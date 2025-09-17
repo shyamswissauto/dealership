@@ -1,0 +1,86 @@
+/* layout */
+.wrap { padding: clamp(24px, 6vw, 48px) 0; }
+.container { width: min(1500px, 92vw); margin: 0 auto; }
+.title { margin: 0 0 12px; font-weight: 900; letter-spacing: .06em; }
+
+/* image frame */
+.media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  /* background: #f4f6f8; */
+  background: #f4f6f8 url("/assets/models/color-bg.webp") center / cover no-repeat;
+  overflow: hidden;
+}
+.img {
+  object-fit: contain;
+  animation: fade .35s ease both;
+  z-index: 0;
+}
+@keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+
+/* === OVERLAY (bottom-left) === */
+.overlay {
+  position: absolute;
+  left: clamp(14px, 4vw, 40px);
+  bottom: clamp(12px, 3vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.5vw, 20px);
+  pointer-events: none;                    /* don't block image except controls */
+  z-index: 2;
+}
+
+.swatches {
+  pointer-events: auto;                    /* clickable */
+  display: flex;
+  gap: 15px;
+  padding: 8px 10px;
+  border-radius: 0px;
+}
+
+.swatchLabel { display: inline-block; }
+.input { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
+
+/* square-ish swatch */
+.swatch {
+  --size: clamp(28px, 4.2vw, 32px);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 0px;
+  background: var(--swatch);
+  border: 0px solid rgba(0,0,0,.25);
+  display: inline-block;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, outline-color .18s ease;
+  transform-origin: center;
+}
+.swatch:hover { transform: translateY(-1px); }
+
+/* >>> Selected swatch scales up */
+.swatchActive {
+  transform: scale(1.24);
+  border-color: #111;
+  outline: 0px solid #111;
+  outline-offset: 2px;
+}
+
+/* name pill next to swatches */
+.colorName {
+  pointer-events: none;                    /* text only */
+  font-weight: 900;
+  letter-spacing: .06em;
+  font-size: clamp(13px, 1.6vw, 18px);
+  color: #111;
+  padding: 8px 12px;
+}
+
+/* responsive tweaks */
+@media (max-width: 640px) {
+  .overlay {
+    left: 10px;
+    bottom: 5px;
+    gap: 10px;
+  }
+  .swatches { padding: 6px 8px 0px 0px; }
+}

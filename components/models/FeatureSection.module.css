@@ -1,0 +1,86 @@
+/* layout */
+.wrap { padding: clamp(24px, 6vw, 85px) 0; }
+.container { width: min(1500px, 92vw); margin: 0 auto; }
+.title {
+  margin: 0 0 clamp(18px, 4vw, 28px);
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+
+/* grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 32px);
+}
+@media (min-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* card */
+.card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  --lift: 0px;
+  opacity: 0;
+  transform: translateX(0);      /* set so transitions have a base */
+  will-change: transform, opacity;
+  transition: opacity 600ms cubic-bezier(.2,.6,.2,1), transform 700ms cubic-bezier(.2,.6,.2,1);
+  margin-bottom: 20px;
+}
+
+/* reveal directions */
+.fromLeft  { transform: translateX(-44px); }
+.fromRight { transform: translateX( 44px); }
+.in { opacity: 1; transform: translateX(0); }
+
+/* image block */
+.media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f3f5f7;
+  border-radius: 0px;
+  box-shadow: 0 14px 28px rgba(0,0,0,.12);
+}
+.img {
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 420ms ease, filter 420ms ease;
+}
+
+/* hover effect: subtle zoom + sheen + lift */
+.card:hover .img { transform: scale(1.04); filter: saturate(1.02) contrast(1.02); }
+.card:hover .media { box-shadow: 0 20px 40px rgba(0,0,0,.16); }
+
+/* sheen */
+.sheen {
+  position: absolute; inset: 0;
+  background: linear-gradient(75deg, transparent 45%, rgba(255,255,255,.18) 50%, transparent 55%);
+  transform: translateX(-120%);
+  transition: transform 600ms ease;
+  pointer-events: none;
+}
+.card:hover .sheen { transform: translateX(120%); }
+
+/* copy */
+.heading {
+  margin: 4px 0 0;
+  font-weight: 900;
+  letter-spacing: .04em;
+  font-size: clamp(16px, 2vw, 24px);
+}
+.body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .img,
+  .sheen { transition: none !important; transform: none !important; opacity: 1 !important; }
+  .fromLeft, .fromRight { transform: none; }
+}
