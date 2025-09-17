@@ -162,6 +162,7 @@
 @media (max-width: 550px) {
   .card {
     aspect-ratio: 16/9;
+    min-height: auto;
   }
 }
 

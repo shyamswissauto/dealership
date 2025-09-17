@@ -12,13 +12,13 @@ const MODELS = [
     name: "U75PLUS",
     img: "/assets/models/img5.webp",
     hoverImg: "/models/img2.png",
-    href: "/models/u75-plus",
+    href: "/",
   },
   {
     name: "U70PRO",
     img: "/assets/models/img4.webp",
     hoverImg: "/models/img1.png",
-    href: "/models/u70-pro",
+    href: "/",
   },
   {
     name: "OFF ROAD TYPE",
@@ -30,13 +30,13 @@ const MODELS = [
     name: "PASSENGER",
     img: "/assets/models/img3.webp",
     hoverImg: "/models/img3.png",
-    href: "/models/bolden-passenger",
+    href: "/",
   },
   {
     name: "COMMERCIAL",
     img: "/assets/models/img1.webp",
     hoverImg: "/models/img2.png",
-    href: "/models/bolden-commercial",
+    href: "/",
   },
 ];
 

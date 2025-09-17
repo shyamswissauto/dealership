@@ -20,7 +20,7 @@ function useIsMobile(bp = 992) {
 export default function SmartBuyingTools({
   title = "SMART BUYING TOOLS",
   items = [
-    { labelTop: "EXCLUSIVE", labelBottom: "OFFERS", image: "/assets/tools/img1.png", href: "/exclusive-offer" },
+    { labelTop: "EXCLUSIVE", labelBottom: "OFFERS", image: "/assets/tools/img1.png", href: "#" },
     { labelTop: "EXPERIENCE", labelBottom: "THE DRIVE", image: "/assets/tools/img2.png", href: "#" },
     { labelTop: "REQUEST A", labelBottom: "QUOTE", image: "/assets/tools/img3.png", href: "#", badge: "1" },
     { labelTop: "FINANCE", labelBottom: "CALCULATOR", image: "/assets/tools/img4.png", href: "#" },

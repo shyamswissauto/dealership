@@ -125,6 +125,7 @@
     grid-auto-columns: unset;
     width: 100%;
   }
-  .tab { width: 100%; }
-  .containerBg {padding: 50px;}
+  .tab { width: 100%; padding: 12px 5px;}
+  .containerBg {padding: 50px 20px;}
+  .wrap { padding-top: 50px; padding-bottom: 50px;}
 }

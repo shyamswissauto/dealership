@@ -141,3 +141,8 @@
 .viewport :global(.swiper-button-next) {
   display: none !important;
 }
+
+@media (max-width: 640px) {
+  
+  .wrap { padding-top: 50px; padding-bottom: 50px; margin-top: 0px;}
+}
