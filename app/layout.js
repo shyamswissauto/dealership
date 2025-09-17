@@ -32,8 +32,8 @@ const almarai = Almarai({
 });
 
 export const metadata = {
-  title: "AutoBrand",
-  description: "Models Carousel with Offcanvas Navbar",
+  title: "VGV - Swiss Auto Trading",
+  description: "VGV - Swiss Auto Trading",
 };
 
 export default function RootLayout({ children }) {

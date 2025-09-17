@@ -14,6 +14,7 @@ export default function Page() {
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
         <ShowcaseHero />
+        <ShowcaseHero />
 
 
 

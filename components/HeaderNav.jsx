@@ -41,11 +41,11 @@ export default function HeaderNav() {
         
         <nav className="nav">
           <Link href="/models" className="cstTransY">Models</Link>
-          <Link href="/showroom" className="cstTransY">Showroom</Link>
-          <Link href="/special-offers" className="cstTransY">Special Offers</Link>
-          <Link href="/service-parts" className="cstTransY">Service Parts</Link>
-          <Link href="/business" className="cstTransY">VGV Business</Link>
-          <Link href="/contact" className="cstTransY">Contact</Link>
+          <Link href="/" className="cstTransY">Showroom</Link>
+          <Link href="/" className="cstTransY">Special Offers</Link>
+          <Link href="/" className="cstTransY">Service & Parts</Link>
+          <Link href="/" className="cstTransY">VGV Business</Link>
+          <Link href="/" className="cstTransY">Contact</Link>
         </nav>
 
         
@@ -93,11 +93,11 @@ export default function HeaderNav() {
 
           
           <Link href="/models" onClick={() => setMobileOpen(false)}>Models</Link>
-          <Link href="/showroom" onClick={() => setMobileOpen(false)}>Showroom</Link>
-          <Link href="/special-offers" onClick={() => setMobileOpen(false)}>Special Offers</Link>
-          <Link href="/service-parts" onClick={() => setMobileOpen(false)}>Service Parts</Link>
-          <Link href="/business" onClick={() => setMobileOpen(false)}>VGV Business</Link>
-          <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact</Link>
+          <Link href="/" onClick={() => setMobileOpen(false)}>Showroom</Link>
+          <Link href="/" onClick={() => setMobileOpen(false)}>Special Offers</Link>
+          <Link href="/" onClick={() => setMobileOpen(false)}>Service & Parts</Link>
+          <Link href="/" onClick={() => setMobileOpen(false)}>VGV Business</Link>
+          <Link href="/" onClick={() => setMobileOpen(false)}>Contact</Link>
         </div>
       </aside>
 
