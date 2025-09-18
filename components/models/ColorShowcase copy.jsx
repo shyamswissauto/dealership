@@ -3,14 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./ColorShowcase.module.css";
-/* import s9Colors from "@/data/models/s9/s9Colors"; */
+import s9Colors from "@/data/models/s9/s9Colors";
 
 
 export default function ColorShowcase({
-  /* title = "",
+  title = "",
   colors = s9Colors,
-  initialId = s9Colors[0]?.id, */
-  title = "", colors = [], initialId
+  initialId = s9Colors[0]?.id,
 }) {
   const [activeId, setActiveId] = useState(initialId);
   const active = colors.find(c => c.id === activeId) ?? colors[0];
@@ -29,9 +28,7 @@ export default function ColorShowcase({
             fill
             priority
             className={styles.img}
-            sizes="(max-width:768px) 100vw, (max-width:1200px) 90vw, 1500px"
-                  quality={90}
-            /* sizes="(max-width: 1100px) 100vw, 1200px" */
+            sizes="(max-width: 1100px) 100vw, 1200px"
           />
 
           {/* OVERLAY: bottom-left */}

@@ -4,34 +4,9 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./FeatureSection.module.css";
 
-const DEFAULT_ITEMS = [
-  {
-    title: "HEADLINE",
-    body:
-      "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam",
-    img: "/assets/hero/bg1.png",
-  },
-  {
-    title: "HEADLINE",
-    body:
-      "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, nonummy nibh euismod",
-    img: "/assets/hero/bg1.png",
-  },
-  {
-    title: "HEADLINE",
-    body:
-      "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam",
-    img: "/assets/hero/bg1.png",
-  },
-  {
-    title: "HEADLINE",
-    body:
-      "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, nonummy nibh euismod",
-    img: "/assets/hero/bg1.png",
-  },
-];
 
-export default function ModelFeatureSection({ items = DEFAULT_ITEMS, title = "" }) {
+
+export default function ModelFeatureSection({ items = [], title = "" }) {
   const rootRef = useRef(null);
 
   useEffect(() => {
@@ -74,7 +49,9 @@ export default function ModelFeatureSection({ items = DEFAULT_ITEMS, title = "" 
                     alt={it.title}
                     fill
                     className={styles.img}
-                    sizes="(max-width: 900px) 100vw, 700px"
+                    /* sizes="(max-width: 900px) 100vw, 700px" */
+                    sizes="(max-width:768px) 100vw, (max-width:1200px) 90vw, 1500px"
+                    quality={90}
                     priority={i < 2}
                   />
                   <span className={styles.sheen} aria-hidden="true" />

@@ -7,7 +7,7 @@ import { Navigation, Keyboard, Autoplay  } from "swiper/modules";
 import "swiper/css";
 import styles from "./ExteriorGallerySwiper.module.css";
 
-import EXTERIOR_GALLERY_ITEMS from "@/data/models/s9/exteriorGalleryItems";
+/* import EXTERIOR_GALLERY_ITEMS from "@/data/models/s9/exteriorGalleryItems"; */
 
 const DEFAULT_ITEMS = [
   { src: "/assets/hero/slide2-desktop.webp", alt: "Gallery 1" },

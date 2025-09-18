@@ -24,7 +24,7 @@ export default function WhoWeAreSection() {
             href="/our-journey"
             aria-label="Read about Our Journey"
             className={`${styles.card} ${styles.up}`}
-            style={{ "--bg": "url('/assets/hero/bg2.png')" }} 
+            style={{ "--bg": "url('/assets/home/who-we-are.webp')" }} 
           >
             <span className={styles.overlay} aria-hidden="true" />
             <div className={styles.inner}>
@@ -40,7 +40,7 @@ export default function WhoWeAreSection() {
             href="/our-vision"
             aria-label="Read about Our Vision"
             className={`${styles.card} ${styles.down}`}
-            style={{ "--bg": "url('/assets/hero/bg1.png')" }} 
+            style={{ "--bg": "url('/assets/hero/bg2.png')" }} 
           >
             <span className={styles.overlay} aria-hidden="true" />
             <div className={styles.inner}>

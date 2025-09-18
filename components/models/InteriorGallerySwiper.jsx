@@ -7,7 +7,7 @@ import { Navigation, Keyboard, Autoplay  } from "swiper/modules";
 import "swiper/css";
 import styles from "./InteriorGallerySwiper.module.css";
 
-import INTERIOR_GALLERY_ITEMS from "@/data/models/s9/interiorGalleryItems";
+/* import INTERIOR_GALLERY_ITEMS from "@/data/models/s9/interiorGalleryItems"; */
 
 const swiperRef = { current: null };
 

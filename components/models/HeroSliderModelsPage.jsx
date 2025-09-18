@@ -98,7 +98,7 @@ export default function HeroSlider({ slides = [], autoPlayMs = 7000 }) {
       </div> */}
 
       
-      <div className={`railScrim ${railOpen ? "show" : ""}`} onClick={() => setRailOpen(false)} />
+      {/* <div className={`railScrim ${railOpen ? "show" : ""}`} onClick={() => setRailOpen(false)} />
       <aside className={`rail ${railOpen ? "open" : ""}`}>
         <div className="railInner">
           <h4>Quick Actions</h4>
@@ -108,7 +108,7 @@ export default function HeroSlider({ slides = [], autoPlayMs = 7000 }) {
           <Link href="/service-parts">Service & Parts</Link>
         </div>
         <button className="railClose" aria-label="Close" onClick={() => setRailOpen(false)}>×</button>
-      </aside>
+      </aside> */}
 
       <style jsx>{`
         .hero { position: relative; width: 100%; height: 100svh; min-height: 520px; overflow: hidden; color: #fff; }

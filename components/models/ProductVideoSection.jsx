@@ -94,7 +94,7 @@ export default function ProductVideoSection({
         muted
         controls={false}
         loop={loop}
-        /* poster={poster} */
+        poster={poster}
       />
 
 

@@ -40,6 +40,7 @@
   transition: transform .15s ease, background .15s ease, opacity .15s ease;
   opacity: .85;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 .tab:hover { transform: translateY(-1px); opacity: 1; }
 .tabActive { background: #111; opacity: 1; }

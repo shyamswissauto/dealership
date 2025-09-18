@@ -3,8 +3,8 @@
 import Image from "next/image";
 import styles from "./TestDriveSection.module.css";
 
-const DEFAULT_LEFT  = "/assets/hero/test1.webp";   
-const DEFAULT_RIGHT = "/assets/hero/bg2.png";  
+const DEFAULT_LEFT  = "/assets/home/book-test-drive1.webp";
+const DEFAULT_RIGHT = "/assets/home/book-test-drive2.webp";
 
 const CAR_OPTIONS = ["Okavango", "Starray", "Coolray", "Emgrand"];
 

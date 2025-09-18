@@ -1,30 +1,30 @@
 export const metadata = {
   metadataBase: new URL('https://mysinotruk.ae'),
     alternates: {
-        canonical: '/bolden-s9-off-road/',
+        canonical: '/sinotruk-vgv-u70-pro/',
         languages: {
-          'en': 'https://mysinotruk.ae/models/bolden-s9-off-road/',
-          'ar': 'https://mysinotruk.ae/ar/models/bolden-s9-off-road/',
+          'en': 'https://mysinotruk.ae/models/sinotruk-vgv-u70-pro/',
+          'ar': 'https://mysinotruk.ae/ar/models/sinotruk-vgv-u70-pro/',
         },
     },
-  title: 'Bolden S9 Off-Road',
-  description: 'Bolden S9 Off-Road',
+  title: 'Sinotruk VGV U70 Pro',
+  description: 'Sinotruk VGV U70 Pro',
   openGraph: {
-      title: 'Bolden S9 Off-Road',
-      description: 'Bolden S9 Off-Road',
-      url: 'https://mysinotruk.ae/models/bolden-s9-off-road/',
+      title: 'Sinotruk VGV U70 Pro',
+      description: 'Sinotruk VGV U70 Pro',
+      url: 'https://mysinotruk.ae/models/sinotruk-vgv-u70-pro/',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
-          url: 'assets/images/og/bolden-s9-off-road.png',
+          url: 'assets/images/og/sinotruk-vgv-u70-pro.png',
           width: 800,
           height: 600,
         },
         {
-          url: 'assets/images/og/bolden-s9-off-road.png',
+          url: 'assets/images/og/sinotruk-vgv-u70-pro.png',
           width: 1800,
           height: 1600,
-          alt: 'Bolden S9 Off-Road',
+          alt: 'Sinotruk VGV U70 Pro',
         },
       ],
       locale: 'en_US',
