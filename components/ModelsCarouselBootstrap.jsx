@@ -18,7 +18,7 @@ const MODELS = [
     name: "U70PRO",
     img: "/assets/models/img4.webp",
     hoverImg: "/models/img1.png",
-    href: "/",
+    href: "/models/sinotruk-vgv-u70-pro",
   },
   {
     name: "OFF ROAD TYPE",
