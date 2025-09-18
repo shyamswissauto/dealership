@@ -116,9 +116,15 @@ a.ar { color: #fff; text-decoration: none; font-weight: 400; opacity: 1; text-tr
   display: none !important;
 }
 
+
+
 @media (max-width: 768px) {
       .siteHeader .logo img { width: 130px;}
       .hideMobile { display: none !important;}
+}
+
+@media (min-width: 769px) {
+      .explore-models .title {  margin-bottom: 150px !important; color: #000000;}
 }
 
 

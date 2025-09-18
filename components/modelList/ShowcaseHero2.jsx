@@ -2,18 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import styles from "./ShowcaseHero.module.css";
-import DEFAULTS from "@/data/models/all-list/showcasePresets";
+import styles from "./ShowcaseHero2.module.css";
 
 export default function ShowcaseHero({
-  bg = DEFAULTS.bg,
-  mobileBg = DEFAULTS.mobileBg,
-  car = DEFAULTS.car,
-  title = DEFAULTS.title,
-  subtitle = DEFAULTS.subtitle,
-  learnHref = DEFAULTS.learnHref,
-  modalImage = DEFAULTS.modalImage,
-  reverse = DEFAULTS.reverse,
+  bg = "/assets/models/model-list-bg1.webp",
+  mobileBg = "/assets/models/test2.webp",
+  car = "/assets/models/test.png",
+  title = "U70 PRO",
+  subtitle = "Elevate every journey with comfort and tech that just works.",
+  learnHref = "#",
+  modalImage= "/assets/models/book-a-test-drive.webp",
   carOptions = ["U75 Plus", "U70 Pro", "Bolden S9", "Bolden S7", "Bolden S6"],
 }) {
   const rootRef = useRef(null);
@@ -30,10 +28,12 @@ export default function ShowcaseHero({
     return () => io.disconnect();
   }, []);
 
+  // Close on Esc while modal is open
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
+    // (optional) prevent background scroll
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
@@ -44,15 +44,17 @@ export default function ShowcaseHero({
 
   const onSubmit = (e) => {
     e.preventDefault();
+    // TODO: wire to your endpoint
     setOpen(false);
   };
 
   return (
     <section ref={rootRef} className={styles.wrap} aria-labelledby="showcase-title">
       <div className={styles.container}>
-        <div className={`${styles.stage} ${reverse ? styles.reverse : ""}`}>
-          {/* desktop & mobile BGs */}
+        <div className={styles.stage}>
+          {/* desktop bg */}
           <Image src={bg} alt="" fill priority className={`${styles.bg} ${styles.bgDesktop}`} />
+          {/* mobile bg */}
           <Image src={mobileBg} alt="" fill priority className={`${styles.bg} ${styles.bgMobile}`} />
 
           {/* car */}
@@ -65,7 +67,7 @@ export default function ShowcaseHero({
             className={styles.car}
           />
 
-          {/* content (left when reverse, right otherwise) */}
+          {/* right content */}
           <div className={styles.content}>
             <h2 id="showcase-title" className={styles.title}>{title}</h2>
             <p className={styles.sub}>{subtitle}</p>
@@ -80,6 +82,7 @@ export default function ShowcaseHero({
         </div>
       </div>
 
+      {/* ===== Modal ===== */}
       {open && (
         <div
           className={styles.modalOverlay}
@@ -104,14 +107,19 @@ export default function ShowcaseHero({
 
             <div className={styles.modalRight}>
               <h3 className={styles.modalTitle}>BOOK A TEST DRIVE</h3>
+
               <form className={styles.form} onSubmit={onSubmit}>
                 <input className={styles.input} type="text" name="name" placeholder="Full Name" required />
                 <input className={styles.input} type="email" name="email" placeholder="Your email" required />
                 <input className={styles.input} type="tel" name="phone" placeholder="Phone Number" required />
+
                 <select className={`${styles.input} ${styles.select}`} name="car" defaultValue="" required>
                   <option value="" disabled hidden>Select your car</option>
-                  {carOptions.map((c) => <option key={c} value={c}>{c}</option>)}
+                  {carOptions.map((c) => (
+                    <option key={c} value={c}>{c}</option>
+                  ))}
                 </select>
+
                 <button className={styles.cta} type="submit">BOOK NOW</button>
               </form>
             </div>

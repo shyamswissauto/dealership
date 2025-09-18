@@ -1,5 +1,10 @@
 // app/layout.jsx
 import "./globals.css";
+import GoogleTagManager from "@/components/analytics/GoogleTagManager";
+import GtmPageView from "@/components/analytics/GtmPageView";
+
+const GTM_ID = "GTM-W769MT2C"; // put GTM-XXXXXXX in .env.local
+
 import CookieConsent from "@/components/cookies/CookieConsent";
 
 import Script from "next/script";
@@ -40,11 +45,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${redRose.variable}  ${almarai.variable} ${poppins.variable}`}>
       <body>
+        <GoogleTagManager gtmId={GTM_ID} />
         {children}
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
         />
+        <GtmPageView />
         <CookieConsent />
       </body>
     </html>

@@ -79,11 +79,23 @@
 /* Mobile: bottom sticky, horizontal; labels hidden */
 @media (max-width: 768px) {
   .wrap {
-    inset: auto 0 max(12px, env(safe-area-inset-bottom)) 0; /* bottom centered */
+    inset: auto 0 max(12px, env(safe-area-inset-bottom)) 0;
     transform: none;
     display: grid;
     place-items: center;
+
+    /* 👇 hidden by default until scrolled past threshold */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity .18s ease, transform .18s ease;
   }
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
   .bar {
     flex-direction: row;
     gap: 12px;
@@ -93,5 +105,5 @@
     backdrop-filter: saturate(140%) blur(6px);
   }
   .btn { --size: 48px; box-shadow: none; }
-  .label { display: none; } /* hide labels on mobile */
+  .label { display: none; }
 }

@@ -187,31 +187,6 @@
   z-index: 1;
 }
 
-.reverse .car {
-  /* place car on the RIGHT */
-  left: auto;
-  right: clamp(12px, 2vw, 24px);
-  /* enter from the right (mirror) */
-  transform: translateX(28px) translateY(10px);
-}
-.in.reverse .car {
-  transform: translateX(0) translateY(0);
-}
-
-.reverse .content {
-  /* move content to the LEFT */
-  right: auto;
-  left: clamp(18px, 3vw, 36px);
-  text-align: left;
-}
-.reverse .title,
-.reverse .sub {
-  text-align: left;
-}
-.reverse .ctaRow {
-  justify-content: flex-start;
-}
-
 
 /* --------- Responsive tweaks --------- */
 
@@ -257,24 +232,6 @@
   /* keep CTAs in one line; shrink slightly if needed */
   .ctaRow { justify-content: center; gap: 10px; flex-wrap: nowrap; }
   .pill { padding: 10px 14px; font-size: 14px; }
-
-  .reverse .car {
-    /* center on mobile just like default */
-    right: auto;
-    left: 50%;
-    width: min(90vw, 640px);
-    transform: translate(-50%, 10px);
-  }
-  .in.reverse .car { transform: translate(-50%, 0); }
-
-  .reverse .content {
-    left: 12px; right: 12px; bottom: 25px;
-    text-align: center;
-    justify-items: center;
-  }
-  .reverse .title,
-  .reverse .sub { text-align: center; }
-  .reverse .ctaRow { justify-content: center; }
 }
 
 @media (max-width: 500px) {

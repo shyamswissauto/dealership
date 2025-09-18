@@ -73,7 +73,7 @@ export default function TestDriveSection({
                     </select>
                 </div>
 
-                <button className={styles.btn} type="submit">SEND A MESSAGE</button>
+                <button className={styles.btn} type="submit">BOOK NOW</button>
                 </form>
 
 

@@ -112,7 +112,8 @@ export default function InteriorGallerySwiper({ items = INTERIOR_GALLERY_ITEMS, 
                   src={img.src}
                   alt={img.alt ?? `Gallery image ${i + 1}`}
                   fill
-                  sizes="(max-width:1024px) 100vw, 1200px"
+                  sizes="(max-width:768px) 100vw, (max-width:1200px) 90vw, 1500px"
+                  quality={90}
                   priority={i === 0}
                   className={styles.img}
                 />
