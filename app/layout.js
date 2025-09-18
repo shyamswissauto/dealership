@@ -1,13 +1,12 @@
 // app/layout.jsx
 import "./globals.css";
+import { Suspense } from "react";
+import Script from "next/script";
+
+import CookieConsent from "@/components/cookies/CookieConsent";
 import GoogleTagManager from "@/components/analytics/GoogleTagManager";
 import GtmPageView from "@/components/analytics/GtmPageView";
 
-const GTM_ID = "GTM-W769MT2C"; // put GTM-XXXXXXX in .env.local
-
-import CookieConsent from "@/components/cookies/CookieConsent";
-
-import Script from "next/script";
 
 import { Red_Rose, Almarai, Poppins } from "next/font/google";
 
@@ -41,6 +40,8 @@ export const metadata = {
   description: "VGV - Swiss Auto Trading",
 };
 
+const GTM_ID = "GTM-W769MT2C";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${redRose.variable}  ${almarai.variable} ${poppins.variable}`}>
@@ -51,8 +52,10 @@ export default function RootLayout({ children }) {
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
         />
-        <GtmPageView />
         <CookieConsent />
+        <Suspense fallback={null}>
+          <GtmPageView />
+        </Suspense>
       </body>
     </html>
   );
