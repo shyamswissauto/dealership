@@ -12,7 +12,7 @@ const MODELS = [
     name: "U75PLUS",
     img: "/assets/models/img5.webp",
     hoverImg: "/models/img2.png",
-    href: "/",
+    href: "/models/sinotruk-vgv-u75-plus",
   },
   {
     name: "U70PRO",
@@ -30,13 +30,13 @@ const MODELS = [
     name: "PASSENGER",
     img: "/assets/models/img3.webp",
     hoverImg: "/models/img3.png",
-    href: "/",
+    href: "/models/bolden-passenger",
   },
   {
     name: "COMMERCIAL",
     img: "/assets/models/img1.webp",
     hoverImg: "/models/img2.png",
-    href: "/",
+    href: "/models/bolden-commercial",
   },
 ];
 

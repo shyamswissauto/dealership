@@ -1,31 +1,31 @@
 // app/models/bolden-s9-off-road/page.jsx
 import HeaderNav from "@/components/client/HeaderNavClient";
 import HeroSliderClient from "@/components/client/models/HeroSliderModels";
-import { HERO_SLIDES } from "@/data/heroSlidesS9";
+import { HERO_SLIDES } from "@/data/models/s9offroad/heroSlides";
 import Footer from "@/components/client/FooterClient";
 
 
 import ProductSectionNav from "@/components/models/ProductSectionNav";
 
 import ColorShowcase from "@/components/models/ColorShowcase"
-import colorsVariants from "@/data/models/s9/s9Colors";
+import colorsVariants from "@/data/models/s9offroad/colors";
 
 import ProductVideoSection from "@/components/models/ProductVideoSection";
-import s9VideoConfig from "@/data/models/s9/videoConfig";
+import VideoConfig from "@/data/models/s9offroad/videoConfig";
 
 import DualImageIntro from "@/components/models/DualImageIntro";
 
 import ExteriorGallerySwiper from "@/components/models/ExteriorGallerySwiper";
-import EXTERIOR_GALLERY_ITEMS from "@/data/models/s9/exteriorGalleryItems";
+import EXTERIOR_GALLERY_ITEMS from "@/data/models/s9offroad/exteriorGalleryItems";
 
 import ModelFeatureSection from "@/components/models/FeatureSection";
-import featureItems from "@/data/models/s9/featureItems";
+import featureItems from "@/data/models/s9offroad/featureItems";
 
 import InteriorGallerySwiper from "@/components/models/InteriorGallerySwiper";
-import INTERIOR_GALLERY_ITEMS from "@/data/models/s9/interiorGalleryItems";
+import INTERIOR_GALLERY_ITEMS from "@/data/models/s9offroad/interiorGalleryItems";
 
 import SpecificationTabs from "@/components/models/SpecsTabs";
-import specsTabs from "@/data/models/s9/specsTabs";
+import specsTabs from "@/data/models/s9offroad/specsTabs";
 
 import EmiCalculator from "@/components/models/EmiCalculator";
 
@@ -41,7 +41,7 @@ export default function Page() {
 
         <ColorShowcase colors={colorsVariants} initialId="aurora-green" />
 
-        <ProductVideoSection {...s9VideoConfig} />
+        <ProductVideoSection {...VideoConfig} />
 
         {/* <DualImageIntro /> */}
         <ExteriorGallerySwiper items={EXTERIOR_GALLERY_ITEMS} title="EXTERIOR" />

@@ -2,9 +2,11 @@
 
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import TestDriveModal from "@/components/TestDriveModal";
 
 export default function HeaderNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const closeBtnRef = useRef(null);
 
   const openHeroRail = () => {
@@ -50,7 +52,8 @@ export default function HeaderNav() {
 
         
         <div className="right">
-          <Link href="/test-drive" className="cta btn cstBtnStyle hideMobile">TEST DRIVE</Link>
+          {/* <Link href="/test-drive" className="cta btn cstBtnStyle hideMobile">TEST DRIVE</Link> */}
+          <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile">TEST DRIVE</button>
           <Link href="/ar" className="ar cstTransY">العربية</Link>
 
           
@@ -145,6 +148,14 @@ export default function HeaderNav() {
         </div>
       </aside>
 
+      {open && (
+        <TestDriveModal
+          onClose={() => setOpen(false)}
+          modalImage="/assets/popup/popup1.webp"
+          carOptions={["VGV U75 Plus", "VGV U70 Pro", "Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
+        />
+      )}
+
       <style jsx>{`
         .siteHeader {
           position: absolute;
@@ -179,8 +190,7 @@ export default function HeaderNav() {
         .right { display: flex; align-items: center; gap: 30px; justify-content: end;}
         .cta {
           text-decoration: none;
-          background: #fff; color: #000;
-          font-weight: 800; padding: 10px 14px; border-radius: 999px;
+          font-weight: 800; border-radius: 999px;
         }
         .ar { color: #fff; text-decoration: none; font-weight: 800; opacity: .9; }
 

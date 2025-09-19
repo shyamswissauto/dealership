@@ -44,6 +44,10 @@ a.ar { color: #fff; text-decoration: none; font-weight: 400; opacity: 1; text-tr
 }
 
 
+
+
+
+
 .navbar.sticky-top {
   backdrop-filter: saturate(140%) blur(4px);
 }

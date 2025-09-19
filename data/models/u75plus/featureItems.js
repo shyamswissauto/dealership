@@ -1,24 +1,24 @@
 
 const featureItems = [
   {
-    title: "Bold Presence, Refined Details",
-    body:"Command attention with the U70 Pro. Its aggressive front grille, sleek LED headlamps, and sporty red accents give it a premium silhouette that blends urban sophistication with SUV muscle.",
-    img: "/assets/models/u70pro/feature/feature4.webp",
+    title: "Turbocharged Power, Seamless Control",
+    body:"Equipped with a 2.0T-GDI engine delivering 224 HP and 385 Nm of torque, the U75 Plus brings you high performance with an 8-speed automatic transmission for smooth, responsive driving across any terrain.",
+    img: "/assets/models/u75plus/feature/feature1.webp",
   },
   {
-    title: "Engineered for Strength and Stability",
-    body:"The U70 Pro’s ultra-high-strength, cage-type lightweight body, reinforced with boron steel, provides enhanced side-impact protection. Its McPherson independent front suspension and torque beam rear setup ensure a smooth, confident ride.",
-    img: "/assets/models/u70pro/feature/feature2.webp",
+    title: "Tech-Infused Comfort That Feels Like Home",
+    body:"Step into a refined cabin featuring high-end leather seats, a 10.25” full LCD instrument panel, and a 10.1” waterfall touchscreen. Intelligent voice control, Bluetooth, and surround sound elevate every journey.",
+    img: "/assets/models/u75plus/feature/feature2.webp",
   },
   {
-    title: "Comfort Meets Intelligent Design",
-    body:"Inside, you’ll find rich brown leatherette finish seats and a 10.25-inch three-dimensional central control touchscreen. With a six-direction driver seat adjuster, the U70 Pro is crafted for both luxury and practicality.",
-    img: "/assets/models/u70pro/feature/feature1.webp",
+    title: "Stability You Can Feel, Engineering You Can Trust",
+    body:"Built on a 2800mm wheelbase with a MacPherson front and multi-link rear independent suspension system, the U75 Plus gives you a balanced, confident ride with enhanced road grip and comfort.",
+    img: "/assets/models/u75plus/feature/feature3.webp",
   },
   {
-    title: "Space That Adapts to Your Life",
-    body:"With a trunk capacity of up to 1800L, the U70 Pro offers exceptional cargo flexibility. Get a spacious boot that’s designed to carry it all without compromising on your comfort.",
-    img: "/assets/models/u70pro/feature/feature3.webp",
+    title: "Flexible Seating, Expansive Freedom",
+    body:"Designed for families and adventurers alike, the U75 Plus offers a 5/7-seat layout and up to 1800L of boot space. Foldable rear seats and a flat trunk floor mean you have room for everything.",
+    img: "/assets/models/u75plus/feature/feature4.webp",
   },
 ];
 
