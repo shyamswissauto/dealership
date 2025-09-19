@@ -6,14 +6,14 @@ import styles from "./ShowcaseHero.module.css";
 import DEFAULTS from "@/data/models/all-list/showcasePresets";
 
 export default function ShowcaseHero({
-  bg = "/assets/models/model-list-bg1.webp",
-  mobileBg = "/assets/models/model-list-mobile-bg1.webp",
-  car = "/assets/models/car-list-u70.webp",
-  title = "U75PLUS",
-  subtitle = "Elevate every journey with comfort and tech that just works.",
-  learnHref = "/models/sinotruk-vgv-u75-plus",
-  modalImage = "/assets/models/book-a-test-drive.webp",
-  reverse = false,
+  bg = DEFAULTS.bg,
+  mobileBg = DEFAULTS.mobileBg,
+  car = DEFAULTS.car,
+  title = DEFAULTS.title,
+  subtitle = DEFAULTS.subtitle,
+  learnHref = DEFAULTS.learnHref,
+  modalImage = DEFAULTS.modalImage,
+  reverse = DEFAULTS.reverse,
   carOptions = ["U75 Plus", "U70 Pro", "Bolden S9", "Bolden S7", "Bolden S6"],
 }) {
   const rootRef = useRef(null);
