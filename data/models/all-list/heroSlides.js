@@ -2,7 +2,7 @@
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/explore-models.webp",
-    mobile:  "/assets/hero/all-list-hero-slide.webp",
+    mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "EXPLORE THE FULL RANGE",
     subtitle:"",
     align:   "center",

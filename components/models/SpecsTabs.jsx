@@ -119,7 +119,7 @@ export default function SpecsTabs({ title = "SPECIFICATIONS", tabs = [], default
                     ))}
                   </ul>
 
-                  <div className={styles.ctas}>
+                  {/* <div className={styles.ctas}>
                     <a
                       href={activeTab.brochureUrl}
                       className={`${styles.pill} ${styles.dark}`}
@@ -132,7 +132,8 @@ export default function SpecsTabs({ title = "SPECIFICATIONS", tabs = [], default
                     >
                       DOWNLOAD SPEC SHEET
                     </a>
-                  </div>
+                  </div> */}
+                  
                 </div>
               </div>
             </div>
