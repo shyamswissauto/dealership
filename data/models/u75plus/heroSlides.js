@@ -2,7 +2,7 @@
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/u75-hero.webp",
-    mobile:  "/assets/hero/slide3-mobile.jpg",
+    mobile:  "/assets/hero/u75plus-mobile.webp",
     title:   "Sinotruk VGV U75 Plus",
     subtitle:"Combine Sports Styling With Smart Living",
     align:   "left",

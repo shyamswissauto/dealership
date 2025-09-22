@@ -7,7 +7,7 @@ import DEFAULTS from "@/data/models/all-list/showcasePresets";
 
 export default function ShowcaseHero({
   bg = "/assets/models/model-list-bg1.webp",
-  mobileBg = "/assets/models/model-list-mobile-bg1.webp",
+  mobileBg = "/assets/models/pro-mobilebg.webp",
   car = "/assets/models/car-list-u70.webp",
   title = "U75PLUS",
   subtitle = "Elevate every journey with comfort and tech that just works.",

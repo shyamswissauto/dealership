@@ -45,7 +45,7 @@ export default function StickyActions({
   return (
     <nav className={`${styles.wrap} ${visible ? styles.show : ""}`} aria-label="Quick actions">
       <ul className={styles.bar}>
-        {/* {items.map((item, i) => (
+        {items.map((item, i) => (
           <li key={i} className={styles.item}>
             <a href={item.href} className={styles.btn} aria-label={item.label} title={item.label}>
               <span className={styles.icon} aria-hidden="true">
@@ -61,63 +61,7 @@ export default function StickyActions({
               <span className={styles.label}>{item.label}</span>
             </a>
           </li>
-        ))} */}
-        <li className={styles.item}>
-            <a href="/" className={styles.btn} aria-label="Book a test drive" title="Book a test drive">
-              <span className={styles.icon} aria-hidden="true">
-                <Image
-                  src="/assets/icons/icon1.webp"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.iconImg}
-                />
-              </span>
-              <span className={styles.label}>Book a test drive</span>
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a href="/" className={styles.btn} aria-label="Get Quote" title="Get Quote">
-              <span className={styles.icon} aria-hidden="true">
-                <Image
-                  src="/assets/icons/icon4.webp"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.iconImg}
-                />
-              </span>
-              <span className={styles.label}>Get Quote</span>
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a href="/" className={styles.btn} aria-label="Contact us" title="Contact us">
-              <span className={styles.icon} aria-hidden="true">
-                <Image
-                  src="/assets/icons/icon2.webp"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.iconImg}
-                />
-              </span>
-              <span className={styles.label}>Contact us</span>
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a href="/" className={styles.btn} aria-label="Service & Support" title="Service & Support">
-              <span className={styles.icon} aria-hidden="true">
-                <Image
-                  src="/assets/icons/icon3.webp"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className={styles.iconImg}
-                />
-              </span>
-              <span className={styles.label}>Service & Support</span>
-            </a>
-          </li>
+        ))}
       </ul>
     </nav>
   );

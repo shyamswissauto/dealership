@@ -37,7 +37,7 @@ export default function Page() {
 
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
 
-        <ProductSectionNav modalImage="/assets/popup/car-list-u70.webp" />
+        <ProductSectionNav modalImage="/assets/popup/s7passenger-popup.webp" />
 
         <ColorShowcase colors={colorsVariants} initialId="coffee-brown" />
 

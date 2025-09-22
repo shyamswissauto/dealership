@@ -3,7 +3,7 @@ const specsTabs = [
   {
     key: "basic",
     label: "Design & Dimensions",
-    image: { src: "/assets/models/u70pro/spec.webp", alt: "Design & Dimensions" },
+    image: { src: "/assets/models/s6commercial/spec.webp", alt: "Design & Dimensions" },
     points: [
       "Engine type - High-pressure common rail, turbocharged, and intercooled",
       "Length x Breadth x Height - 5645 x 1895 x 1890mm",
@@ -12,7 +12,7 @@ const specsTabs = [
       "Electric door mirrors",
       "Black grey interior trim",
       "Slush-molded dashboard",
-      "Chinese loong head front grill design",
+      "Chinese long head front grill design",
     ],
     brochureUrl: "/assets/brochure/brochure1.pdf",
     specUrl: "/assets/brochure/brochure2.pdf",
@@ -20,7 +20,7 @@ const specsTabs = [
   {
     key: "performance",
     label: "Performance & Safety",
-    image: { src: "/assets/models/u70pro/spec.webp", alt: "Performance & Safety" },
+    image: { src: "/assets/models/s6commercial/spec.webp", alt: "Performance & Safety" },
     points: [
       "WP2H 2.0T engine",
       "140kW power, 420Nm torque",
@@ -36,7 +36,7 @@ const specsTabs = [
   {
     key: "tech",
     label: "Utility & Tech",
-    image: { src: "/assets/models/u70pro/spec.webp", alt: "Utility & Tech" },
+    image: { src: "/assets/models/s6commercial/spec.webp", alt: "Utility & Tech" },
     points: [
       "7\" color LCD dashboard",
       "Satellite navigation",

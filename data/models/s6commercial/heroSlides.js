@@ -1,8 +1,8 @@
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/u70-hero.webp",
-    mobile:  "/assets/hero/slide3-mobile.jpg",
+    desktop: "/assets/models/s6commercial/bolden-s6-hero-slider.webp",
+    mobile:  "/assets/hero/commericial-mobile.webp",
     title:   "Sinotruk Bolden Commercial Pickup Truck",
     subtitle:"Commercial in Strength Heavy-Duty by Nature",
     align:   "left",

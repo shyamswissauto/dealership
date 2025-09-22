@@ -17,7 +17,7 @@ const DEFAULT_ITEMS = [
     alt: "BOLDEN PASSENGER",
     title: "BOLDEN PASSENGER",
     subtitle: "Urban-ready performance.",
-    learnHref: "/",
+    learnHref: "/models/bolden-passenger",
     bookHref: "/test-drive?model=falcon",
   },
   {
@@ -25,7 +25,7 @@ const DEFAULT_ITEMS = [
     alt: "BOLDEN COMMERCIAL",
     title: "BOLDEN COMMERCIAL",
     subtitle: "Utility with finesse.",
-    learnHref: "",
+    learnHref: "/models/bolden-commercial",
     bookHref: "/test-drive?model=atlas",
   },
 ];
