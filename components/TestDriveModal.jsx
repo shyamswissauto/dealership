@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./TestDriveModal.module.css";
 
 export default function TestDriveModal({ onClose, modalImage, carOptions = [] }) {
   const firstFieldRef = useRef(null);
   const dialogRef = useRef(null);
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -39,10 +40,32 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
     };
   }, [onClose]);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    // TODO: hook up to your API
-    onClose();
+    const formEl = e.currentTarget;
+    const fd = new FormData(formEl);
+    const payload = Object.fromEntries(fd.entries());
+
+    // add page info + UA (helps in email)
+    payload.source = window.location.href;
+    payload.userAgent = navigator.userAgent;
+
+    try {
+      setSending(true);
+      const res = await fetch("/api/test-drive", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json();
+      if (!res.ok || !json.ok) throw new Error(json.error || "Failed to send");
+      onClose(); // success
+    } catch (err) {
+      console.error("TestDrive submit error:", err);
+      alert(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -65,16 +88,24 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
         <div className={styles.modalRight}>
           <h2 className={styles.modalTitle}>BOOK A TEST DRIVE</h2>
 
-          <form className={styles.form} onSubmit={submit}>
+          <form className={styles.form} onSubmit={submit} noValidate>
             <input
               ref={firstFieldRef}
+              name="fullName"
               className={styles.input}
               placeholder="Full Name"
               required
             />
-            <input type="email" className={styles.input} placeholder="Your email" required />
+            <input
+              type="email"
+              name="email"
+              className={styles.input}
+              placeholder="Your email"
+              required
+            />
             <input
               type="tel"
+              name="phone"
               className={styles.input}
               placeholder="Phone Number"
               inputMode="tel"
@@ -83,7 +114,12 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
             />
 
             {carOptions.length > 0 && (
-              <select className={`${styles.input} ${styles.select}`} defaultValue="" required>
+              <select
+                name="car"
+                className={`${styles.input} ${styles.select}`}
+                defaultValue=""
+                required
+              >
                 <option value="" disabled hidden>Select your car</option>
                 {carOptions.map((c) => (
                   <option key={c} value={c}>{c}</option>
@@ -91,7 +127,9 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
               </select>
             )}
 
-            <button type="submit" className={styles.cta}>BOOK NOW</button>
+            <button type="submit" className={styles.cta} disabled={sending}>
+              {sending ? "SENDING…" : "BOOK NOW"}
+            </button>
           </form>
         </div>
 
