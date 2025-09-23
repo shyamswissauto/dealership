@@ -97,12 +97,12 @@
 /* CTAs */
 .ctas {  
   display: flex;
-  flex-direction: column; /* stack vertically */
+  flex-direction: row; /* stack vertically */
   align-items: center;    /* center horizontally */
   gap: 12px;
   margin-top: 6px; }
-.pill {
-  display: inline-flex;   /* keeps pill sizing snug */
+/* .pill {
+  display: inline-flex;
   justify-content: center;
   text-align: center;
   padding: 12px 18px;
@@ -117,8 +117,14 @@
 .dark  { background: #2f2f2f; color: #fff; }
 .dark:hover { background: #1f1f1f; }
 .light { background: #f0f1f3; color: #111; }
-.light:hover { background: #e7e8eb; }
+.light:hover { background: #e7e8eb; } */
 
+
+@media (max-width: 890px) {
+  .ctas {  
+    display: flex;
+    flex-direction: column;}
+}
 /* Mobile */
 @media (max-width: 640px) {
   .tabs {

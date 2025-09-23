@@ -133,6 +133,30 @@ export default function SpecsTabs({ title = "SPECIFICATIONS", tabs = [], default
                       DOWNLOAD SPEC SHEET
                     </a>
                   </div> */}
+
+                      <div className={styles.ctas}>
+                        <a
+                          href={activeTab.brochureUrl}
+                          className={`${styles.pill} ${styles.dark}`}
+                          aria-label="Download the brochure"
+                          target="_blank"
+                          rel="noopener"
+                          download
+                        >
+                          <Image src="/assets/brochure/download-brochure.webp" alt="" width={316} height={88} />
+                        </a>
+
+                        <a
+                          href={activeTab.specUrl}
+                          className={`${styles.pill} ${styles.light}`}
+                          aria-label="Download spec sheet"
+                          target="_blank"
+                          rel="noopener"
+                          download
+                        >
+                          <Image src="/assets/brochure/download-spec-sheet.webp" alt="" width={316} height={88} />
+                        </a>
+                      </div>
                   
                 </div>
               </div>

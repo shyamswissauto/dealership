@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 
 function HeroSkeleton() {
   return (
-    <div style={{ position: "relative", width: "100vw", height: "50vh" }}>
+    <div style={{ position: "relative", width: "100vw", height: "70vh" }}>
         <div className="spinner" role="status" aria-label="Loading"></div>
 
         <style jsx>{`

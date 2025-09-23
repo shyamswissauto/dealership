@@ -4,12 +4,13 @@ import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 
 import Footer from "@/components/client/FooterClient";
 import RequestQuote from "@/components/demo/RequestQuote";
+import LandingPageCommon from "@/components/form/landingpagecommon";
 
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/explore-models.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "REQUEST A QUOTE",
+    title:   "BOLDEN OFF ROAD",
     subtitle:"",
     align:   "center",
     overlay: "rgba(0,0,0,0.3)",
@@ -25,7 +26,8 @@ export default function Page() {
       <>
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
-        <RequestQuote />        
+        
+        <LandingPageCommon />       
 
 
         <Footer />        

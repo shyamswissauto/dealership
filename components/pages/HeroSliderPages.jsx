@@ -111,7 +111,7 @@ export default function HeroSlider({ slides = [], autoPlayMs = 7000 }) {
       </aside> */}
 
       <style jsx>{`
-        .hero { position: relative; width: 100%; height: 50svh; min-height: 520px; overflow: hidden; color: #fff; }
+        .hero { position: relative; width: 100%; height: 70svh; min-height: 520px; overflow: hidden; color: #fff; }
         :global(.swiper), :global(.swiper-wrapper), :global(.swiper-slide) { height: 100%; z-index: 0; } /* keep below overlays */
 
         .slide { position: relative; width: 100%; height: 100%; }
