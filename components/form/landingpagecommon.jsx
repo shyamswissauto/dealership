@@ -61,7 +61,7 @@ export default function LandingPageCommon() {
       setServerMsg("");
 
       // send to your API (adjust endpoint as needed)
-      const res = await fetch("/api/quote", {
+      const res = await fetch("/api/landing-common", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
