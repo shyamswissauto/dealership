@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./landingpagecommon.module.css";
 
 const TITLES = ["Mr.", "Ms.", "Mrs."];
@@ -8,6 +9,7 @@ const VEHICLES = ["U75 Plus", "U70 Pro", "Bolden Off-Road", "Bolden Passenger", 
 const LOCATIONS = ["Dubai", "Abu Dhabi", "Al Ain", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
 export default function LandingPageCommon() {
+  const router = useRouter();
   const [form, setForm] = useState({
     title: "",
     firstName: "",
@@ -66,28 +68,19 @@ export default function LandingPageCommon() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
-          modelId: form.vehicle,
-          modelName: form.vehicle,
         }),
       });
 
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Request failed");
 
-      setServerMsg("Thanks! We’ll contact you shortly.");
-      // reset minimal fields
+      router.replace(`/thank-you`);
+
+      /* setServerMsg("Thanks! We’ll contact you shortly.");
       setForm({
-        title: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        location: "",
-        vehicle: "",
-        phone: "",
-        comments: "",
-        agree: false,
+        title: "", firstName: "", lastName: "", email: "", location: "", vehicle: "", phone: "", comments: "", agree: false,
       });
-      setTouched({});
+      setTouched({}); */
     } catch (err) {
       setServerMsg(err.message || "Something went wrong");
     } finally {
