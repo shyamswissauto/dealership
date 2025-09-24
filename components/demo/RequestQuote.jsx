@@ -8,9 +8,9 @@ const CATEGORIES = ["ALL", "SEDAN", "SUV"];
 const MODELS = [
   { id: "u75plus", name: "U75PLUS", body: "SUV", category: "SUV", img: "/assets/models/img4.webp" },
   { id: "u70pro", name: "U70PRO", body: "SUV", category: "SUV", img: "/assets/models/img5.webp" },
-  { id: "bolden-off-road",     name: "BOLDEN OFF-ROAD", body: "SUV", category: "SUV", img: "/assets/models/img2.webp" },
-  { id: "bolden-passenger", name: "BOLDEN PASSENGER", body: "SUV", category: "SUV", img: "/assets/models/img3.webp" },
-  { id: "bolden-commercial",  name: "BOLDEN COMMERCIAL", body: "Sedan", category: "SEDAN", img: "/assets/models/img1.webp" },
+  { id: "bolden-off-road",     name: "BOLDEN OFF-ROAD", body: "PICKUP", category: "PICKUP", img: "/assets/models/img2.webp" },
+  { id: "bolden-passenger", name: "BOLDEN PASSENGER", body: "PICKUP", category: "PICKUP", img: "/assets/models/img3.webp" },
+  { id: "bolden-commercial",  name: "BOLDEN COMMERCIAL", body: "PICKUP", category: "PICKUP", img: "/assets/models/img1.webp" },
 ];
 
 const TITLES = ["Mr.", "Ms.", "Mrs."];

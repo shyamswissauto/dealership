@@ -59,7 +59,7 @@ export async function POST(req) {
       .slice(2, 6)
       .toUpperCase()}`;
 
-    const subject = `Request a Quote${model ? ` - ${model}` : ""} (${ref})`;
+    const subject = `Request a Quote${model ? ` - ${model}` : ""}`;
     const { text, html } = buildBodies(ref, { ...body, model }, referer);
 
     // ---- Build transporter (with logger+debug in non-prod) -------
