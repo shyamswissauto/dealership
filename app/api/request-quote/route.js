@@ -1,149 +1,97 @@
-import nodemailer from "nodemailer";
+// app/api/quote/route.js
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 
-/** Create transporter once (cold starts reuse it) */
-function createTransporter() {
-  const {
-    SMTP_HOST,
-    SMTP_PORT,
-    SMTP_SECURE,
-    SMTP_USER,
-    SMTP_PASS,
-  } = process.env;
+export const runtime = "nodejs"; // Nodemailer requires Node runtime
 
-  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-    throw new Error("SMTP environment variables are missing.");
-  }
+// ---- mail helper (same pattern as your offer api) ---------------------------
+async function sendMail({ subject, text, html }) {
+  const nodemailer = (await import("nodemailer")).default;
 
-  return nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: Number(SMTP_PORT ?? 465),
-    secure: String(SMTP_SECURE ?? "true") === "true", // 465 -> true, 587 -> false
-    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,                          // e.g. smtp.hostinger.com
+    port: Number(process.env.SMTP_PORT || 465),
+    secure: String(process.env.SMTP_SECURE || "true") === "true", // 465->true, 587->false
+    auth: {
+      user: process.env.SMTP_USER,                        // your smtp mailbox
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  await transporter.sendMail({
+    from: process.env.MAIL_FROM || process.env.SMTP_USER, // must be a mailbox you own
+    to: process.env.MAIL_TO,                               // where you receive leads
+    subject,
+    text,
+    html,
   });
 }
 
-const transporter = createTransporter();
+// ---- text & html formatting -------------------------------------------------
+function fmt(ref, data) {
+  const pairs = Object.entries(data || {});
+  const text = pairs.map(([k, v]) => `${k}: ${v ?? "-"}`).join("\n");
 
-/** Small helper to build both text & HTML bodies */
-function buildBodies({ ref, payload, referer }) {
-  const pairs = Object.entries(payload);
-
-  const text =
-    [
-      `New Request a Quote submission`,
-      `Reference: ${ref}`,
-      referer ? `From page: ${referer}` : null,
-      "",
-      ...pairs.map(([k, v]) => `${k}: ${v ?? "-"}`),
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-  const htmlRows = pairs
-    .map(
-      ([k, v]) =>
-        `<tr><td style="padding:6px 10px;border:1px solid #eee;font-weight:600;text-transform:capitalize;">${k}</td><td style="padding:6px 10px;border:1px solid #eee;">${(v ?? "-")
-          .toString()
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")}</td></tr>`
-    )
-    .join("");
-
-  const html = `
-    <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:14px;color:#111">
-      <h2 style="margin:0 0 10px">New Request a Quote submission</h2>
-      <p style="margin:0 0 8px"><strong>Reference:</strong> ${ref}</p>
-      ${referer ? `<p style="margin:0 0 8px"><strong>From page:</strong> ${referer}</p>` : ""}
-      <table style="border-collapse:collapse;border:1px solid #eee">${htmlRows}</table>
-    </div>
-  `;
+  const html =
+    `<table cellspacing="0" cellpadding="6" style="border-collapse:collapse;border:1px solid #eee;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">` +
+    pairs
+      .map(
+        ([k, v]) =>
+          `<tr>
+            <td style="border:1px solid #eee;background:#fafafa"><strong>${k}</strong></td>
+            <td style="border:1px solid #eee">${(v ?? "-")
+              .toString()
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")}</td>
+          </tr>`
+      )
+      .join("") +
+    `</table>`;
 
   return { text, html };
 }
 
-/** Generate a short reference code */
-function makeRef(prefix = "RQ") {
-  const a = Date.now().toString(36).toUpperCase();
-  const b = Math.random().toString(36).slice(2, 6).toUpperCase();
-  return `${prefix}-${a}-${b}`;
-}
-
+// ---- route ------------------------------------------------------------------
 export async function POST(req) {
   try {
-    const data = await req.json().catch(() => ({}));
+    const body = await req.json();
+
+    // normalize model (works with modelName / vehicle / modelId)
+    const model =
+      body.modelName || body.vehicle || body.model || body.modelId || "";
+
+    // include referer page in the email
     const referer = headers().get("referer") || headers().get("origin") || "";
+    const payload = { ...body, model, referer };
 
-    // Pull expected fields (whatever you send from the form)
-    const {
-      title,
-      firstName,
-      lastName,
-      email,
-      phone,
-      location,
-      comments = "",
-      modelId,
-      modelName,
-      modelBody,
-      modelCategory,
-    } = data;
+    // required fields (comments optional)
+    const required = ["title", "firstName", "lastName", "email", "phone", "location"];
+    if (!model) required.push("model");
 
-    // Basic validation
-    if (!title || !firstName || !lastName || !email || !phone || !location) {
+    const missing = required.filter((k) => !payload?.[k]);
+    if (missing.length) {
       return NextResponse.json(
-        { ok: false, error: "Missing required fields." },
+        { ok: false, error: `Missing: ${missing.join(", ")}` },
         { status: 400 }
       );
     }
 
-    const ref = makeRef();
+    // human-friendly reference
+    const ref = `RQ-${Date.now().toString(36).toUpperCase()}-${Math.random()
+      .toString(36)
+      .slice(2, 6)
+      .toUpperCase()}`;
 
-    const payload = {
-      title,
-      firstName,
-      lastName,
-      email,
-      phone,
-      location,
-      comments,
-      modelId,
-      modelName,
-      modelBody,
-      modelCategory,
-    };
+    const subject = `Request a Quote${model ? ` - ${model}` : ""} (${ref})`;
+    const { text, html } = fmt(ref, payload);
 
-    const { text, html } = buildBodies({ ref, payload, referer });
+    await sendMail({ subject, text, html });
 
-    const to = process.env.MAIL_TO;
-    if (!to) {
-      throw new Error("MAIL_TO is not configured.");
-    }
-
-    // Optional CC (comma separated in env)
-   /*  const cc = (process.env.MAIL_CC || "")
-      .split(",")
-      .map(s => s.trim())
-      .filter(Boolean); */
-
-    /** Send */
-    const info = await transporter.sendMail({
-      from: process.env.MAIL_FROM || process.env.SMTP_USER, // must be owned mailbox
-      to,
-      //cc: cc.length ? cc : undefined,
-      replyTo: email, // your sales team can reply directly to the customer
-      subject: `Request a Quote — ${modelName || modelId || "Unknown model"} — ${ref}`,
-      text,
-      html,
-    });
-
-    // You could log info.messageId if you want
     return NextResponse.json({ ok: true, ref });
   } catch (err) {
-    console.error("Quote API error:", err);
+    console.error("quote POST error", err);
     return NextResponse.json(
-      { ok: false, error: err.message || "Server error" },
+      { ok: false, error: err.message || "Send failed" },
       { status: 500 }
     );
   }
