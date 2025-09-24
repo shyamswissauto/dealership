@@ -2,36 +2,16 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 
-export const runtime = "nodejs"; // Nodemailer requires Node runtime
+export const runtime = "nodejs"; // nodemailer needs Node runtime
 
-// ---- mail helper (same pattern as your offer api) ---------------------------
-async function sendMail({ subject, text, html }) {
-  const nodemailer = (await import("nodemailer")).default;
-
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,                          // e.g. smtp.hostinger.com
-    port: Number(process.env.SMTP_PORT || 465),
-    secure: String(process.env.SMTP_SECURE || "true") === "true", // 465->true, 587->false
-    auth: {
-      user: process.env.SMTP_USER,                        // your smtp mailbox
-      pass: process.env.SMTP_PASS,
-    },
-  });
-
-  await transporter.sendMail({
-    from: process.env.MAIL_FROM || process.env.SMTP_USER, // must be a mailbox you own
-    to: process.env.MAIL_TO,                               // where you receive leads
-    subject,
-    text,
-    html,
-  });
+function safe(v) {
+  if (!v) return v;
+  return v.replace(/./g, "*"); // masks secrets in logs
 }
 
-// ---- text & html formatting -------------------------------------------------
-function fmt(ref, data) {
-  const pairs = Object.entries(data || {});
+function buildBodies(ref, data, referer) {
+  const pairs = Object.entries({ ...data, referer });
   const text = pairs.map(([k, v]) => `${k}: ${v ?? "-"}`).join("\n");
-
   const html =
     `<table cellspacing="0" cellpadding="6" style="border-collapse:collapse;border:1px solid #eee;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">` +
     pairs
@@ -47,49 +27,101 @@ function fmt(ref, data) {
       )
       .join("") +
     `</table>`;
-
   return { text, html };
 }
 
-// ---- route ------------------------------------------------------------------
 export async function POST(req) {
+  const isProd = process.env.NODE_ENV === "production";
   try {
-    const body = await req.json();
+    const body = await req.json().catch(() => ({}));
+    const referer = headers().get("referer") || headers().get("origin") || "";
 
-    // normalize model (works with modelName / vehicle / modelId)
+    // Normalize model field names used by different forms
     const model =
       body.modelName || body.vehicle || body.model || body.modelId || "";
 
-    // include referer page in the email
-    const referer = headers().get("referer") || headers().get("origin") || "";
-    const payload = { ...body, model, referer };
-
-    // required fields (comments optional)
+    // ---- Required fields (adjust per form) -----------------------
     const required = ["title", "firstName", "lastName", "email", "phone", "location"];
-    if (!model) required.push("model");
+    if (!model) required.push("model"); // enforce some model name/id exists
 
-    const missing = required.filter((k) => !payload?.[k]);
+    const missing = required.filter((k) => !body[k]);
     if (missing.length) {
+      console.error("Missing fields:", missing);
       return NextResponse.json(
         { ok: false, error: `Missing: ${missing.join(", ")}` },
         { status: 400 }
       );
     }
 
-    // human-friendly reference
+    // ---- Compose mail -------------------------------------------
     const ref = `RQ-${Date.now().toString(36).toUpperCase()}-${Math.random()
       .toString(36)
       .slice(2, 6)
       .toUpperCase()}`;
 
     const subject = `Request a Quote${model ? ` - ${model}` : ""} (${ref})`;
-    const { text, html } = fmt(ref, payload);
+    const { text, html } = buildBodies(ref, { ...body, model }, referer);
 
-    await sendMail({ subject, text, html });
+    // ---- Build transporter (with logger+debug in non-prod) -------
+    const nodemailer = (await import("nodemailer")).default;
 
-    return NextResponse.json({ ok: true, ref });
+    const smtpConfig = {
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT || 465),
+      secure: String(process.env.SMTP_SECURE || "true") === "true", // 465->true, 587->false
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+      // Extra debug only in dev
+      logger: !isProd,
+      debug: !isProd,
+      // If your hosting has strange certs, temporarily try the line below:
+      // tls: { rejectUnauthorized: false },
+    };
+
+    // Log non-secret parts of config
+    console.log("SMTP config:", {
+      host: smtpConfig.host,
+      port: smtpConfig.port,
+      secure: smtpConfig.secure,
+      user: smtpConfig.auth?.user,
+      pass: safe(smtpConfig.auth?.pass),
+    });
+
+    const transporter = nodemailer.createTransport(smtpConfig);
+
+    // Verify connection (prints full error if credentials/port/secure are wrong)
+    console.log("Verifying SMTP connection…");
+    await transporter.verify();
+    console.log("SMTP connection verified.");
+
+    // IMPORTANT for Hostinger:
+    // The FROM must be the authenticated mailbox, or you'll get 553 "not owned by user".
+    const from = process.env.SMTP_USER; // keep EXACTLY the mailbox you log in with
+    const to = process.env.MAIL_TO || process.env.SMTP_USER;
+
+    console.log("Sending mail:", { from, to, subject });
+
+    const info = await transporter.sendMail({
+      from,              // MUST equal SMTP_USER on Hostinger
+      to,                // where you want to receive it
+      replyTo: body.email, // so you can reply to the customer
+      subject,
+      text,
+      html,
+    });
+
+    console.log("Mail sent:", {
+      messageId: info.messageId,
+      response: info.response,
+      accepted: info.accepted,
+      rejected: info.rejected,
+    });
+
+    return NextResponse.json({ ok: true, ref, messageId: info.messageId });
   } catch (err) {
-    console.error("quote POST error", err);
+    console.error("EMAIL SEND ERROR:", err);
     return NextResponse.json(
       { ok: false, error: err.message || "Send failed" },
       { status: 500 }
