@@ -19,10 +19,7 @@ export default function Footer() {
               className={styles.logo}
             />
             <p className={styles.blurb}>
-              Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit, sed diam nonummy nibh euismod
-              tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-              enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+              Swiss Auto Trading – Official Sinotruck Dealer & distributor in the UAE.Offering premium trucks and SUVs engineered for performance and reliability. Driven by excellence, trusted across the UAE.
             </p>
           </div>
 
@@ -30,11 +27,11 @@ export default function Footer() {
           <nav aria-labelledby="foot-product" className={styles.col}>
             <h3 id="foot-product" className={styles.heading}>MODELS</h3>
             <ul className={styles.list}>
-              <li><Link href="#">U75PLUS</Link></li>
-              <li><Link href="#">U70PRO</Link></li>
-              <li><Link href="#">OFF ROAD TYPE</Link></li>
-              <li><Link href="#">PASSENGER</Link></li>
-              <li><Link href="#">COMMERCIAL</Link></li>
+              <li><Link href="/models/sinotruk-vgv-u75-plus">U75PLUS</Link></li>
+              <li><Link href="/models/sinotruk-vgv-u70-pro">U70PRO</Link></li>
+              <li><Link href="/models/bolden-off-road">OFF ROAD TYPE</Link></li>
+              <li><Link href="/models/bolden-passenger">PASSENGER</Link></li>
+              <li><Link href="/models/bolden-commercial">COMMERCIAL</Link></li>
             </ul>
           </nav>
 
@@ -42,11 +39,11 @@ export default function Footer() {
           <nav aria-labelledby="foot-links" className={styles.col}>
             <h3 id="foot-links" className={styles.heading}>USEFUL LINKS</h3>
             <ul className={styles.list}>
-              <li><Link href="#">Lorem ipsum</Link></li>
-              <li><Link href="#">Lorem ipsum</Link></li>
-              <li><Link href="#">Lorem ipsum</Link></li>
-              <li><Link href="#">Lorem ipsum</Link></li>
-              <li><Link href="#">Lorem ipsum</Link></li>
+              <li><Link href="/request-a-quote">Get A Quote</Link></li>
+              <li><Link href="/brochure-download">Brochure Download</Link></li>
+              <li><Link href="#">Blogs</Link></li>
+              <li><Link href="/contact-us">Contact US</Link></li>
+              <li><Link href="/book-a-test-drive">Test Drive</Link></li>
             </ul>
           </nav>
 

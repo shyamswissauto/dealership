@@ -14,8 +14,8 @@ const specsTabs = [
       "Slush-molded dashboard",
       "Chinese long head front grill design",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-commercial-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-commercial-spec.pdf",
   },
   {
     key: "performance",
@@ -30,8 +30,8 @@ const specsTabs = [
       "Double, side airbags",
       "TPMS, collision fuel cut-off, rear view camera",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-commercial-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-commercial-spec.pdf",
   },
   {
     key: "tech",
@@ -48,8 +48,8 @@ const specsTabs = [
       "Halogen Headlights",
       "CCS, ACC",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-commercial-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-commercial-spec.pdf",
   },
 ];
 

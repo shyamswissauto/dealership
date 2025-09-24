@@ -43,7 +43,7 @@ export default function RequestQuote() {
     setServerMsg("");
     setSubmitting(true);
 
-    const formEl = e.currentTarget;              // ⬅️ capture the element now
+    const formEl = e.currentTarget;
 
     try {
         const form = new FormData(formEl);
@@ -52,17 +52,18 @@ export default function RequestQuote() {
         const m = MODELS.find(x => x.id === selectedId) || {};
         const body = { ...payload, modelId: selectedId, modelName: m.name, modelBody: m.body, modelCategory: m.category };
 
-        const res = await fetch("/api/quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
+        const res = await fetch("/api/request-quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
         });
+
 
         const json = await res.json();
         if (!res.ok || !json.ok) throw new Error(json.error || "Failed");
 
         setServerMsg(`Thanks! Reference: ${json.ref}`);
-        formEl.reset();                             // ✅ safe now (we kept a reference)
+        formEl.reset();
         setAgree(false);
     } catch (err) {
         setServerMsg(err.message || "Something went wrong");
@@ -174,34 +175,23 @@ export default function RequestQuote() {
               </div>
             </div>
 
-            {/* Phone */}
-            <div className={styles.field}>
-              <label className={styles.label} htmlFor="phone">Phone <span>*</span></label>
-              <div className={styles.phoneRow}>
-                <div className={`${styles.selectWrap} ${styles.ccWrap}`}>
-                  <select name="cc" className={`${styles.input} ${styles.select}`} defaultValue="+971" required aria-label="Country code">
-                    <option value="+971">+971</option>
-                    <option value="+966">+966</option>
-                    <option value="+973">+973</option>
-                    <option value="+974">+974</option>
-                  </select>
-                </div>
-                <input
-                  id="phone"
-                  name="phone"
-                  className={styles.input}
-                  inputMode="tel"
-                  pattern="[0-9]{5,15}"
-                  placeholder="Phone"
-                  required
-                />
+            <div className={styles.grid2}>
+              <div className={styles.field}>
+                  <label className={styles.label} htmlFor="phone">Phone <span>*</span></label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    className={styles.input}
+                    inputMode="tel"
+                    pattern="[0-9]{5,15}"
+                    placeholder="Phone"
+                    required
+                  />
               </div>
-            </div>
-
-            {/* Email */}
-            <div className={styles.field}>
-              <label className={styles.label} htmlFor="email">Email <span>*</span></label>
-              <input id="email" name="email" type="email" className={styles.input} required />
+              <div className={styles.field}>
+                <label className={styles.label} htmlFor="email">Email <span>*</span></label>
+                <input id="email" name="email" type="email" className={styles.input} required />
+              </div>
             </div>
 
             {/* Location */}

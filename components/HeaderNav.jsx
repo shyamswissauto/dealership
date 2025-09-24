@@ -43,11 +43,11 @@ export default function HeaderNav() {
         
         <nav className="nav">
           <Link href="/models" className="cstTransY">Models</Link>
-          <Link href="/" className="cstTransY">Showroom</Link>
-          <Link href="/" className="cstTransY">Special Offers</Link>
-          <Link href="/" className="cstTransY">Service & Parts</Link>
-          <Link href="/" className="cstTransY">VGV Business</Link>
-          <Link href="/" className="cstTransY">Contact</Link>
+          {/* <Link href="/" className="cstTransY">Showroom</Link> */}
+          <Link href="/special-offers" className="cstTransY">Special Offers</Link>
+          <Link href="/service-and-parts" className="cstTransY">Service & Parts</Link>
+          <Link href="/vgv-business" className="cstTransY">VGV Business</Link>
+          <Link href="/contact-us" className="cstTransY">Contact</Link>
         </nav>
 
         
@@ -96,11 +96,11 @@ export default function HeaderNav() {
 
           <div className="mLinks">
               <Link href="/models" onClick={() => setMobileOpen(false)}>Models</Link>
-              <Link href="/" onClick={() => setMobileOpen(false)}>Showroom</Link>
-              <Link href="/" onClick={() => setMobileOpen(false)}>Special Offers</Link>
-              <Link href="/" onClick={() => setMobileOpen(false)}>Service & Parts</Link>
-              <Link href="/" onClick={() => setMobileOpen(false)}>VGV Business</Link>
-              <Link href="/" onClick={() => setMobileOpen(false)}>Contact</Link>
+              {/* <Link href="/" onClick={() => setMobileOpen(false)}>Showroom</Link> */}
+              <Link href="/special-offers" onClick={() => setMobileOpen(false)}>Special Offers</Link>
+              <Link href="/service-and-parts" onClick={() => setMobileOpen(false)}>Service & Parts</Link>
+              <Link href="/vgv-business" onClick={() => setMobileOpen(false)}>VGV Business</Link>
+              <Link href="/contact-us" onClick={() => setMobileOpen(false)}>Contact</Link>
 
               <div className="headerSocial">
                   <ul className="socials" aria-label="Social media">

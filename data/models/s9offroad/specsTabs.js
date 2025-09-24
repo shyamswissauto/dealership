@@ -12,8 +12,8 @@ const specsTabs = [
       "Approach/departure angles - 29°/25°",
       "Shark fin antenna, LED daytime lights, injection-molded side steps",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-off-road-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-off-road-spec.pdf",
   },
   {
     key: "performance",
@@ -28,8 +28,8 @@ const specsTabs = [
       "Boron steel B-pillars",
       "Collision fuel cut-off system",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-off-road-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-off-road-spec.pdf",
   },
   {
     key: "tech",
@@ -43,8 +43,8 @@ const specsTabs = [
       "2-way manual adjustment of steering wheel",
       "12.3” full color LCD dashboard",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-off-road-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-off-road-spec.pdf",
   },
 ];
 

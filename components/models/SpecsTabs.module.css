@@ -101,6 +101,11 @@
   align-items: center;    /* center horizontally */
   gap: 12px;
   margin-top: 6px; }
+
+.ctas img {transition: transform 300ms ease;}
+.ctas img:hover {
+  transform: translateY(-5px);
+}
 /* .pill {
   display: inline-flex;
   justify-content: center;

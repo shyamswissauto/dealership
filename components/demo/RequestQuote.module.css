@@ -8,7 +8,7 @@
   border-bottom: 1px solid #e7e1db;
 }
 .row:last-child { border-bottom: 0; }
-.content { width: min(1500px, 92vw); margin: 0 auto; }
+.content { width: min(1300px, 92vw); margin: 0 auto; }
 
 .step {
   display: grid; place-items: center; align-content: start;
@@ -42,7 +42,7 @@
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 260px);
   gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 12px;
-  padding: 12px 44px; /* leave room for arrows */
+  padding: 50px 44px; /* leave room for arrows */
 }
 .scroller:focus { outline: 2px solid #111; outline-offset: 2px; }
 
@@ -92,7 +92,8 @@
 
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-.phoneRow { display: grid; grid-template-columns: 140px 1fr; gap: 10px; }
+/* .phoneRow { display: grid; grid-template-columns: 140px 1fr; gap: 10px; }  */
+.phoneRow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; } 
 .ccWrap { min-width: 120px; }
 
 .selectWrap { position: relative; }

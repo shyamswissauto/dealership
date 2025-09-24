@@ -13,8 +13,8 @@ const specsTabs = [
       "Oversized panoramic sunroof",
       "Body trim kit",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/vgv-u70pro-brochure.pdf",
+    specUrl: "/assets/brochure/vgv-u70pro-spec.pdf",
   },
   {
     key: "performance",
@@ -28,8 +28,8 @@ const specsTabs = [
       "Driver front passenger airbag",
       "Boron steel B-pillars",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/vgv-u70pro-brochure.pdf",
+    specUrl: "/assets/brochure/vgv-u70pro-spec.pdf",
   },
   {
     key: "tech",
@@ -42,8 +42,8 @@ const specsTabs = [
       "Keyless entry/start",
       "Electric driver seat adjustment",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/vgv-u70pro-brochure.pdf",
+    specUrl: "/assets/brochure/vgv-u70pro-spec.pdf",
   },
 ];
 

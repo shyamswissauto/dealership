@@ -28,12 +28,10 @@ async function sendMail({ subject, text, html, to, from }) {
 function fmt(ref, data) {
   const pairs = Object.entries(data || {});
   const text = [
-    `Ref: ${ref}`,
     ...pairs.map(([k, v]) => `${k}: ${v ?? "-"}`),
   ].join("\n");
 
   const html =
-    `<p><strong>Ref:</strong> ${ref}</p>` +
     `<table cellspacing="0" cellpadding="6" style="border-collapse:collapse;border:1px solid #eee;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">` +
     pairs
       .map(
@@ -66,7 +64,7 @@ export async function POST(req) {
     // Nice human-readable reference
     const ref = `OFR-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
 
-    const subject = `New Enquiry (${ref})${body?.vehicle ? " - " + body.vehicle : ""}`;
+    const subject = `New Enquiry ${body?.vehicle ? " - " + body.vehicle : ""}`;
     const { text, html } = fmt(ref, body);
 
     await sendMail({ subject, text, html });

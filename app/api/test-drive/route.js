@@ -28,13 +28,10 @@ export async function POST(req) {
       "Phone": body.phone,
       "Selected car": has(body.car) ? body.car : "-",
       "Source page": body.source,
-      "User agent": body.userAgent || "-",
-      "Submitted at": new Date().toISOString(),
     };
 
-    const text = `Ref: ${ref}\n` + Object.entries(rows).map(([k, v]) => `${k}: ${v}`).join("\n");
+    const text = `\n` + Object.entries(rows).map(([k, v]) => `${k}: ${v}`).join("\n");
     const html =
-      `<p><strong>Ref:</strong> ${ref}</p>` +
       `<table cellspacing="0" cellpadding="6" style="border-collapse:collapse;border:1px solid #eee;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">` +
       Object.entries(rows)
         .map(
@@ -54,7 +51,7 @@ export async function POST(req) {
     });
 
     const subject =
-      `Test Drive Request (${ref})` + (has(body.car) ? ` — ${body.car}` : "");
+      `Test Drive Request ` + (has(body.car) ? ` — ${body.car}` : "");
 
     await transporter.sendMail({
       from: process.env.MAIL_FROM || process.env.SMTP_USER, // what recipient sees

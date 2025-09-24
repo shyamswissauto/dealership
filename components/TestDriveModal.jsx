@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./TestDriveModal.module.css";
 
 export default function TestDriveModal({ onClose, modalImage, carOptions = [] }) {
+  const router = useRouter();
   const firstFieldRef = useRef(null);
   const dialogRef = useRef(null);
   const [sending, setSending] = useState(false);
@@ -59,7 +61,8 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
       });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Failed to send");
-      onClose(); // success
+      onClose();
+      router.replace(`/thank-you`);
     } catch (err) {
       console.error("TestDrive submit error:", err);
       alert(err.message || "Something went wrong. Please try again.");

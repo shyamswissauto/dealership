@@ -10,8 +10,8 @@ const specsTabs = [
       "190mm ground clearance",
       "Sports appearance kit",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/vgv-u75plus-brochure.pdf",
+    specUrl: "/assets/brochure/vgv-u75plus-spec.pdf",
   },
   {
     key: "performance",
@@ -24,8 +24,8 @@ const specsTabs = [
       "Safety suite: ABS, EPB, ESP, LDW, TCS, FCW",
       "Driver, Co-driver, 2 Side Airbags",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/vgv-u75plus-brochure.pdf",
+    specUrl: "/assets/brochure/vgv-u75plus-spec.pdf",
   },
   {
     key: "tech",
@@ -37,8 +37,8 @@ const specsTabs = [
       "Keyless entry, cruise control, electric tailgate",
       "Bluetooth, GPS, and folding mirrors",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/vgv-u75plus-brochure.pdf",
+    specUrl: "/assets/brochure/vgv-u75plus-spec.pdf",
   },
 ];
 

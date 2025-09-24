@@ -13,7 +13,7 @@ export async function POST(req) {
 
     const {
       modelId, modelName, modelBody, modelCategory,
-      title, firstName, lastName, cc, phone, email, location, comments,
+      title, firstName, lastName,  phone, email, location, comments,
     } = data || {};
 
     // basic validation
@@ -22,7 +22,6 @@ export async function POST(req) {
     if (!title) missing.push("title");
     if (!firstName) missing.push("firstName");
     if (!lastName) missing.push("lastName");
-    if (!cc) missing.push("cc");
     if (!phone) missing.push("phone");
     if (!email) missing.push("email");
     if (!location) missing.push("location");

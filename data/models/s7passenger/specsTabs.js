@@ -12,8 +12,8 @@ const specsTabs = [
       "Electric Power Steering",
       "Front & rear LED headlights",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-passenger-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-passenger-spec.pdf",
   },
   {
     key: "performance",
@@ -29,8 +29,8 @@ const specsTabs = [
       "FCW, LDW, TSR, SAS, RCW, LCK",
       "Front radar, Parking radar",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-passenger-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-passenger-spec.pdf",
   },
   {
     key: "tech",
@@ -45,8 +45,8 @@ const specsTabs = [
       "Internet of Vehicles, remote control, voice recognition",
       "OTA updates, Bluetooth integration",
     ],
-    brochureUrl: "/assets/brochure/brochure1.pdf",
-    specUrl: "/assets/brochure/brochure2.pdf",
+    brochureUrl: "/assets/brochure/bolden-passenger-brochure.pdf",
+    specUrl: "/assets/brochure/bolden-passenger-spec.pdf",
   },
 ];
 
