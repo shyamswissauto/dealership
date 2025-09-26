@@ -35,7 +35,7 @@ export default function HeroSlider({
     {
       desktop: "/assets/hero/slide2-desktop.webp",
       mobile:  "/assets/hero/slide2-mobile.webp",
-      title:   "Drive the Future with Sinotruck",
+      title:   "Drive the Future with Sinotruk",
       subtitle:"Built for power, comfort, and performance—now available in the UAE.",
       align:   "center",
       overlay: "rgba(0,0,0,.32)",

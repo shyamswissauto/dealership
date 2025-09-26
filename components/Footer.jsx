@@ -19,7 +19,7 @@ export default function Footer() {
               className={styles.logo}
             />
             <p className={styles.blurb}>
-              Swiss Auto Trading – Official Sinotruck Dealer & distributor in the UAE.Offering premium trucks and SUVs engineered for performance and reliability. Driven by excellence, trusted across the UAE.
+              Swiss Auto Trading – Official Sinotruk Dealer & distributor in the UAE.Offering premium trucks and SUVs engineered for performance and reliability. Driven by excellence, trusted across the UAE.
             </p>
           </div>
 
@@ -105,7 +105,7 @@ export default function Footer() {
       
       <div className={styles.legal}>
         <div className={styles.container}>
-          <p>© 2025 SINOTRUCK. ALL RIGHTS RESERVED.</p>
+          <p>© 2025 SINOTRUK. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
 

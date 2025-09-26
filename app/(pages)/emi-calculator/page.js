@@ -9,9 +9,10 @@ export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/explore-models.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "REQUEST A QUOTE",
+    title:   "EMI Calculator",
     subtitle:"",
-    align:   "center",
+    align:   "left",
+    valign:   "end",
     overlay: "rgba(0,0,0,0.3)",
     learnMoreHref: "",
     bookHref:      "",
@@ -25,7 +26,9 @@ export default function Page() {
       <>
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
-        <RequestQuote />        
+        <div style={{ height: "100vh" }}>
+          
+        </div>        
 
 
         <Footer />        
