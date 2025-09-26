@@ -10,7 +10,7 @@ const DEFAULT_ITEMS = [
     title: "BOLDEN OFF-ROAD",
     subtitle: "Born for dunes.",
     learnHref: "/models/bolden-off-road",
-    bookHref: "/test-drive?model=tundra",
+    bookHref: "/",
   },
   {
     src: "/assets/models/list2.webp",
@@ -18,7 +18,7 @@ const DEFAULT_ITEMS = [
     title: "BOLDEN PASSENGER",
     subtitle: "Urban-ready performance.",
     learnHref: "/models/bolden-passenger",
-    bookHref: "/test-drive?model=falcon",
+    bookHref: "/",
   },
   {
     src: "/assets/models/list3.webp",
@@ -26,7 +26,7 @@ const DEFAULT_ITEMS = [
     title: "BOLDEN COMMERCIAL",
     subtitle: "Utility with finesse.",
     learnHref: "/models/bolden-commercial",
-    bookHref: "/test-drive?model=atlas",
+    bookHref: "/",
   },
 ];
 
