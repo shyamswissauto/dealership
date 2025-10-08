@@ -53,36 +53,36 @@ export default function PromoGrid({
         <div className={styles.grid}>
           {items.map((item, i) => (
             <article key={i} className={styles.card}>
-  <div className={styles.media}>
-    <Image
-      src={item.src}
-      alt={item.alt || ""}
-      fill
-      priority={i === 0}
-      className={styles.img}
-      sizes="(max-width:768px) 100vw, (max-width:1200px) 45vw, 32vw"
-      quality={90}
-    />
-  </div>
+              <div className={styles.media}>
+                <Image
+                  src={item.src}
+                  alt={item.alt || ""}
+                  fill
+                  priority={i === 0}
+                  className={styles.img}
+                  sizes="(max-width:768px) 100vw, (max-width:1200px) 45vw, 32vw"
+                  quality={90}
+                />
+              </div>
 
-  {/* gradients first/last so we control layer order */}
-  <div className={styles.topFade} aria-hidden="true" />
-  <div className={styles.fade} aria-hidden="true" />
+              {/* gradients first/last so we control layer order */}
+              <div className={styles.topFade} aria-hidden="true" />
+              <div className={styles.fade} aria-hidden="true" />
 
-  {/* TOP-CENTER title & subtitle */}
-  <div className={styles.head}>
-    <div className={styles.textBlock}>
-      <h3 className={styles.cardTitle}>{item.title}</h3>
-      {item.subtitle && <p className={styles.cardSub}>{item.subtitle}</p>}
-    </div>
-  </div>
+              {/* TOP-CENTER title & subtitle */}
+              <div className={styles.head}>
+                <div className={styles.textBlock}>
+                  <h3 className={styles.cardTitle}>{item.title}</h3>
+                  {item.subtitle && <p className={styles.cardSub}>{item.subtitle}</p>}
+                </div>
+              </div>
 
-  {/* Bottom CTAs */}
-  <div className={styles.ctaRow}>
-    <a className={`${styles.pill} ${styles.ghost}`} href={item.learnHref}>LEARN MORE</a>
-    <a className={styles.pill} href={item.bookHref || "#"}>BOOK A TEST DRIVE</a>
-  </div>
-</article>
+              {/* Bottom CTAs */}
+              <div className={styles.ctaRow}>
+                <a className={`${styles.pill} ${styles.ghost}`} href={item.learnHref}>LEARN MORE</a>
+                <a className={styles.pill} href={item.bookHref || "#"}>BOOK A TEST DRIVE</a>
+              </div>
+            </article>
 
 
           ))}

@@ -5,6 +5,7 @@ import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 import Footer from "@/components/client/FooterClient";
 import PromoTiles from "@/components/demo/PromoTiles";
 import ServicesShowcase from "@/components/demo/ServicesShowcase";
+import StepsFlow from "@/components/demo/StepsFlow";
 
 
 export const HERO_SLIDES = [
@@ -68,6 +69,8 @@ export default function Page() {
           primaryCta={{ label: "VIEW ALL SERVICES", href: "/services" }}
           secondaryCta={{ label: "VIEW PACKAGE", href: "/packages" }}
         />
+
+        <StepsFlow />
 
         
 

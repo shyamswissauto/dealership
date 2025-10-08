@@ -151,7 +151,7 @@ export default function HeaderNav() {
       {open && (
         <TestDriveModal
           onClose={() => setOpen(false)}
-          modalImage="/assets/popup/popup1.webp"
+          modalImage="/assets/popup/home-popup.webp"
           carOptions={["VGV U75 Plus", "VGV U70 Pro", "Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
         />
       )}

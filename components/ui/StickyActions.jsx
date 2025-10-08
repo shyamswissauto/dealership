@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import TestDriveModal from "@/components/TestDriveModal";
 import styles from "./StickyActions.module.css";
 
 // swap these src paths to your assets
@@ -20,6 +21,7 @@ export default function StickyActions({
   const [visible, setVisible] = useState(false);
   const lastY = useRef(0);
   const ticking = useRef(false);
+   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,6 +45,7 @@ export default function StickyActions({
   }, [threshold, showOnScrollUp]);
 
   return (
+    <>
     <nav className={`${styles.wrap} ${visible ? styles.show : ""}`} aria-label="Quick actions">
       <ul className={styles.bar}>
         {/* {items.map((item, i) => (
@@ -62,7 +65,7 @@ export default function StickyActions({
             </a>
           </li>
         ))} */}
-        <li className={styles.item}>
+          {/* <li className={styles.item}>
             <a href="/" className={styles.btn} aria-label="Book a test drive" title="Book a test drive">
               <span className={styles.icon} aria-hidden="true">
                 <Image
@@ -75,6 +78,20 @@ export default function StickyActions({
               </span>
               <span className={styles.label}>Book a test drive</span>
             </a>
+          </li> */}
+          <li className={styles.item}>
+            <button onClick={() => setOpen(true)} className={styles.btn} aria-label="Book a test drive" title="Book a test drive">
+              <span className={styles.icon} aria-hidden="true">
+                <Image
+                  src="/assets/icons/icon1.webp"
+                  alt=""
+                  width={40}
+                  height={40}
+                  className={styles.iconImg}
+                />
+              </span>
+              <span className={styles.label}>Book a test drive</span>
+            </button>
           </li>
           <li className={styles.item}>
             <a href="/" className={styles.btn} aria-label="Get Quote" title="Get Quote">
@@ -120,5 +137,13 @@ export default function StickyActions({
           </li>
       </ul>
     </nav>
+          {open && (
+            <TestDriveModal
+              onClose={() => setOpen(false)}
+              modalImage="/assets/popup/home-popup.webp"
+              carOptions={["VGV U75 Plus", "VGV U70 Pro", "Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
+            />
+          )}
+    </>
   );
 }
