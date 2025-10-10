@@ -19,7 +19,7 @@ export default function Footer() {
               className={styles.logo}
             />
             <p className={styles.blurb}>
-              Swiss Auto Trading – Official Sinotruk Dealer & distributor in the UAE.Offering premium trucks and SUVs engineered for performance and reliability. Driven by excellence, trusted across the UAE.
+              Royal Swiss Auto Trading – Official Sinotruk Dealer & distributor in the UAE. Offering premium trucks and SUVs engineered for performance and reliability. Driven by excellence, trusted across the UAE.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
             <h3 className={styles.heading}>CONTACT</h3>
             <ul className={styles.contactList}>
               <li>Dubai, UAE</li>
-              <li><a href="mailto:info@">Info@</a></li>
+              <li><a href="mailto:info@">sales@mysinotruk.ae</a></li>
               <li><a href="tel:80000000">800 000 00</a></li>
               <li><a href="tel:+971000000000">971 00 000 000</a></li>
             </ul>
