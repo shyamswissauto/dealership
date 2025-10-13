@@ -8,7 +8,7 @@ import LandingPageCommon from "@/components/form/landingpagecommon";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/explore-models.webp",
+    desktop: "/assets/hero/landing-banner.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "BOLDEN OFF ROAD",
     subtitle:"",

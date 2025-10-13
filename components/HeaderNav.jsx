@@ -37,7 +37,7 @@ export default function HeaderNav() {
       <div className="wrap bar">
         
         <Link href="/" className="logo">
-          <img src="/assets/logo.png" alt="Sinotruk" width={180} />
+          <img src="/assets/sinotruk-logo.png" alt="Sinotruk" width={180} />
         </Link>
 
         

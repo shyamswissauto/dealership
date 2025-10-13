@@ -33,13 +33,35 @@ export default function HeroSlider({
       className:     "slide-hmU70pro",
     }, */
     {
+      desktop: "/assets/hero/bolden-s9-hero-slider.webp",
+      mobile:  "/assets/hero/off-road-mobile.webp",
+      title:   "Power That Conquers Any Terrain",
+      subtitle:"From deserts to mountains, the Bolden Off-Road is built to dominate every challenge.",
+      align:   "left",
+      overlay: "rgba(0,0,0,.42)",
+      learnMoreHref: "/models/bolden-s9-off-road",
+      bookHref:      "/",
+      className:     "slide-pure-design",
+    },
+    {
       desktop: "/assets/hero/bolden-heroslider.webp",
       mobile:  "/assets/hero/passenger-mobile.webp",
-      title:   "Drive the Future with Sinotruk",
-      subtitle:"Built for power, comfort, and performance—now available in the UAE.",
+      title:   "Bolden S7 Passenger. Redefining Everyday Luxury",
+      subtitle:"A perfect blend of modern design and powerful performance, built for those who value more.",
       align:   "center",
-      overlay: "rgba(0,0,0,.32)",
+      overlay: "rgba(0,0,0,.42)",
       learnMoreHref: "/models/bolden-s7-passenger",
+      bookHref:      "/",
+      className:     "slide-pure-design",
+    },
+    {
+      desktop: "/assets/hero/bolden-s6-hero-slider.webp",
+      mobile:  "/assets/hero/commericial-mobile.webp",
+      title:   "Bolden S6 Commercial. Strength You Can Trust.",
+      subtitle:"Built for performance, trusted for productivity — that’s Bolden Commercial.",
+      align:   "right",
+      overlay: "rgba(0,0,0,.42)",
+      learnMoreHref: "/models/bolden-s6-commercial",
       bookHref:      "/",
       className:     "slide-pure-design",
     },
@@ -156,7 +178,7 @@ export default function HeroSlider({
         .align-left   { justify-items: start;  text-align: left;  padding-left: clamp(16px, 6vw, 0); }
         .align-center { justify-items: center; text-align: center; }
         .align-right  { justify-items: end;    text-align: right; padding-right: clamp(16px, 6vw, 0); }
-        .title    { margin: 0; font-weight: 800; line-height: 1.05; font-size: clamp(28px, 4vw, 56px); }
+        .title    { margin: 0; font-weight: 800; line-height: 1.05; font-size: clamp(28px, 4vw, 46px); }
         .subtitle { margin: 6px 0 0; max-width: min(720px, 90vw); font-size: clamp(14px, 1.4vw, 18px); opacity: .95; }
 
         

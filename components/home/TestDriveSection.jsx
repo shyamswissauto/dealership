@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import styles from "./TestDriveSection.module.css";
 
 const DEFAULT_LEFT  = "/assets/home/book-test-drive1.webp";
@@ -14,6 +16,46 @@ export default function TestDriveSection({
   rightSrc = DEFAULT_RIGHT,
   cars = CAR_OPTIONS,
 }) {
+
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
+  const [serverMsg, setServerMsg] = useState("");
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setServerMsg("");
+    setSubmitting(true);
+
+    try {
+      const form = new FormData(e.currentTarget);
+      const payload = Object.fromEntries(form.entries());
+
+      // Simple client validation
+      if (!payload.fullName || !payload.email || !payload.phone || !payload.car) {
+        throw new Error("Please fill all required fields.");
+      }
+
+      const res = await fetch("/api/home-test-drive", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json?.ok) {
+        throw new Error(json?.error || "Submission failed");
+      }
+
+      // success → Thank you page (include ref if provided)
+      const ref = json.ref ? `?ref=${encodeURIComponent(json.ref)}` : "";
+      router.replace(`/thank-you`);
+    } catch (err) {
+      setServerMsg(err.message || "Something went wrong");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <section className={styles.wrap} aria-labelledby="td-title">
       <div className={styles.grid}>
@@ -33,47 +75,62 @@ export default function TestDriveSection({
         <div className={styles.formPanel}>
           <h2 id="td-title" className={styles.title}>{title}</h2>
 
-          <form
-                className={styles.form}
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    // API
-                }}
-                >
+          <form className={styles.form} onSubmit={onSubmit} noValidate>
                 <div className={styles.field}>
-                    <input type="text" className={styles.input} placeholder="Full Name" required />
-                </div>
-
-                <div className={styles.field}>
-                    <input type="email" className={styles.input} placeholder="Your email" required />
+                    <input
+                        type="text"
+                        name="fullName"
+                        className={styles.input}
+                        placeholder="Full Name"
+                        required
+                      />
                 </div>
 
                 <div className={styles.field}>
                     <input
-                    type="tel"
-                    className={styles.input}
-                    placeholder="Phone Number"
-                    inputMode="tel"
-                    pattern="[0-9+() -]*"
-                    required
+                      type="email"
+                      name="email"
+                      className={styles.input}
+                      placeholder="Your email"
+                      required
+                    />
+                </div>
+
+                <div className={styles.field}>
+                    <input
+                      type="tel"
+                      name="phone"
+                      className={styles.input}
+                      placeholder="Phone Number"
+                      inputMode="tel"
+                      pattern="[0-9+() -]*"
+                      required
                     />
                 </div>
 
                 <div className={styles.field}>
                     <select
-                    className={`${styles.input} ${styles.select}`}
-                    name="car"
-                    required
-                    defaultValue=""             
+                      className={`${styles.input} ${styles.select}`}
+                      name="car"
+                      required
+                      defaultValue=""
                     >
-                    <option value="" disabled hidden>Select your car</option>
-                    {cars.map((c) => (
+                      <option value="" disabled hidden>Select your car</option>
+                      {cars.map((c) => (
                         <option key={c} value={c}>{c}</option>
-                    ))}
+                      ))}
                     </select>
                 </div>
 
-                <button className={styles.btn} type="submit">BOOK NOW</button>
+                <button className={styles.btn} type="submit" disabled={submitting}>
+                  {submitting ? "BOOKING..." : "BOOK NOW"}
+                </button>
+
+                {serverMsg && (
+                  <p style={{ marginTop: 8, color: "var(--bs-danger, #c00)" }}>
+                    {serverMsg}
+                  </p>
+                )}
                 </form>
 
 

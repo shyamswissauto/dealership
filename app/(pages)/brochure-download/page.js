@@ -7,7 +7,7 @@ import RequestQuote from "@/components/demo/RequestQuote";
 import BrochureGrid from "@/components/pages/BrochureGrid";
 
 const BROCHURES = [
-  {
+  /* {
     title: "U70PRO",
     img: "/assets/models/img5.webp",
     href: "/assets/brochure/sinotruk-u70pro-brochure.pdf",
@@ -18,21 +18,21 @@ const BROCHURES = [
     img: "/assets/models/img4.webp",
     href: "/assets/brochure/sinotruk-u75plus-brochure.pdf",
     download: true,
-  },
+  }, */
   {
-    title: "BOLDEN OFF-ROAD",
+    title: "BOLDEN S9 OFF-ROAD",
     img: "/assets/models/img2.webp",
     href: "/assets/brochure/bolden-off-road-brochure.pdf",
     download: true,
   },
   {
-    title: "BOLDEN PASSENGER",
+    title: "BOLDEN S7 PASSENGER",
     img: "/assets/models/img3.webp",
     href: "/assets/brochure/bolden-passenger-brochure.pdf",
     download: true,
   },
   {
-    title: "BOLDEN COMMERCIAL",
+    title: "BOLDEN S6 COMMERCIAL",
     img: "/assets/models/img1.webp",
     href: "/assets/brochure/bolden-commercial-brochure.pdf",
     download: true,
@@ -41,7 +41,7 @@ const BROCHURES = [
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/explore-models.webp",
+    desktop: "/assets/hero/landing-banner.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "Brochure Download",
     subtitle:"",

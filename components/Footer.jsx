@@ -13,7 +13,7 @@ export default function Footer() {
           
           <div className={styles.brand}>
             <img
-              src="/assets/logo.png"   
+              src="/assets/swiss-logo.png"   
               alt="BOLDEN"
               width={180}
               className={styles.logo}
@@ -69,21 +69,21 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#" aria-label="X" className={styles.socialLink}>
+              <Link href="https://x.com/SinotrukUAE" aria-label="X" className={styles.socialLink}>
                 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                   <path fill="currentColor" d="M3 4l8.1 9.7L3.7 20H6l6.2-5.5L17.6 20H21l-8.5-10L20.3 4H18L12.2 9.1 8.1 4z"/>
                 </svg>
               </Link>
             </li>
             <li>
-              <Link href="#" aria-label="Instagram" className={styles.socialLink}>
+              <Link href="https://www.instagram.com/sinotrukvgv_uae" aria-label="Instagram" className={styles.socialLink}>
                 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                   <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
                 </svg>
               </Link>
             </li>
             <li>
-              <Link href="#" aria-label="YouTube" className={styles.socialLink}>
+              <Link href="https://www.youtube.com/@Sinotrukuae" aria-label="YouTube" className={styles.socialLink}>
                 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                   <path fill="currentColor" d="M23 12s0-3-.4-4.4c-.2-.9-.9-1.6-1.8-1.8C18.4 5 12 5 12 5s-6.4 0-8.8.8c-.9.2-1.6.9-1.8 1.8C1 9 1 12 1 12s0 3 .4 4.4c.2.9.9 1.6 1.8 1.8C5.6 19 12 19 12 19s6.4 0 8.8-.8c.9-.2 1.6-.9 1.8-1.8.4-1.4.4-4.4.4-4.4zM10 15V9l6 3-6 3z"/>
                 </svg>

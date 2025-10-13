@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import styles from "./landingpagecommon.module.css";
 
 const TITLES = ["Mr.", "Ms.", "Mrs."];
-const VEHICLES = ["U75 Plus", "U70 Pro", "Bolden Off-Road", "Bolden Passenger", "Bolden Commercial"];
+const VEHICLES = ["Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"];
 const LOCATIONS = ["Dubai", "Abu Dhabi", "Al Ain", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
 export default function LandingPageCommon() {
@@ -93,8 +93,8 @@ export default function LandingPageCommon() {
       <div className={styles.container}>
         {/* LEFT */}
         <div className={styles.left}>
-          <h2 id="bts-title" className={styles.title}>OFFERS</h2>
-          <h3 className={styles.sub}>After Sales Benefits</h3>
+          <h2 id="bts-title" className={styles.title}>Simply Unbeatable Offer</h2>
+          <h3 className={styles.sub}>Ready.Set. Drive Bolden</h3>
 
           <p className={styles.intro}>
             Visit our showrooms now &amp; enjoy exclusive offers

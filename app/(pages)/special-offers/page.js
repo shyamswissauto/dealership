@@ -8,7 +8,7 @@ import OffersGrid from "@/components/pages/OffersGrid";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/explore-models.webp",
+    desktop: "/assets/hero/landing-banner.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "Exclusive Offers",
     subtitle:"",
