@@ -9,7 +9,7 @@ export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/explore-models.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "VGV BUSINESS",
+    title:   "BOLDEN BUSINESS",
     subtitle:"",
     align:   "left",
     valign:   "end",

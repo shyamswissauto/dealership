@@ -1,6 +1,6 @@
 /* Section */
 .wrap { padding: clamp(10px, 6vw, 10px) 0; }
-.container { width: min(1500px, 92vw); margin: 0 auto; }
+.container { width: min(1500px, 92vw); margin: 50px auto; }
 
 /* Header */
 .header { display: grid; gap: 6px; margin-bottom: clamp(18px, 4vw, 28px); }

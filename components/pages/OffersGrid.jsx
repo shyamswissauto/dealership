@@ -31,7 +31,11 @@ export default function OffersGrid() {
 
             <div className={styles.body}>
               <h3 className={styles.title}>{o.title}</h3>
-              {o.subtitle && <p className={styles.sub}>{o.subtitle}</p>}
+              {o.subtitle && Array.isArray(o.subtitle) ? (
+                <ul className={styles.subList}>
+                  {o.subtitle.map((item, idx) => (<li key={idx}>{item}</li>))}
+                </ul>
+              ) : null}
               <button
                 className={styles.cta}
                 onClick={() => setActive(o)}

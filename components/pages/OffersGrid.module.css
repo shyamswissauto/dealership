@@ -20,6 +20,15 @@
 .title { margin: 0; font-weight: 800; letter-spacing: .02em; }
 .sub { margin: 0; color: #444; opacity: .9; }
 
+.subList {
+  margin: .5rem 0 0;
+  padding-left: 1.1rem;
+}
+.subList li {
+  margin: .15rem 0;
+  line-height: 1.35;
+}
+
 .cta {
   margin-top: 10px;
   appearance: none; border: 0; border-radius: 10px;

@@ -14,7 +14,7 @@ export default function ShowcaseHero({
   learnHref = "/models/sinotruk-vgv-u75-plus",
   modalImage = "/assets/models/book-a-test-drive.webp",
   reverse = false,
-  carOptions = ["U75 Plus", "U70 Pro", "Bolden S9", "Bolden S7", "Bolden S6"],
+  carOptions = ["Bolden S9", "Bolden S7", "Bolden S6"],
 }) {
   const rootRef = useRef(null);
   const [open, setOpen] = useState(false);

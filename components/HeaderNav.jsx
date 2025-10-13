@@ -46,7 +46,7 @@ export default function HeaderNav() {
           {/* <Link href="/" className="cstTransY">Showroom</Link> */}
           <Link href="/special-offers" className="cstTransY">Special Offers</Link>
           <Link href="/service-and-parts" className="cstTransY">Service & Parts</Link>
-          <Link href="/vgv-business" className="cstTransY">VGV Business</Link>
+          <Link href="/bolden-business" className="cstTransY">Bolden Business</Link>
           <Link href="/contact-us" className="cstTransY">Contact</Link>
         </nav>
 
@@ -54,7 +54,7 @@ export default function HeaderNav() {
         <div className="right">
           {/* <Link href="/test-drive" className="cta btn cstBtnStyle hideMobile">TEST DRIVE</Link> */}
           <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile">TEST DRIVE</button>
-          <Link href="/ar" className="ar cstTransY">العربية</Link>
+          <Link href="/" className="ar cstTransY">العربية</Link>
 
           
           <button className="railBtn" aria-label="Open Quick Menu" onClick={openHeroRail}>
@@ -99,7 +99,7 @@ export default function HeaderNav() {
               {/* <Link href="/" onClick={() => setMobileOpen(false)}>Showroom</Link> */}
               <Link href="/special-offers" onClick={() => setMobileOpen(false)}>Special Offers</Link>
               <Link href="/service-and-parts" onClick={() => setMobileOpen(false)}>Service & Parts</Link>
-              <Link href="/vgv-business" onClick={() => setMobileOpen(false)}>VGV Business</Link>
+              <Link href="/bolden-business" onClick={() => setMobileOpen(false)}>Bolden Business</Link>
               <Link href="/contact-us" onClick={() => setMobileOpen(false)}>Contact</Link>
 
               <div className="headerSocial">
@@ -152,7 +152,7 @@ export default function HeaderNav() {
         <TestDriveModal
           onClose={() => setOpen(false)}
           modalImage="/assets/popup/home-popup.webp"
-          carOptions={["VGV U75 Plus", "VGV U70 Pro", "Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
+          carOptions={["Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
         />
       )}
 

@@ -32,7 +32,7 @@ const LINKS = [
 const PRODUCTS = [
   {
     id: "p1",
-    title: "2025 Coaster Bus",
+    title: "Bolden S9 Off-Road",
     img: "/assets/hero/slide1-desktop.webp",
     badge: "Listing",
     brochure: "/docs/coaster-brochure.pdf",
@@ -40,7 +40,15 @@ const PRODUCTS = [
   },
   {
     id: "p2",
-    title: "2025 Light Truck",
+    title: "Bolden S7 Passenger",
+    img: "/assets/hero/slide1-desktop.webp",
+    badge: "Listing",
+    brochure: "/docs/light-truck-brochure.pdf",
+    spec: "/docs/light-truck-spec.pdf",
+  },
+  {
+    id: "p3",
+    title: "Bolden S6 Commercial",
     img: "/assets/hero/slide1-desktop.webp",
     badge: "Listing",
     brochure: "/docs/light-truck-brochure.pdf",
@@ -61,21 +69,21 @@ export default function LinktreePage() {
   }, [q]);
 
   return (
-    <main className="bg-body-tertiary min-vh-100 d-flex justify-content-center">
+    <main className="bg-body-tertiary min-vh-100 d-flex justify-content-center linkTreeClass">
+      
       <div className="container px-3 px-md-0" style={{ maxWidth: 600 }}>
 
-        <h2>LinkTree </h2>
-        {/* <div className="rounded-4 bg-white shadow-sm my-4 p-3 p-md-4 position-relative">
+        <div className="rounded-4 bg-white shadow-sm my-4 p-3 p-md-4 position-relative">
 
 
           <div className="d-flex flex-column align-items-center text-center mt-2">
-            <div className="rounded-circle overflow-hidden border" style={{ width: 86, height: 86 }}>
-              <Image src={PROFILE.avatar} alt="Logo" width={86} height={86} />
+            <div className="overflow-hidden " style={{ maxWidth: 250}}>
+              <img src={PROFILE.avatar} alt="Logo" style={{ width: '100%'}} />
             </div>
             <h1 className="h6 fw-bold mt-3 mb-1">{PROFILE.handle}</h1>
             <div className="text-muted small lh-sm">
               <div>{PROFILE.title}</div>
-              <div dir="rtl">{PROFILE.subtitleAr}</div>
+              {/* <div dir="rtl">{PROFILE.subtitleAr}</div> */}
             </div>
 
             <div className="d-inline-flex bg-body-tertiary rounded-pill mt-3 p-1 gap-1">
@@ -91,7 +99,7 @@ export default function LinktreePage() {
                 className={`btn btn-sm rounded-pill ${tab === "shop" ? "btn-dark" : "btn-light"}`}
                 onClick={() => setTab("shop")}
               >
-                Shop
+                DOWNLOADS
               </button>
             </div>
           </div>
@@ -100,23 +108,16 @@ export default function LinktreePage() {
             {tab === "links" ? <LinksList /> : <Shop q={q} setQ={setQ} items={filtered} />}
           </div>
 
-          <div className="text-center mt-4">
+          {/* <div className="text-center mt-4">
             <div className="text-muted small mt-2 d-flex justify-content-center gap-3">
               <Link href="#" className="link-secondary text-decoration-none">Terms of use</Link>
               <Link href="#" className="link-secondary text-decoration-none">Privacy Policy</Link>
             </div>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
 
       <style jsx>{`
-        .link-pill{
-          background:#1664d3;color:#fff;border:0;border-radius:12px;padding:14px 16px;text-align:left;
-          transition:transform .12s ease,box-shadow .12s ease,opacity .12s ease;
-        }
-        .link-pill:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12);color:#fff}
-        .link-icon{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.2);display:grid;place-items:center}
-
         .product-card{border-radius:12px;overflow:hidden;border:0;box-shadow:0 4px 12px rgba(0,0,0,.06)}
         .product-cover{ position:relative; }
         .overlay{
@@ -142,6 +143,8 @@ export default function LinktreePage() {
           font-weight:600;max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
         }
       `}</style>
+
+      
     </main>
   );
 }
@@ -152,21 +155,34 @@ function LinksList() {
       {LINKS.map((l) => {
         const Icon = l.icon || FaGlobe;
         return (
-          <Link key={l.label} href={l.href} target="_blank" className="d-flex align-items-center gap-3 link-pill text-decoration-none">
-            <span className="link-icon"><Icon size={18} /></span>
-            <span className="fw-semibold">{l.label}</span>
+          <Link
+            key={l.label}
+            href={l.href}
+            target="_blank"
+            className="link-pill text-decoration-none"
+          >
+            {/* left icon – absolutely positioned */}
+            <span className="link-icon">
+              <Icon size={22} />
+            </span>
+
+            {/* centered text */}
+            <span className="link-label">{l.label}</span>
           </Link>
         );
       })}
+
+      
     </div>
   );
 }
+
 
 function Shop({ q, setQ, items }) {
   return (
     <>
       {/* Search */}
-      <div className="input-group mb-3">
+      {/* <div className="input-group mb-3">
         <span className="input-group-text bg-white"><BiSearch /></span>
         <input
           type="search"
@@ -175,7 +191,7 @@ function Shop({ q, setQ, items }) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
         />
-      </div>
+      </div> */}
 
       <div className="row g-3">
         {items.map((p) => (
@@ -193,7 +209,7 @@ function Shop({ q, setQ, items }) {
                 />
 
                 {/* optional tags */}
-                {p.badge && <span className="badge-soft small">{p.badge}</span>}
+                {/* {p.badge && <span className="badge-soft small">{p.badge}</span>} */}
                 <span className="title-chip small">{p.title}</span>
 
                 {/* overlay buttons */}

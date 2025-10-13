@@ -15,7 +15,7 @@ export default function ProductSectionNav({
   headerOffset = 0, // sticky header height if you have one
   onLearnMore,
   modalImage = "/assets/popup/bolden-s9.webp",
-  carOptions = ["VGV U75 Plus", "VGV U70 Pro", "Bolden S9 Off-Road", "Bolden S7 Passenger ", "Bolden S6 Commercial "],
+  carOptions = ["Bolden S9 Off-Road", "Bolden S7 Passenger ", "Bolden S6 Commercial "],
 }) {
   const [active, setActive] = useState(links[0]?.id);
   const [open, setOpen] = useState(false);

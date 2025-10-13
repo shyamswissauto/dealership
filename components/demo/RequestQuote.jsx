@@ -1,22 +1,24 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./RequestQuote.module.css";
 
 const CATEGORIES = ["ALL", "SEDAN", "SUV"];
 
 const MODELS = [
-  { id: "u75plus", name: "U75PLUS", body: "SUV", category: "SUV", img: "/assets/models/img4.webp" },
-  { id: "u70pro", name: "U70PRO", body: "SUV", category: "SUV", img: "/assets/models/img5.webp" },
-  { id: "bolden-off-road",     name: "BOLDEN OFF-ROAD", body: "PICKUP", category: "PICKUP", img: "/assets/models/img2.webp" },
-  { id: "bolden-passenger", name: "BOLDEN PASSENGER", body: "PICKUP", category: "PICKUP", img: "/assets/models/img3.webp" },
-  { id: "bolden-commercial",  name: "BOLDEN COMMERCIAL", body: "PICKUP", category: "PICKUP", img: "/assets/models/img1.webp" },
+  /* { id: "u75plus", name: "U75PLUS", body: "SUV", category: "SUV", img: "/assets/models/img4.webp" },
+  { id: "u70pro", name: "U70PRO", body: "SUV", category: "SUV", img: "/assets/models/img5.webp" }, */
+  { id: "bolden-off-road",     name: "BOLDEN S9 OFF-ROAD", body: "PICKUP", category: "PICKUP", img: "/assets/models/img2.webp" },
+  { id: "bolden-passenger", name: "BOLDEN S7 PASSENGER", body: "PICKUP", category: "PICKUP", img: "/assets/models/img3.webp" },
+  { id: "bolden-commercial",  name: "BOLDEN S6 COMMERCIAL", body: "PICKUP", category: "PICKUP", img: "/assets/models/img1.webp" },
 ];
 
 const TITLES = ["Mr.", "Ms.", "Mrs."];
 const LOCATIONS = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
 export default function RequestQuote() {
+  const router = useRouter();
   const [cat, setCat] = useState("ALL");
   const [submitting, setSubmitting] = useState(false);
   const [serverMsg, setServerMsg] = useState("");
@@ -62,9 +64,12 @@ export default function RequestQuote() {
         const json = await res.json();
         if (!res.ok || !json.ok) throw new Error(json.error || "Failed");
 
-        setServerMsg(`Thanks! Reference: ${json.ref}`);
+        router.replace(`/thank-you`);
+        return;
+
+        /* setServerMsg(`Thanks! Reference: ${json.ref}`);
         formEl.reset();
-        setAgree(false);
+        setAgree(false); */
     } catch (err) {
         setServerMsg(err.message || "Something went wrong");
     } finally {

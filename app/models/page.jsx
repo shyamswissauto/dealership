@@ -16,8 +16,8 @@ export default function Page() {
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
         {/* <ShowcaseHero /> */}
-        <ShowcaseHero {...SHOWCASE_DEFAULT} />
-        <ShowcaseHero {...SHOWCASE_PRESETS.u75plus} subtitle="Conquer any terrain." />
+        {/* <ShowcaseHero {...SHOWCASE_DEFAULT} />
+        <ShowcaseHero {...SHOWCASE_PRESETS.u75plus} subtitle="Conquer any terrain." /> */}
         <PromoGrid />
 
 

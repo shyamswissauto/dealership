@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 
 const MODELS = [
-  {
+  /* {
     name: "U75PLUS",
     img: "/assets/models/img5.webp",
     hoverImg: "/models/img2.png",
@@ -19,7 +19,7 @@ const MODELS = [
     img: "/assets/models/img4.webp",
     hoverImg: "/models/img1.png",
     href: "/models/sinotruk-vgv-u70-pro",
-  },
+  }, */
   {
     name: "OFF ROAD TYPE",
     img: "/assets/models/img2.webp",
@@ -36,7 +36,7 @@ const MODELS = [
     name: "COMMERCIAL",
     img: "/assets/models/img1.webp",
     hoverImg: "/models/img2.png",
-    href: "/models/bolden-commercial",
+    href: "/models/bolden-s6-commercial",
   },
 ];
 
@@ -52,8 +52,8 @@ export default function ModelsCarouselBootstrap() {
       0: { slidesPerView: 1, spaceBetween: 16 },
       576: { slidesPerView: 2, spaceBetween: 20 },
       768: { slidesPerView: 3, spaceBetween: 24 },
-      992: { slidesPerView: 4, spaceBetween: 24 },
-      1200: { slidesPerView: 5, spaceBetween: 24 },
+      992: { slidesPerView: 3, spaceBetween: 24 },
+      1200: { slidesPerView: 3, spaceBetween: 24 },
     }),
     []
   );

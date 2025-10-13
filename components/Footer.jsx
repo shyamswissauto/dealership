@@ -14,7 +14,7 @@ export default function Footer() {
           <div className={styles.brand}>
             <img
               src="/assets/logo.png"   
-              alt="VGV"
+              alt="BOLDEN"
               width={180}
               className={styles.logo}
             />
@@ -27,11 +27,9 @@ export default function Footer() {
           <nav aria-labelledby="foot-product" className={styles.col}>
             <h3 id="foot-product" className={styles.heading}>MODELS</h3>
             <ul className={styles.list}>
-              <li><Link href="/models/sinotruk-vgv-u75-plus">U75PLUS</Link></li>
-              <li><Link href="/models/sinotruk-vgv-u70-pro">U70PRO</Link></li>
-              <li><Link href="/models/bolden-off-road">OFF ROAD TYPE</Link></li>
-              <li><Link href="/models/bolden-passenger">PASSENGER</Link></li>
-              <li><Link href="/models/bolden-commercial">COMMERCIAL</Link></li>
+              <li><Link href="/models/bolden-off-road">Bolden S9 OFF ROAD TYPE</Link></li>
+              <li><Link href="/models/bolden-passenger">Bolden S7 PASSENGER</Link></li>
+              <li><Link href="/models/bolden-s6-commercial">Bolden S6 COMMERCIAL</Link></li>
             </ul>
           </nav>
 
@@ -41,8 +39,8 @@ export default function Footer() {
             <ul className={styles.list}>
               <li><Link href="/request-a-quote">Get A Quote</Link></li>
               <li><Link href="/brochure-download">Brochure Download</Link></li>
-              <li><Link href="#">Blogs</Link></li>
-              <li><Link href="/contact-us">Contact US</Link></li>
+              {/* <li><Link href="#">Blogs</Link></li> */}
+              <li><Link href="/contact-us">Contact Us</Link></li>
               <li><Link href="/book-a-test-drive">Test Drive</Link></li>
             </ul>
           </nav>
@@ -51,10 +49,10 @@ export default function Footer() {
           <div className={styles.col}>
             <h3 className={styles.heading}>CONTACT</h3>
             <ul className={styles.contactList}>
-              <li>Dubai, UAE</li>
+              <li>Abu Dhabi, UAE</li>
               <li><a href="mailto:info@">sales@mysinotruk.ae</a></li>
-              <li><a href="tel:80000000">800 000 00</a></li>
-              <li><a href="tel:+971000000000">971 00 000 000</a></li>
+              {/* <li><a href="tel:80000000">800 000 00</a></li> */}
+              <li><a href="tel:+971561122500">+971 56 11 22 500</a></li>
             </ul>
           </div>
         </div>
@@ -64,7 +62,7 @@ export default function Footer() {
           <p className={styles.socialTitle}>Get Connected with us on social networks</p>
           <ul className={styles.socials} aria-label="Social media">
             <li>
-              <Link href="#" aria-label="Facebook" className={styles.socialLink}>
+              <Link href="https://www.facebook.com/profile.php?id=61579914192315" aria-label="Facebook" className={styles.socialLink}>
                 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                   <path fill="currentColor" d="M13 10h3l-1 4h-2v7h-4v-7H7v-4h2V8a4 4 0 0 1 4-4h3v4h-3a1 1 0 0 0-1 1v1z"/>
                 </svg>

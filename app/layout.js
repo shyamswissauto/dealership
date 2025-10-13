@@ -36,8 +36,8 @@ const almarai = Almarai({
 });
 
 export const metadata = {
-  title: "VGV - Swiss Auto Trading",
-  description: "VGV - Swiss Auto Trading",
+  title: "Sinotruk - Swiss Auto Trading",
+  description: "Sinotruk - Swiss Auto Trading",
 };
 
 const GTM_ID = "GTM-W769MT2C";

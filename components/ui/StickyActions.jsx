@@ -9,7 +9,7 @@ import styles from "./StickyActions.module.css";
 const DEFAULT_ITEMS = [
   { href: "/test-drive",       label: "Book a test drive", src: "/assets/icons/icon1.webp" },
   { href: "/",                 label: "Get Quote",         src: "/assets/icons/icon4.webp" },
-  { href: "tel:+971000000000", label: "Contact us",        src: "/assets/icons/icon2.webp" },
+  { href: "tel:+971561122500", label: "Contact us",        src: "/assets/icons/icon2.webp" },
   { href: "/service",          label: "Service & Support", src: "/assets/icons/icon3.webp" },
 ];
 
@@ -108,7 +108,7 @@ export default function StickyActions({
             </a>
           </li>
           <li className={styles.item}>
-            <a href="/" className={styles.btn} aria-label="Contact us" title="Contact us">
+            <a href="tel:+971561122500" className={styles.btn} aria-label="Contact us" title="Contact us">
               <span className={styles.icon} aria-hidden="true">
                 <Image
                   src="/assets/icons/icon2.webp"
@@ -141,7 +141,7 @@ export default function StickyActions({
             <TestDriveModal
               onClose={() => setOpen(false)}
               modalImage="/assets/popup/home-popup.webp"
-              carOptions={["VGV U75 Plus", "VGV U70 Pro", "Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
+              carOptions={["Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
             />
           )}
     </>

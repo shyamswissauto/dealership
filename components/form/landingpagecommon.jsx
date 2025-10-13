@@ -93,21 +93,18 @@ export default function LandingPageCommon() {
       <div className={styles.container}>
         {/* LEFT */}
         <div className={styles.left}>
-          <h2 id="bts-title" className={styles.title}>BACK TO SCHOOL OFFERS</h2>
-          <h3 className={styles.sub}>ENJOY EXCLUSIVE BACK TO SCHOOL OFFERS</h3>
+          <h2 id="bts-title" className={styles.title}>OFFERS</h2>
+          <h3 className={styles.sub}>After Sales Benefits</h3>
 
           <p className={styles.intro}>
             Visit our showrooms now &amp; enjoy exclusive offers
           </p>
 
           <ul className={styles.bullets}>
-            <li>0% Finance Up to for 5 years*</li>
-            <li>Free Insurance*</li>
-            <li>Free Registration*</li>
-            <li>Up to 6 years&apos; service or 120,000 KM*</li>
-            <li>Free Tinting*</li>
-            <li>One Year Free Roadside Assistance*</li>
-            <li>Up to 7 years Warranty or 250,000 KM*</li>
+            <li>10 Years Warranty or 300,000KM</li>
+            <li>5 Years Service Contract or 100,000KM</li>
+            <li>Free Registration</li>
+            <li>0% downpayment</li>
           </ul>
 
           <p className={styles.tc}>Terms &amp; Conditions apply*</p>

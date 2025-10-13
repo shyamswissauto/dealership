@@ -2,40 +2,16 @@
 const OFFERS = [
   {
     id: "b2s1",
-    title: "Back To School Offers 1",
-    subtitle: "Exclusive Back to School Offers",
+    title: "After Sales Benefits",
+    subtitle: [
+    "10 Years Warranty or 300,000KM",
+    "5 Years Service Contract or 100,000KM",
+    "Free Registration",
+    "0% downpayment (T&C Apply)"
+  ],
     img: "/assets/hero/test1.webp",
   },
-  {
-    id: "b2s2",
-    title: "Back To School Offers 2",
-    subtitle: "Exclusive Back to School Offers",
-    img: "/assets/hero/test1.webp",
-  },
-  {
-    id: "b2s3",
-    title: "Back To School Offers 3",
-    subtitle: "Exclusive Back to School Offers",
-    img: "/assets/hero/test1.webp",
-  },
-  {
-    id: "b2s4",
-    title: "Back To School Offers 4",
-    subtitle: "Exclusive Back to School Offers",
-    img: "/assets/hero/test1.webp",
-  },
-  {
-    id: "b2s5",
-    title: "Back To School Offers 5",
-    subtitle: "Exclusive Back to School Offers",
-    img: "/assets/hero/test1.webp",
-  },
-  {
-    id: "b2s6",
-    title: "Back To School Offers 6",
-    subtitle: "Exclusive Back to School Offers",
-    img: "/assets/hero/test1.webp",
-  },
+  
 ];
 
 export default OFFERS;
