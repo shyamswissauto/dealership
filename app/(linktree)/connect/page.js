@@ -19,40 +19,40 @@ const PROFILE = {
 };
 
 const LINKS = [
-  { icon: FaGlobe, label: "Website", href: "#" },
-  { icon: FaWhatsapp, label: "WhatsApp", href: "#" },
+  { icon: FaGlobe, label: "Website", href: "https://www.mysinotruk.ae/" },
+  { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/971561122500?text=Hi%2C%20Bolden%20UAE" },
   { icon: BiGeoAlt, label: "Location", href: "#" },
-  { icon: FaInstagram, label: "Instagram", href: "#" },
-  { icon: FaFacebookF, label: "Facebook", href: "#" },
-  { icon: FaYoutube, label: "YouTube", href: "#" },
-  { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
-  { icon: FaXTwitter, label: "Twitter", href: "#" },
+  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/sinotrukvgv_uae" },
+  { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61579914192315" },
+  { icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@Sinotrukuae" },
+  /* { icon: FaLinkedinIn, label: "LinkedIn", href: "#" }, */
+  { icon: FaXTwitter, label: "Twitter", href: "https://x.com/SinotrukUAE" },
 ];
 
 const PRODUCTS = [
   {
     id: "p1",
     title: "Bolden S9 Off-Road",
-    img: "/assets/hero/slide1-desktop.webp",
+    img: "/assets/linktree/bolden-s9-hero-slider.webp",
     badge: "Listing",
-    brochure: "/docs/coaster-brochure.pdf",
-    spec: "/docs/coaster-spec.pdf",
+    brochure: "/assets/brochure/bolden-off-road-brochure.pdf",
+    spec: "/assets/brochure/bolden-off-road-spec.pdf",
   },
   {
     id: "p2",
     title: "Bolden S7 Passenger",
-    img: "/assets/hero/slide1-desktop.webp",
+    img: "/assets/linktree/bolden-heroslider.webp",
     badge: "Listing",
-    brochure: "/docs/light-truck-brochure.pdf",
-    spec: "/docs/light-truck-spec.pdf",
+    brochure: "/assets/brochure/bolden-passenger-brochure.pdf",
+    spec: "/assets/brochure/bolden-passenger-spec.pdf",
   },
   {
     id: "p3",
     title: "Bolden S6 Commercial",
-    img: "/assets/hero/slide1-desktop.webp",
+    img: "/assets/linktree/bolden-s6-hero-slider.webp",
     badge: "Listing",
-    brochure: "/docs/light-truck-brochure.pdf",
-    spec: "/docs/light-truck-spec.pdf",
+    brochure: "/assets/brochure/bolden-commercial-brochure.pdf",
+    spec: "/assets/brochure/bolden-commercial-spec.pdf",
   },
   // ...add the rest
 ];

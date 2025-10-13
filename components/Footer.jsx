@@ -50,7 +50,7 @@ export default function Footer() {
             <h3 className={styles.heading}>CONTACT</h3>
             <ul className={styles.contactList}>
               <li>Abu Dhabi, UAE</li>
-              <li><a href="mailto:info@">sales@mysinotruk.ae</a></li>
+              <li><a href="mailto:sales@mysinotruk.ae">sales@mysinotruk.ae</a></li>
               {/* <li><a href="tel:80000000">800 000 00</a></li> */}
               <li><a href="tel:+971561122500">+971 56 11 22 500</a></li>
             </ul>

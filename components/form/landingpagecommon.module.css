@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: clamp(20px, 4vw, 40px);
-  align-items: start;
+  align-items: center;
 }
 
 /* left content */
@@ -14,15 +14,17 @@
   margin: 0 0 10px;
   font-weight: 900;
   letter-spacing: .06em;
+  font-size: clamp(28px,4vw,46px);
 }
 .sub {
   margin: 0 0 18px;
   font-weight: 800;
   letter-spacing: .06em;
+  font-size: clamp(24px,4vw,36px);
 }
-.intro { margin: 0 0 16px; }
-.bullets { margin: 0 0 16px; padding: 0 0 0 22px; display: grid; gap: 10px; }
-.tc { font-style: italic; opacity: .8; }
+.intro { margin: 0 0 16px; font-size: clamp(16px,4vw,20px);}
+.bullets { margin: 0 0 16px; padding: 0 0 0 22px; display: grid; gap: 10px; font-size: clamp(16px,4vw,20px);}
+.tc { font-style: italic; opacity: .8; font-size: 15px;}
 
 /* right form card */
 .right {
