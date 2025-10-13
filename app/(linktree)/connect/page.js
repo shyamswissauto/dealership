@@ -13,9 +13,9 @@ import { BiGeoAlt, BiSearch, BiCog, BiShareAlt } from "react-icons/bi";
 /* ---------- Demo data ---------- */
 const PROFILE = {
   handle: "@SinoTruk | Royal Swiss Auto Trading",
-  title: "Car dealership",
+  title: "Car Dealer",
   subtitleAr: "وكالة بيع سيارات — جميع أنواع السيارات الجديدة",
-  avatar: "/assets/logo-dark.png",
+  avatar: "/assets/sinotruk-logo-dark.png",
 };
 
 const LINKS = [
