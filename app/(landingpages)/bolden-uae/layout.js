@@ -1,17 +1,17 @@
 export const metadata = {
   metadataBase: new URL('https://mysinotruk.ae'),
     alternates: {
-        canonical: '/models/bolden-s9-off-road/',
+        canonical: '/bolden-uae/',
         languages: {
-          'en': 'https://mysinotruk.ae/models/bolden-s9-off-road/',
+          'en': 'https://mysinotruk.ae/bolden-uae/',
         },
     },
-  title: 'Bolden S9 Off-Road | Royal Swiss Auto Trading',
-  description: 'Bolden S9 Off-Road | Royal Swiss Auto Trading',
+  title: 'Bolden UAE | Royal Swiss Auto Trading',
+  description: 'Bolden UAE | Royal Swiss Auto Trading',
   openGraph: {
-      title: 'Bolden S9 Off-Road | Royal Swiss Auto Trading',
-      description: 'Bolden S9 Off-Road | Royal Swiss Auto Trading',
-      url: 'https://mysinotruk.ae/models/bolden-s9-off-road/',
+      title: 'Bolden UAE | Royal Swiss Auto Trading',
+      description: 'Bolden UAE | Royal Swiss Auto Trading',
+      url: 'https://mysinotruk.ae/bolden-uae/',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
@@ -23,7 +23,7 @@ export const metadata = {
           url: 'assets/images/og/sinotruk-vgv-u70-pro.png',
           width: 1800,
           height: 1600,
-          alt: 'Bolden S9 Off-Road',
+          alt: 'Bolden UAE',
         },
       ],
       locale: 'en_US',
@@ -33,7 +33,7 @@ export const metadata = {
 
 
 
-export default function BoldenS9Layout({ children }) {
+export default function BoldenUAELayout({ children }) {
   return (
     <div>
       {/* Layout styling or components like a header, sidebar, etc., can go here */}

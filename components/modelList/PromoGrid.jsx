@@ -17,7 +17,7 @@ const DEFAULT_ITEMS = [
     alt: "BOLDEN S7 PASSENGER",
     title: "BOLDEN S7 PASSENGER",
     subtitle: "Urban-ready performance.",
-    learnHref: "/models/bolden-s6-passenger",
+    learnHref: "/models/bolden-s7-passenger",
     bookHref: "/",
   },
   {

@@ -1,18 +1,17 @@
 export const metadata = {
   metadataBase: new URL('https://mysinotruk.ae'),
     alternates: {
-        canonical: '/sinotruk-vgv-u70-pro/',
+        canonical: '/models/bolden-s6-commercial/',
         languages: {
-          'en': 'https://mysinotruk.ae/models/sinotruk-vgv-u70-pro/',
-          'ar': 'https://mysinotruk.ae/ar/models/sinotruk-vgv-u70-pro/',
+          'en': 'https://mysinotruk.ae/models/bolden-s6-commercial/',
         },
     },
-  title: 'Sinotruk VGV U70 Pro',
-  description: 'Sinotruk VGV U70 Pro',
+  title: 'Bolden S6 Commercial | Royal Swiss Auto Trading',
+  description: 'Bolden S6 Commercial | Royal Swiss Auto Trading',
   openGraph: {
-      title: 'Sinotruk VGV U70 Pro',
-      description: 'Sinotruk VGV U70 Pro',
-      url: 'https://mysinotruk.ae/models/sinotruk-vgv-u70-pro/',
+      title: 'Bolden S6 Commercial | Royal Swiss Auto Trading',
+      description: 'Bolden S6 Commercial | Royal Swiss Auto Trading',
+      url: 'https://mysinotruk.ae/models/bolden-s6-commercial/',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
@@ -24,7 +23,7 @@ export const metadata = {
           url: 'assets/images/og/sinotruk-vgv-u70-pro.png',
           width: 1800,
           height: 1600,
-          alt: 'Sinotruk VGV U70 Pro',
+          alt: 'Bolden S6 Commercial',
         },
       ],
       locale: 'en_US',

@@ -4,15 +4,15 @@ import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 
 import Footer from "@/components/client/FooterClient";
 import RequestQuote from "@/components/demo/RequestQuote";
-import LandingPageCommon from "@/components/form/landingpagecommon";
 
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/landing-banner.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "Drive the Future with Sinotruck",
+    title:   "Thank You",
     subtitle:"",
-    align:   "center",
+    align:   "left",
+    valign:   "end",
     overlay: "rgba(0,0,0,0.4)",
     learnMoreHref: "",
     bookHref:      "",
@@ -26,8 +26,11 @@ export default function Page() {
       <>
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
-        
-        <LandingPageCommon />       
+
+        <div className="thankYouContainer">
+            <h1>Thank you!</h1>
+            <p>We’ve received your request. Our team will contact you shortly.</p>
+        </div>        
 
 
         <Footer />        

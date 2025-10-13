@@ -68,19 +68,16 @@ export async function POST(req) {
 
       const html = `
         <h2>New Test Drive Request</h2>
-        <p><b>Reference:</b> ${reference}</p>
         <p><b>Name:</b> ${fullName}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone}</p>
-        <p><b>Car:</b> ${car}</p>
-        <hr />
-        <p>Submitted on ${new Date().toLocaleString()}</p>
+        <p><b>Model:</b> ${car}</p>
       `;
 
       await transporter.sendMail({
         to,
         from,
-        subject: `Test Drive Request ${reference}`,
+        subject: `Test Drive Request`,
         html,
       });
     }
