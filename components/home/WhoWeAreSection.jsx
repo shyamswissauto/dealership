@@ -10,10 +10,10 @@ export default function WhoWeAreSection() {
         <div className={styles.titlebox}>
             <h2 id="who-title" className={styles.title}>WHO WE ARE</h2>
             <p className={styles.kicker}>
-              We are Swiss Auto Trading, the authorized Sinotruk dealer in the UAE. We deliver vehicles designed for power, comfort, and reliability.Your destination for world-class vehicles and professional after-sales support.
+              We are Royal Swiss Auto Trading, the authorized Sinotruk dealer in the UAE. We deliver vehicles designed for power, comfort, and reliability.Your destination for world-class vehicles and professional after-sales support.
             </p>
             <p className={styles.kicker2}>
-              Discover Bolden and VGV vehicles built for work, family, and adventure.
+              Discover Bolden vehicles built for work, family, and adventure.
             </p>
         </div>
         
@@ -30,7 +30,7 @@ export default function WhoWeAreSection() {
             <div className={styles.inner}>
               <span className={styles.heading}>OUR JOURNEY</span>
               <span className={`${styles.desc} ${styles.fromBottom}`}>
-                Swiss Auto Trading started with one goal: to redefine mobility in the UAE. With Sinotruk’s Bolden and VGV vehicles, we’ve made that goal a reality. Our journey is driven by trust, performance, and a passion for progress.
+                Royal Swiss Auto Trading started with one goal: to redefine mobility in the UAE. With Sinotruk’s Bolden vehicles, we’ve made that goal a reality. Our journey is driven by trust, performance, and a passion for progress.
               </span>
             </div>
           </Link>

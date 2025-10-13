@@ -10,7 +10,7 @@ export default function HeroSlider({
 
 
   slides = [
-    {
+    /* {
       desktop: "/assets/hero/slide3-desktop.webp",
       mobile:  "/assets/hero/slide3-mobile.webp",
       title:   "Drive Bigger. Live Better",
@@ -31,15 +31,15 @@ export default function HeroSlider({
       learnMoreHref: "/models/sinotruk-vgv-u70-pro",
       bookHref:      "/",
       className:     "slide-hmU70pro",
-    },
+    }, */
     {
-      desktop: "/assets/hero/slide2-desktop.webp",
-      mobile:  "/assets/hero/slide2-mobile.webp",
+      desktop: "/assets/hero/bolden-heroslider.webp",
+      mobile:  "/assets/hero/passenger-mobile.webp",
       title:   "Drive the Future with Sinotruk",
       subtitle:"Built for power, comfort, and performance—now available in the UAE.",
       align:   "center",
       overlay: "rgba(0,0,0,.32)",
-      learnMoreHref: "/",
+      learnMoreHref: "/models/bolden-s7-passenger",
       bookHref:      "/",
       className:     "slide-pure-design",
     },

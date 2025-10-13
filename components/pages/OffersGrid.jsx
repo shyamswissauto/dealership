@@ -41,7 +41,7 @@ export default function OffersGrid() {
                 onClick={() => setActive(o)}
                 aria-haspopup="dialog"
               >
-                <span aria-hidden="true">📞</span>&nbsp;Offer Details
+                <span aria-hidden="true">📞</span>&nbsp;Get This Offer
               </button>
             </div>
           </li>

@@ -2,7 +2,7 @@
 const OFFERS = [
   {
     id: "b2s1",
-    title: "After Sales Benefits",
+    title: "Smarter Car Deal",
     subtitle: [
     "10 Years Warranty or 300,000KM",
     "5 Years Service Contract or 100,000KM",

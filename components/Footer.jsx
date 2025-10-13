@@ -27,8 +27,8 @@ export default function Footer() {
           <nav aria-labelledby="foot-product" className={styles.col}>
             <h3 id="foot-product" className={styles.heading}>MODELS</h3>
             <ul className={styles.list}>
-              <li><Link href="/models/bolden-off-road">Bolden S9 OFF ROAD TYPE</Link></li>
-              <li><Link href="/models/bolden-passenger">Bolden S7 PASSENGER</Link></li>
+              <li><Link href="/models/bolden-s9-off-road">Bolden S9 OFF ROAD TYPE</Link></li>
+              <li><Link href="/models/bolden-s7-passenger">Bolden S7 PASSENGER</Link></li>
               <li><Link href="/models/bolden-s6-commercial">Bolden S6 COMMERCIAL</Link></li>
             </ul>
           </nav>

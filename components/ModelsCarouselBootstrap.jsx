@@ -24,13 +24,13 @@ const MODELS = [
     name: "OFF ROAD TYPE",
     img: "/assets/models/img2.webp",
     hoverImg: "/models/img4.png",
-    href: "/models/bolden-off-road",
+    href: "/models/bolden-s9-off-road",
   },
   {
     name: "PASSENGER",
     img: "/assets/models/img3.webp",
     hoverImg: "/models/img3.png",
-    href: "/models/bolden-passenger",
+    href: "/models/bolden-s7-passenger",
   },
   {
     name: "COMMERCIAL",
