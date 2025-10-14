@@ -33,7 +33,7 @@ export default function HeaderNavLanding() {
   }, [mobileOpen]);
 
   return (
-    <header className="siteHeader reveal-up dirRtl">
+    <header className="siteHeader reveal-up">
       <div className="wrap bar">
         
         <Link href="" className="logo">
