@@ -8,18 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 
 const MODELS = [
-  /* {
-    name: "U75PLUS",
-    img: "/assets/models/img5.webp",
-    hoverImg: "/models/img2.png",
-    href: "/models/sinotruk-vgv-u75-plus",
-  },
-  {
-    name: "U70PRO",
-    img: "/assets/models/img4.webp",
-    hoverImg: "/models/img1.png",
-    href: "/models/sinotruk-vgv-u70-pro",
-  }, */
+
   {
     name: "OFF ROAD TYPE",
     img: "/assets/models/img2.webp",

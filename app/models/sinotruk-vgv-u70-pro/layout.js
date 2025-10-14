@@ -1,30 +1,30 @@
 export const metadata = {
   metadataBase: new URL('https://mysinotruk.ae'),
     alternates: {
-        canonical: '/sinotruk-vgv-u70-pro/',
+        canonical: '/sinotruk/',
         languages: {
-          'en': 'https://mysinotruk.ae/models/sinotruk-vgv-u70-pro/',
-          'ar': 'https://mysinotruk.ae/ar/models/sinotruk-vgv-u70-pro/',
+          'en': 'https://mysinotruk.ae/models/sinotruk/',
+          'ar': 'https://mysinotruk.ae/ar/models/sinotruk/',
         },
     },
-  title: 'Sinotruk VGV U70 Pro',
-  description: 'Sinotruk VGV U70 Pro',
+  title: 'Sinotruk',
+  description: 'Sinotruk',
   openGraph: {
-      title: 'Sinotruk VGV U70 Pro',
-      description: 'Sinotruk VGV U70 Pro',
-      url: 'https://mysinotruk.ae/models/sinotruk-vgv-u70-pro/',
+      title: 'Sinotruk',
+      description: 'Sinotruk',
+      url: 'https://mysinotruk.ae/models/sinotruk/',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
-          url: 'assets/images/og/sinotruk-vgv-u70-pro.png',
+          url: 'assets/images/og/sinotruk.png',
           width: 800,
           height: 600,
         },
         {
-          url: 'assets/images/og/sinotruk-vgv-u70-pro.png',
+          url: 'assets/images/og/sinotruk.png',
           width: 1800,
           height: 1600,
-          alt: 'Sinotruk VGV U70 Pro',
+          alt: 'Sinotruk',
         },
       ],
       locale: 'en_US',

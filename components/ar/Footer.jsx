@@ -76,7 +76,7 @@ export default function FooterAr() {
               </Link>
             </li>
             <li>
-              <Link href="https://www.instagram.com/sinotrukvgv_uae" aria-label="Instagram" className={styles.socialLink}>
+              <Link href="#" aria-label="Instagram" className={styles.socialLink}>
                 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                   <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
                 </svg>

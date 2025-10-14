@@ -16,6 +16,9 @@ const nextConfig = {
       { source: '/service-and-parts', destination: '/', permanent: true },
       { source: '/terms-of-use', destination: '/', permanent: true },
       { source: '/book-a-test-drive', destination: '/', permanent: true },
+      { source: '/sinotruk-vgv-u70-pro', destination: '/', permanent: true },
+      { source: '/sinotruk-vgv-u75-plus', destination: '/', permanent: true },
+      
     ];
   },
 };

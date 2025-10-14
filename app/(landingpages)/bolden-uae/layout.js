@@ -15,12 +15,12 @@ export const metadata = {
       siteName: 'www.mysinotruk.ae',
       images: [
         {
-          url: 'assets/images/og/sinotruk-vgv-u70-pro.png',
+          url: 'assets/images/og/sinotruk.png',
           width: 800,
           height: 600,
         },
         {
-          url: 'assets/images/og/sinotruk-vgv-u70-pro.png',
+          url: 'assets/images/og/sinotruk.png',
           width: 1800,
           height: 1600,
           alt: 'Bolden UAE',

@@ -10,28 +10,7 @@ export default function HeroSlider({
 
 
   slides = [
-    /* {
-      desktop: "/assets/hero/slide3-desktop.webp",
-      mobile:  "/assets/hero/slide3-mobile.webp",
-      title:   "Drive Bigger. Live Better",
-      subtitle:"With advanced features, spacious design, and premium comfort, the U75 Plus redefines family SUVs.",
-      align:   "left",
-      overlay: "rgba(0,0,0,.30)",
-      learnMoreHref: "/models/sinotruk-vgv-u75-plus",
-      bookHref:      "/",
-      className:     "slide-u75plus",
-    },
-    {
-      desktop: "/assets/hero/slide1-desktop.webp",
-      mobile:  "/assets/hero/slide1-mobile.webp",
-      title:   "One SUV, Endless Family Adventures.",
-      subtitle:"Comfort, space, and safety — everything your family deserves, in one powerful drive.",
-      align:   "left",
-      overlay: "rgba(0,0,0,.28)",
-      learnMoreHref: "/models/sinotruk-vgv-u70-pro",
-      bookHref:      "/",
-      className:     "slide-hmU70pro",
-    }, */
+    
     {
       desktop: "/assets/hero/bolden-s9-hero-slider.webp",
       mobile:  "/assets/hero/off-road-mobile.webp",
