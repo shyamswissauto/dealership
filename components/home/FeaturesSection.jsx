@@ -48,7 +48,7 @@ export default function FeaturesSection() {
               href="/models"
               className={`${styles.card} ${styles.cardLarge}`}
               style={{
-                "--bg": "url('/assets/home/feature1.png')",
+                "--bg": "url('/assets/home/feature1.webp')",
                 "--overlay": "rgba(0,0,0,.45)",
                 "--overlayHover": "rgba(0,0,0,.65)",
               }}
@@ -71,7 +71,7 @@ export default function FeaturesSection() {
               href="/models"
               className={styles.card}
               style={{
-                "--bg": "url('/assets/home/feature2.png')",
+                "--bg": "url('/assets/home/feature2.webp')",
                 "--overlay": "rgba(3, 86, 126, .35)",
                 "--overlayHover": "rgba(3, 86, 126, .55)",
               }}
@@ -94,7 +94,7 @@ export default function FeaturesSection() {
               href="/models"
               className={styles.card}
               style={{
-                "--bg": "url('/assets/home/feature3.png')",
+                "--bg": "url('/assets/home/feature3.webp')",
                 "--overlay": "rgba(0,0,0,.25)",
                 "--overlayHover": "rgba(0,0,0,.5)",
               }}
