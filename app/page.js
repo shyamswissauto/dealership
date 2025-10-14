@@ -22,9 +22,9 @@ export default function HomePage() {
       <ModelsCarouselClient />
       {/* <WhoWeAreSection /> */}
       <ViewportVideoClient />
-      <FeaturesSection />
+      {/* <FeaturesSection />
       <GallerySwiperClient />
-      <TestDriveSection />      
+      <TestDriveSection /> */}      
       <Footer />
     </>
   );
