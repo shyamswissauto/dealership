@@ -11,9 +11,9 @@ const LOCATIONS = ["Dubai", "Abu Dhabi", "Al Ain", "Sharjah", "Ajman", "Ras Al K
 export default function LandingPageCommon() {
   const router = useRouter();
   const [form, setForm] = useState({
-    title: "",
+    //title: "",
     firstName: "",
-    lastName: "",
+    //lastName: "",
     email: "",
     location: "",
     vehicle: "",
@@ -28,9 +28,9 @@ export default function LandingPageCommon() {
 
   const errors = useMemo(() => {
     const e = {};
-    if (!form.title) e.title = "Title is required";
-    if (!form.firstName) e.firstName = "First name is required";
-    if (!form.lastName) e.lastName = "Last name is required";
+    //if (!form.title) e.title = "Title is required";
+    if (!form.firstName) e.firstName = "Name is required";
+    //if (!form.lastName) e.lastName = "Last name is required";
     if (!form.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Valid email is required";
     if (!form.location) e.location = "Location is required";
@@ -47,9 +47,9 @@ export default function LandingPageCommon() {
   const submit = async (e) => {
     e.preventDefault();
     setTouched({
-      title: true,
+      //title: true,
       firstName: true,
-      lastName: true,
+      //lastName: true,
       email: true,
       location: true,
       vehicle: true,
@@ -116,6 +116,9 @@ export default function LandingPageCommon() {
             {/* Row 1 */}
             <div className={styles.row}>
               <div className={styles.colFull}>
+                  <h3 className={styles.subTest}>Book A Test Drive</h3>
+              </div>
+              {/* <div className={styles.colFull}>
                 <select
                   name="title"
                   className={styles.input}
@@ -137,16 +140,16 @@ export default function LandingPageCommon() {
                     {errors.title}
                   </span>
                 )}
-              </div>
+              </div> */}
             </div>
 
             {/* Row 2 */}
             <div className={styles.row}>
-              <div className={styles.col}>
+              <div className={styles.colFull}>
                 <input
                   name="firstName"
                   className={styles.input}
-                  placeholder="First Name *"
+                  placeholder="Your Name *"
                   value={form.firstName}
                   onChange={(e) => setField("firstName", e.target.value)}
                   onBlur={onBlur}
@@ -159,7 +162,7 @@ export default function LandingPageCommon() {
                   </span>
                 )}
               </div>
-              <div className={styles.col}>
+              {/* <div className={styles.col}>
                 <input
                   name="lastName"
                   className={styles.input}
@@ -175,7 +178,7 @@ export default function LandingPageCommon() {
                     {errors.lastName}
                   </span>
                 )}
-              </div>
+              </div> */}
             </div>
 
             {/* Row 3 */}

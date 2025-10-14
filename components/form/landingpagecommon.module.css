@@ -22,6 +22,13 @@
   letter-spacing: .06em;
   font-size: clamp(24px,4vw,36px);
 }
+.subTest {
+  margin: 0 0 18px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  font-size: clamp(24px,4vw,36px);
+  text-align: center;
+}
 .intro { margin: 0 0 16px; font-size: clamp(16px,4vw,20px);}
 .bullets { margin: 0 0 16px; padding: 0 0 0 22px; display: grid; gap: 10px; font-size: clamp(16px,4vw,20px);}
 .tc { font-style: italic; opacity: .8; font-size: 15px;}

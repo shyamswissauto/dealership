@@ -52,7 +52,8 @@ export async function POST(req) {
     const body = await req.json();
 
     // ❗️Adjust required fields for your form
-    const required = ["title", "firstName", "lastName", "email", "location", "vehicle", "phone", "comments"];
+    //const required = ["title", "firstName", "lastName", "email", "location", "vehicle", "phone", "comments"];
+    const required = ["firstName", "email", "location", "vehicle", "phone", "comments"];
     const missing = required.filter((k) => !body?.[k]);
     if (missing.length) {
       return NextResponse.json(
