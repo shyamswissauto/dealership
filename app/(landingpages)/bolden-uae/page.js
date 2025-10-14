@@ -9,7 +9,7 @@ import LandingPageCommon from "@/components/form/landingpagecommon";
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/bolden-landing.webp",
-    mobile:  "/assets/hero/landing-banner-m.webp",
+    mobile:  "/assets/hero/bolden-landing-m.webp",
     title:   "",
     subtitle:"",
     align:   "center",
