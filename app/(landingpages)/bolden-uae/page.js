@@ -10,10 +10,10 @@ export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/landing-banner.webp",
     mobile:  "/assets/hero/landing-banner-m.webp",
-    title:   "Drive the Future with Sinotruck",
+    title:   "",
     subtitle:"",
     align:   "center",
-    overlay: "rgba(0,0,0,0.4)",
+    overlay: "rgba(0,0,0,0. )",
     learnMoreHref: "",
     bookHref:      "",
     className:     "landingCommonCst",

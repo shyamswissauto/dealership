@@ -97,14 +97,14 @@ export default function LandingPageCommon() {
           <h3 className={styles.sub}>Ready.Set. Drive Bolden</h3>
 
           <p className={styles.intro}>
-            Visit our showrooms now &amp; enjoy exclusive offers
+            Visit our showroom now &amp; enjoy exclusive offers
           </p>
 
           <ul className={styles.bullets}>
-            <li>10 Years Warranty or 300,000KM</li>
-            <li>5 Years Service Contract or 100,000KM</li>
+            <li>10 Years Manufacturer Warranty</li>
+            <li>5 Years or 300,000 KM Service Contract</li>
             <li>Free Registration</li>
-            <li>0% downpayment</li>
+            <li>0% down payment</li>
           </ul>
 
           <p className={styles.tc}>Terms &amp; Conditions apply*</p>

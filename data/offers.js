@@ -4,10 +4,10 @@ const OFFERS = [
     id: "b2s1",
     title: "Smarter Car Deal",
     subtitle: [
-    "10 Years Warranty or 300,000KM",
-    "5 Years Service Contract or 100,000KM",
+    "10 Years Manufacturer Warranty",
+    "5 Years or 300,000 KM Service Contract",
     "Free Registration",
-    "0% downpayment (T&C Apply)"
+    "0% down payment"
   ],
     img: "/assets/popup/s9-off-road-popup.webp",
   },
