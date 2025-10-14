@@ -24,7 +24,7 @@ export default function HomePage() {
       <ViewportVideoClient />
       {/* <FeaturesSection />
       <GallerySwiperClient />
-      <TestDriveSection /> */}      
+      <TestDriveSection /> */}
       <Footer />
     </>
   );

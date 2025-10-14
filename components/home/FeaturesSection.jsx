@@ -45,7 +45,7 @@ export default function FeaturesSection() {
             style={{ "--reveal-delay": "0ms" }}
           >
             <Link
-              href="/models/sinotruk-vgv-u75-plus"
+              href="/models"
               className={`${styles.card} ${styles.cardLarge}`}
               style={{
                 "--bg": "url('/assets/home/feature1.png')",
@@ -68,7 +68,7 @@ export default function FeaturesSection() {
             style={{ "--reveal-delay": "120ms" }}
           >
             <Link
-              href="/models/sinotruk-vgv-u70-pro"
+              href="/models"
               className={styles.card}
               style={{
                 "--bg": "url('/assets/home/feature2.png')",
@@ -91,7 +91,7 @@ export default function FeaturesSection() {
             style={{ "--reveal-delay": "220ms" }}
           >
             <Link
-              href="/models/sinotruk-vgv-u70-pro"
+              href="/models"
               className={styles.card}
               style={{
                 "--bg": "url('/assets/home/feature3.png')",

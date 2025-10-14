@@ -9,7 +9,7 @@ const OFFERS = [
     "Free Registration",
     "0% downpayment (T&C Apply)"
   ],
-    img: "/assets/hero/test1.webp",
+    img: "/assets/popup/s9-off-road-popup.webp",
   },
   
 ];
