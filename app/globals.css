@@ -37,6 +37,14 @@ p,
   font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
 }
 
+.dirRtl {
+  direction: rtl;
+}
+
+.dirLtr {
+  direction: ltr;
+}
+
 a {
   text-decoration: none;
 }

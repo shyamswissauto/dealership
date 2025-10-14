@@ -94,13 +94,13 @@ export default function LinktreePage() {
               >
                 Links
               </button>
-              <button
+              {/* <button
                 type="button"
                 className={`btn btn-sm rounded-pill ${tab === "shop" ? "btn-dark" : "btn-light"}`}
                 onClick={() => setTab("shop")}
               >
                 DOWNLOADS
-              </button>
+              </button> */}
             </div>
           </div>
 

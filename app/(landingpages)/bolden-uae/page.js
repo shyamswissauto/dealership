@@ -1,5 +1,5 @@
 
-import HeaderNav from "@/components/client/HeaderNavClient";
+import HeaderNav from "@/components/client/HeaderNavLandingClient";
 import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 
 import Footer from "@/components/client/FooterClient";
@@ -13,7 +13,7 @@ export const HERO_SLIDES = [
     title:   "",
     subtitle:"",
     align:   "center",
-    overlay: "rgba(0,0,0,0. )",
+    overlay: "rgba(0,0,0,0.2)",
     learnMoreHref: "",
     bookHref:      "",
     className:     "landingCommonCst",
