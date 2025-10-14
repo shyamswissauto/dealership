@@ -39,14 +39,14 @@ export default function Page() {
 
         <ProductSectionNav modalImage="/assets/popup/s6commercial-popup.webp" />
 
-        <ColorShowcase colors={colorsVariants} initialId="bright-silver" />
+        {/* <ColorShowcase colors={colorsVariants} initialId="bright-silver" /> */}
 
         <ProductVideoSection {...VideoConfig} />
 
         {/* <DualImageIntro /> */}
         <ExteriorGallerySwiper items={EXTERIOR_GALLERY_ITEMS} title="EXTERIOR" />
 
-        <ModelFeatureSection items={featureItems} />
+        {/* <ModelFeatureSection items={featureItems} /> */}
 
         <InteriorGallerySwiper items={INTERIOR_GALLERY_ITEMS} title="INTERIOR" />
 
