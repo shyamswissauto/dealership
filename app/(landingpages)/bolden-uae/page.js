@@ -16,7 +16,7 @@ export const HERO_SLIDES = [
     overlay: "rgba(0,0,0,0.4)",
     learnMoreHref: "",
     bookHref:      "",
-    className:     "",
+    className:     "landingCommonCst",
   },
 ];
 
