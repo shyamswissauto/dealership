@@ -21,7 +21,7 @@ export default function WhoWeAreSection() {
         <div className={styles.grid}>
           
           <Link
-            href="/our-journey"
+            href="/"
             aria-label="Read about Our Journey"
             className={`${styles.card} ${styles.up}`}
             style={{ "--bg": "url('/assets/home/who-we-are.webp')" }} 
@@ -37,7 +37,7 @@ export default function WhoWeAreSection() {
 
           
           <Link
-            href="/our-vision"
+            href="/"
             aria-label="Read about Our Vision"
             className={`${styles.card} ${styles.down}`}
             style={{ "--bg": "url('/assets/home/who-we-are2.webp')" }} 

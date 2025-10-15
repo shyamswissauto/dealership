@@ -63,8 +63,6 @@ export async function POST(req) {
           <p><b>Phone:</b> ${phone}</p>
           <p><b>Car:</b> ${car}</p>
           ${sourceUrl ? `<p><b>Source URL:</b> <a href="${sourceUrl}" target="_blank">${sourceUrl}</a></p>` : ""}
-          <hr/>
-          <p>Submitted on ${new Date().toLocaleString()}</p>
         `,
       });
     }

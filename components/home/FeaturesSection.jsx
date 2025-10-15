@@ -45,7 +45,7 @@ export default function FeaturesSection() {
             style={{ "--reveal-delay": "0ms" }}
           >
             <Link
-              href="/models"
+              href="/models/bolden-s9-off-road"
               className={`${styles.card} ${styles.cardLarge}`}
               style={{
                 "--bg": "url('/assets/home/feature1.webp')",

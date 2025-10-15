@@ -58,7 +58,7 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
         </figure>
 
         <div className={styles.modalRight}>
-          <h2 className={styles.modalTitle}>BOOK A TEST DRIVE AR</h2>
+          <h2 className={styles.modalTitle}>BOOK A TEST DRIVE</h2>
 
           <form className={styles.form} onSubmit={submit} noValidate>
             <input name="fullName" className={styles.input} placeholder="Full Name" required />

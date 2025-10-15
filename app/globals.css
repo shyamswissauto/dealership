@@ -161,6 +161,58 @@ a.ar:hover {
   transform: translateY(-4px);
 }
 
+a.cstBtnStyle1,
+button.cstBtnStyle1 {
+  --btn-bg: #111827;
+  --btn-bg-hover: #0b1220;
+  --btn-text: #fff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--btn-bg);
+  color: #111827;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+
+a.solid.cstBtnStyle1,
+button.solid.cstBtnStyle1 { background: #ffffff; }
+
+
+@media (hover:hover) {
+  a.cstBtnStyle1:hover,
+  button.cstBtnStyle1:hover {
+    background-color: var(--button-red-hover);
+    transform: translateY(-4px);
+    color: #ffffff;
+  }
+}
+
+a.cstBtnStyle1:focus-visible,
+button.cstBtnStyle1:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+button.cstBtnStyle1:disabled {
+  opacity: .6;
+  pointer-events: none;
+}
+
+a.cstBtnStyle1[aria-disabled="true"] {
+  opacity: .6;
+  pointer-events: none;
+}
+
+
 .cstTransY {
   display: inline-block;
   transition: all 0.4s ease;

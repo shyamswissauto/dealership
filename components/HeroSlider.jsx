@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay, A11y } from "swiper/modules";
+import TestDriveModal from "@/components/TestDriveModal";
 import "swiper/css";
 
 export default function HeroSlider({
@@ -51,6 +52,7 @@ export default function HeroSlider({
    const firstImgRef = useRef(null);
   const [active, setActive] = useState(0);
   const [railOpen, setRailOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const current = slides[active] || slides[0];
 
@@ -63,11 +65,11 @@ export default function HeroSlider({
     }
   }, []);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const open = () => setRailOpen(true);
     window.addEventListener("hero:open-rail", open);
     return () => window.removeEventListener("hero:open-rail", open);
-  }, []);
+  }, []); */
 
   return (
     <section className="hero reveal-up">
@@ -124,10 +126,21 @@ export default function HeroSlider({
         </div>
 
         <div className="cta">
-          <Link href={current.learnMoreHref} className="btn ghost cstBtnStyle">LEARN MORE</Link>
-          <Link href={current.bookHref} className="btn solid cstBtnStyle">BOOK A TEST DRIVE</Link>
+          
+          <Link href={current.learnMoreHref} className="solid cstBtnStyle1">LEARN MORE</Link>
+          <button onClick={() => setOpen(true)} className="solid cstBtnStyle1 ">TEST DRIVE</button>
+          {/* <button onClick={() => setOpen(true)} className="btn solid cstBtnStyle ">TEST DRIVE</button> */}
+          {/* <Link href={current.bookHref} className="btn solid cstBtnStyle">BOOK A TEST DRIVE</Link> */}
         </div>
       </div>
+
+      {open && (
+              <TestDriveModal
+                onClose={() => setOpen(false)}
+                modalImage="/assets/popup/s7passenger-popup.webp"
+                carOptions={["Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
+              />
+            )}
 
       
       {/* <div className={`railScrim ${railOpen ? "show" : ""}`} onClick={() => setRailOpen(false)} />
@@ -186,15 +199,21 @@ export default function HeroSlider({
         }
         .btn {
           display: inline-flex; align-items: center; justify-content: center;
-          padding: 12px 18px; border-radius: 999px; text-decoration: none;
+          padding: 0px 18px; border-radius: 999px; text-decoration: none;
           font-weight: 800; letter-spacing: .04em; font-size: 13px;
           transition: transform .2s, box-shadow .2s, background .2s, color .2s;
           backdrop-filter: saturate(140%);
         }
-        .ghost { background: rgba(255,255,255,.92); color: #000; }
+
+        
+
+
+        
+        
+        /* .ghost { background: rgba(255,255,255,.92); color: #000; }
         .ghost:hover { background: #fff; transform: translateY(-1px); box-shadow: 0 10px 26px rgba(0,0,0,.22); }
         .solid { background: #111; color: #fff; }
-        .solid:hover { background: #000; transform: translateY(-1px); box-shadow: 0 10px 26px rgba(0,0,0,.35); }
+        .solid:hover { background: #000; transform: translateY(-1px); } */
 
         @media (max-width: 575px) {
           .btn { padding: 10px 14px; font-size: 12px; }
