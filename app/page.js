@@ -20,10 +20,10 @@ export default function HomePage() {
       <HeroSliderClient />
       <SmartBuyingTools />
       <ModelsCarouselClient />
-      {/* <WhoWeAreSection /> */}
+      <WhoWeAreSection />
       <ViewportVideoClient />
-      {/* <FeaturesSection />
-      <GallerySwiperClient />
+      <FeaturesSection />
+      {/* <GallerySwiperClient />
       <TestDriveSection /> */}
       <Footer />
     </>

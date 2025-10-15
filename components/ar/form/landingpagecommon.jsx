@@ -29,14 +29,14 @@ export default function LandingPageCommon() {
   const errors = useMemo(() => {
     const e = {};
     //if (!form.title) e.title = "Title is required";
-    if (!form.firstName) e.firstName = "Name is required";
+    if (!form.firstName) e.firstName = "الاسم مطلوب";
     //if (!form.lastName) e.lastName = "Last name is required";
     if (!form.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      e.email = "Valid email is required";
-    if (!form.location) e.location = "Location is required";
-    if (!form.vehicle) e.vehicle = "Vehicle is required";
-    if (!form.phone) e.phone = "Phone number is required";
-    if (!form.agree) e.agree = "You must accept the privacy policy";
+      e.email = "مطلوب بريد إلكتروني صالح";
+    if (!form.location) e.location = "الموقع مطلوب";
+    if (!form.vehicle) e.vehicle = "المركبة مطلوبة";
+    if (!form.phone) e.phone = "مطلوب رقم الهاتف";
+    if (!form.agree) e.agree = "يجب قبول سياسة الخصوصية";
     return e;
   }, [form]);
 
@@ -200,7 +200,7 @@ export default function LandingPageCommon() {
                   aria-invalid={!!(touched.vehicle && errors.vehicle)}
                   aria-describedby={touched.vehicle && errors.vehicle ? "err-veh" : undefined}
                 >
-                  <option value="">Select Vehicle *</option>
+                  <option value="">اختر السيارة</option>
                   {VEHICLES.map((v) => (
                     <option key={v} value={v}>
                       {v}
@@ -224,7 +224,7 @@ export default function LandingPageCommon() {
                   aria-invalid={!!(touched.location && errors.location)}
                   aria-describedby={touched.location && errors.location ? "err-loc" : undefined}
                 >
-                  <option value="">Select the location *</option>
+                  <option value="">اختر الموقع</option>
                   {LOCATIONS.map((l) => (
                     <option key={l} value={l}>
                       {l}
@@ -246,7 +246,7 @@ export default function LandingPageCommon() {
                 <textarea
                   name="comments"
                   className={`${styles.input} ${styles.textarea}`}
-                  placeholder="Comments"
+                  placeholder="التعليقات"
                   rows={6}
                   value={form.comments}
                   onChange={(e) => setField("comments", e.target.value)}
@@ -263,7 +263,7 @@ export default function LandingPageCommon() {
                 onBlur={() => setTouched((t) => ({ ...t, agree: true }))}
               />
               <span>
-                I have read the <a href="/privacy-policy" target="_blank" rel="noreferrer">privacy policy</a> and agree *
+                <a href="/privacy-policy" target="_blank" rel="noreferrer">لقد قرأت سياسة الخصوصية وأوافق عليها *</a>
               </span>
             </label>
             {touched.agree && errors.agree && (
@@ -272,7 +272,7 @@ export default function LandingPageCommon() {
 
             {/* Submit */}
             <button className={styles.submit} disabled={submitting}>
-              {submitting ? "Submitting…" : "Submit"}
+              {submitting ? "Submitting…" : "إرسال"}
             </button>
             {serverMsg && <p className={styles.serverMsg}>{serverMsg}</p>}
           </form>

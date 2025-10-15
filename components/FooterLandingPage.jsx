@@ -5,58 +5,11 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 import StickyActions from "@/components/ui/StickyActions";
 
-export default function FooterAr() {
+export default function Footer() {
   return (
-    <footer className={styles.wrap} role="contentinfo">
+    <footer className={`${styles.wrap} ${styles.wrapFooter}`} role="contentinfo">
       <div className={styles.container}>
-        <div className={styles.top}>
-          
-          <div className={styles.brand}>
-            <img
-              src="/assets/swiss-logo.png"   
-              alt="BOLDEN"
-              width={180}
-              className={styles.logo}
-            />
-            <p className={styles.blurb}>
-              Royal Swiss Auto Trading – Official Sinotruk Dealer & distributor in the UAE. Offering premium trucks and SUVs engineered for performance and reliability. Driven by excellence, trusted across the UAE.
-            </p>
-          </div>
-
-          
-          <nav aria-labelledby="foot-product" className={styles.col}>
-            <h3 id="foot-product" className={styles.heading}>MODELS</h3>
-            <ul className={styles.list}>
-              <li><Link href="/models/bolden-s9-off-road">Bolden S9 OFF ROAD TYPE</Link></li>
-              <li><Link href="/models/bolden-s7-passenger">Bolden S7 PASSENGER</Link></li>
-              <li><Link href="/models/bolden-s6-commercial">Bolden S6 COMMERCIAL</Link></li>
-            </ul>
-          </nav>
-
-          
-          <nav aria-labelledby="foot-links" className={styles.col}>
-            <h3 id="foot-links" className={styles.heading}>USEFUL LINKS</h3>
-            <ul className={styles.list}>
-              <li><Link href="/request-a-quote">Get A Quote</Link></li>
-              <li><Link href="/brochure-download">Brochure Download</Link></li>
-              {/* <li><Link href="#">Blogs</Link></li> */}
-              <li><Link href="/contact-us">Contact Us</Link></li>
-              <li><Link href="/book-a-test-drive">Test Drive</Link></li>
-            </ul>
-          </nav>
-
-          
-          <div className={styles.col}>
-            <h3 className={styles.heading}>CONTACT</h3>
-            <ul className={styles.contactList}>
-              <li>Abu Dhabi, UAE</li>
-              <li><a href="mailto:sales@mysinotruk.ae">sales@mysinotruk.ae</a></li>
-              {/* <li><a href="tel:80000000">800 000 00</a></li> */}
-              <li><a href="tel:+971561122500">+971 56 11 22 500</a></li>
-            </ul>
-          </div>
-        </div>
-
+        
         
         <div className={styles.socialRow}>
           <p className={styles.socialTitle}>Get Connected with us on social networks</p>

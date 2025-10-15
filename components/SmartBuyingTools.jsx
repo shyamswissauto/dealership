@@ -25,7 +25,7 @@ export default function SmartBuyingTools({
     { labelTop: "REQUEST A", labelBottom: "QUOTE", image: "/assets/tools/img3.png", href: "/request-a-quote", badge: "1" },
     { labelTop: "FINANCE", labelBottom: "CALCULATOR", image: "/assets/tools/img4.png", href: "/emi-calculator" },
     { labelTop: "OUR", labelBottom: "LOCATION", image: "/assets/tools/img5.png", href: "/locations" },
-    { labelTop: "VIEW", labelBottom: "BROCHURE", image: "/assets/tools/img6.png", href: "/brochure-download" },
+    { labelTop: "VIEW", labelBottom: "BROCHURE", image: "/assets/tools/img6.webp", href: "/brochure-download" },
   ],
 }) {
   const isMobile = useIsMobile();

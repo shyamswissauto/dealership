@@ -8,6 +8,9 @@
   font-weight: normal;
 }
 
+.wrapFooter {
+  padding-top: clamp(20px, 3vw, 20px);
+}
 
 .container {
   width: min(1500px, 92vw);

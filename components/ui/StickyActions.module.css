@@ -99,7 +99,7 @@
 
   .bar {
     flex-direction: row;
-    gap: 12px;
+    gap: 30px;
     background: rgba(255,255,255,.5);
     padding: 8px 10px;
     border-radius: 999px;

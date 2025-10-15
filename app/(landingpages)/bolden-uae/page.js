@@ -2,7 +2,7 @@
 import HeaderNav from "@/components/client/HeaderNavLandingClient";
 import HeroSliderClient from "@/components/client/pages/HeroSliderLandingPages";
 
-import Footer from "@/components/client/FooterClient";
+import Footer from "@/components/client/FooterLandingPageClient";
 import RequestQuote from "@/components/demo/RequestQuote";
 import LandingPageCommon from "@/components/form/landingpagecommon";
 

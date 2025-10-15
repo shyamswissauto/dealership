@@ -34,7 +34,7 @@ function HeroSkeleton() {
   );
 }
 
-const HeroSlider = dynamic(() => import("@/components/pages/HeroSliderLandingPages"), {
+const HeroSlider = dynamic(() => import("@/components/ar/pages/HeroSliderLandingPages"), {
   ssr: false,
   loading: () => <HeroSkeleton />,
 });

@@ -62,8 +62,7 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Failed to send");
       onClose();
-      //router.replace(`/thank-you`);
-      window.open("/thank-you", "_self");
+      router.replace(`/thank-you`);
     } catch (err) {
       console.error("TestDrive submit error:", err);
       alert(err.message || "Something went wrong. Please try again.");

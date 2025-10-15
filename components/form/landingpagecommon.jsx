@@ -74,7 +74,8 @@ export default function LandingPageCommon() {
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Request failed");
 
-      router.replace(`/thank-you`);
+      //router.replace(`/thank-you`);
+      window.open("/thank-you", "_self");
 
       /* setServerMsg("Thanks! We’ll contact you shortly.");
       setForm({

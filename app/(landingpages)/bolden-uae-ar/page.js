@@ -1,8 +1,8 @@
 
 import HeaderNav from "@/components/ar/client/HeaderNavLandingClient";
-import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
+import HeroSliderClient from "@/components/ar/client/pages/HeroSliderLandingPages";
 
-import Footer from "@/components/client/FooterClient";
+import Footer from "@/components/ar/client/FooterLandingPageClient";
 
 
 import LandingPageCommon from "@/components/ar/form/landingpagecommon";
@@ -10,12 +10,12 @@ import AtmCards from "@/components/pages/AtmCards";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/landing-banner.webp",
-    mobile:  "/assets/hero/landing-banner-m.webp",
+    desktop: "/assets/hero/bolden-landing.webp",
+    mobile:  "/assets/hero/bolden-landing-m.webp",
     title:   "",
     subtitle:"",
     align:   "center",
-    overlay: "rgba(0,0,0,0.2)",
+    overlay: "rgba(0,0,0,0.15)",
     learnMoreHref: "",
     bookHref:      "",
     className:     "landingCommonCst",

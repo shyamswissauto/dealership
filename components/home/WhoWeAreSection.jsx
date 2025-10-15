@@ -40,7 +40,7 @@ export default function WhoWeAreSection() {
             href="/our-vision"
             aria-label="Read about Our Vision"
             className={`${styles.card} ${styles.down}`}
-            style={{ "--bg": "url('/assets/hero/bg2.png')" }} 
+            style={{ "--bg": "url('/assets/home/who-we-are2.webp')" }} 
           >
             <span className={styles.overlay} aria-hidden="true" />
             <div className={styles.inner}>
