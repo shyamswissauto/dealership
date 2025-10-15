@@ -93,6 +93,7 @@
 .select {
   font-family: var(--font-poppins), "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 500;
+  direction:rtl;
 }
 
 .select option {
@@ -103,6 +104,11 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+.error {
+  color: #c90000;
+  font-size: 16px;
 }
 
 .select:invalid { color: rgba(0,0,0,.55); }

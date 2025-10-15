@@ -23,8 +23,8 @@ export default function HomePage() {
       <WhoWeAreSection />
       <ViewportVideoClient />
       <FeaturesSection />
-      {/* <GallerySwiperClient />
-      <TestDriveSection /> */}
+      {/* <GallerySwiperClient /> */}
+      <TestDriveSection />
       <Footer />
     </>
   );

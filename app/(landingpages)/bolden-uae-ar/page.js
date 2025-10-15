@@ -10,8 +10,8 @@ import AtmCards from "@/components/pages/AtmCards";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/bolden-landing.webp",
-    mobile:  "/assets/hero/bolden-landing-m.webp",
+    desktop: "/assets/hero/bolden-landing-ar.webp",
+    mobile:  "/assets/hero/bolden-landing-ar-m.webp",
     title:   "",
     subtitle:"",
     align:   "center",
