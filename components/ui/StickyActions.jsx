@@ -93,7 +93,7 @@ export default function StickyActions({
               <span className={styles.label}>Book a test drive</span>
             </button>
           </li>
-          <li className={styles.item}>
+          {/* <li className={styles.item}>
             <a href="/" className={styles.btn} aria-label="Get Quote" title="Get Quote">
               <span className={styles.icon} aria-hidden="true">
                 <Image
@@ -106,9 +106,9 @@ export default function StickyActions({
               </span>
               <span className={styles.label}>Get Quote</span>
             </a>
-          </li>
+          </li> */}
           <li className={styles.item}>
-            <a href="tel:+971561122500" className={`${styles.btn} track-callbtn`} aria-label="Contact us" title="Contact us">
+            <a href="tel:+971561122500" className={`${styles.btn} track-callbtn`} aria-label="Call Now" title="Call Now">
               <span className={styles.icon} aria-hidden="true">
                 <Image
                   src="/assets/icons/icon2.webp"
@@ -118,21 +118,21 @@ export default function StickyActions({
                   className={styles.iconImg}
                 />
               </span>
-              <span className={styles.label}>Contact us</span>
+              <span className={styles.label}>Call Now</span>
             </a>
           </li>
           <li className={styles.item}>
-            <a href="/" className={styles.btn} aria-label="Service & Support" title="Service & Support">
+            <a href="https://wa.me/971561122500?text=Hi%2C%20Bolden%20UAE" className={`${styles.btn} track-whatsappbtn`} aria-label="Whatsapp" title="Whatsapp Now">
               <span className={styles.icon} aria-hidden="true">
                 <Image
-                  src="/assets/icons/icon3.webp"
+                  src="/assets/icons/whatsapp.webp"
                   alt=""
                   width={40}
                   height={40}
                   className={styles.iconImg}
                 />
               </span>
-              <span className={styles.label}>Service & Support</span>
+              <span className={styles.label}>Whatsapp Now</span>
             </a>
           </li>
       </ul>
