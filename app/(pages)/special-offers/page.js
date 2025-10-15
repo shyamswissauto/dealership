@@ -8,13 +8,13 @@ import OffersGrid from "@/components/pages/OffersGrid";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/landing-banner.webp",
-    mobile:  "/assets/hero/listing-page-banner.webp",
+    desktop: "/assets/hero/offer-page-banner.webp",
+    mobile:  "/assets/hero/offer-page-banner-m.webp",
     title:   "Exclusive Offers",
     subtitle:"",
     align:   "left",
     valign:   "end",
-    overlay: "rgba(0,0,0,0.7)",
+    overlay: "rgba(0,0,0,0.5)",
     learnMoreHref: "",
     bookHref:      "",
     className:     "",

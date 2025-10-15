@@ -3,55 +3,29 @@ import nodemailer from "nodemailer";
 
 export const runtime = "nodejs";
 
-/* ---------- rate limit memory bucket ---------- */
-const WINDOW_MS = 60_000; // 1 minute
-const MAX_REQUESTS = 5;   // 5 per minute per IP
-const buckets = new Map();
-
-function rateLimit(ip) {
-  const now = Date.now();
-  const record = buckets.get(ip);
-  if (!record || now - record.start > WINDOW_MS) {
-    buckets.set(ip, { start: now, count: 1 });
-    return { allowed: true };
-  }
-  record.count++;
-  if (record.count > MAX_REQUESTS) return { allowed: false };
-  return { allowed: true };
+function isEmail(v = "") {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 }
-
-/* ---------- validation helpers ---------- */
-function isEmail(v = "") { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); }
-function isPhone(v = "") { return /[0-9]{10,}/.test(v.replace(/\D/g, "")); }
+function isPhone(v = "") {
+  return /[0-9]{10,}/.test(v.replace(/\D/g, ""));
+}
 
 async function readBody(req) {
   const ct = req.headers.get("content-type") || "";
   if (ct.includes("application/json")) return req.json();
-  if (ct.includes("form")) {
+  if (ct.includes("application/x-www-form-urlencoded") || ct.includes("multipart/form-data")) {
     const fd = await req.formData();
     return Object.fromEntries(fd.entries());
   }
   try { return await req.json(); } catch { return {}; }
 }
 
-/* ---------- main handler ---------- */
 export async function POST(req) {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.ip || "unknown";
-  const limit = rateLimit(ip);
-  if (!limit.allowed) {
-    return NextResponse.json({ ok: false, error: "Too many requests. Please try again later." }, { status: 429 });
-  }
-
   try {
     const data = await readBody(req);
-    const { fullName = "", email = "", phone = "", car = "", sourceUrl = "", company = "" } = data;
+    const { fullName = "", email = "", phone = "", car = "", sourceUrl = "" } = data;
 
-    // 🧠 honeypot: if bot filled "company", pretend success but skip sending
-    if (company) {
-      return NextResponse.json({ ok: true }, { status: 200 });
-    }
-
-    // ✅ validation
+    // Server-side validation (source of truth)
     const errors = {};
     if (!fullName.trim()) errors.fullName = "Full name is required.";
     if (!isEmail(email)) errors.email = "A valid email is required.";
@@ -62,8 +36,8 @@ export async function POST(req) {
       return NextResponse.json({ ok: false, error: "Validation error", errors }, { status: 400 });
     }
 
-    // optional mail
-    const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO, MAIL_FROM } = process.env;
+    // Optional email
+    const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO, MAIL_FROM, MAIL_CC, MAIL_BCC } = process.env;
     if (SMTP_HOST && SMTP_USER && SMTP_PASS && (MAIL_TO || MAIL_FROM)) {
       const transporter = nodemailer.createTransport({
         host: SMTP_HOST,
@@ -72,10 +46,16 @@ export async function POST(req) {
         auth: { user: SMTP_USER, pass: SMTP_PASS },
       });
 
+      const to = MAIL_TO || SMTP_USER;
+      const from = MAIL_FROM || `"Website" <${SMTP_USER}>`;
+
       await transporter.sendMail({
-        to: MAIL_TO || SMTP_USER,
-        from: MAIL_FROM || `"Website" <${SMTP_USER}>`,
+        to,
+        from,
         subject: "New Test Drive Request",
+        replyTo: email,
+        cc: MAIL_CC || undefined,
+        bcc: MAIL_BCC || undefined,
         html: `
           <h2>Test Drive Request</h2>
           <p><b>Name:</b> ${fullName}</p>

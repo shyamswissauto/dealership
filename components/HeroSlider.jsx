@@ -218,7 +218,27 @@ export default function HeroSlider({
         @media (max-width: 575px) {
           .btn { padding: 10px 14px; font-size: 12px; }
           .arrow { width: 40px; height: 40px; }
-          .cta { gap: 8px; right: 6px; }
+        }
+
+        @media (max-width: 575px) {
+          .cta {
+            left: 0;
+            right: 0;
+            bottom: 25px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+          }
+
+          .cta :global(a.cstBtnStyle1),
+          .cta :global(button.cstBtnStyle1) {
+            /* width: min(260px, 90vw); */
+            justify-content: center;
+            text-align: center;
+            flex: 0 0 auto;
+          }
         }
 
         /* Right Rail — desktop only */

@@ -11,7 +11,7 @@ export default function OffersGrid() {
 
   return (
     <section className={styles.wrap} aria-labelledby="offers-title">
-      <h2 id="offers-title" className={styles.pageTitle}>LATEST OFFERS</h2>
+      {/* <h2 id="offers-title" className={styles.pageTitle}>LATEST OFFERS</h2> */}
 
       <ul className={styles.grid}>
         {OFFERS.map((o) => (

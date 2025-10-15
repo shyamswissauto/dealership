@@ -42,7 +42,8 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
       if (!res.ok || !json?.ok) throw new Error(json?.error || "Submission failed");
 
       onClose?.();
-      router.replace("/thank-you");
+      //router.replace("/thank-you");
+      window.open("/thank-you", "_self");
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -61,6 +62,7 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
           <h2 className={styles.modalTitle}>BOOK A TEST DRIVE</h2>
 
           <form className={styles.form} onSubmit={submit} noValidate>
+            <input type="text" name="company" tabIndex={-1} autoComplete="off" style={{ display: "none" }} />
             <input name="fullName" className={styles.input} placeholder="Full Name" required />
             <input name="email" type="email" className={styles.input} placeholder="Your email" required />
             <input
