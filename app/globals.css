@@ -37,13 +37,7 @@ p,
   font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
 }
 
-.dirRtl {
-  direction: rtl;
-}
 
-.dirLtr {
-  direction: ltr;
-}
 
 a {
   text-decoration: none;
@@ -281,6 +275,38 @@ a.ar:hover {
   height: 50vh;
   align-content: center;
   text-align: center;
+}
+
+/* Arabic */
+.dirRtl {
+  direction: rtl;
+  font-family: var(--font-almarai);
+  
+}
+
+.dirLtr {
+  direction: ltr;
+}
+
+
+.dirRtl h1,
+.dirRtl h2,
+.dirRtl h3,
+.dirRtl h4,
+.dirRtl h5,
+.dirRtl h6 {
+  font-family: var(--font-almarai);
+}
+
+.dirRtl p,
+.dirRtl .kicker {
+  font-family: var(--font-almarai);
+}
+
+
+
+.dirRtl a {
+  font-family: var(--font-almarai);
 }
 
 /* (optional) tighter on small screens */

@@ -1,11 +1,11 @@
 
-import HeaderNav from "@/components/client/HeaderNavLandingClient";
+import HeaderNav from "@/components/ar/client/HeaderNavLandingClient";
 import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 
 import Footer from "@/components/client/FooterClient";
 
-import RequestQuote from "@/components/demo/RequestQuote";
-import LandingPageCommon from "@/components/form/landingpagecommon";
+
+import LandingPageCommon from "@/components/ar/form/landingpagecommon";
 import AtmCards from "@/components/pages/AtmCards";
 
 export const HERO_SLIDES = [
@@ -74,7 +74,7 @@ export default function Page() {
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
         
         <LandingPageCommon />  
-        <AtmCards items={items} />     
+        {/* <AtmCards items={items} /> */}     
 
 
         <Footer />        

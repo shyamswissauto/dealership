@@ -108,7 +108,7 @@ export default function StickyActions({
             </a>
           </li>
           <li className={styles.item}>
-            <a href="tel:+971561122500" className={styles.btn} aria-label="Contact us" title="Contact us">
+            <a href="tel:+971561122500" className={`${styles.btn} track-callbtn`} aria-label="Contact us" title="Contact us">
               <span className={styles.icon} aria-hidden="true">
                 <Image
                   src="/assets/icons/icon2.webp"
