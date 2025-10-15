@@ -54,15 +54,17 @@ export default function PromoGrid({
           {items.map((item, i) => (
             <article key={i} className={styles.card}>
               <div className={styles.media}>
-                <Image
-                  src={item.src}
-                  alt={item.alt || ""}
-                  fill
-                  priority={i === 0}
-                  className={styles.img}
-                  sizes="(max-width:768px) 100vw, (max-width:1200px) 45vw, 32vw"
-                  quality={90}
-                />
+                <a href={item.learnHref}>
+                  <Image
+                    src={item.src}
+                    alt={item.alt || ""}
+                    fill
+                    priority={i === 0}
+                    className={styles.img}
+                    sizes="(max-width:768px) 100vw, (max-width:1200px) 45vw, 32vw"
+                    quality={90}
+                  />
+                </a>
               </div>
 
               {/* gradients first/last so we control layer order */}

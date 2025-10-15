@@ -22,10 +22,10 @@ const LINKS = [
   { icon: FaGlobe, label: "Website", href: "https://www.mysinotruk.ae/" },
   { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/971561122500?text=Hi%2C%20Bolden%20UAE" },
   { icon: BiGeoAlt, label: "Location", href: "https://maps.app.goo.gl/LCF7xi7E7z4xtRks8" },
-  { icon: FaInstagram, label: "Instagram", href: "#" },
-  { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61579914192315" },
+  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/sinotrukbolden_uae/" },
+  { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/people/Sinotruk-UAE/61579914192315/" },
   { icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@Sinotrukuae" },
-  /* { icon: FaLinkedinIn, label: "LinkedIn", href: "#" }, */
+  { icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/company/109429488" },
   { icon: FaXTwitter, label: "Twitter", href: "https://x.com/SinotrukUAE" },
 ];
 
@@ -94,13 +94,13 @@ export default function LinktreePage() {
               >
                 Links
               </button>
-              {/* <button
+              <button
                 type="button"
                 className={`btn btn-sm rounded-pill ${tab === "shop" ? "btn-dark" : "btn-light"}`}
                 onClick={() => setTab("shop")}
               >
                 DOWNLOADS
-              </button> */}
+              </button>
             </div>
           </div>
 
