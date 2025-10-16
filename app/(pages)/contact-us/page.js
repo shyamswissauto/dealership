@@ -4,8 +4,7 @@ import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 
 import Footer from "@/components/client/FooterClient";
 import RequestQuote from "@/components/demo/RequestQuote";
-import ContactSection from "@/components/contactpage/ContactSection";
-import LocationSection from "@/components/contactpage/LocationSection";
+
 
 export const HERO_SLIDES = [
   {
@@ -29,8 +28,7 @@ export default function Page() {
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
 
-        <ContactSection />
-        <LocationSection />
+
         <div style={{ height: "100vh" }}>
           
         </div>        
