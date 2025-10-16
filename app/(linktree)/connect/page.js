@@ -8,7 +8,6 @@ import { useMemo, useState } from "react";
 import {
   FaGlobe, FaWhatsapp, FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn, FaXTwitter,
 } from "react-icons/fa6";
-import { BiGeoAlt, BiSearch, BiCog, BiShareAlt } from "react-icons/bi";
 
 /* ---------- Demo data ---------- */
 const PROFILE = {
@@ -21,7 +20,6 @@ const PROFILE = {
 const LINKS = [
   { icon: FaGlobe, label: "Website", href: "https://www.mysinotruk.ae/" },
   { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/971561122500?text=Hi%2C%20Bolden%20UAE" },
-  /* { icon: BiGeoAlt, label: "Location", href: "https://maps.app.goo.gl/LCF7xi7E7z4xtRks8" }, */
   { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/sinotrukbolden_uae/" },
   { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/people/Sinotruk-UAE/61579914192315/" },
   { icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@Sinotrukuae" },
