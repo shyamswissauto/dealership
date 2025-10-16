@@ -36,9 +36,37 @@ const almarai = Almarai({
 });
 
 export const metadata = {
-  title: "Sinotruk - Swiss Auto Trading",
-  description: "Sinotruk - Swiss Auto Trading",
-};
+  metadataBase: new URL('https://mysinotruk.ae'),
+    alternates: {
+        canonical: '/',
+        languages: {
+          'en': 'https://mysinotruk.ae/',
+        },
+    },
+  title: 'Sinotruk Bolden UAE – Powerful Commercial & Off Road Pickup Trucks | MySinotruk',
+  description: 'Explore Sinotruk Bolden pickups in UAE – durable, powerful, and road-ready. Schedule your test drive.',
+  openGraph: {
+      title: 'Sinotruk Bolden UAE – Powerful Commercial & Off Road Pickup Trucks | MySinotruk',
+      description: 'Explore Sinotruk Bolden pickups in UAE – durable, powerful, and road-ready. Schedule your test drive.',
+      url: 'https://mysinotruk.ae/',
+      siteName: 'www.mysinotruk.ae',
+      images: [
+        {
+          url: 'assets/images/og/sinotruk.png',
+          width: 800,
+          height: 600,
+        },
+        {
+          url: 'assets/images/og/sinotruk.png',
+          width: 1800,
+          height: 1600,
+          alt: 'Bolden UAE',
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+}
 
 const GTM_ID = "GTM-W769MT2C";
 

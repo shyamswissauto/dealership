@@ -4,14 +4,15 @@ export const metadata = {
         canonical: '/bolden-uae/',
         languages: {
           'en': 'https://mysinotruk.ae/bolden-uae/',
+          'ar': 'https://mysinotruk.ae/bolden-uae-ar/',
         },
     },
-  title: 'Bolden UAE | Royal Swiss Auto Trading',
-  description: 'Bolden UAE | Royal Swiss Auto Trading',
+  title: 'سينوتروك بولدن  رفيقك المثالي في العمل والمغامرة. انطلق بثقة على كل طريق مع ماي سينوتروك في الإمارات.',
+  description: 'قدها بطريقتك مع بولدن في الإمارات! استمتع بـ ضمان 10 سنوات، و0٪ دفعة أولى، وتسجيل مجاني، بالإضافة إلى خطة صيانة لمدة 5 سنوات.الفرصة بين يديك  امتلك القوة والثقة مع Sinotruk Bolden اليوم!',
   openGraph: {
-      title: 'Bolden UAE | Royal Swiss Auto Trading',
-      description: 'Bolden UAE | Royal Swiss Auto Trading',
-      url: 'https://mysinotruk.ae/bolden-uae/',
+      title: 'سينوتروك بولدن  رفيقك المثالي في العمل والمغامرة. انطلق بثقة على كل طريق مع ماي سينوتروك في الإمارات.',
+      description: 'قدها بطريقتك مع بولدن في الإمارات! استمتع بـ ضمان 10 سنوات، و0٪ دفعة أولى، وتسجيل مجاني، بالإضافة إلى خطة صيانة لمدة 5 سنوات.الفرصة بين يديك  امتلك القوة والثقة مع Sinotruk Bolden اليوم!',
+      url: 'https://mysinotruk.ae/bolden-uae-ar/',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
@@ -26,7 +27,7 @@ export const metadata = {
           alt: 'Bolden UAE',
         },
       ],
-      locale: 'en_US',
+      locale: 'ar_AR',
       type: 'website',
     },
 }
