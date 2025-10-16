@@ -329,6 +329,11 @@ a.cstBtnStyle1[aria-disabled="true"] {
   text-align: center;
 }
 
+/* Privacy Policy */
+.privacyGrid {
+  width: min(1500px, 92%); margin: 50px auto;
+}
+
 /* Arabic */
 .dirRtl {
   direction: rtl;
