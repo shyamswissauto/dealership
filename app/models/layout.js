@@ -7,11 +7,11 @@ export const metadata = {
           'ar': 'https://mysinotruk.ae/ar/models/',
         },
     },
-  title: 'BOLDEN Models',
-  description: 'BOLDEN Models',
+  title: 'Sinotruk Models UAE – Find Your Ideal Truck | MySinotruk',
+  description: 'Browse Sinotruk models in UAE. Pickups, commercial trucks, and off-road vehicles fit for your needs.',
   openGraph: {
-      title: 'BOLDEN Models',
-      description: 'BOLDEN Models',
+      title: 'Sinotruk Models UAE – Find Your Ideal Truck | MySinotruk',
+      description: 'Browse Sinotruk models in UAE. Pickups, commercial trucks, and off-road vehicles fit for your needs.',
       url: 'https://mysinotruk.ae/models/',
       siteName: 'www.mysinotruk.ae',
       images: [
