@@ -8,6 +8,7 @@ import { useMemo, useState } from "react";
 import {
   FaGlobe, FaWhatsapp, FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn, FaXTwitter,
 } from "react-icons/fa6";
+import { PiSteeringWheelBold } from "react-icons/pi";
 
 /* ---------- Demo data ---------- */
 const PROFILE = {
@@ -18,7 +19,8 @@ const PROFILE = {
 };
 
 const LINKS = [
-  { icon: FaGlobe, label: "Website", href: "https://www.mysinotruk.ae/" },
+  { icon: PiSteeringWheelBold, label: "Book A Test Drive", href: "https://www.mysinotruk.ae/bolden-uae" },
+  { icon: FaGlobe, label: "Website", href: "https://www.mysinotruk.ae/" },  
   { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/971561122500?text=Hi%2C%20Bolden%20UAE" },
   { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/sinotrukbolden_uae/" },
   { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/people/Sinotruk-UAE/61579914192315/" },
