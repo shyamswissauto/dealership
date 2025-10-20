@@ -1,0 +1,110 @@
+/* Fixed container */
+.wrap {
+  position: fixed;
+  z-index: 60;
+  inset: 50% max(50px, env(safe-area-inset-right)) auto auto; /* right side */
+  transform: translateY(-50%); /* vertical center on desktop */
+  pointer-events: none;         /* only buttons capture clicks */
+}
+
+/* Vertical stack (desktop) */
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: auto;
+}
+.item { list-style: none; }
+
+/* Circular button */
+.btn {
+  --size: 56px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+  border: 0px;
+}
+.btn:hover { transform: translateY(-2px); background: #111; }
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.45), 0 10px 24px rgba(0,0,0,.25);
+}
+
+/* Icon wrapper + image */
+.icon { line-height: 0; display: grid; place-items: center; }
+.iconImg { width: 30px; height: 30px; object-fit: contain; }
+/* If your source icons are dark and you need them white, uncomment this line: */
+/* .iconImg { filter: invert(1) brightness(1.4); } */
+
+/* Hover label (desktop only) */
+.label {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  opacity: 0;
+  pointer-events: none;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 14px;
+  transition: opacity .18s ease, transform .18s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover .label,
+  .btn:focus-visible .label {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .label { transition: none; }
+}
+
+/* Mobile: bottom sticky, horizontal; labels hidden */
+@media (max-width: 768px) {
+  .wrap {
+    inset: auto 0 max(12px, env(safe-area-inset-bottom)) 0;
+    transform: none;
+    display: grid;
+    place-items: center;
+
+    /* 👇 hidden by default until scrolled past threshold */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .bar {
+    flex-direction: row;
+    gap: 30px;
+    background: rgba(255,255,255,.5);
+    padding: 8px 10px;
+    border-radius: 999px;
+    backdrop-filter: saturate(140%) blur(6px);
+  }
+  .btn { --size: 48px; box-shadow: none; }
+  .label { display: none; }
+}
