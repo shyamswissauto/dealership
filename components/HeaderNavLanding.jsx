@@ -52,7 +52,7 @@ export default function HeaderNavLanding() {
         
         <div className="right">
           
-          <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle ">TEST DRIVE</button>
+          <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle cstHeadTest">TEST DRIVE</button>
           
           
         </div>
@@ -262,6 +262,14 @@ export default function HeaderNavLanding() {
           .hamburger { display: inline-block; }
           .drawer { display: block; }
           .bar {margin-top:0px;}
+        }
+
+        @media (max-width: 350px) {
+          .cstHeadTest {
+            padding-right: 10px;
+            padding-left: 10px;
+            font-size: 14px;
+          }
         }
 
         

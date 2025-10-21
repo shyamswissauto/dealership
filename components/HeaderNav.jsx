@@ -53,7 +53,7 @@ export default function HeaderNav() {
         
         <div className="right">
           {/* <Link href="/test-drive" className="cta btn cstBtnStyle hideMobile">TEST DRIVE</Link> */}
-          <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile">TEST DRIVE</button>
+          <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile cstHeadTest">TEST DRIVE</button>
           <Link href="/" className="ar cstTransY">العربية</Link>
 
           
@@ -280,6 +280,14 @@ export default function HeaderNav() {
           .hamburger { display: inline-block; }
           .drawer { display: block; }
           .bar {margin-top:0px;}
+        }
+
+        @media (max-width: 350px) {
+          .cstHeadTest {
+            padding-right: 10px;
+            padding-left: 10px;
+            font-size: 14px;
+          }
         }
 
         
