@@ -38,34 +38,34 @@ export default function ContactSection() {
       <div className={styles.container}>
         {/* Left */}
         <div className={styles.left}>
-          <h2 id="contact-title" className={styles.title}>Lorem ipsum dolor sit amet</h2>
+          <h2 id="contact-title" className={styles.title}>Let&rsquo;s Connect – We&rsquo;re Here to Help</h2>
           <p className={styles.lead}>
-            Email, call, or complete the form to learn how we can help.
+            Reach out via email, phone, or our contact form to discover everything about Sinotruk Bolden.
           </p>
 
           <div className={styles.block}>
             <a href="mailto:info@mysinotruk.ae" className={styles.link}>info@mysinotruk.ae</a>
             <a href="tel:+971561122500" className={styles.link}>+971 56 11 22 500</a>
-            <a href="#" className={`${styles.link} ${styles.underline}`}>Customer Support</a>
+            {/* <a href="#" className={`${styles.link} ${styles.underline}`}>Customer Support</a> */}
           </div>
 
           <div className={styles.grid3}>
             <div>
-              <h4 className={styles.h4}>Customer Support</h4>
+              <h4 className={styles.h4}>Assistance You Can Count On</h4>
               <p className={styles.meta}>
-                Our support team is available around the clock to address any concerns you may have.
+                Our dedicated support team is available to resolve your queries swiftly and professionally.
               </p>
             </div>
             <div>
-              <h4 className={styles.h4}>Feedback and Suggestions</h4>
+              <h4 className={styles.h4}>We&rsquo;re Listening</h4>
               <p className={styles.meta}>
-                We value your feedback and are always working to improve. Your input helps shape our future.
+                We welcome your feedback as a vital part of our continuous improvement. Every suggestion helps us serve you better.
               </p>
             </div>
             <div>
-              <h4 className={styles.h4}>Sales Inquiries</h4>
+              <h4 className={styles.h4}>Partner With Us</h4>
               <p className={styles.meta}>
-                For media-related questions or press inquiries, email <a href="mailto:sales@mysinotruk.ae">sales@mysinotruk.ae</a>.
+                For media coverage or partnership opportunities, email <a href="mailto:sales@mysinotruk.ae">sales@mysinotruk.ae</a>.
               </p>
             </div>
           </div>

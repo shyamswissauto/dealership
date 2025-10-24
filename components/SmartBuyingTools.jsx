@@ -24,7 +24,7 @@ export default function SmartBuyingTools({
     { labelTop: "EXPERIENCE", labelBottom: "THE DRIVE", image: "/assets/tools/img2.png", href: "/experience-the-drive" },
     { labelTop: "REQUEST A", labelBottom: "QUOTE", image: "/assets/tools/img3.png", href: "/request-a-quote", badge: "1" },
     { labelTop: "FINANCE", labelBottom: "CALCULATOR", image: "/assets/tools/img4.png", href: "/emi-calculator" },
-    { labelTop: "OUR", labelBottom: "LOCATION", image: "/assets/tools/img5.png", href: "/locations" },
+    { labelTop: "OUR", labelBottom: "LOCATION", image: "/assets/tools/img5.png", href: "/contact-us" },
     { labelTop: "VIEW", labelBottom: "BROCHURE", image: "/assets/tools/img6.webp", href: "/brochure-download" },
   ],
 }) {

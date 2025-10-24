@@ -19,7 +19,7 @@ export default function Footer() {
               className={styles.logo}
             />
             <p className={styles.blurb}>
-              Royal Swiss Auto Trading – Official Sinotruk Dealer & distributor in the UAE. Offering premium trucks and SUVs engineered for performance and reliability. Driven by excellence, trusted across the UAE.
+              Royal Swiss Auto Trading is the authorized dealer & distributor of Sinotruk Bolden  in the UAE. Our all-terrain vehicles are built to perform. Experience confidence in every ride, backed by expert support.
             </p>
           </div>
 
@@ -27,9 +27,9 @@ export default function Footer() {
           <nav aria-labelledby="foot-product" className={styles.col}>
             <h3 id="foot-product" className={styles.heading}>MODELS</h3>
             <ul className={styles.list}>
-              <li><Link href="/models/bolden-s9-off-road">Bolden S9 OFF ROAD TYPE</Link></li>
-              <li><Link href="/models/bolden-s7-passenger">Bolden S7 PASSENGER</Link></li>
-              <li><Link href="/models/bolden-s6-commercial">Bolden S6 COMMERCIAL</Link></li>
+              <li><Link href="/models/bolden-s9-off-road">Bolden OFF ROAD</Link></li>
+              <li><Link href="/models/bolden-s7-passenger">Bolden PASSENGER</Link></li>
+              <li><Link href="/models/bolden-s6-commercial">Bolden COMMERCIAL</Link></li>
             </ul>
           </nav>
 
@@ -41,7 +41,7 @@ export default function Footer() {
               <li><Link href="/brochure-download">Brochure Download</Link></li>
               {/* <li><Link href="#">Blogs</Link></li> */}
               <li><Link href="/contact-us">Contact Us</Link></li>
-              <li><Link href="/book-a-test-drive">Test Drive</Link></li>
+              {/* <li><Link href="/book-a-test-drive">Test Drive</Link></li> */}
             </ul>
           </nav>
 

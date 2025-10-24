@@ -4,6 +4,7 @@ import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 
 import Footer from "@/components/client/FooterClient";
 import RequestQuote from "@/components/demo/RequestQuote";
+import EmiCalculator1 from "@/components/models/EmiCalculator1";
 
 export const HERO_SLIDES = [
   {
@@ -26,9 +27,9 @@ export default function Page() {
       <>
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
-        <div style={{ height: "100vh" }}>
-          
-        </div>        
+
+        <EmiCalculator1 />
+             
 
 
         <Footer />        

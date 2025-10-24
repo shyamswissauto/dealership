@@ -1,0 +1,98 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;                 /* large, cinematic */
+  color: #fff;
+  overflow: hidden;
+  background: #000;                 /* fallback while image loads */
+  align-content: center;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+}
+
+.bgImg {
+  object-fit: cover;
+  object-position: center;          /* adjust focal point if needed */
+  filter: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* subtle gradient, darker on left to ensure text contrast */
+  background-color: rgba(0,0,0,.75)
+}
+
+.inner {
+  position: relative;
+  height: 100%;
+  display: grid;
+  align-items: center;              /* vertical centering */
+  width: min(1500px, 92vw);
+  margin: 0px auto;
+}
+
+.copy {
+  max-width: 640px;
+  padding: clamp(16px, 3vw, 28px);
+  margin-left: clamp(16px, 6vw, 80px);   /* left gutter like screenshot */
+}
+
+.title {
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 12px 0;
+  font-size: clamp(36px, 5.5vw, 40px);
+}
+
+.titleEmphasis {
+  /* same style; separated if you want a different weight/color later */
+}
+
+.eyebrow {
+  margin: 6px 0 18px 0;
+  font-size: clamp(12px, 1.2vw, 14px);
+  color: rgba(255,255,255,.85);
+}
+
+.body {
+  margin: 0 0 22px 0;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.7;
+  color: rgba(255,255,255,.9);
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.9);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, transform .02s ease, border-color .2s ease;
+}
+
+.cta:hover {
+  background: #fff;
+  color: #111;
+  border-color: #fff;
+}
+
+.cta:active { transform: translateY(1px); }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero { min-height: 58vh; }
+  .copy { margin-left: clamp(12px, 5vw, 32px); max-width: 92vw; }
+  .overlay { background: linear-gradient(90deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.15) 85%); }
+}
+
+@media (min-width: 1440px) {
+  .copy { max-width: 720px; }
+}

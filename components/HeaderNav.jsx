@@ -45,7 +45,7 @@ export default function HeaderNav() {
           <Link href="/models" className="cstTransY">Models</Link>
           {/* <Link href="/" className="cstTransY">Showroom</Link> */}
           <Link href="/special-offers" className="cstTransY">Special Offers</Link>
-          <Link href="/service-and-parts" className="cstTransY">Service & Parts</Link>
+          {/* <Link href="/service-and-parts" className="cstTransY">Service & Parts</Link> */}
           <Link href="/bolden-business" className="cstTransY">Bolden Business</Link>
           <Link href="/contact-us" className="cstTransY">Contact</Link>
         </nav>
@@ -98,7 +98,7 @@ export default function HeaderNav() {
               <Link href="/models" onClick={() => setMobileOpen(false)}>Models</Link>
               {/* <Link href="/" onClick={() => setMobileOpen(false)}>Showroom</Link> */}
               <Link href="/special-offers" onClick={() => setMobileOpen(false)}>Special Offers</Link>
-              <Link href="/service-and-parts" onClick={() => setMobileOpen(false)}>Service & Parts</Link>
+              {/* <Link href="/service-and-parts" onClick={() => setMobileOpen(false)}>Service & Parts</Link> */}
               <Link href="/bolden-business" onClick={() => setMobileOpen(false)}>Bolden Business</Link>
               <Link href="/contact-us" onClick={() => setMobileOpen(false)}>Contact</Link>
 

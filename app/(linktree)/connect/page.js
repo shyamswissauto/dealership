@@ -32,7 +32,7 @@ const LINKS = [
 const PRODUCTS = [
   {
     id: "p1",
-    title: "Bolden S9 Off-Road",
+    title: "Bolden Off-Road",
     img: "/assets/linktree/bolden-s9-hero-slider.webp",
     badge: "Listing",
     brochure: "/assets/brochure/bolden-off-road-brochure.pdf",
@@ -40,7 +40,7 @@ const PRODUCTS = [
   },
   {
     id: "p2",
-    title: "Bolden S7 Passenger",
+    title: "Bolden Passenger",
     img: "/assets/linktree/bolden-heroslider.webp",
     badge: "Listing",
     brochure: "/assets/brochure/bolden-passenger-brochure.pdf",
@@ -48,7 +48,7 @@ const PRODUCTS = [
   },
   {
     id: "p3",
-    title: "Bolden S6 Commercial",
+    title: "Bolden Commercial",
     img: "/assets/linktree/bolden-s6-hero-slider.webp",
     badge: "Listing",
     brochure: "/assets/brochure/bolden-commercial-brochure.pdf",

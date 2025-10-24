@@ -1,0 +1,205 @@
+.wrap {
+  background: #ffffff;
+}
+.container { width: min(1500px, 92vw); margin: 0 auto; }
+.containerBg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+   /*  background: #f4f6f8 url("/assets/models/emi-banner.webp") center / cover no-repeat; */
+    padding: 80px 0px;
+}
+.header h2 {
+  margin: 0 0 12px;
+  font-size: clamp(18px, 2.2vw, 26px);
+  color: #1d2430;
+}
+
+.glass {
+  margin: 0 auto;
+  width: min(1500px, 100%);
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(1px);
+  border: 0px solid rgba(255,255,255,.18);
+  border-radius: 12px;
+  box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.19);
+-webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.19);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.19);
+  padding: clamp(14px, 3vw, 30px) clamp(16px, 3vw, 40px);
+  display: grid;
+  gap: clamp(16px, 2.4vw, 20px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(16px, 3vw, 28px);
+}
+
+@media (max-width: 960px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* LEFT */
+.controls { display: grid; gap: 18px; }
+.block { background: #fff; border: 1px solid #e6e9ee; border-radius: 12px; padding: 14px; }
+.lbl {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1d2430;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* inputs */
+.inlineField {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  border: 1px solid #e6e9ee;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.prefix, .suffix {
+  color: #6a7280;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 12px;
+}
+
+.prefix { border-right: 1px solid #e6e9ee; }
+.suffix { border-left: 1px solid #e6e9ee; }
+
+.input {
+  border: 0;
+  padding: 10px 12px;
+  font-size: 15px;
+  outline: none;
+  min-width: 0;
+}
+.input:focus { outline: none; }
+
+.twoCols {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 12px;
+}
+@media (max-width: 520px) { .twoCols { grid-template-columns: 1fr; } }
+
+/* slider */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: #d9dee7;
+  outline: none;
+  margin-top: 12px;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px; height: 18px;
+  background: #111827;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.25);
+}
+.slider::-moz-range-thumb {
+  width: 18px; height: 18px;
+  background: #111827;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* select */
+.selectWrap { position: relative; }
+.select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #e6e9ee;
+  border-radius: 10px;
+  padding: 12px 42px 12px 12px;
+  font-size: 15px;
+  color: #1d2430;
+  background: #fff;
+}
+.caret {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: #95a0b3;
+  pointer-events: none;
+}
+
+/* Period buttons */
+.yearBtns { display: flex; gap: 10px; flex-wrap: wrap; }
+.yearBtn {
+  border: 1px solid #e6e9ee;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  min-width: 44px;
+  font-weight: 700;
+  color: #6a7280;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.yearBtn:hover { border-color: #cfd6e2; }
+.yearBtnActive {
+  border-color: #cfd6e2;
+  background: #f2f5fb;
+  color: #1d2430;
+}
+
+/* RIGHT summary */
+.summary {
+  background: #e8eef9;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(16,24,40,.08);
+  padding: clamp(16px, 2.6vw, 22px);
+  border: 1px solid #e6e9ee;
+}
+.summaryEyebrow {
+  margin: 0;
+  color: #6a7280;
+  font-weight: 700;
+  text-align: center;
+}
+.monthly {
+  text-align: center;
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 800;
+  margin: 6px 0 14px;
+  color: #1d2430;
+}
+
+.kvList { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.kvList li { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-top: 1px solid #e6e9ee; }
+.kvList li:first-child { border-top: 0; }
+.kvList span { color: #6a7280; }
+.kvList b { color: #1d2430; font-weight: 800; }
+
+.note {
+  margin-top: 16px;
+  color: #6a7280;
+  font-size: 12px;
+}
+
+/* Two-up rows for control blocks */
+.controlsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 720px) {
+  .controlsRow {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+}

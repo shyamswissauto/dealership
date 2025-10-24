@@ -4,19 +4,22 @@ import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 
 import Footer from "@/components/client/FooterClient";
 import RequestQuote from "@/components/demo/RequestQuote";
+import ExperienceSection from "@/components/pages/ExperienceSection";
+import TrackExperienceHero from "@/components/pages/TrackExperienceHero";
+import MoreInfoSection from "@/components/pages/MoreInfoSection";
 
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/landing-banner.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "Experience the Drive",
+    title:   "STEP IN, START UP, AND EXPERIENCE THE DIFFERENCE.",
     subtitle:"",
     align:   "left",
     valign:   "end",
-    overlay: "rgba(0,0,0,0.3)",
+    overlay: "rgba(0,0,0,0.6)",
     learnMoreHref: "",
     bookHref:      "",
-    className:     "",
+    className:     "experienceHero",
   },
 ];
 
@@ -26,9 +29,13 @@ export default function Page() {
       <>
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
-        <div style={{ height: "100vh" }}>
-          
-        </div>        
+
+        <ExperienceSection />
+
+        <TrackExperienceHero />
+
+        <MoreInfoSection />
+         
 
 
         <Footer />        

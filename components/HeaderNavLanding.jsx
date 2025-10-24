@@ -80,7 +80,7 @@ export default function HeaderNavLanding() {
               <Link href="/models" onClick={() => setMobileOpen(false)}>Models</Link>
               {/* <Link href="/" onClick={() => setMobileOpen(false)}>Showroom</Link> */}
               <Link href="/special-offers" onClick={() => setMobileOpen(false)}>Special Offers</Link>
-              <Link href="/service-and-parts" onClick={() => setMobileOpen(false)}>Service & Parts</Link>
+              {/* <Link href="/service-and-parts" onClick={() => setMobileOpen(false)}>Service & Parts</Link> */}
               <Link href="/bolden-business" onClick={() => setMobileOpen(false)}>Bolden Business</Link>
               <Link href="/contact-us" onClick={() => setMobileOpen(false)}>Contact</Link>
 

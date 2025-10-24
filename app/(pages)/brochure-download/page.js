@@ -47,7 +47,7 @@ export const HERO_SLIDES = [
     subtitle:"",
     align:   "left",
     valign:   "end",
-    overlay: "rgba(0,0,0,0.3)",
+    overlay: "rgba(0,0,0,0.6)",
     learnMoreHref: "",
     bookHref:      "",
     className:     "",

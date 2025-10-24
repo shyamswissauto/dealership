@@ -5,7 +5,7 @@ import styles from "./LocationSection.module.css";
 
 export default function LocationSection({
   titleKicker = "Our Location",
-  title = "Connecting Near and Far",
+  title = "Find us here",
   org = "SINOTRUK",
   tagline = "Chat Beyond Limits Together",
   cityLabel = "Abu Dhabi, UAE",
