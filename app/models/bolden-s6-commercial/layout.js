@@ -1,17 +1,17 @@
 export const metadata = {
-  metadataBase: new URL('https://mysinotruk.ae'),
+  metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/models/bolden-s6-commercial/',
+        canonical: '/models/bolden-s6-commercial',
         languages: {
-          'en': 'https://mysinotruk.ae/models/bolden-s6-commercial/',
+          'en': 'https://www.mysinotruk.ae/models/bolden-s6-commercial',
         },
     },
-  title: 'Bolden S6 Commercial | Royal Swiss Auto Trading',
-  description: 'Bolden S6 Commercial | Royal Swiss Auto Trading',
+  title: 'Sinotruk The Bolden Commercial – Built for Tough Jobs',
+  description: 'Experience Sinotruk The Bolden Commercial, engineered for durability and performance. Perfect for heavy-duty work with comfort and efficiency',
   openGraph: {
-      title: 'Bolden S6 Commercial | Royal Swiss Auto Trading',
-      description: 'Bolden S6 Commercial | Royal Swiss Auto Trading',
-      url: 'https://mysinotruk.ae/models/bolden-s6-commercial/',
+      title: 'Sinotruk The Bolden Commercial – Built for Tough Jobs',
+      description: 'Experience Sinotruk The Bolden Commercial, engineered for durability and performance. Perfect for heavy-duty work with comfort and efficiency',
+      url: 'https://www.mysinotruk.ae/models/bolden-s6-commercial',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
@@ -23,7 +23,7 @@ export const metadata = {
           url: 'assets/images/og/sinotruk.png',
           width: 1800,
           height: 1600,
-          alt: 'Bolden S6 Commercial',
+          alt: 'Bolden Commercial UAE',
         },
       ],
       locale: 'en_US',

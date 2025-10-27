@@ -10,17 +10,17 @@ export default function MoreInfoSection({
     items = [
         {
             title:"View Full Specs - Get detailed technical information before booking.",
-            href: "/",
+            href: "/brochure-download",
             img: "/assets/home/book-test-drive2.webp",
         },
         {
             title:"Compare Models - Explore your options and trim levels.",
-            href: "/",
+            href: "/models",
             img: "/assets/home/book-test-drive2.webp",
         },
         {
             title:"Need more help? - Talk to a specialist for personalized guidance.",
-            href: "/",
+            href: "tel:+971561122500",
             img: "/assets/home/book-test-drive2.webp",
         },
     ],
@@ -32,7 +32,7 @@ export default function MoreInfoSection({
 
                 <div className={styles.grid}>
                     {items.map((it, i) => (
-                        <div href={it.href || "#"} key={i} className={styles.card}>
+                        <a href={it.href || "#"} key={i} className={styles.card}>
                             <span className="sr-only">{it.title}</span>
 
                             <div className={styles.media}>
@@ -55,7 +55,7 @@ export default function MoreInfoSection({
                                     </svg>
                                 </span> */}
                             </div>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>

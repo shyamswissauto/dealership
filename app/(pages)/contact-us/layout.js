@@ -1,18 +1,17 @@
 export const metadata = {
   metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/bolden-uae',
+        canonical: '/contact-us',
         languages: {
-          'en': 'https://www.mysinotruk.ae/bolden-uae',
-          'ar': 'https://www.mysinotruk.ae/bolden-uae-ar',
+          'en': 'https://www.mysinotruk.ae/contact-us',
         },
     },
-  title: 'Bolden UAE – 10-Year Warranty, 0% Down Payment & Exclusive Offers.',
-  description: 'Drive home a Bolden in the UAE with a 10-year warranty, zero down payment, free registration, and a 5-year service plan.',
+  title: 'Contact Us - Sinotruk Bolden Off-Road, Passenger & Commercial',
+  description: 'Get in touch with Mysinotruk The Bolden off-road, passenger, and commercial truck inquiries. Our team is here to help you find the right vehicle.',
   openGraph: {
-      title: 'Bolden UAE – 10-Year Warranty, 0% Down Payment & Exclusive Offers.',
-      description: 'Drive home a Bolden in the UAE with a 10-year warranty, zero down payment, free registration, and a 5-year service plan.',
-      url: 'https://www.mysinotruk.ae/bolden-uae',
+      title: 'Contact Us - Sinotruk Bolden Off-Road, Passenger & Commercial',
+      description: 'Get in touch with Mysinotruk The Bolden off-road, passenger, and commercial truck inquiries. Our team is here to help you find the right vehicle.',
+      url: 'https://www.mysinotruk.ae/contact-us',
       siteName: 'www.mysinotruk.ae',
       images: [
         {

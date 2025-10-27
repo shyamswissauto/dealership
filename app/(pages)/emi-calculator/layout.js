@@ -1,17 +1,17 @@
 export const metadata = {
   metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/models',
+        canonical: '/emi-calculator',
         languages: {
-          'en': 'https://www.mysinotruk.ae/models',
+          'en': 'https://www.mysinotruk.ae/emi-calculator',
         },
     },
-  title: 'Sinotruk Models in UAE - For Commercial, Off-Road, Passenger',
-  description: 'Explore Sinotruk Models in UAE,  For Commercial, Off-road, Passenger. Find the perfect model that fits your business or adventure needs today',
+  title: 'Sinotruk Bolden Off-Road, Passenger & Commercial Vehicle Finance',
+  description: 'Plan your Sinotruk Bolden ownership with easy finance insights, comparing options for off-road, passenger and commercial vehicles',
   openGraph: {
-      title: 'Sinotruk Models in UAE - For Commercial, Off-Road, Passenger',
-      description: 'Explore Sinotruk Models in UAE,  For Commercial, Off-road, Passenger. Find the perfect model that fits your business or adventure needs today',
-      url: 'https://www.mysinotruk.ae/models',
+      title: 'Sinotruk Bolden Off-Road, Passenger & Commercial Vehicle Finance',
+      description: 'Plan your Sinotruk Bolden ownership with easy finance insights, comparing options for off-road, passenger and commercial vehicles',
+      url: 'https://www.mysinotruk.ae/emi-calculator',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
@@ -33,7 +33,7 @@ export const metadata = {
 
 
 
-export default function BoldenS9Layout({ children }) {
+export default function BoldenUAELayout({ children }) {
   return (
     <div>
       {/* Layout styling or components like a header, sidebar, etc., can go here */}

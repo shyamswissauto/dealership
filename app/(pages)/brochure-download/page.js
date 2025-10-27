@@ -20,19 +20,19 @@ const BROCHURES = [
     download: true,
   }, */
   {
-    title: "BOLDEN S9 OFF-ROAD",
+    title: "BOLDEN OFF-ROAD",
     img: "/assets/models/img2.webp",
     href: "/assets/brochure/bolden-off-road-brochure.pdf",
     download: true,
   },
   {
-    title: "BOLDEN S7 PASSENGER",
+    title: "BOLDEN PASSENGER",
     img: "/assets/models/img3.webp",
     href: "/assets/brochure/bolden-passenger-brochure.pdf",
     download: true,
   },
   {
-    title: "BOLDEN S6 COMMERCIAL",
+    title: "BOLDEN COMMERCIAL",
     img: "/assets/models/img1.webp",
     href: "/assets/brochure/bolden-commercial-brochure.pdf",
     download: true,

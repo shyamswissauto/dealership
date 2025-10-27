@@ -8,6 +8,7 @@ export default function ContactSection() {
     first: "", last: "", email: "", code: "+971", phone: "", msg: ""
   });
   const [errors, setErrors] = useState({});
+  const [serverMsg, setServerMsg] = useState("");
   const maxLen = 120;
 
   const onChange = (e) => {
@@ -26,12 +27,43 @@ export default function ContactSection() {
     return !Object.keys(e).length;
   };
 
-  const onSubmit = (e) => {
+  /* const onSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
     // TODO: send to /api/contact
     alert("Submitted! (wire to your API)");
+  }; */
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    try {
+      setServerMsg("");
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...values,
+          sourceUrl: typeof window !== "undefined" ? window.location.href : "",
+          // company: "" // if you add a hidden honeypot <input name="company" />
+        }),
+      });
+
+      const json = await res.json();
+      if (!res.ok || !json.ok) {
+        // Show field errors from server, if any
+        if (json.errors) setErrors((prev) => ({ ...prev, ...json.errors }));
+        throw new Error(json.error || "Submission failed");
+      }
+
+      window.open("/thank-you", "_self");
+      setValues({ first: "", last: "", email: "", code: "+971", phone: "", msg: "" });
+    } catch (err) {
+      setServerMsg(err.message || "Something went wrong");
+    }
   };
+
 
   return (
     <section className={styles.wrap} aria-labelledby="contact-title">
@@ -139,8 +171,10 @@ export default function ContactSection() {
               <button className={styles.submit} type="submit">Submit</button>
 
               <p className={styles.consent}>
-                By contacting us, you agree to our <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a>
+                By contacting us, you agree to our <a href="/privacy-policy">Privacy Policy</a>
               </p>
+
+              {serverMsg && <p className={styles.serverMsg}>{serverMsg}</p>}
             </form>
           </div>
         </div>

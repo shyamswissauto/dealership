@@ -1,17 +1,17 @@
 export const metadata = {
   metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/models',
+        canonical: '/connect',
         languages: {
-          'en': 'https://www.mysinotruk.ae/models',
+          'en': 'https://www.mysinotruk.ae/connect',
         },
     },
-  title: 'Sinotruk Models in UAE - For Commercial, Off-Road, Passenger',
-  description: 'Explore Sinotruk Models in UAE,  For Commercial, Off-road, Passenger. Find the perfect model that fits your business or adventure needs today',
+  title: 'Connect with Sinotruk UAE',
+  description: 'Have questions or need details? Connect with Sinotruk UAE to get expert support and personalized assistance',
   openGraph: {
-      title: 'Sinotruk Models in UAE - For Commercial, Off-Road, Passenger',
-      description: 'Explore Sinotruk Models in UAE,  For Commercial, Off-road, Passenger. Find the perfect model that fits your business or adventure needs today',
-      url: 'https://www.mysinotruk.ae/models',
+      title: 'Connect with Sinotruk UAE',
+      description: 'Have questions or need details? Connect with Sinotruk UAE to get expert support and personalized assistance',
+      url: 'https://www.mysinotruk.ae/connect',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
@@ -33,7 +33,7 @@ export const metadata = {
 
 
 
-export default function BoldenS9Layout({ children }) {
+export default function BoldenUAELayout({ children }) {
   return (
     <div>
       {/* Layout styling or components like a header, sidebar, etc., can go here */}

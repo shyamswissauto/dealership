@@ -12,13 +12,13 @@ import LocationSection from "@/components/contactpage/LocationSection";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/landing-banner.webp",
+    desktop: "/assets/hero/contact-us.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "Contact Us",
     subtitle:"",
     align:   "left",
     valign:   "end",
-    overlay: "rgba(0,0,0,0.5)",
+    overlay: "rgba(0,0,0,0.3)",
     learnMoreHref: "",
     bookHref:      "",
     className:     "",

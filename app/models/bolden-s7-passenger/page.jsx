@@ -52,8 +52,8 @@ export default function Page() {
 
         <SpecificationTabs title="SPECIFICATIONS" tabs={specsTabs} defaultKey={specsTabs[0].key} />
 
-        <EmiCalculator />
-
+        {/* <EmiCalculator />
+ */}
         
         
 

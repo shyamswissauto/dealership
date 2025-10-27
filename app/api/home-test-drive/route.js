@@ -83,8 +83,8 @@ export async function POST(req) {
         from: MAIL_FROM || `"Website" <${SMTP_USER}>`,
         subject: "New Test Drive Request",
         replyTo: email,
-        cc: MAIL_CC || undefined,
-        bcc: MAIL_BCC || undefined,
+        //cc: MAIL_CC || undefined,
+        //bcc: MAIL_BCC || undefined,
         html: `
           <h2>Test Drive Request (Home)</h2>
           <p><b>Name:</b> ${fullName}</p>

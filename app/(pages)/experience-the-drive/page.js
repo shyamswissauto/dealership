@@ -10,7 +10,7 @@ import MoreInfoSection from "@/components/pages/MoreInfoSection";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/landing-banner.webp",
+    desktop: "/assets/hero/experience-the-drive.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "STEP IN, START UP, AND EXPERIENCE THE DIFFERENCE.",
     subtitle:"",

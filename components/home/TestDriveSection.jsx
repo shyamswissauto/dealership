@@ -7,7 +7,7 @@ import styles from "./TestDriveSection.module.css";
 
 const DEFAULT_LEFT  = "/assets/home/book-test-drive1.webp";
 const DEFAULT_RIGHT = "/assets/home/book-test-drive2.webp";
-const CAR_OPTIONS = ["Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"];
+const CAR_OPTIONS = ["Bolden Off-Road", "Bolden Passenger", "Bolden Commercial"];
 
 export default function TestDriveSection({
   title = "BOOK A TEST DRIVE",

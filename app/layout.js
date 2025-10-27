@@ -36,19 +36,19 @@ const almarai = Almarai({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://mysinotruk.ae'),
+  metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
         canonical: '/',
         languages: {
-          'en': 'https://mysinotruk.ae/',
+          'en': 'https://www.mysinotruk.ae',
         },
     },
-  title: 'Sinotruk Bolden UAE – Powerful Commercial & Off Road Pickup Trucks | MySinotruk',
-  description: 'Explore Sinotruk Bolden pickups in UAE – durable, powerful, and road-ready. Schedule your test drive.',
+  title: 'Explore Sinotruk Bolden Pickups in UAE – Power Meets Style',
+  description: 'Discover the bold design, rugged performance, and unbeatable value of Sinotruk Bolden pickups in UAE. Perfect for work and adventure!',
   openGraph: {
-      title: 'Sinotruk Bolden UAE – Powerful Commercial & Off Road Pickup Trucks | MySinotruk',
-      description: 'Explore Sinotruk Bolden pickups in UAE – durable, powerful, and road-ready. Schedule your test drive.',
-      url: 'https://mysinotruk.ae/',
+      title: 'Explore Sinotruk Bolden Pickups in UAE – Power Meets Style',
+      description: 'Discover the bold design, rugged performance, and unbeatable value of Sinotruk Bolden pickups in UAE. Perfect for work and adventure!',
+      url: 'https://www.mysinotruk.ae',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
@@ -60,12 +60,23 @@ export const metadata = {
           url: 'assets/images/og/sinotruk.png',
           width: 1800,
           height: 1600,
-          alt: 'Bolden UAE',
+          alt: 'Sinotruk Bolden UAE',
         },
       ],
       locale: 'en_US',
       type: 'website',
     },
+    robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
 }
 
 const GTM_ID = "GTM-W769MT2C";

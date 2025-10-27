@@ -10,7 +10,7 @@ export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/landing-banner.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "EMI Calculator",
+    title:   "Finance Calculator",
     subtitle:"",
     align:   "left",
     valign:   "end",

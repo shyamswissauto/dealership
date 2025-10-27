@@ -1,10 +1,10 @@
 export const metadata = {
-  metadataBase: new URL('https://mysinotruk.ae'),
+  metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/bolden-uae/',
+        canonical: '/bolden-uae',
         languages: {
-          'en': 'https://mysinotruk.ae/bolden-uae/',
-          'ar': 'https://mysinotruk.ae/bolden-uae-ar/',
+          'en': 'https://www.mysinotruk.ae/bolden-uae',
+          'ar': 'https://www.mysinotruk.ae/bolden-uae-ar',
         },
     },
   title: 'بولدن… قوتك في العمل ومغامرتك على كل طريق.',
@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
       title: 'بولدن… قوتك في العمل ومغامرتك على كل طريق.',
       description: 'قدها مع بولدن! ضمان 10 سنوات، 0٪ دفعة أولى، تسجيل مجاني، وصيانة 5 سنوات. انطلق بثقة وامتلك القوة اليوم!',
-      url: 'https://mysinotruk.ae/bolden-uae-ar/',
+      url: 'https://www.mysinotruk.ae/bolden-uae',
       siteName: 'www.mysinotruk.ae',
       images: [
         {

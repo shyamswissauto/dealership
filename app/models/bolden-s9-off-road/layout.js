@@ -1,17 +1,17 @@
 export const metadata = {
-  metadataBase: new URL('https://mysinotruk.ae'),
+  metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/models/bolden-s9-off-road/',
+        canonical: '/models/bolden-s9-off-road',
         languages: {
-          'en': 'https://mysinotruk.ae/models/bolden-s9-off-road/',
+          'en': 'https://www.mysinotruk.ae/models/bolden-s9-off-road',
         },
     },
-  title: 'Bolden S9 Off-Road | Royal Swiss Auto Trading',
-  description: 'Bolden S9 Off-Road | Royal Swiss Auto Trading',
+  title: 'Sinotruk The Bolden Off-Road – Off-Road Powerhouse',
+  description: 'Experience Sinotruk The Bolden Off-Road  built for adventure. Experience rugged strength, sleek design, and unmatched performance on every terrain in the UAE',
   openGraph: {
-      title: 'Bolden S9 Off-Road | Royal Swiss Auto Trading',
-      description: 'Bolden S9 Off-Road | Royal Swiss Auto Trading',
-      url: 'https://mysinotruk.ae/models/bolden-s9-off-road/',
+      title: 'Sinotruk The Bolden Off-Road – Off-Road Powerhouse',
+      description: 'Experience Sinotruk The Bolden Off-Road  built for adventure. Experience rugged strength, sleek design, and unmatched performance on every terrain in the UAE',
+      url: 'https://www.mysinotruk.ae/models/bolden-s9-off-road',
       siteName: 'www.mysinotruk.ae',
       images: [
         {
@@ -23,7 +23,7 @@ export const metadata = {
           url: 'assets/images/og/sinotruk.png',
           width: 1800,
           height: 1600,
-          alt: 'Bolden S9 Off-Road',
+          alt: 'Bolden UAE',
         },
       ],
       locale: 'en_US',

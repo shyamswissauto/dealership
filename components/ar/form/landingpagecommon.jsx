@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import styles from "./landingpagecommon.module.css";
 
 const TITLES = ["Mr.", "Ms.", "Mrs."];
-const VEHICLES = ["Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"];
+const VEHICLES = ["Bolden Off-Road", "Bolden Passenger", "Bolden Commercial"];
 const LOCATIONS = ["Dubai", "Abu Dhabi", "Al Ain", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
 export default function LandingPageCommon() {

@@ -73,7 +73,7 @@ export default function ShowcaseHero({
             <div className={styles.ctaRow}>
               <a className={`${styles.pill} ${styles.ghost}`} href={learnHref}>LEARN MORE</a>
               <button type="button" className={styles.pill} onClick={() => setOpen(true)}>
-                BOOK A TEST DRIVE
+                BOOK A TEST DRIVE 1
               </button>
             </div>
           </div>
