@@ -137,8 +137,8 @@ export default function HeroSlider({
       {open && (
               <TestDriveModal
                 onClose={() => setOpen(false)}
-                modalImage="/assets/popup/s7passenger-popup.webp"
-                carOptions={["Bolden S9 Off-Road", "Bolden S7 Passenger", "Bolden S6 Commercial"]}
+                modalImage="/assets/popup/book-test-drive-home.webp"
+                carOptions={["Bolden Off-Road", "Bolden Passenger", "Bolden Commercial"]}
               />
             )}
 

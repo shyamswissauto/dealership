@@ -140,7 +140,7 @@ export default function StickyActions({
           {open && (
             <TestDriveModal
               onClose={() => setOpen(false)}
-              modalImage="/assets/popup/s7passenger-popup.webp"
+              modalImage="/assets/popup/book-test-drive-home.webp"
               carOptions={["Bolden Off-Road", "Bolden Passenger", "Bolden Commercial"]}
             />
           )}
