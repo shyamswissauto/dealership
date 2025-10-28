@@ -11,17 +11,20 @@ export default function MoreInfoSection({
         {
             title:"View Full Specs - Get detailed technical information before booking.",
             href: "/brochure-download",
-            img: "/assets/home/book-test-drive2.webp",
+            img: "/assets/pages/experience-view-spec.webp",
+            alttext: "View Full Specs",
         },
         {
             title:"Compare Models - Explore your options and trim levels.",
             href: "/models",
-            img: "/assets/home/book-test-drive2.webp",
+            img: "/assets/pages/experience-compare-model.webp",
+            alttext: "Compare Models",
         },
         {
             title:"Need more help? - Talk to a specialist for personalized guidance.",
             href: "tel:+971561122500",
-            img: "/assets/home/book-test-drive2.webp",
+            img: "/assets/pages/experience-talk-specialist.webp",
+            alttext: "Need more help?",
         },
     ],
 }) {
@@ -38,7 +41,7 @@ export default function MoreInfoSection({
                             <div className={styles.media}>
                                 <Image
                                     src={it.img}
-                                    alt=""
+                                    alt={it.alttext}
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                     className={styles.img}

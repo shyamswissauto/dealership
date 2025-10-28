@@ -8,13 +8,13 @@ import EmiCalculator1 from "@/components/models/EmiCalculator1";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/landing-banner.webp",
+    desktop: "/assets/hero/emi-calculator.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "Finance Calculator",
     subtitle:"",
     align:   "left",
     valign:   "end",
-    overlay: "rgba(0,0,0,0.3)",
+    overlay: "rgba(0,0,0,0.6)",
     learnMoreHref: "",
     bookHref:      "",
     className:     "",

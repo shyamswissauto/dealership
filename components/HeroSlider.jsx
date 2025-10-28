@@ -92,7 +92,7 @@ export default function HeroSlider({
                     <source media="(min-width: 768px)" srcSet={s.desktop} />
                     <img
                         src={s.mobile}
-                        alt=""
+                        alt={s.title}
                         className="bg"
                         loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"

@@ -84,7 +84,7 @@ export default function StickyActions({
               <span className={styles.icon} aria-hidden="true">
                 <Image
                   src="/assets/icons/icon1.webp"
-                  alt=""
+                  alt="Book a test drive"
                   width={40}
                   height={40}
                   className={styles.iconImg}
@@ -112,7 +112,7 @@ export default function StickyActions({
               <span className={styles.icon} aria-hidden="true">
                 <Image
                   src="/assets/icons/icon2.webp"
-                  alt=""
+                  alt="Call Now"
                   width={40}
                   height={40}
                   className={styles.iconImg}
@@ -126,7 +126,7 @@ export default function StickyActions({
               <span className={styles.icon} aria-hidden="true">
                 <Image
                   src="/assets/icons/whatsapp.webp"
-                  alt=""
+                  alt="Whatsapp"
                   width={40}
                   height={40}
                   className={styles.iconImg}

@@ -58,7 +58,7 @@ export default function HeroSlider({ slides = [], autoPlayMs = 7000 }) {
                     <source media="(min-width: 768px)" srcSet={s.desktop} />
                     <img
                         src={s.mobile}
-                        alt=""
+                        alt="Bolden Trucks"
                         className="bg"
                         loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"

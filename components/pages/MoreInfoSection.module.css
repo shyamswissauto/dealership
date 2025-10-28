@@ -57,7 +57,7 @@
   position: absolute;
   inset: 0;
   /* darker at bottom like Porsche cards */
-  background:rgba(0,0,0,.75);
+  background:rgba(0,0,0,.55);
   z-index: 1;
 }
 

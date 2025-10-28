@@ -41,7 +41,7 @@ const BROCHURES = [
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/landing-banner.webp",
+    desktop: "/assets/hero/view-brochure.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "Brochure Download",
     subtitle:"",

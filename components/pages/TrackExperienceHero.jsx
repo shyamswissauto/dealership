@@ -19,7 +19,7 @@ export default function TrackExperienceHero({
       <div className={styles.bg}>
         <Image
           src={imgSrc}
-          alt=""
+          alt="Experience"
           fill
           priority
           sizes="100vw"

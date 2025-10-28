@@ -55,7 +55,7 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
     <div className={styles.modalOverlay} role="dialog" aria-modal="true" onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <figure className={styles.modalLeft}>
-          <img src={modalImage || "/assets/home/book-test-drive1.webp"} alt="" className={styles.modalImg} />
+          <img src={modalImage || "/assets/home/book-test-drive1.webp"} alt="Test Drive" className={styles.modalImg} />
         </figure>
 
         <div className={styles.modalRight}>

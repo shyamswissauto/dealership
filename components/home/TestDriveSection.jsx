@@ -65,7 +65,7 @@ export default function TestDriveSection({
       <div className={styles.grid}>
 
         <figure className={`${styles.panel} ${styles.left}`}>
-          <Image src={leftSrc} alt="" fill sizes="(max-width: 991px) 100vw, 40vw" className={styles.bg} />
+          <Image src={leftSrc} alt="Test Drive Off Road" fill sizes="(max-width: 991px) 100vw, 40vw" className={styles.bg} />
         </figure>
 
         <div className={styles.formPanel}>
@@ -137,7 +137,7 @@ export default function TestDriveSection({
         </div>
 
         <figure className={`${styles.panel} ${styles.right}`}>
-          <Image src={rightSrc} alt="" fill sizes="(max-width: 991px) 100vw, 40vw" className={styles.bg} />
+          <Image src={rightSrc} alt="Test Drive Bolden Off Road" fill sizes="(max-width: 991px) 100vw, 40vw" className={styles.bg} />
         </figure>
       </div>
     </section>

@@ -10,7 +10,7 @@ import EmiCalculator1 from "@/components/models/EmiCalculator1";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/landing-banner.webp",
+    desktop: "/assets/hero/business-page.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "BOLDEN BUSINESS",
     subtitle:"",

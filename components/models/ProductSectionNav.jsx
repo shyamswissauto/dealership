@@ -132,7 +132,7 @@ function TestDriveModal({ onClose, modalImage, carOptions }) {
     <div className={styles.modalOverlay} onClick={onClose} role="dialog" aria-modal="true">
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <figure className={styles.modalLeft}>
-          <img src={modalImage} alt="" className={styles.modalImg} />
+          <img src={modalImage} alt="Bolden Test Drive" className={styles.modalImg} />
         </figure>
 
         <div className={styles.modalRight}>

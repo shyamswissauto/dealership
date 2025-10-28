@@ -7,12 +7,13 @@ import RequestQuote from "@/components/demo/RequestQuote";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/landing-banner.webp",
+    desktop: "/assets/hero/request-a-quote.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
     title:   "REQUEST A QUOTE",
     subtitle:"",
-    align:   "center",
-    overlay: "rgba(0,0,0,0.3)",
+    align:   "left",
+    valign:   "end",
+    overlay: "rgba(0,0,0,0.6)",
     learnMoreHref: "",
     bookHref:      "",
     className:     "",

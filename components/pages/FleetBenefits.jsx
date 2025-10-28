@@ -56,7 +56,7 @@ export default function FleetBenefits({
                   {/* swap to <img> if you don’t use Next/Image */}
                   <Image
                     src={it.icon}
-                    alt=""
+                    alt={it.title}
                     width={56}
                     height={56}
                     priority={i < 3}
