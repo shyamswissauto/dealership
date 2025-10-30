@@ -273,7 +273,7 @@ export default function EmiCalculator1() {
                     </div>
 
                     <div className={styles.note}>
-                        * These figures are estimates and for illustration only. Exact rates are subject to bank approval.
+                        * The figures shown are for illustration purposes only. Final rates and approvals are subject to the respective bank’s discretion.
                     </div>
 
                 </div>
