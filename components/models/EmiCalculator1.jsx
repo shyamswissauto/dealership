@@ -6,12 +6,12 @@ import styles from "./EmiCalculator1.module.css";
 /** 👉 Configure your models here */
 const CAR_MODELS = [
     { id: "base", name: "Select a model", price: 0 },
-    { id: "boldenoffroad", name: "Bolden Off-Road", price: 135000 },
-    { id: "boldenpassenger", name: "Bolden Passenger", price: 115000 },
-    { id: "boldencomlux4wd", name: "Bolden Commercial Luxury 4WD", price: 105000 },
-    { id: "boldencomyoung4wd", name: "Bolden Commercial Young 4WD", price: 90000 },
+    { id: "boldenoffroad", name: "Bolden Off-Road", price: 120000 },
+    { id: "boldenpassenger", name: "Bolden Passenger", price: 105000 },
+    { id: "boldencomlux4wd", name: "Bolden Commercial Luxury 4WD", price: 95000 },
+    { id: "boldencomyoung4wd", name: "Bolden Commercial Young 4WD", price: 85000 },
     { id: "boldencomyoungrwd", name: "Bolden Commercial Young RWD", price: 80000 },
-    { id: "boldencomcomfort4wd", name: "Bolden Commercial Comfort 4WD", price: 85000 },
+    { id: "boldencomcomfort4wd", name: "Bolden Commercial Comfort 4WD", price: 75000 },
     { id: "boldencomcomfortrwd", name: "Bolden Commercial Comfort RWD", price: 70000 },
 ];
 
@@ -25,7 +25,7 @@ export default function EmiCalculator1() {
         [modelId]
     );
 
-    const [carPrice, setCarPrice] = useState(modelPrice || 135000);
+    const [carPrice, setCarPrice] = useState(modelPrice || 120000);
     const [downPct, setDownPct] = useState(20);
     const [interest, setInterest] = useState(2.79);
     const [years, setYears] = useState(5);
