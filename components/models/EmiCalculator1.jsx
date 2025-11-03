@@ -12,7 +12,7 @@ const CAR_MODELS = [
     { id: "boldencomyoung4wd", name: "Bolden Commercial Young 4WD", price: 90000 },
     { id: "boldencomyoungrwd", name: "Bolden Commercial Young RWD", price: 80000 },
     { id: "boldencomcomfort4wd", name: "Bolden Commercial Comfort 4WD", price: 85000 },
-    { id: "boldencomcomfortrwd", name: "Bolden Commercial Comfort RWD", price: 75000 },
+    { id: "boldencomcomfortrwd", name: "Bolden Commercial Comfort RWD", price: 70000 },
 ];
 
 const LOAN_YEARS = [1, 2, 3, 4, 5];
