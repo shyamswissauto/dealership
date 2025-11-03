@@ -13,6 +13,17 @@ export default function HeroSlider({
   slides = [
     
     {
+      desktop: "/assets/hero/bolden-landing.webp",
+      mobile:  "/assets/hero/bolden-landing-m.webp",
+      title:   "",
+      subtitle:"",
+      align:   "left",
+      overlay: "rgba(0,0,0,.12)",
+      learnMoreHref: "/models/",
+      bookHref:      "/",
+      className:     "slide-pure-design",
+    },
+    {
       desktop: "/assets/hero/bolden-s9-hero-slider.webp",
       mobile:  "/assets/hero/off-road-mobile.webp",
       title:   "Power That Conquers Any Terrain",
