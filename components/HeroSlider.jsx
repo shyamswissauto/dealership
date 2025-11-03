@@ -14,7 +14,7 @@ export default function HeroSlider({
     
     {
       desktop: "/assets/hero/bolden-landing.webp",
-      mobile:  "/assets/hero/bolden-landing-m.webp",
+      mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
       title:   "",
       subtitle:"",
       align:   "left",
