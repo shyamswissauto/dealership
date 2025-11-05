@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import TestDriveModal from "@/components/TestDriveModal";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function HeaderNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -53,8 +54,10 @@ export default function HeaderNav() {
         
         <div className="right">
           {/* <Link href="/test-drive" className="cta btn cstBtnStyle hideMobile">TEST DRIVE</Link> */}
+          {/* <LanguageSwitcher /> */}
           <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile cstHeadTest">TEST DRIVE</button>
           {/* <Link href="/" className="ar cstTransY">العربية</Link> */}
+          
 
           
           {/* <button className="railBtn" aria-label="Open Quick Menu" onClick={openHeroRail}>

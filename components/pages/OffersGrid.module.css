@@ -1,6 +1,6 @@
 .wrap { width: min(1200px, 92vw); margin: 40px auto; }
 .pageTitle {
-  margin: 0 0 18px; text-align: left; font-weight: 900; letter-spacing: .04em;
+  margin: 0 0 18px; text-align: left; font-weight: 900; letter-spacing: .04em; 
 }
 
 /* 3 columns -> 2 -> 1 */
@@ -17,7 +17,7 @@
 .img { object-fit: cover; }
 
 .body { padding: 14px 14px 18px; display: grid; gap: 8px; }
-.title { margin: 0; font-weight: 800; letter-spacing: .02em; }
+.title { margin: 0; font-weight: 800; letter-spacing: .02em; font-size: 1.5rem;}
 .sub { margin: 0; color: #444; opacity: .9; }
 
 .subList {
@@ -38,3 +38,8 @@
   transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
 }
 .cta:hover { transform: translateY(-1px); background: #15181c; }
+
+
+.offerb2s2 {
+  list-style: none;
+}

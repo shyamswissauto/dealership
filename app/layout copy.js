@@ -6,7 +6,7 @@ import Script from "next/script";
 import CookieConsent from "@/components/cookies/CookieConsent";
 import GoogleTagManager from "@/components/analytics/GoogleTagManager";
 import GtmPageView from "@/components/analytics/GtmPageView";
-import LayoutWrapper from "@/components/LayoutWrapper";
+
 
 import { Red_Rose, Almarai, Poppins } from "next/font/google";
 
@@ -86,9 +86,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${redRose.variable}  ${almarai.variable} ${poppins.variable}`}>
       <body>
         <GoogleTagManager gtmId={GTM_ID} />
-        <LayoutWrapper>
-          {children}
-        </LayoutWrapper>
+        {children}
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"

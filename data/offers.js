@@ -7,10 +7,25 @@ const OFFERS = [
     "10 Years Manufacturer Warranty",
     "5 Years or 300,000 KM Service Contract",
     "Free Registration",
-    "0% down payment"
+    "0% down payment (T&C Apply)"
   ],
     img: "/assets/popup/s9-off-road-popup.webp",
+    cstclass: "offerb2s1",
   },
+  {
+    id: "b2s2",
+    title: "Flash Bolden Drive Deals!",
+    subtitle: [
+    "Price starting for 70,000 AED",
+    "10 Years Manufacturer Warranty",
+    "5 Years or 300,000 KM Service Contract",
+    "Free Registration",
+    "0% down payment (T&C Apply)"
+  ],
+    img: "/assets/offers/small-offers.webp",
+    cstclass: "offerb2s1",
+  },
+  
   
 ];
 

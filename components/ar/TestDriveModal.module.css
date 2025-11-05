@@ -17,6 +17,7 @@
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 24px 48px rgba(0,0,0,.3);
+  direction: rtl;
 }
 
 .modalLeft { position: relative; margin: 0;}

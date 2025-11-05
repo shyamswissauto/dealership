@@ -75,6 +75,23 @@ a.ar:hover {
 }
 
 
+a.language-switcher {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  opacity: 1;
+  text-transform: uppercase;
+  font-family: var(--font-almarai);
+}
+
+.is-arabic a.language-switcher {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  opacity: 1;
+  text-transform: uppercase;
+  font-family: var(--font-red-rose), ui-serif, Georgia, serif;
+}
 
 
 
