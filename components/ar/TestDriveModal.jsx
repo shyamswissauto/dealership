@@ -52,24 +52,24 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
   };
 
   return (
-    <div className={styles.modalOverlay} role="dialog" aria-modal="true" onClick={onClose}>
+    <div className={`${styles.modalOverlay} dirRtl`} role="dialog" aria-modal="true" onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <figure className={styles.modalLeft}>
           <img src={modalImage || "/assets/home/book-test-drive1.webp"} alt="Test Drive" className={styles.modalImg} />
         </figure>
 
         <div className={styles.modalRight}>
-          <h2 className={styles.modalTitle}>BOOK A TEST DRIVE AR</h2>
+          <h2 className={styles.modalTitle}>احجز تجربة قيادة</h2>
 
           <form className={styles.form} onSubmit={submit} noValidate>
             <input type="text" name="company" tabIndex={-1} autoComplete="off" style={{ display: "none" }} />
-            <input name="fullName" className={styles.input} placeholder="Full Name" required />
-            <input name="email" type="email" className={styles.input} placeholder="Your email" required />
+            <input name="fullName" className={styles.input} placeholder="اسمك" required />
+            <input name="email" type="email" className={styles.input} placeholder="البريد الإلكتروني" required />
             <input
               name="phone"
               type="tel"
               className={styles.input}
-              placeholder="Phone Number"
+              placeholder="رقم الهاتف"
               inputMode="tel"
               pattern="[0-9+() -]*"
               required
@@ -78,7 +78,7 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
             {/* REQUIRED car selection */}
             <select name="car" className={`${styles.input} ${styles.select}`} defaultValue="" required>
               <option value="" disabled hidden>
-                Select your car
+                اختر السيارة
               </option>
               {carOptions.map((c) => (
                 <option key={c} value={c}>
@@ -88,7 +88,7 @@ export default function TestDriveModal({ onClose, modalImage, carOptions = [] })
             </select>
 
             <button type="submit" className={styles.cta} disabled={sending}>
-              {sending ? "SENDING…" : "BOOK NOW"}
+              {sending ? "الحجز" : "احجز الآن"}
             </button>
 
             {error && <p className={styles.error}>{error}</p>}

@@ -128,7 +128,7 @@
   }
   .brand {
     grid-template-columns: 1fr;
-    text-align: left;
+    text-align: right;
     row-gap: 14px;
   }
   .blurb { max-width: 100%; }

@@ -43,19 +43,17 @@ export default function HeaderNav() {
 
         
         <nav className="nav">
-          <Link href="/models" className="cstTransY">Models AR</Link>
-          {/* <Link href="/" className="cstTransY">Showroom</Link> */}
-          <Link href="/special-offers" className="cstTransY">Special Offers</Link>
-          {/* <Link href="/service-and-parts" className="cstTransY">Service & Parts</Link> */}
-          <Link href="/bolden-business" className="cstTransY">Bolden Business</Link>
-          <Link href="/contact-us" className="cstTransY">Contact</Link>
+          <Link href="/models" className="cstTransY">الموديلات</Link>
+          <Link href="/special-offers" className="cstTransY">العروض الخاصة</Link>
+          <Link href="/bolden-business" className="cstTransY">بولدن للأعمل</Link>
+          <Link href="/contact-us" className="cstTransY">التواصل</Link>
         </nav>
 
         
         <div className="right">
           {/* <Link href="/test-drive" className="cta btn cstBtnStyle hideMobile">TEST DRIVE</Link> */}
           <LanguageSwitcher />
-          <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile cstHeadTest">TEST DRIVE</button>
+          <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile cstHeadTest">تجربة قيادة</button>
           {/* <Link href="/" className="ar cstTransY">العربية</Link> */}
           
 
@@ -98,12 +96,12 @@ export default function HeaderNav() {
           </button>
 
           <div className="mLinks">
-              <Link href="/models" onClick={() => setMobileOpen(false)}>Models</Link>
+              <Link href="/models" onClick={() => setMobileOpen(false)}>الموديلات</Link>
               {/* <Link href="/" onClick={() => setMobileOpen(false)}>Showroom</Link> */}
-              <Link href="/special-offers" onClick={() => setMobileOpen(false)}>Special Offers</Link>
+              <Link href="/special-offers" onClick={() => setMobileOpen(false)}>العروض الخاصة</Link>
               {/* <Link href="/service-and-parts" onClick={() => setMobileOpen(false)}>Service & Parts</Link> */}
-              <Link href="/bolden-business" onClick={() => setMobileOpen(false)}>Bolden Business</Link>
-              <Link href="/contact-us" onClick={() => setMobileOpen(false)}>Contact</Link>
+              <Link href="/bolden-business" onClick={() => setMobileOpen(false)}>بولدن للأعمل</Link>
+              <Link href="/contact-us" onClick={() => setMobileOpen(false)}>التواصل</Link>
 
               <div className="headerSocial">
                   <ul className="socials" aria-label="Social media">

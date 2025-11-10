@@ -360,7 +360,7 @@ a.cstBtnStyle1[aria-disabled="true"] {
 /* Arabic */
 .dirRtl {
   direction: rtl;
-  font-family: var(--font-almarai);
+  font-family: var(--font-almarai) !important;
   
 }
 

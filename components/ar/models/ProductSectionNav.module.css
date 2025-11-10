@@ -1,0 +1,199 @@
+/* ===== Bar ===== */
+.wrap {
+  position: sticky;         /* sticks under your header if the header is sticky */
+  top: 0;                   /* adjust if you have a fixed header; otherwise leave 0 and pass headerOffset in props */
+  z-index: 30;
+  background: #fff;
+  margin-top: 20px;
+}
+
+.container {
+  width: min(1500px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: clamp(18px, 3.5vw, 42px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+.tab {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  letter-spacing: .06em;
+  font-size: 20px;
+  opacity: .75;
+  transition: opacity .15s ease, transform .15s ease;
+}
+.tab:hover { opacity: 1; transform: translateY(-1px); }
+.active,
+.tab[aria-current="true"] { opacity: 1; }
+
+/* Actions */
+.actions { display: flex; gap: 14px; }
+.pill {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: #fff;
+  background: #2f2f2f;
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.pill:hover { background: #222; transform: translateY(-1px); }
+.ghost { background: #3b3b3b; }
+
+/* ===== Modal ===== */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: grid;
+  place-items: center;
+  z-index: 120;
+  padding: 16px;
+}
+
+.modal {
+  width: min(1100px, 94vw);
+  background: #fff;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.modalLeft { position: relative; margin: 0; }
+.modalImg { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.modalRight {
+  background: #e9e9e9;
+  padding: clamp(18px, 4vw, 40px);
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.modalTitle {
+  text-align: center;
+  margin: 0 0 8px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+/* Form */
+.form { display: grid; gap: 16px; }
+.input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(0,0,0,.55);
+  padding: 10px 2px 12px;
+  font-size: 16px;
+  color: #111;
+  outline: none;
+  transition: border-color .18s ease;
+}
+.input:focus { border-bottom-color: #111; }
+
+.select {
+  padding-right: 24px;
+  background-image: linear-gradient(45deg, transparent 50%, #111 50%),
+                    linear-gradient(135deg, #111 50%, transparent 50%);
+  background-position: right 6px center, right 0px center;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+.select option { color: #111; }
+
+.cta {
+  justify-self: start;
+  padding: 12px 26px;
+  border: 2px solid #111;
+  background: transparent;
+  color: #111;
+  font-weight: 800;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.cta:hover { transform: translateY(-2px); background: #111; color: #fff; }
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  border: 0;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Responsive modal */
+@media (max-width: 860px) {
+  .modal { grid-template-columns: 1fr; }
+  .modalLeft { min-height: 220px; }
+}
+
+@media (max-width: 768px) {
+	.container {
+	  display: block;
+	}
+	.actions { display: block; text-align: center; margin-top: 20px;}
+
+  .tabs {
+      display: flex;
+      gap: clamp(18px, 3.5vw, 42px);
+      align-items: center;
+
+      overflow-x: auto;
+      overflow-y: hidden;
+      inline-size: 100%; 
+      padding-inline: clamp(12px, 2vw, 24px);
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+
+      --fade: 18px;
+      mask-image: linear-gradient(to right,
+                  rgba(0,0,0,0) 0,
+                  rgba(0,0,0,1) var(--fade),
+                  rgba(0,0,0,1) calc(100% - var(--fade)),
+                  rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to right,
+                  rgba(0,0,0,0) 0,
+                  rgba(0,0,0,1) var(--fade),
+                  rgba(0,0,0,1) calc(100% - var(--fade)),
+                  rgba(0,0,0,0) 100%);
+    }
+
+
+    .tabs > li {
+      flex: 0 0 auto;
+      scroll-snap-align: start; /* or 'start' if you prefer */
+    }
+
+    .tabs::-webkit-scrollbar { display: none; }
+    .tabs { scrollbar-width: none; } 
+
+    .tabs {
+      white-space: nowrap;
+    }
+}

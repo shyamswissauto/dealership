@@ -54,7 +54,7 @@ export default function HeaderNav() {
         
         <div className="right">
           {/* <Link href="/test-drive" className="cta btn cstBtnStyle hideMobile">TEST DRIVE</Link> */}
-          {/* <LanguageSwitcher /> */}
+          <LanguageSwitcher />
           <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile cstHeadTest">TEST DRIVE</button>
           {/* <Link href="/" className="ar cstTransY">العربية</Link> */}
           

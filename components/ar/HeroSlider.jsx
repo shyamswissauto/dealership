@@ -13,8 +13,8 @@ export default function HeroSlider({
   slides = [
     
     {
-      desktop: "/assets/hero/bolden-landing.webp",
-      mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
+      desktop: "/assets/hero/bolden-landing-ar.webp",
+      mobile:  "/assets/hero/bolden-landing-ar-m.webp",
       title:   "",
       subtitle:"",
       align:   "left",
@@ -26,8 +26,8 @@ export default function HeroSlider({
     {
       desktop: "/assets/hero/bolden-s9-hero-slider.webp",
       mobile:  "/assets/hero/off-road-mobile.webp",
-      title:   "Power That Conquers Any Terrain",
-      subtitle:"From deserts to mountains, the Bolden Off-Road is built to dominate every challenge.",
+      title:   "قوة تتغلب على أي تضاريس",
+      subtitle:"من الصحاري إلى الجبال، تم تصميم بولدن أوف-رود للتغلب على كل التحديات. ",
       align:   "left",
       overlay: "rgba(0,0,0,.42)",
       learnMoreHref: "/models/bolden-s9-off-road",
@@ -37,8 +37,8 @@ export default function HeroSlider({
     {
       desktop: "/assets/hero/bolden-heroslider.webp",
       mobile:  "/assets/hero/passenger-mobile.webp",
-      title:   "Bolden S7 Passenger. Redefining Everyday Luxury",
-      subtitle:"A perfect blend of modern design and powerful performance, built for those who value more.",
+      title:   "بولدن باسنجر. إعادة تعريف الفخامة اليومية",
+      subtitle:"مزيج مثالي من التصميم العصري والأداء القوي، مصمم لمن يقدرون المزيد.",
       align:   "center",
       overlay: "rgba(0,0,0,.42)",
       learnMoreHref: "/models/bolden-s7-passenger",
@@ -48,8 +48,8 @@ export default function HeroSlider({
     {
       desktop: "/assets/hero/bolden-s6-hero-slider.webp",
       mobile:  "/assets/hero/commericial-mobile.webp",
-      title:   "Bolden S6 Commercial. Strength You Can Trust.",
-      subtitle:"Built for performance, trusted for productivity — that’s Bolden Commercial.",
+      title:   "بولدن كوميرشال. قوة يمكنك الوثوق بها.",
+      subtitle:"صُممت من أجل الأداء، وموثوقة من أجل الإنتاجية — هذه هي بولدن كوميرشال.",
       align:   "right",
       overlay: "rgba(0,0,0,.42)",
       learnMoreHref: "/models/bolden-s6-commercial",
@@ -114,7 +114,7 @@ export default function HeroSlider({
               <div className="colorOverlay" style={{ background: s.overlay }} />
 
               
-              <div className="wrap uiText">
+              <div className="wrap uiText dirRtl">
                 <div className={`copy align-${s.align}`}>
                   <h2 className="title slide-in-up">{s.title}</h2>
                   {s.subtitle && <p className="subtitle">{s.subtitle}</p>}
@@ -136,10 +136,10 @@ export default function HeroSlider({
           </button>
         </div>
 
-        <div className="cta">
+        <div className="cta dirRtl">
           
-          <Link href={current.learnMoreHref} className="solid cstBtnStyle1">LEARN MORE</Link>
-          <button onClick={() => setOpen(true)} className="solid cstBtnStyle1 ">TEST DRIVE</button>
+          <Link href={current.learnMoreHref} className="solid cstBtnStyle1">تعلم المزيد</Link>
+          <button onClick={() => setOpen(true)} className="solid cstBtnStyle1 ">تجربة قيادة</button>
           {/* <button onClick={() => setOpen(true)} className="btn solid cstBtnStyle ">TEST DRIVE</button> */}
           {/* <Link href={current.bookHref} className="btn solid cstBtnStyle">BOOK A TEST DRIVE</Link> */}
         </div>

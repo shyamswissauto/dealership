@@ -92,7 +92,7 @@
 
 .input,
 .select {
-  font-family: var(--font-poppins), "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: var(--font-almarai);
   font-weight: 500;
   direction:rtl;
 }
