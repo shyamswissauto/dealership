@@ -1,23 +1,23 @@
 
 const featureItems = [
   {
-    title: "Smooth Responsive Diesel Powertrain",
-    body:"The 2.0T diesel powertrain ranks top in its class for single-turbo diesel engines. It is built for both city and highway performance.",
+    title: "محرك ديزل سلس وسريع الاستجابة",
+    body:"المرتبة الأولى في فئته بين محركات الديزل أحادية التوربو. وهو مصمم ليقدم أداءً ممتازاً في المدينة وعلى الطرق السريعة       يحتل محرك ديزل T  2.0",
     img: "/assets/models/s7passenger/feature/feature4.webp",
   },
   {
-    title: "Ultra-Quiet Cabin",
-    body:"Submarine-grade silent tech creates a 5-layer insulation that reduces idle noise to just 39 dB. This makes it one of the quietest diesel pickups on the market.",
+    title: "مقصورة فائقة الهدوء",
+    body:"تقنية الصمت المستخدمة في الغواصات تخلق عازلًا من ٥ طبقات يقلل الضوضاء إلى ٣٩ ديسيبل فقط. وهذا يجعلها واحدة من أكثر شاحنات الديزل هدوءًا في السوق.",
     img: "/assets/models/s7passenger/feature/feature2.webp",
   },
   {
-    title: "Extreme Climate Capability",
-    body:"The pickup starts reliably even at –40°C due to its advanced cold-start technology. It’s a great option for harsh winters or high-altitude terrain.",
+    title: "قدرة على تحمل الظروف المناخية القاسية",
+    body:"تبدأ الشاحنة الصغيرة في العمل بشكل موثوق حتى عند درجة حرارة -40 درجة مئوية بفضل تقنية التشغيل البارد المتطورة. إنها خيار رائع للشتاء القاسي أو التضاريس المرتفعة.",
     img: "/assets/models/s7passenger/feature/feature3.webp",
   },
   {
-    title: "Comfort-Tuned Suspension",
-    body:"Front double wishbone, Independent suspension, and rear passenger-specific multi-link integral axle give you SUV-level ride comfort and handling stability.",
+    title: "نظام تعليق مريح",
+    body:"يمنحك نظام التعليق الأمامي المزدوج ذو الذراعين المتوازيين، ونظام التعليق المستقل، والمحور المتكامل متعدد الوصلات الخلفي المخصص للركاب راحة قيادة على مستوى سيارات الدفع الرباعي واستقراراً في التحكم.",
     img: "/assets/models/s7passenger/feature/feature1.webp",
   },
 ];

@@ -4,66 +4,21 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay, A11y } from "swiper/modules";
-import TestDriveModal from "@/components/TestDriveModal";
 import "swiper/css";
 
-export default function HeroSlider({
+/**
+ * @param {{ slides: Array<{
+ *  desktop:string, mobile:string, title:string, subtitle?:string,
+ *  align?:"left"|"center"|"right", overlay?:string,
+ *  learnMoreHref?:string, bookHref?:string, className?:string
+ * }>, autoPlayMs?: number }} props
+ */
 
-
-  slides = [
-    
-    {
-      desktop: "/assets/hero/bolden-landing.webp",
-      mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
-      title:   "",
-      subtitle:"",
-      align:   "left",
-      overlay: "rgba(0,0,0,.12)",
-      learnMoreHref: "/models/",
-      bookHref:      "/",
-      className:     "slide-pure-design",
-    },
-    {
-      desktop: "/assets/hero/bolden-s9-hero-slider.webp",
-      mobile:  "/assets/hero/off-road-mobile.webp",
-      title:   "Power That Conquers Any Terrain",
-      subtitle:"From deserts to mountains, the Bolden Off-Road is built to dominate every challenge.",
-      align:   "left",
-      overlay: "rgba(0,0,0,.42)",
-      learnMoreHref: "/models/bolden-s9-off-road",
-      bookHref:      "/",
-      className:     "slide-pure-design",
-    },
-    {
-      desktop: "/assets/hero/bolden-heroslider.webp",
-      mobile:  "/assets/hero/passenger-mobile.webp",
-      title:   "Bolden Passenger. Redefining Everyday Luxury",
-      subtitle:"A perfect blend of modern design and powerful performance, built for those who value more.",
-      align:   "center",
-      overlay: "rgba(0,0,0,.42)",
-      learnMoreHref: "/models/bolden-s7-passenger",
-      bookHref:      "/",
-      className:     "slide-pure-design",
-    },
-    {
-      desktop: "/assets/hero/bolden-s6-hero-slider.webp",
-      mobile:  "/assets/hero/commericial-mobile.webp",
-      title:   "Bolden Commercial. Strength You Can Trust.",
-      subtitle:"Built for performance, trusted for productivity — that’s Bolden Commercial.",
-      align:   "right",
-      overlay: "rgba(0,0,0,.42)",
-      learnMoreHref: "/models/bolden-s6-commercial",
-      bookHref:      "/",
-      className:     "slide-pure-design",
-    },
-  ],
-  autoPlayMs = 7000,
-}) {
+export default function HeroSlider({ slides = [], autoPlayMs = 7000 }) {
   const swiperRef = useRef(null);
    const firstImgRef = useRef(null);
   const [active, setActive] = useState(0);
   const [railOpen, setRailOpen] = useState(false);
-  const [open, setOpen] = useState(false);
 
   const current = slides[active] || slides[0];
 
@@ -76,11 +31,11 @@ export default function HeroSlider({
     }
   }, []);
 
-  /* useEffect(() => {
+  useEffect(() => {
     const open = () => setRailOpen(true);
     window.addEventListener("hero:open-rail", open);
     return () => window.removeEventListener("hero:open-rail", open);
-  }, []); */
+  }, []);
 
   return (
     <section className="hero reveal-up">
@@ -103,7 +58,7 @@ export default function HeroSlider({
                     <source media="(min-width: 768px)" srcSet={s.desktop} />
                     <img
                         src={s.mobile}
-                        alt={s.title}
+                        alt="Bolden Trucks"
                         className="bg"
                         loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"
@@ -115,7 +70,7 @@ export default function HeroSlider({
 
               
               <div className="wrap uiText">
-                <div className={`copy align-${s.align}`}>
+                <div className={`copy align-${s.align} valign-${s.valign}`}>
                   <h2 className="title slide-in-up">{s.title}</h2>
                   {s.subtitle && <p className="subtitle">{s.subtitle}</p>}
                 </div>
@@ -126,7 +81,7 @@ export default function HeroSlider({
       </Swiper>
 
       
-      <div className="wrap fixedUi">
+      {/* <div className="wrap fixedUi">
         <div className="arrows">
           <button className="arrow prev" aria-label="Previous" onClick={() => swiperRef.current?.slidePrev()}>
             ‹
@@ -137,21 +92,10 @@ export default function HeroSlider({
         </div>
 
         <div className="cta">
-          
-          <Link href={current.learnMoreHref} className="solid cstBtnStyle1">LEARN MORE</Link>
-          <button onClick={() => setOpen(true)} className="solid cstBtnStyle1 ">TEST DRIVE</button>
-          {/* <button onClick={() => setOpen(true)} className="btn solid cstBtnStyle ">TEST DRIVE</button> */}
-          {/* <Link href={current.bookHref} className="btn solid cstBtnStyle">BOOK A TEST DRIVE</Link> */}
+          <Link href={current.learnMoreHref} className="btn ghost cstBtnStyle">LEARN MORE</Link>
+          <Link href={current.bookHref} className="btn solid cstBtnStyle">BOOK A TEST DRIVE</Link>
         </div>
-      </div>
-
-      {open && (
-              <TestDriveModal
-                onClose={() => setOpen(false)}
-                modalImage="/assets/popup/book-test-drive-home.webp"
-                carOptions={["Bolden Off-Road", "Bolden Passenger", "Bolden Commercial"]}
-              />
-            )}
+      </div> */}
 
       
       {/* <div className={`railScrim ${railOpen ? "show" : ""}`} onClick={() => setRailOpen(false)} />
@@ -167,7 +111,7 @@ export default function HeroSlider({
       </aside> */}
 
       <style jsx>{`
-        .hero { position: relative; width: 100%; height: 100svh; min-height: 520px; overflow: hidden; color: #fff; }
+        .hero { position: relative; width: 100%; height: 70svh; min-height: 520px; overflow: hidden; color: #fff; }
         :global(.swiper), :global(.swiper-wrapper), :global(.swiper-slide) { height: 100%; z-index: 0; } /* keep below overlays */
 
         .slide { position: relative; width: 100%; height: 100%; }
@@ -181,7 +125,11 @@ export default function HeroSlider({
         .align-left   { justify-items: start;  text-align: left;  padding-left: clamp(16px, 6vw, 0); }
         .align-center { justify-items: center; text-align: center; }
         .align-right  { justify-items: end;    text-align: right; padding-right: clamp(16px, 6vw, 0); }
-        .title    { margin: 0; font-weight: 800; line-height: 1.05; font-size: clamp(28px, 4vw, 46px); }
+        .valign-end   { align-content: end; }
+        .valign-center   { align-content: center; }
+        .valign-start   { align-content: start; }
+        .title    { margin: 0; font-weight: 800; line-height: 1.05; font-size: clamp(28px, 4vw, 56px); }
+
         .subtitle { margin: 6px 0 0; max-width: min(720px, 90vw); font-size: clamp(14px, 1.4vw, 18px); opacity: .95; }
 
         
@@ -210,46 +158,20 @@ export default function HeroSlider({
         }
         .btn {
           display: inline-flex; align-items: center; justify-content: center;
-          padding: 0px 18px; border-radius: 999px; text-decoration: none;
+          padding: 12px 18px; border-radius: 999px; text-decoration: none;
           font-weight: 800; letter-spacing: .04em; font-size: 13px;
           transition: transform .2s, box-shadow .2s, background .2s, color .2s;
           backdrop-filter: saturate(140%);
         }
-
-        
-
-
-        
-        
-        /* .ghost { background: rgba(255,255,255,.92); color: #000; }
+        .ghost { background: rgba(255,255,255,.92); color: #000; }
         .ghost:hover { background: #fff; transform: translateY(-1px); box-shadow: 0 10px 26px rgba(0,0,0,.22); }
         .solid { background: #111; color: #fff; }
-        .solid:hover { background: #000; transform: translateY(-1px); } */
+        .solid:hover { background: #000; transform: translateY(-1px); box-shadow: 0 10px 26px rgba(0,0,0,.35); }
 
         @media (max-width: 575px) {
           .btn { padding: 10px 14px; font-size: 12px; }
           .arrow { width: 40px; height: 40px; }
-        }
-
-        @media (max-width: 575px) {
-          .cta {
-            left: 0;
-            right: 0;
-            bottom: 25px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-          }
-
-          .cta :global(a.cstBtnStyle1),
-          .cta :global(button.cstBtnStyle1) {
-            /* width: min(260px, 90vw); */
-            justify-content: center;
-            text-align: center;
-            flex: 0 0 auto;
-          }
+          .cta { gap: 8px; right: 6px; }
         }
 
         /* Right Rail — desktop only */

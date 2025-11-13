@@ -58,7 +58,7 @@ export default function SpecsTabs({ title = "SPECIFICATIONS", tabs = [], default
   const activeTab = tabs.find((t) => t.key === active) ?? tabs[0];
 
   return (
-    <section id="specifications" className={styles.wrap} aria-labelledby={`${wrapId}-title`}>
+    <section id="specifications" className={`${styles.wrap} dirRtl`} aria-labelledby={`${wrapId}-title`}>
       <div className={styles.container}>
         <h2 id={`${wrapId}-title`} className={styles.title}>{title}</h2>
 

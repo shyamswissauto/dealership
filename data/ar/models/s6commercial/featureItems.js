@@ -1,23 +1,23 @@
 
 const featureItems = [
   {
-    title: "High-Torque Diesel Engine",
-    body:"Powered by the WP2H 2.0T engine delivering 140kW and 420Nm torque for heavy-duty hauling and long-distance reliability.",
+    title: "محرك ديزل عالي العزم",
+    body:"مدعوم بمحرك WP2H 2.0T الذي يوفر قوة ١٤٠ كيلوواط وعزم دوران ٤٢٠ نيوتن متر للقيام بأعمال النقل الثقيلة والموثوقية على المسافات الطويلة.",
     img: "/assets/models/u70pro/feature/feature4.webp",
   },
   {
-    title: "Heavy-Duty Build",
-    body:"High-strength steel roll cage construction with key components rated up to 1500 MPa for enhanced durability and load-bearing capacity.",
+    title: "هيكل متين",
+    body:"هيكل قفص فولاذي عالي القوة مع مكونات رئيسية تصل قوتها إلى ألف وخمسمائة ميجا باسكال لتعزيز المتانة وقدرة تحمل الأحمال.",
     img: "/assets/models/u70pro/feature/feature2.webp",
   },
   {
-    title: "Flexible Cargo Options",
-    body:"Available in standard and long wheelbase with cargo bed sizes of 1520×1520×530mm or 1800×1520×530mm to suit varied commercial needs.",
+    title: "خيارات حمولة مرنة",
+    body:"تتوفر بنسختين من قاعدة العجلات – القياسية والطويلة – مع صناديق حمولة بأبعاد ١٥٢٠×١٥٢٠×٥٣٠ ملم أو ١٨٠٠×١٥٢٠×٥٣٠ ملم لت",
     img: "/assets/models/u70pro/feature/feature1.webp",
   },
   {
-    title: "Cold-Start Technology",
-    body:"Starts reliably even at –40°C thanks to advanced diesel ignition systems, making it perfect for extreme climates and high-altitude operations.",
+    title: "تقنية التشغيل البارد",
+    body:"تعمل بثبات حتى في درجات حرارة منخفضة تصل إلى –٤٠°م، بفضل أنظمة إشعال الديزل المتطورة، مما يجعلها مثالية للظروف المناخية القاسية والمناطق المرتفعة.",
     img: "/assets/models/u70pro/feature/feature3.webp",
   },
 ];

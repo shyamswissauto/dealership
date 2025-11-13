@@ -28,7 +28,7 @@ export default function ModelFeatureSection({ items = [], title = "" }) {
   }, []);
 
   return (
-    <section className={styles.wrap} aria-labelledby="feat-title" ref={rootRef}>
+    <section className={`${styles.wrap} dirRtl`} aria-labelledby="feat-title" ref={rootRef}>
       <div className={styles.container}>
         {title ? (
           <h2 id="feat-title" className={styles.title}>{title}</h2>
@@ -36,7 +36,7 @@ export default function ModelFeatureSection({ items = [], title = "" }) {
 
         <div className={styles.grid}>
           {items.map((it, i) => {
-            const dir = i % 2 === 0 ? "left" : "right"; // alternate
+            const dir = i % 2 === 0 ? "right" : "left"; // alternate
             return (
               <article
                 key={i}

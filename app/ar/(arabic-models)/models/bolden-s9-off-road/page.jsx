@@ -11,19 +11,18 @@ import colorsVariants from "@/data/ar/models/s9offroad/colors";
 import ProductVideoSection from "@/components/models/ProductVideoSection";
 import VideoConfig from "@/data/models/s9offroad/videoConfig";
 
-import DualImageIntro from "@/components/models/DualImageIntro";
 
-import ExteriorGallerySwiper from "@/components/models/ExteriorGallerySwiper";
-import EXTERIOR_GALLERY_ITEMS from "@/data/models/s9offroad/exteriorGalleryItems";
+import ExteriorGallerySwiper from "@/components/ar/models/ExteriorGallerySwiper";
+import EXTERIOR_GALLERY_ITEMS from "@/data/ar/models/s9offroad/exteriorGalleryItems";
 
-import ModelFeatureSection from "@/components/models/FeatureSection";
-import featureItems from "@/data/models/s9offroad/featureItems";
+import ModelFeatureSection from "@/components/ar/models/FeatureSection";
+import featureItems from "@/data/ar/models/s9offroad/featureItems";
 
-import InteriorGallerySwiper from "@/components/models/InteriorGallerySwiper";
-import INTERIOR_GALLERY_ITEMS from "@/data/models/s9offroad/interiorGalleryItems";
+import InteriorGallerySwiper from "@/components/ar/models/InteriorGallerySwiper";
+import INTERIOR_GALLERY_ITEMS from "@/data/ar/models/s9offroad/interiorGalleryItems";
 
-import SpecificationTabs from "@/components/models/SpecsTabs";
-import specsTabs from "@/data/models/s9offroad/specsTabs";
+import SpecificationTabs from "@/components/ar/models/SpecsTabs";
+import specsTabs from "@/data/ar/models/s9offroad/specsTabs";
 
 import EmiCalculator from "@/components/models/EmiCalculator";
 import Footer from "@/components/ar/client/FooterClient";
@@ -42,13 +41,13 @@ export default function Page() {
         <ProductVideoSection {...VideoConfig} />
 
         {/* <DualImageIntro /> */}
-        <ExteriorGallerySwiper items={EXTERIOR_GALLERY_ITEMS} title="EXTERIOR" />
+        <ExteriorGallerySwiper items={EXTERIOR_GALLERY_ITEMS} title="الخارج" />
 
         <ModelFeatureSection items={featureItems} />
 
-        <InteriorGallerySwiper items={INTERIOR_GALLERY_ITEMS} title="INTERIOR" />
+        <InteriorGallerySwiper items={INTERIOR_GALLERY_ITEMS} title="داخلي" />
 
-        <SpecificationTabs title="SPECIFICATIONS" tabs={specsTabs} defaultKey={specsTabs[0].key} />
+        <SpecificationTabs title="مواصفات" tabs={specsTabs} defaultKey={specsTabs[0].key} />
 
         {/* <EmiCalculator /> */}
 

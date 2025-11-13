@@ -1,0 +1,64 @@
+.wrap {
+  background: #fff;
+}
+
+.container {
+  max-width: 920px;           /* roomy but readable */
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 88px) 16px;
+  display: grid;
+}
+
+.title {
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px 0;
+  font-size: clamp(32px, 5vw, 40px); /* scales nicely */
+  color: #0b0b0b;
+}
+
+.titleEmphasis {
+  /* same weight/size; separated to allow future styling if needed */
+}
+
+.eyebrow {
+  margin: 0 0 28px 0;
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: #3a3a3a;
+  font-weight: 500;
+}
+
+.copy {
+  color: #222;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.7;
+  /* max-width: 760px; */
+}
+
+.copy p + p {
+  margin-top: 16px;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid #0b0b0b;
+  background: transparent;
+  color: #0b0b0b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, transform .02s ease;
+  width: 200px;
+  margin: 0px auto;
+}
+
+.cta:hover { background: #0b0b0b; color: #fff; }
+.cta:active { transform: translateY(1px); }
+
+/* Optional: tighter layout on very large screens to keep lines readable */
+@media (min-width: 1440px) {
+  .container { max-width: 980px; }
+}

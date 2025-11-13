@@ -46,7 +46,7 @@ export default function InteriorGallerySwiper({ items = INTERIOR_GALLERY_ITEMS, 
   return (
     <section id="interior" className={styles.wrap} aria-labelledby="gallery-title">
       <div className={styles.container}>
-        <h2 id="gallery-title" className={styles.title}>{title}</h2>
+        <h2 id="gallery-title" className={`${styles.title} dirRtl`}>{title}</h2>
       </div>
 
       <div ref={viewportRef} className={styles.viewport}>
