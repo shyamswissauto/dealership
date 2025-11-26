@@ -31,11 +31,11 @@ export default function TrackExperienceHero({
       {/* Content */}
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <h1 className={styles.title}>
+          <h2 className={styles.title}>
             <span id="track-title-top">{titleTop}</span>
             {/* <br />
             <span className={styles.titleEmphasis}>{titleBottom}</span> */}
-          </h1>
+          </h2>
 
           <p className={styles.eyebrow}>{eyebrow}</p>
 

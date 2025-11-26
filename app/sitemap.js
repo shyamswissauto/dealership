@@ -50,5 +50,45 @@ export default function sitemap() {
             lastModified: '2025-10-22T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/bolden-business',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/bolden-uae',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/bolden-uae-ar',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/contact-us',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/emi-calculator',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/experience-the-drive',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/blog',
+            lastModified: '2025-11-25T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/blog/now-in-the-uae-dedicated-sinotruk-bolden-service-through-royal-swiss-auto-services',
+            lastModified: '2025-11-25T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }

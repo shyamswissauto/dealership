@@ -17,6 +17,15 @@
   margin: 0 auto;
 }
 
+.cstWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cstWrap a {
+  color: #fff;
+  font-size: 13px;
+}
 
 .top {
   display: grid;

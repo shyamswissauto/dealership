@@ -39,7 +39,7 @@ export default function Footer() {
             <ul className={styles.list}>
               <li><Link href="/request-a-quote">Get A Quote</Link></li>
               <li><Link href="/brochure-download">Brochure Download</Link></li>
-              {/* <li><Link href="#">Blogs</Link></li> */}
+              <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/contact-us">Contact Us</Link></li>
               {/* <li><Link href="/book-a-test-drive">Test Drive</Link></li> */}
             </ul>
@@ -49,7 +49,8 @@ export default function Footer() {
           <div className={styles.col}>
             <h3 className={styles.heading}>CONTACT</h3>
             <ul className={styles.contactList}>
-              <li>Abu Dhabi, UAE</li>
+              <li><a href="https://maps.app.goo.gl/ChJz6fV7KXVwUxR27" target="blank">C 178 Al Mahdar St, Industrial Area
+Industrial City - ICAD V - Abu Dhabi</a></li>
               <li><a href="mailto:sales@mysinotruk.ae">sales@mysinotruk.ae</a></li>
               {/* <li><a href="tel:80000000">800 000 00</a></li> */}
               <li><a href="tel:+971561122500">+971 56 11 22 500</a></li>
@@ -102,8 +103,11 @@ export default function Footer() {
 
       
       <div className={styles.legal}>
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles.cstWrap}`}>
           <p>© 2025 SINOTRUK. ALL RIGHTS RESERVED.</p>
+          <div>
+            <Link href="/privacy-policy">Privacy Policy</Link> | <Link href="/connect">Connect</Link>
+          </div>
         </div>
       </div>
 

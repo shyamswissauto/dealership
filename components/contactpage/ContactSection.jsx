@@ -70,7 +70,7 @@ export default function ContactSection() {
       <div className={styles.container}>
         {/* Left */}
         <div className={styles.left}>
-          <h2 id="contact-title" className={styles.title}>Let&rsquo;s Connect – We&rsquo;re Here to Help</h2>
+          <h1 id="contact-title" className={styles.title}>Let&rsquo;s Connect – We&rsquo;re Here to Help</h1>
           <p className={styles.lead}>
             Reach out via email, phone, or our contact form to discover everything about Sinotruk Bolden.
           </p>
