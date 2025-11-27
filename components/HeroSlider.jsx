@@ -13,8 +13,8 @@ export default function HeroSlider({
   slides = [
     
     {
-      desktop: "/assets/hero/bolden-landing.webp",
-      mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
+      desktop: "/assets/hero/uae/bolden-landing.webp", //desktop: "/assets/hero/bolden-landing.webp",
+      mobile:  "/assets/hero/uae/bolden-home-page-banner-m.webp", //mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
       title:   "",
       subtitle:"",
       align:   "left",

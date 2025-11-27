@@ -22,7 +22,7 @@ const OFFERS = [
     "Free Registration",
     "0% down payment (T&C Apply)"
   ],
-    img: "/assets/offers/small-offers.webp",
+    img: "/assets/offers/uae-offer.webp",
     cstclass: "offerb2s1",
   },
   

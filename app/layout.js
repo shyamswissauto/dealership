@@ -77,6 +77,9 @@ export const metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: {
+    yandex: "f20a2e8f6cf291db",
+  },
 }
 
 const GTM_ID = "GTM-W769MT2C";
