@@ -39,13 +39,13 @@ export async function generateMetadata({ params }) {
   if (!data[slug]) notFound();
   const page = data[slug];
 
-  const pageUrl = `https://swissautorecovery.com/blog/${page.slug || slug
+  const pageUrl = `https://www.mysinotruk.ae/blog/${page.slug || slug
     }/`;
 
   const title =
-    page.seoTitle || "Car Recovery UAE | Reliable Car Recovery Service Experts";
+    page.seoTitle || "Sinotruk UAE";
   const description =
-    page.seoDesc || "Expert 24/7 car recovery in UAE...";
+    page.seoDesc || "Sinotruk UAE";
 
   return {
     title,
@@ -54,11 +54,11 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url: pageUrl,
-      siteName: "www.swissautorecovery.com",
+      siteName: "www.mysinotruk.ae",
       images: [
         {
-          url: `/assets/images/blog/${page.imgurl}`,
-          alt: page.title || "Car Recovery Services UAE",
+          url: `/assets/blog/${page.imgurl}`,
+          alt: page.title || "Sinotruk UAE",
         },
       ],
       locale: "en_US",
