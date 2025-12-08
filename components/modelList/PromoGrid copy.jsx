@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import styles from "./PromoGrid.module.css";
-import TestDriveModal from "@/components/TestDriveModal";
 
 const DEFAULT_ITEMS = [
   {
@@ -38,7 +36,6 @@ export default function PromoGrid({
   items = DEFAULT_ITEMS,
   onBook, // optional callback to open your modal instead of link
 }) {
-  const [open, setOpen] = useState(false);
   const handleBook = (e, item) => {
     if (!onBook) return;
     e.preventDefault();
@@ -46,7 +43,6 @@ export default function PromoGrid({
   };
 
   return (
-    <>
     <section className={styles.wrap} aria-labelledby="promo-title">
       <div className={styles.container}>
         {/* <header className={styles.header}>
@@ -86,8 +82,7 @@ export default function PromoGrid({
               {/* Bottom CTAs */}
               <div className={styles.ctaRow}>
                 <a className={`${styles.pill} ${styles.ghost}`} href={item.learnHref}>LEARN MORE</a>
-                {/* <a className={styles.pill} href={item.bookHref || "#"}>BOOK A TEST DRIVE</a> */}
-                <button onClick={() => setOpen(true)} className={styles.pill}>BOOK A TEST DRIVE</button>
+                <a className={styles.pill} href={item.bookHref || "#"}>BOOK A TEST DRIVE</a>
               </div>
             </article>
 
@@ -96,13 +91,5 @@ export default function PromoGrid({
         </div>
       </div>
     </section>
-    {open && (
-            <TestDriveModal
-              onClose={() => setOpen(false)}
-              modalImage="/assets/popup/book-test-drive-home.webp"
-              carOptions={["Bolden Off-Road", "Bolden Passenger", "Bolden Commercial"]}
-            />
-          )}
-    </>
   );
 }

@@ -96,6 +96,7 @@
   transition: transform .15s ease, background .15s ease, box-shadow .2s ease;
   white-space: nowrap;
   font-size: 13px;
+  border: 0px;
 }
 .pill:hover { background: #1f1f1f; transform: translateY(-2px); }
 .ghost { background: #3a3a3a; }
