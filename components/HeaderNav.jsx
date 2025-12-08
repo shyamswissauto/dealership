@@ -5,17 +5,63 @@ import Link from "next/link";
 import TestDriveModal from "@/components/TestDriveModal";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+// ====== MODEL DATA FOR MEGA MENU ======
+const MODEL_GROUPS = [
+  {
+    id: "PICKUP",
+    label: "Pickups",
+    models: [
+      {
+        name: "OFF ROAD",
+        href: "/models/bolden-s9-off-road",
+        image: "/assets/models/img2.webp",
+      },
+      {
+        name: "PASSENGER",
+        href: "/models/bolden-s7-passenger",
+        image: "/assets/models/img3.webp",
+      },
+      {
+        name: "COMMERCIAL",
+        href: "/models/bolden-s6-commercial",
+        image: "/assets/models/img1.webp",
+      },
+    ],
+  },
+  /* {
+    id: "passenger",
+    label: "Passenger Cars",
+    models: [],
+  },
+  {
+    id: "sports",
+    label: "Sports Cars",
+    models: [],
+  },
+  {
+    id: "commercial",
+    label: "Commercial Vehicles",
+    models: [],
+  }, */
+];
+
 export default function HeaderNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const closeBtnRef = useRef(null);
+
+  // mega menu state (desktop)
+  const [modelsOpen, setModelsOpen] = useState(false);
+  const [activeGroupId, setActiveGroupId] = useState(MODEL_GROUPS[0].id);
+
+  // mobile models accordion
+  const [modelsMobileOpen, setModelsMobileOpen] = useState(false);
 
   const openHeroRail = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(new CustomEvent("hero:open-rail"));
     }
   };
-
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -26,45 +72,124 @@ export default function HeaderNav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [mobileOpen]);
 
-  
   useEffect(() => {
     if (mobileOpen) {
       closeBtnRef.current?.focus();
+    } else {
+      // close mobile models accordion when drawer closes
+      setModelsMobileOpen(false);
     }
   }, [mobileOpen]);
+
+  // close mega menu on ESC
+  useEffect(() => {
+    if (!modelsOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setModelsOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [modelsOpen]);
+
+  const activeGroup =
+    MODEL_GROUPS.find((g) => g.id === activeGroupId) || MODEL_GROUPS[0];
 
   return (
     <header className="siteHeader reveal-up">
       <div className="wrap bar">
-        
         <Link href="/" className="logo">
           <img src="/assets/sinotruk-logo.png" alt="Sinotruk" width={180} />
         </Link>
 
-        
+        {/* ====== DESKTOP NAV ====== */}
         <nav className="nav">
-          <Link href="/models" className="cstTransY">Models</Link>
-          {/* <Link href="/" className="cstTransY">Showroom</Link> */}
-          <Link href="/special-offers" className="cstTransY">Special Offers</Link>
-          {/* <Link href="/service-and-parts" className="cstTransY">Service & Parts</Link> */}
-          <Link href="/bolden-business" className="cstTransY">Bolden Business</Link>
-          <Link href="/contact-us" className="cstTransY">Contact</Link>
+          {/* MODELS with mega menu */}
+          <div
+            className={`navItem navItemModels ${
+              modelsOpen ? "navItemOpen" : ""
+            }`}
+            onMouseEnter={() => setModelsOpen(true)}
+            onMouseLeave={() => setModelsOpen(false)}
+          >
+            <a href="/models"
+              /* type="button" */
+              className="navLink navLinkBtn cstTransY"
+              aria-haspopup="true"
+              aria-expanded={modelsOpen}
+            >
+              MODELS
+            </a>
+
+            {/* MEGA PANEL – centered under the nav / header */}
+            <div className="megaPanel" role="menu">
+              <div className="megaInner">
+                {/* Tabs */}
+                <div className="megaTabs" role="tablist">
+                  {MODEL_GROUPS.map((group) => (
+                    <button
+                      key={group.id}
+                      type="button"
+                      role="tab"
+                      className={`megaTab ${
+                        group.id === activeGroupId ? "megaTabActive" : ""
+                      }`}
+                      onClick={() => setActiveGroupId(group.id)}
+                    >
+                      {group.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Models grid */}
+                <div className="modelsGrid">
+                  {activeGroup.models.length === 0 && (
+                    <p className="megaEmpty">
+                      Models coming soon for this category.
+                    </p>
+                  )}
+                  {activeGroup.models.map((model) => (
+                    <Link
+                      key={model.href}
+                      href={model.href}
+                      className="modelCard"
+                    >
+                      <div className="modelImageWrap">
+                        <img
+                          src={model.image}
+                          alt={model.name}
+                          className="modelImage"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 className="modelName">{model.name}</h3>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* other links */}
+          <Link href="/special-offers" className="cstTransY navItemLinks">
+            Special Offers
+          </Link>
+          <Link href="/bolden-business" className="cstTransY navItemLinks">
+            Bolden Business
+          </Link>
+          <Link href="/contact-us" className="cstTransY navItemLinks">
+            Contact
+          </Link>
         </nav>
 
-        
+        {/* <LanguageSwitcher /> */}
         <div className="right">
-          {/* <Link href="/test-drive" className="cta btn cstBtnStyle hideMobile">TEST DRIVE</Link> */}
-          {/* <LanguageSwitcher /> */}
-          <button onClick={() => setOpen(true)} className="cta btn cstBtnStyle hideMobile cstHeadTest">TEST DRIVE</button>
-          {/* <Link href="/" className="ar cstTransY">العربية</Link> */}
-          
+          <button
+            onClick={() => setOpen(true)}
+            className="cta btn cstBtnStyle hideMobile cstHeadTest"
+          >
+            TEST DRIVE
+          </button>
 
-          
-          {/* <button className="railBtn" aria-label="Open Quick Menu" onClick={openHeroRail}>
-            ☰
-          </button> */}
-
-          
           <button
             className={`hamburger ${mobileOpen ? "open" : ""}`}
             aria-label="Open Menu"
@@ -79,15 +204,17 @@ export default function HeaderNav() {
         </div>
       </div>
 
-      
-      <div className={`scrim ${mobileOpen ? "show" : ""}`} onClick={() => setMobileOpen(false)} />
+      {/* ====== MOBILE DRAWER ====== */}
+      <div
+        className={`scrim ${mobileOpen ? "show" : ""}`}
+        onClick={() => setMobileOpen(false)}
+      />
       <aside
         id="mobile-drawer"
         className={`drawer ${mobileOpen ? "open" : ""}`}
         aria-hidden={!mobileOpen}
       >
         <div className="drawerInner">
-          
           <button
             ref={closeBtnRef}
             className="drawerClose"
@@ -98,56 +225,69 @@ export default function HeaderNav() {
           </button>
 
           <div className="mLinks">
-              <Link href="/models" onClick={() => setMobileOpen(false)}>Models</Link>
-              {/* <Link href="/" onClick={() => setMobileOpen(false)}>Showroom</Link> */}
-              <Link href="/special-offers" onClick={() => setMobileOpen(false)}>Special Offers</Link>
-              {/* <Link href="/service-and-parts" onClick={() => setMobileOpen(false)}>Service & Parts</Link> */}
-              <Link href="/bolden-business" onClick={() => setMobileOpen(false)}>Bolden Business</Link>
-              <Link href="/contact-us" onClick={() => setMobileOpen(false)}>Contact</Link>
+            {/* MOBILE MODELS ACCORDION */}
+            <button
+              type="button"
+              className="mTrigger"
+              onClick={() => setModelsMobileOpen((v) => !v)}
+            >
+              <span>Models</span>
+              <span
+                className={`mTriggerIcon ${
+                  modelsMobileOpen ? "mTriggerIconOpen" : ""
+                }`}
+              >
+                ▾
+              </span>
+            </button>
 
-              <div className="headerSocial">
-                  <ul className="socials" aria-label="Social media">
-                      <li>
-                        <Link href="https://www.facebook.com/people/Sinotruk-UAE/61579914192315/" aria-label="Facebook" className="socialLink" target="_blank" rel="noopener noreferrer">
-                          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                            <path fill="currentColor" d="M13 10h3l-1 4h-2v7h-4v-7H7v-4h2V8a4 4 0 0 1 4-4h3v4h-3a1 1 0 0 0-1 1v1z"/>
-                          </svg>
+            {modelsMobileOpen && (
+              <div className="mModels">
+                {MODEL_GROUPS.map((group) => (
+                  <div key={group.id} className="mGroup">
+                    <p className="mGroupLabel">{group.label}</p>
+                    <div className="mGroupModels">
+                      {group.models.length === 0 && (
+                        <span className="mEmpty">Coming soon</span>
+                      )}
+                      {group.models.map((model) => (
+                        <Link
+                          key={model.href}
+                          href={model.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="mModelLink"
+                        >
+                          {model.name}
                         </Link>
-                      </li>
-                      <li>
-                        <Link href="https://x.com/SinotrukUAE" aria-label="X" className="socialLink" target="_blank" rel="noopener noreferrer">
-                          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                            <path fill="currentColor" d="M3 4l8.1 9.7L3.7 20H6l6.2-5.5L17.6 20H21l-8.5-10L20.3 4H18L12.2 9.1 8.1 4z"/>
-                          </svg>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="https://www.instagram.com/sinotrukbolden_uae/" aria-label="Instagram" className="socialLink" target="_blank" rel="noopener noreferrer">
-                          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                            <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
-                          </svg>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="https://www.youtube.com/@Sinotrukuae" aria-label="YouTube" className="socialLink" target="_blank" rel="noopener noreferrer">
-                          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                            <path fill="currentColor" d="M23 12s0-3-.4-4.4c-.2-.9-.9-1.6-1.8-1.8C18.4 5 12 5 12 5s-6.4 0-8.8.8c-.9.2-1.6.9-1.8 1.8C1 9 1 12 1 12s0 3 .4 4.4c.2.9.9 1.6 1.8 1.8C5.6 19 12 19 12 19s6.4 0 8.8-.8c.9-.2 1.6-.9 1.8-1.8.4-1.4.4-4.4.4-4.4zM10 15V9l6 3-6 3z"/>
-                          </svg>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="https://www.linkedin.com/company/109429488" aria-label="LinkedIn" className="socialLink" target="_blank" rel="noopener noreferrer">
-                          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                            <path fill="currentColor" d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3.5A2 2 0 1 0 5.26 7.5a2 2 0 0 0-.01-4zM20.44 20h-3.37v-6.25c0-1.49-.53-2.5-1.87-2.5a2.02 2.02 0 0 0-1.89 1.35c-.09.22-.12.52-.12.82V20h-3.37s.04-10.9 0-11.5h3.37v1.63c.45-.7 1.26-1.7 3.07-1.7 2.24 0 3.93 1.46 3.93 4.6V20z"/>
-                          </svg>
-                        </Link>
-                      </li>
-                  </ul>
-
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
+            )}
 
+            {/* other mobile links */}
+            <Link
+              href="/special-offers"
+              onClick={() => setMobileOpen(false)}
+            >
+              Special Offers
+            </Link>
+            <Link
+              href="/bolden-business"
+              onClick={() => setMobileOpen(false)}
+            >
+              Bolden Business
+            </Link>
+            <Link
+              href="/contact-us"
+              onClick={() => setMobileOpen(false)}
+            >
+              Contact
+            </Link>
+
+            {/* your existing social icons block can stay here */}
           </div>
-          
         </div>
       </aside>
 
@@ -155,7 +295,11 @@ export default function HeaderNav() {
         <TestDriveModal
           onClose={() => setOpen(false)}
           modalImage="/assets/popup/book-test-drive-home.webp"
-          carOptions={["Bolden Off-Road", "Bolden Passenger", "Bolden Commercial"]}
+          carOptions={[
+            "Bolden Off-Road",
+            "Bolden Passenger",
+            "Bolden Commercial",
+          ]}
         />
       )}
 
@@ -167,11 +311,11 @@ export default function HeaderNav() {
           color: #fff;
         }
 
-        .ar > .siteHeader {
-          direction: rtl;
+        .wrap {
+          width: min(1500px, 92vw);
+          margin: 0 auto;
         }
-        
-        .wrap { width: min(1500px, 92vw); margin: 0 auto; }
+
         .bar {
           display: grid;
           grid-template-columns: auto 1fr auto;
@@ -180,67 +324,286 @@ export default function HeaderNav() {
           padding: 18px 0;
           margin-top: 40px;
         }
-        .logo { color: #fff; text-decoration: none; font-weight: 900; letter-spacing: .15em; }
+
+        .logo {
+          color: #fff;
+          text-decoration: none;
+          font-weight: 900;
+          letter-spacing: 0.15em;
+        }
 
         .nav {
           display: flex;
           justify-content: center;
           gap: clamp(14px, 2.2vw, 28px);
+          position: relative; /* megaPanel is centered within this */
+          padding-top: 15px;
         }
-        .nav a { color: #fff; text-decoration: none; font-weight: 700; opacity: .9; }
-        .nav a:hover { opacity: 1; }
 
-        .right { display: flex; align-items: center; gap: 30px; justify-content: end;}
+        .nav a {
+          color: #fff;
+          text-decoration: none;
+          /* font-weight: 700; */
+          opacity: 0.9;
+        }
+        .nav a:hover {
+          opacity: 1;
+        }
+
+        .navItem {
+          /* IMPORTANT: no position relative here, so megaPanel uses .nav */
+        }
+
+        .navLinkBtn {
+          background: none;
+          border: 0;
+          padding: 0;
+          cursor: pointer;
+          font: inherit;
+          color: inherit;
+        }
+
+        .right {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          justify-content: end;
+        }
+
         .cta {
           text-decoration: none;
-          font-weight: 800; border-radius: 999px;
-        }
-        .ar { color: #fff; text-decoration: none; font-weight: 800; opacity: .9; }
-
-        /* .railBtn {
-          width: 42px; height: 42px; border-radius: 50%;
-          border: 0; background: rgba(255,255,255,.95); color: #000;
-          box-shadow: 0 10px 26px rgba(0,0,0,.18);
-          cursor: pointer;
-        } */
-
-        .railBtn {
-          width: 42px; height: 42px; border-radius: 50%;
-          border: 0; background: rgba(255,255,255,0); color: #ffffff;
-          cursor: pointer;
-          font-size: 30px;
-        }
-
-        .hamburger {
-          display: none;
-          width: 38px; height: 38px;
-          border: 0; background: rgba(255,255,255,.12);
-          border-radius: 8px; cursor: pointer; position: relative;
-        }
-        .hamburger span {
-          position: absolute; left: 8px; right: 8px; height: 3px; background: #fff;
-          transition: transform .3s, top .3s, opacity .2s;
+          font-weight: 800;
           border-radius: 999px;
         }
-        .hamburger span:nth-child(1){ top: 12px; }
-        .hamburger span:nth-child(2){ top: 18px; }
-        .hamburger span:nth-child(3){ top: 24px; }
-        .hamburger.open span:nth-child(1){ top: 18px; transform: rotate(45deg); }
-        .hamburger.open span:nth-child(2){ opacity: 0; }
-        .hamburger.open span:nth-child(3){ top: 18px; transform: rotate(-45deg); }
 
-        .scrim { position: fixed; inset: 0; background: rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: .2s; z-index: 19; }
-        .scrim.show { opacity: 1; pointer-events: auto; }
+        /* ====== MEGA MENU (DESKTOP) ====== */
+        .megaPanel {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%) translateY(12px); /* start slightly down */
+          top: 100%;
+          margin-top: 0px;
+          width: min(1200px, 92vw);
+          background: #ffffff;
+          color: #111827;
+          border-radius: 18px;
+          box-shadow: 0 28px 70px rgba(15, 23, 42, 0.25);
+          padding: 22px 26px 26px;
+          opacity: 0;                 /* hidden by default */
+          visibility: hidden;
+          pointer-events: none;
+          transition:
+            opacity 0.22s ease-out,
+            transform 0.22s ease-out,
+            visibility 0.22s ease-out;
+          z-index: 40;
+        }
+
+        .navItemOpen .megaPanel {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: translateX(-50%) translateY(0); /* slide up into place */
+        }
+
+        .megaInner {
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .megaTabs {
+          display: flex;
+          gap: 24px;
+          border-bottom: 1px solid #e5e7eb;
+          padding-bottom: 10px;
+        }
+
+        .megaTab {
+          border: 0;
+          background: transparent;
+          cursor: pointer;
+          font-size: 13px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.14em;
+          color: #6b7280;
+          padding: 4px 0;
+          position: relative;
+        }
+
+        .megaTabActive {
+          color: #111827;
+        }
+
+        .megaTabActive::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -9px;
+          height: 2px;
+          background: #111827;
+          border-radius: 999px;
+        }
+
+        .modelsGrid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 26px 22px;
+        }
+
+        .modelCard {
+          text-decoration: none;
+          color: inherit;
+          text-align: center;
+          padding: 12px 8px 16px;
+          border-radius: 14px;
+          transition: transform 0.15s ease, box-shadow 0.15s ease,
+            background 0.15s ease;
+        }
+
+        /* .modelCard:hover {
+          transform: translateY(-4px);
+          background: #f9fafb;
+          box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .modelCard:hover img.modelImage {
+          transform: translateY(-4px);
+          background: #f9fafb;
+          box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+        } */
+
+        .modelCard:hover .modelImage,
+        .modelCard:focus-visible .modelImage {
+          transform: scale(1.05);
+        }
+
+        .modelImageWrap {
+          width: 100%;
+          min-height: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
+
+        .modelImage {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .modelName {
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          margin: 4px 0 4px;
+          color: #4b5563;
+          text-align: center;
+        }
+
+        .modelPrice {
+          font-size: 12px;
+          color: #4b5563;
+          margin: 0;
+        }
+
+        .megaEmpty {
+          font-size: 13px;
+          color: #6b7280;
+        }
+
+        .navItemModels {
+          padding-bottom: 15px;
+        }
+
+    
+
+        .cstTransY {
+        
+        }
+
+        /* ====== MOBILE DRAWER ====== */
+        .hamburger {
+          display: none;
+          width: 38px;
+          height: 38px;
+          border: 0;
+          background: rgba(255, 255, 255, 0.12);
+          border-radius: 8px;
+          cursor: pointer;
+          position: relative;
+        }
+        .hamburger span {
+          position: absolute;
+          left: 8px;
+          right: 8px;
+          height: 3px;
+          background: #fff;
+          transition: transform 0.3s, top 0.3s, opacity 0.2s;
+          border-radius: 999px;
+        }
+        .hamburger span:nth-child(1) {
+          top: 12px;
+        }
+        .hamburger span:nth-child(2) {
+          top: 18px;
+        }
+        .hamburger span:nth-child(3) {
+          top: 24px;
+        }
+        .hamburger.open span:nth-child(1) {
+          top: 18px;
+          transform: rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+          top: 18px;
+          transform: rotate(-45deg);
+        }
+
+        .scrim {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.35);
+          opacity: 0;
+          pointer-events: none;
+          transition: 0.2s;
+          z-index: 19;
+        }
+        .scrim.show {
+          opacity: 1;
+          pointer-events: auto;
+        }
 
         .drawer {
-          position: fixed; inset: 0 0 0 auto; width: 76vw; max-width: 340px;
-          background: #0f1114; color: #fff; translate: 100% 0;
-          transition: translate .28s ease; z-index: 20; display: none;
+          position: fixed;
+          inset: 0 0 0 auto;
+          width: 76vw;
+          max-width: 340px;
+          background: #0f1114;
+          color: #fff;
+          translate: 100% 0;
+          transition: translate 0.28s ease;
+          z-index: 20;
+          display: none;
         }
-        .drawer.open { translate: 0 0; }
-        .drawerInner { padding: 18px 18px 24px; display: grid; gap: 14px; position: relative; }
 
-        
+        .drawer.open {
+          translate: 0 0;
+        }
+
+        .drawerInner {
+          padding: 18px 18px 24px;
+          display: grid;
+          gap: 14px;
+          position: relative;
+        }
+
         .drawerClose {
           position: absolute;
           top: 10px;
@@ -249,19 +612,18 @@ export default function HeaderNav() {
           height: 36px;
           border-radius: 8px;
           border: 0;
-          background: rgba(255,255,255,0.12);
+          background: rgba(255, 255, 255, 0.12);
           color: #fff;
           font-size: 18px;
           cursor: pointer;
           z-index: 99;
         }
-        .drawerClose:focus-visible {
-          outline: 2px solid #fff;
-          outline-offset: 2px;
-        }
 
         .drawerInner a {
-          color: #fff; text-decoration: none; padding: 12px 6px; border-bottom: 1px solid rgba(255,255,255,.08);
+          color: #fff;
+          text-decoration: none;
+          padding: 12px 6px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .mLinks {
@@ -277,12 +639,78 @@ export default function HeaderNav() {
           text-transform: uppercase;
         }
 
+        /* MOBILE MODELS ACCORDION */
+        .mTrigger {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          width: 100%;
+          border: 0;
+          background: transparent;
+          color: #fff;
+          font-size: 14px;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+
+        .mTriggerIcon {
+          transition: transform 0.2s ease;
+        }
+        .mTriggerIconOpen {
+          transform: rotate(180deg);
+        }
+
+        .mModels {
+          text-align: center;
+        }
+
+        .mGroup {
+        }
+
+        .mGroupLabel {
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 0.14em;
+          opacity: 0.7;
+          margin: 4px 0;
+        }
+
+        .mGroupModels {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .mModelLink {
+          padding: 6px 0;
+          font-size: 14px;
+          text-transform: none;
+          border: 0;
+        }
+
+        .mEmpty {
+          font-size: 12px;
+          opacity: 0.7;
+          padding: 4px 0 8px;
+        }
+
         @media (max-width: 991px) {
-          .nav { display: none; }
-          .railBtn { display: none; }
-          .hamburger { display: inline-block; }
-          .drawer { display: block; }
-          .bar {margin-top:0px;}
+          .nav {
+            display: none;
+          }
+          .hamburger {
+            display: inline-block;
+          }
+          .drawer {
+            display: block;
+          }
+          .bar {
+            margin-top: 0px;
+          }
+          /* hide mega panel on mobile */
+          .megaPanel {
+            display: none !important;
+          }
         }
 
         @media (max-width: 350px) {
@@ -292,8 +720,6 @@ export default function HeaderNav() {
             font-size: 14px;
           }
         }
-
-        
       `}</style>
     </header>
   );
