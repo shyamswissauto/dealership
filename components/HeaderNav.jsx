@@ -383,7 +383,7 @@ export default function HeaderNav() {
           transform: translateX(-50%) translateY(12px); /* start slightly down */
           top: 100%;
           margin-top: 0px;
-          width: min(1200px, 92vw);
+          width: min(900px, 92vw);
           background: #ffffff;
           color: #111827;
           border-radius: 18px;
