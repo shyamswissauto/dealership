@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/models/bolden-s9-off-road',
         },
     },
-  title: 'Sinotruk The Bolden Off-Road – Off-Road Powerhouse',
-  description: 'Experience Sinotruk The Bolden Off-Road  built for adventure. Experience rugged strength, sleek design, and unmatched performance on every terrain in the UAE',
+  title: 'Bolden Off-Road 4x4 Pickup Truck for sale. Best off-road vehicle in UAE',
+  description: 'Built for the UAE Desert. Bolden Off-Road 4x4 features a powerful diesel engine with exceptional warranty and tough chassis. View full specs & Get the Price!',
   openGraph: {
-      title: 'Sinotruk The Bolden Off-Road – Off-Road Powerhouse',
-      description: 'Experience Sinotruk The Bolden Off-Road  built for adventure. Experience rugged strength, sleek design, and unmatched performance on every terrain in the UAE',
+      title: 'Bolden Off-Road 4x4 Pickup Truck for sale. Best off-road vehicle in UAE',
+      description: 'Built for the UAE Desert. Bolden Off-Road 4x4 features a powerful diesel engine with exceptional warranty and tough chassis. View full specs & Get the Price!',
       url: 'https://www.mysinotruk.ae/models/bolden-s9-off-road',
       siteName: 'www.mysinotruk.ae',
       images: [

@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/request-a-quote',
         },
     },
-  title: 'Request a Quote for Sinotruk Bolden Off-Road, Passenger and Commercial',
-  description: 'Get your personalized quote for Sinotruk The Bolden Off-Road, Passenger and Commercial today. Explore pricing and features for commercial, passenger & off-road models in UAE',
+  title: 'Request a Quote: Get the Best Bolden Sinotruk Price in UAE',
+  description: 'Ready to Buy? Get the Exclusive price on a Brand New Sinotruk Bolden Models Today. Submit your quick inquiry to receive best price for personal or fleet needs.',
   openGraph: {
-      title: 'Request a Quote for Sinotruk Bolden Off-Road, Passenger and Commercial',
-      description: 'Get your personalized quote for Sinotruk The Bolden Off-Road, Passenger and Commercial today. Explore pricing and features for commercial, passenger & off-road models in UAE',
+      title: 'Request a Quote: Get the Best Bolden Sinotruk Price in UAE',
+      description: 'Ready to Buy? Get the Exclusive price on a Brand New Sinotruk Bolden Models Today. Submit your quick inquiry to receive best price for personal or fleet needs.',
       url: 'https://www.mysinotruk.ae/request-a-quote',
       siteName: 'www.mysinotruk.ae',
       images: [

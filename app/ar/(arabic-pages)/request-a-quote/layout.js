@@ -1,17 +1,17 @@
 export const metadata = {
   metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/special-offers',
+        canonical: '/request-a-quote',
         languages: {
-          'en': 'https://www.mysinotruk.ae/special-offers',
+          'en': 'https://www.mysinotruk.ae/request-a-quote',
         },
     },
-  title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',
-  description: 'Don’t miss out! Explore the latest Sinotruk Bolden special offers, deals, & promotions on  Off-Road, Passenger & Commercial trucks in UAE. Limited time deals!',
+  title: 'Request a Quote for Sinotruk Bolden Off-Road, Passenger and Commercial',
+  description: 'Get your personalized quote for Sinotruk The Bolden Off-Road, Passenger and Commercial today. Explore pricing and features for commercial, passenger & off-road models in UAE',
   openGraph: {
-      title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',
-      description: 'Don’t miss out! Explore the latest Sinotruk Bolden special offers, deals, & promotions on  Off-Road, Passenger & Commercial trucks in UAE. Limited time deals!',
-      url: 'https://www.mysinotruk.ae/special-offers',
+      title: 'Request a Quote for Sinotruk Bolden Off-Road, Passenger and Commercial',
+      description: 'Get your personalized quote for Sinotruk The Bolden Off-Road, Passenger and Commercial today. Explore pricing and features for commercial, passenger & off-road models in UAE',
+      url: 'https://www.mysinotruk.ae/request-a-quote',
       siteName: 'www.mysinotruk.ae',
       images: [
         {

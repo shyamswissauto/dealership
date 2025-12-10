@@ -1,17 +1,17 @@
 export const metadata = {
   metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/special-offers',
+        canonical: '/emi-calculator',
         languages: {
-          'en': 'https://www.mysinotruk.ae/special-offers',
+          'en': 'https://www.mysinotruk.ae/emi-calculator',
         },
     },
-  title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',
-  description: 'Don’t miss out! Explore the latest Sinotruk Bolden special offers, deals, & promotions on  Off-Road, Passenger & Commercial trucks in UAE. Limited time deals!',
+  title: 'Sinotruk Bolden Off-Road, Passenger & Commercial Vehicle Finance',
+  description: 'Plan your Sinotruk Bolden ownership with easy finance insights, comparing options for off-road, passenger and commercial vehicles',
   openGraph: {
-      title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',
-      description: 'Don’t miss out! Explore the latest Sinotruk Bolden special offers, deals, & promotions on  Off-Road, Passenger & Commercial trucks in UAE. Limited time deals!',
-      url: 'https://www.mysinotruk.ae/special-offers',
+      title: 'Sinotruk Bolden Off-Road, Passenger & Commercial Vehicle Finance',
+      description: 'Plan your Sinotruk Bolden ownership with easy finance insights, comparing options for off-road, passenger and commercial vehicles',
+      url: 'https://www.mysinotruk.ae/emi-calculator',
       siteName: 'www.mysinotruk.ae',
       images: [
         {

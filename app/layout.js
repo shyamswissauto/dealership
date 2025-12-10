@@ -43,11 +43,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae',
         },
     },
-  title: 'Explore Sinotruk Bolden Pickups in UAE – Power Meets Style',
-  description: 'Discover the bold design, rugged performance, and unbeatable value of Sinotruk Bolden pickups in UAE. Perfect for work and adventure!',
+  title: 'Sinotruk Bolden Official Dealer UAE | Best Off-Road & Commercial Pickup Trucks',
+  description: 'The Official Sinotruk Bolden Dealer in UAE, Best value pickup trucks. Explore our rugged Off-Road & reliable Commercial pickup trucks. Get Exclusive Pricing!',
   openGraph: {
-      title: 'Explore Sinotruk Bolden Pickups in UAE – Power Meets Style',
-      description: 'Discover the bold design, rugged performance, and unbeatable value of Sinotruk Bolden pickups in UAE. Perfect for work and adventure!',
+      title: 'Sinotruk Bolden Official Dealer UAE | Best Off-Road & Commercial Pickup Trucks',
+      description: 'The Official Sinotruk Bolden Dealer in UAE, Best value pickup trucks. Explore our rugged Off-Road & reliable Commercial pickup trucks. Get Exclusive Pricing!',
       url: 'https://www.mysinotruk.ae',
       siteName: 'www.mysinotruk.ae',
       images: [

@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/bolden-business',
         },
     },
-  title: 'Bolden Business - Sinotruk Bolden Off-Road, Passenger & Commercial',
-  description: 'Experience Bolden Business by MySinotruk — top off-road, passenger, and commercial trucks built for power, performance, and reliability on any terrain in UAE',
+  title: 'Bolden Business: Fleet Solution & Corporate Deals on all Bolden Models',
+  description: 'Optimize your operations with Bolden Business fleet solutions. Get exclusive corporate pricing, dedicated support, & Best packages for your commercial vehicle needs.',
   openGraph: {
-      title: 'Bolden Business - Sinotruk Bolden Off-Road, Passenger & Commercial',
-      description: 'Experience Bolden Business by MySinotruk — top off-road, passenger, and commercial trucks built for power, performance, and reliability on any terrain in UAE',
+      title: 'Bolden Business: Fleet Solution & Corporate Deals on all Bolden Models',
+      description: 'Optimize your operations with Bolden Business fleet solutions. Get exclusive corporate pricing, dedicated support, & Best packages for your commercial vehicle needs.',
       url: 'https://www.mysinotruk.ae/bolden-business',
       siteName: 'www.mysinotruk.ae',
       images: [

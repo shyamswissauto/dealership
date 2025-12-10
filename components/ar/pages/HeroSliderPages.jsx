@@ -128,7 +128,7 @@ export default function HeroSlider({ slides = [], autoPlayMs = 7000 }) {
         .valign-end   { align-content: end; }
         .valign-center   { align-content: center; }
         .valign-start   { align-content: start; }
-        .title    { margin: 0; font-weight: 800; line-height: 1.05; font-size: clamp(28px, 4vw, 56px); }
+        .title    { margin: 0; font-weight: 700; line-height: 1.05; font-size: clamp(28px, 4vw, 56px); font-family: var(--font-almarai);}
 
         .subtitle { margin: 6px 0 0; max-width: min(720px, 90vw); font-size: clamp(14px, 1.4vw, 18px); opacity: .95; }
 

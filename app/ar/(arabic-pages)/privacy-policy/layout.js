@@ -1,17 +1,17 @@
 export const metadata = {
   metadataBase: new URL('https://www.mysinotruk.ae'),
     alternates: {
-        canonical: '/special-offers',
+        canonical: '/privacy-policy',
         languages: {
-          'en': 'https://www.mysinotruk.ae/special-offers',
+          'en': 'https://www.mysinotruk.ae/privacy-policy',
         },
     },
-  title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',
-  description: 'Don’t miss out! Explore the latest Sinotruk Bolden special offers, deals, & promotions on  Off-Road, Passenger & Commercial trucks in UAE. Limited time deals!',
+  title: 'Read Our Privacy Policy & Stay Informed',
+  description: 'Learn how we protect your personal data and ensure transparency. Read our privacy policy to know your rights and our data practices',
   openGraph: {
-      title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',
-      description: 'Don’t miss out! Explore the latest Sinotruk Bolden special offers, deals, & promotions on  Off-Road, Passenger & Commercial trucks in UAE. Limited time deals!',
-      url: 'https://www.mysinotruk.ae/special-offers',
+      title: 'Read Our Privacy Policy & Stay Informed',
+      description: 'Learn how we protect your personal data and ensure transparency. Read our privacy policy to know your rights and our data practices',
+      url: 'https://www.mysinotruk.ae/privacy-policy',
       siteName: 'www.mysinotruk.ae',
       images: [
         {

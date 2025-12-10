@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/models',
         },
     },
-  title: 'Sinotruk Models in UAE - For Commercial, Off-Road, Passenger',
-  description: 'Explore Sinotruk Models in UAE,  For Commercial, Off-road, Passenger. Find the perfect model that fits your business or adventure needs today',
+  title: 'Explore Sinotruk Bolden – 4×4 Off-Road, Passenger & Commercial Trucks',
+  description: 'See the full lineup of Sinotruk Bolden pickup trucks. Compare specs for the rugged Off-Road, powerful Commercial, and passenger. Book your Test Drive Today!',
   openGraph: {
-      title: 'Sinotruk Models in UAE - For Commercial, Off-Road, Passenger',
-      description: 'Explore Sinotruk Models in UAE,  For Commercial, Off-road, Passenger. Find the perfect model that fits your business or adventure needs today',
+      title: 'Explore Sinotruk Bolden – 4×4 Off-Road, Passenger & Commercial Trucks',
+      description: 'See the full lineup of Sinotruk Bolden pickup trucks. Compare specs for the rugged Off-Road, powerful Commercial, and passenger. Book your Test Drive Today!',
       url: 'https://www.mysinotruk.ae/models',
       siteName: 'www.mysinotruk.ae',
       images: [

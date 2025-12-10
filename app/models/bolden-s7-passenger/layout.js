@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/models/bolden-s7-passenger',
         },
     },
-  title: 'Sinotruk The Bolden Passenger – Comfort Meets Power',
-  description: 'Experience the Sinotruk Bolden Passenger, a perfect mix of power, comfort, and modern design for family and business travel in the UAE',
+  title: 'Buy Bolden Passenger Pickup: Specs, Features & Price in UAE',
+  description: 'Bolden Passenger Pickup blends comfort and power for your daily drive. View detailed features, interior design, and get the latest price in the UAE.',
   openGraph: {
-      title: 'Sinotruk The Bolden Passenger – Comfort Meets Power',
-      description: 'Experience the Sinotruk Bolden Passenger, a perfect mix of power, comfort, and modern design for family and business travel in the UAE',
+      title: 'Buy Bolden Passenger Pickup: Specs, Features & Price in UAE',
+      description: 'Bolden Passenger Pickup blends comfort and power for your daily drive. View detailed features, interior design, and get the latest price in the UAE.',
       url: 'https://www.mysinotruk.ae/models/bolden-s7-passenger',
       siteName: 'www.mysinotruk.ae',
       images: [

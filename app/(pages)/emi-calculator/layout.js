@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/emi-calculator',
         },
     },
-  title: 'Sinotruk Bolden Off-Road, Passenger & Commercial Vehicle Finance',
-  description: 'Plan your Sinotruk Bolden ownership with easy finance insights, comparing options for off-road, passenger and commercial vehicles',
+  title: 'EMI Calculator: Estimate Your Sinotruk Bolden Monthly Payment',
+  description: 'Zero Down Payment Offer! Calculate your monthly EMI. Use our fast, free calculator to plan financing Instantly and drive your Bolden Vehicle today.',
   openGraph: {
-      title: 'Sinotruk Bolden Off-Road, Passenger & Commercial Vehicle Finance',
-      description: 'Plan your Sinotruk Bolden ownership with easy finance insights, comparing options for off-road, passenger and commercial vehicles',
+      title: 'EMI Calculator: Estimate Your Sinotruk Bolden Monthly Payment',
+      description: 'Zero Down Payment Offer! Calculate your monthly EMI. Use our fast, free calculator to plan financing Instantly and drive your Bolden Vehicle today.',
       url: 'https://www.mysinotruk.ae/emi-calculator',
       siteName: 'www.mysinotruk.ae',
       images: [

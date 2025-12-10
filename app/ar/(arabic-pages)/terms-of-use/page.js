@@ -1,20 +1,15 @@
 
-import HeaderNav from "@/components/ar/client/HeaderNavClientAr";
-import HeroSliderClient from "@/components/ar/client/pages/HeroSliderPages";
+import HeaderNav from "@/components/client/HeaderNavClient";
+import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
 
-import Footer from "@/components/ar/client/FooterClient";
+import Footer from "@/components/client/FooterClient";
 import RequestQuote from "@/components/demo/RequestQuote";
-
-import ContactSection from "@/components/ar/contactpage/ContactSection";
-import LocationSection from "@/components/ar/contactpage/LocationSection";
-
-
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/contact-us.webp",
+    desktop: "/assets/hero/landing-banner.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "اتصل بنا",
+    title:   "Terms & Conditions",
     subtitle:"",
     align:   "left",
     valign:   "end",
@@ -31,9 +26,9 @@ export default function Page() {
       <>
         <HeaderNav />
         <HeroSliderClient slides={HERO_SLIDES} autoPlayMs={6000} />
-
-        <ContactSection />
-        <LocationSection />
+        <div style={{ height: "100vh" }}>
+          
+        </div>        
 
 
         <Footer />        

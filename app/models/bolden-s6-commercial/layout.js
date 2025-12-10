@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/models/bolden-s6-commercial',
         },
     },
-  title: 'Sinotruk The Bolden Commercial – Built for Tough Jobs',
-  description: 'Experience Sinotruk The Bolden Commercial, engineered for durability and performance. Perfect for heavy-duty work with comfort and efficiency',
+  title: 'Drive Bolden Commercial Pickup Trucks: Best for Utility & Fleet Deals',
+  description: 'Bolden Commercial is the top-rated commercial work trucks for reliability, durability and lowest TCO in the UAE. Boost your fleet now! Request a Business Quote!',
   openGraph: {
-      title: 'Sinotruk The Bolden Commercial – Built for Tough Jobs',
-      description: 'Experience Sinotruk The Bolden Commercial, engineered for durability and performance. Perfect for heavy-duty work with comfort and efficiency',
+      title: 'Drive Bolden Commercial Pickup Trucks: Best for Utility & Fleet Deals',
+      description: 'Bolden Commercial is the top-rated commercial work trucks for reliability, durability and lowest TCO in the UAE. Boost your fleet now! Request a Business Quote!',
       url: 'https://www.mysinotruk.ae/models/bolden-s6-commercial',
       siteName: 'www.mysinotruk.ae',
       images: [

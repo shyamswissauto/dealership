@@ -106,14 +106,14 @@ export default function ContactSection() {
         {/* Right – Card */}
         <div className={styles.right}>
           <div className={styles.card} role="form" aria-labelledby="form-title">
-            <h3 id="form-title" className={styles.cardTitle}>Get in Touch</h3>
-            <p className={styles.cardSub}>You can reach us anytime</p>
+            <h3 id="form-title" className={styles.cardTitle}>تواصل معنا</h3>
+            <p className={styles.cardSub}>يمكنك الوصول إلينا في أي وقت</p>
 
             <form onSubmit={onSubmit} noValidate>
               <div className={styles.row}>
                 <div className={styles.field}>
                   <input
-                    name="first" placeholder="First name"
+                    name="first" placeholder="الاسم"
                     value={values.first} onChange={onChange}
                     aria-invalid={!!errors.first}
                     className={styles.cstInput}
@@ -122,7 +122,7 @@ export default function ContactSection() {
                 </div>
                 <div className={styles.field}>
                   <input
-                    name="last" placeholder="Last name"
+                    name="last" placeholder="الاسم العائلة"
                     value={values.last} onChange={onChange}
                     aria-invalid={!!errors.last}
                     className={styles.cstInput}
@@ -134,7 +134,7 @@ export default function ContactSection() {
               <div className={styles.row}>
                 <div className={styles.field}>
                   <input
-                    name="email" type="email" placeholder="Your email"
+                    name="email" type="email" placeholder="بريدك الإلكتروني"
                     value={values.email} onChange={onChange}
                     aria-invalid={!!errors.email}
                     className={styles.cstInput}
@@ -143,7 +143,7 @@ export default function ContactSection() {
                 </div>
                 <div className={styles.field}>
                   <input
-                    name="phone" inputMode="tel" placeholder="Phone number"
+                    name="phone" inputMode="tel" placeholder="رقم هاتفك"
                     value={values.phone} onChange={onChange}
                     aria-invalid={!!errors.phone}
                     className={styles.cstInput}
@@ -156,7 +156,7 @@ export default function ContactSection() {
 
               <div className={styles.field}>
                 <textarea
-                  name="msg" placeholder="How can we help?"
+                  name="msg" placeholder="كيف يمكنني مساعدتك؟"
                   rows={4} maxLength={maxLen}
                   value={values.msg} onChange={onChange}
                   aria-invalid={!!errors.msg}
@@ -171,7 +171,7 @@ export default function ContactSection() {
               <button className={styles.submit} type="submit">Submit</button>
 
               <p className={styles.consent}>
-                By contacting us, you agree to our <a href="/privacy-policy">Privacy Policy</a>
+                بالاتصال بنا، فإنك توافق على سياسة الخصوصية الخاصة بنا
               </p>
 
               {serverMsg && <p className={styles.serverMsg}>{serverMsg}</p>}

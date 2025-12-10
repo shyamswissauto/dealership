@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/brochure-download',
         },
     },
-  title: 'Download Sinotruk Bolden Off-Road, Passenger, Commercial Brochure Today',
-  description: 'Get your Sinotruk The Bolden Off-Road, Passenger, Commercial brochures now! Explore features, specs, and designs with a simple brochure download',
+  title: 'Download Sinotruk Bolden Brochure | Explore Features & Specs',
+  description: 'Get the full details! Download the official Sinotruk Bolden brochures. Includes complete technical specs, engine details, and safety features for all models.',
   openGraph: {
-      title: 'Download Sinotruk Bolden Off-Road, Passenger, Commercial Brochure Today',
-      description: 'Get your Sinotruk The Bolden Off-Road, Passenger, Commercial brochures now! Explore features, specs, and designs with a simple brochure download',
+      title: 'Download Sinotruk Bolden Brochure | Explore Features & Specs',
+      description: 'Get the full details! Download the official Sinotruk Bolden brochures. Includes complete technical specs, engine details, and safety features for all models.',
       url: 'https://www.mysinotruk.ae/brochure-download',
       siteName: 'www.mysinotruk.ae',
       images: [

@@ -6,11 +6,11 @@ export const metadata = {
           'en': 'https://www.mysinotruk.ae/special-offers',
         },
     },
-  title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',
-  description: 'Don’t miss out! Explore the latest Sinotruk Bolden special offers, deals, & promotions on  Off-Road, Passenger & Commercial trucks in UAE. Limited time deals!',
+  title: 'Special Offers on Sinotruk Bolden Off-Road, Passenger and Commercial Models',
+  description: 'Don’t miss exciting special offers on Sinotruk The Bolden Off-Road, Passenger and Commercial. Save big on commercial, passenger, and off-road models. Limited-time deals!',
   openGraph: {
-      title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',
-      description: 'Don’t miss out! Explore the latest Sinotruk Bolden special offers, deals, & promotions on  Off-Road, Passenger & Commercial trucks in UAE. Limited time deals!',
+      title: 'Special Offers on Sinotruk Bolden Off-Road, Passenger and Commercial Models',
+      description: 'Don’t miss exciting special offers on Sinotruk The Bolden Off-Road, Passenger and Commercial. Save big on commercial, passenger, and off-road models. Limited-time deals!',
       url: 'https://www.mysinotruk.ae/special-offers',
       siteName: 'www.mysinotruk.ae',
       images: [
