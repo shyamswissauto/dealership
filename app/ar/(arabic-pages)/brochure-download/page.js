@@ -1,10 +1,9 @@
 
-import HeaderNav from "@/components/client/HeaderNavClient";
-import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
+import HeaderNav from "@/components/ar/client/HeaderNavClientAr";
+import HeroSliderClient from "@/components/ar/client/pages/HeroSliderPages";
 
-import Footer from "@/components/client/FooterClient";
-import RequestQuote from "@/components/demo/RequestQuote";
-import BrochureGrid from "@/components/pages/BrochureGrid";
+import Footer from "@/components/ar/client/FooterClient";
+import BrochureGrid from "@/components/ar/pages/BrochureGrid";
 
 const BROCHURES = [
   /* {
@@ -20,19 +19,19 @@ const BROCHURES = [
     download: true,
   }, */
   {
-    title: "BOLDEN OFF-ROAD",
+    title: "بولدن أوف رود",
     img: "/assets/models/img2.webp",
     href: "/assets/brochure/bolden-off-road-brochure.pdf",
     download: true,
   },
   {
-    title: "BOLDEN PASSENGER",
+    title: "بولدن باسنجر",
     img: "/assets/models/img3.webp",
     href: "/assets/brochure/bolden-passenger-brochure.pdf",
     download: true,
   },
   {
-    title: "BOLDEN COMMERCIAL",
+    title: "بولدن كوميرشال",
     img: "/assets/models/img1.webp",
     href: "/assets/brochure/bolden-commercial-brochure.pdf",
     download: true,
@@ -43,7 +42,7 @@ export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/view-brochure.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "Brochure Download",
+    title:   "تحميل الكتيب",
     subtitle:"",
     align:   "left",
     valign:   "end",

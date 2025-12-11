@@ -33,7 +33,7 @@ export default function BrochureGrid({ items = [] }) {
                   aria-label={`View & download ${it.title}`}
                   {...(it.download ? { download: "" } : {})}
                 >
-                  <span>Download</span>
+                  <span>تحميل</span>
                   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                     <path
                       d="M13 5l7 7-7 7M20 12H4"

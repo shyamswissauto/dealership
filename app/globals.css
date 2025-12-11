@@ -23,6 +23,10 @@ body {
   font-family: var(--font-red-rose), ui-serif, Georgia, serif;
 }
 
+.is-arabic body {
+  font-family: var(--font-red-rose), ui-serif, Georgia, serif;
+}
+
 h1,
 h2,
 h3,
@@ -369,17 +373,17 @@ a.cstBtnStyle1[aria-disabled="true"] {
 }
 
 
-.dirRtl h1,
-.dirRtl h2,
-.dirRtl h3,
-.dirRtl h4,
-.dirRtl h5,
-.dirRtl h6 {
+.dirRtl h1, .is-arabic h1,
+.dirRtl h2, .is-arabic h2,
+.dirRtl h3, .is-arabic h3,
+.dirRtl h4, .is-arabic h4,
+.dirRtl h5, .is-arabic h5,
+.dirRtl h6, .is-arabic h6 {
   font-family: var(--font-almarai);
 }
 
-.dirRtl p,
-.dirRtl .kicker {
+.dirRtl p, .is-arabic p,
+.dirRtl .kicker, .is-arabic .kicker {
   font-family: var(--font-almarai);
 }
 

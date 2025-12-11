@@ -1,16 +1,15 @@
 
-import HeaderNav from "@/components/client/HeaderNavClient";
-import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
+import HeaderNav from "@/components/ar/client/HeaderNavClientAr";
+import HeroSliderClient from "@/components/ar/client/pages/HeroSliderPages";
 
-import Footer from "@/components/client/FooterClient";
-import RequestQuote from "@/components/demo/RequestQuote";
-import OffersGrid from "@/components/pages/OffersGrid";
+import Footer from "@/components/ar/client/FooterClient";
+import OffersGrid from "@/components/ar/pages/OffersGrid";
 
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/offer-page-banner.webp",
     mobile:  "/assets/hero/offer-page-banner-m.webp",
-    title:   "Exclusive Offers",
+    title:   "عروض حصرية",
     subtitle:"",
     align:   "left",
     valign:   "end",

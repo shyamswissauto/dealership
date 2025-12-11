@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./OffersGrid.module.css";
-import OFFERS from "@/data/offers";
+import OFFERS from "@/data/offers-ar";
 import OfferFormModal from "./OfferFormModal";
 
 export default function OffersGrid() {
@@ -41,7 +41,7 @@ export default function OffersGrid() {
                 onClick={() => setActive(o)}
                 aria-haspopup="dialog"
               >
-                <span aria-hidden="true">📞</span>&nbsp;Get This Offer
+                <span aria-hidden="true">📞</span>&nbsp;احصل على هذا العرض
               </button>
             </div>
           </li>

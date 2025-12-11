@@ -81,7 +81,7 @@ export default function OfferFormModal({ offer, onClose }) {
 
         {/* RIGHT: form */}
         <div className={styles.modalRight}>
-          <h2 className={styles.modalTitle}>OFFER ENQUIRY</h2>
+          <h2 className={styles.modalTitle}>استفسار عن العرض</h2>
           {offer?.title && <p className={styles.offerName}>{offer.title}</p>}
 
           <form className={styles.form} onSubmit={submit} noValidate>
@@ -93,28 +93,28 @@ export default function OfferFormModal({ offer, onClose }) {
               ref={firstFieldRef}
               name="fullName"
               className={styles.input}
-              placeholder="Full Name"
+              placeholder="اسمك"
               required
             />
             <input
               type="email"
               name="email"
               className={styles.input}
-              placeholder="Your email"
+              placeholder="البريد الإلكتروني"
               required
             />
             <input
               type="tel"
               name="phone"
               className={styles.input}
-              placeholder="Phone Number"
+              placeholder="رقم الهاتف"
               inputMode="tel"
               pattern="[0-9+() -]*"
               required
             />
 
             <button type="submit" className={styles.cta} disabled={sending}>
-              {sending ? "SENDING…" : "SUBMIT"}
+              {sending ? "جاري الإرسال…" : "إرسال"}
             </button>
           </form>
         </div>

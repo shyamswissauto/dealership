@@ -20,12 +20,12 @@ function useIsMobile(bp = 992) {
 export default function SmartBuyingTools({
   title = "أدوات الشراء الذكية",
   items = [
-    { labelTop: "عروض", labelBottom: "حصرية", image: "/assets/tools/img1.webp", href: "/special-offers" },
-    { labelTop: "جرب", labelBottom: "القيادة", image: "/assets/tools/img2.png", href: "/experience-the-drive" },
-    { labelTop: "اطلب", labelBottom: "عرض الأسعار", image: "/assets/tools/img3.png", href: "/request-a-quote", badge: "1" },
-    { labelTop: "حاسبة", labelBottom: "مالية", image: "/assets/tools/img4.png", href: "/emi-calculator" },
-    { labelTop: "موقعنا", labelBottom: "", image: "/assets/tools/img5.png", href: "/contact-us" },
-    { labelTop: "عرض", labelBottom: "الكتيب", image: "/assets/tools/img6.webp", href: "/brochure-download" },
+    { labelTop: "عروض", labelBottom: "حصرية", image: "/assets/tools/img1.webp", href: "/ar/special-offers" },
+    { labelTop: "جرب", labelBottom: "القيادة", image: "/assets/tools/img2.png", href: "/ar/experience-the-drive" },
+    { labelTop: "اطلب", labelBottom: "عرض الأسعار", image: "/assets/tools/img3.png", href: "/ar/request-a-quote", badge: "1" },
+    { labelTop: "حاسبة", labelBottom: "مالية", image: "/assets/tools/img4.png", href: "/ar/emi-calculator" },
+    { labelTop: "موقعنا", labelBottom: "", image: "/assets/tools/img5.png", href: "/ar/contact-us" },
+    { labelTop: "عرض", labelBottom: "الكتيب", image: "/assets/tools/img6.webp", href: "/ar/brochure-download" },
   ],
 }) {
   const isMobile = useIsMobile();

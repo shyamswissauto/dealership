@@ -28,6 +28,7 @@
   padding: clamp(14px, 3vw, 30px) clamp(16px, 3vw, 40px);
   display: grid;
   gap: clamp(16px, 2.4vw, 20px);
+  font-family: var(--font-almarai) !important;
 }
 
 .grid {
@@ -189,6 +190,7 @@
   margin-top: 16px;
   color: #6a7280;
   font-size: 12px;
+  font-family: var(--font-almarai) !important;
 }
 
 /* Two-up rows for control blocks */

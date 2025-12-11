@@ -1,18 +1,15 @@
 
-import HeaderNav from "@/components/client/HeaderNavClient";
-import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
+import HeaderNav from "@/components/ar/client/HeaderNavClientAr";
+import HeroSliderClient from "@/components/ar/client/pages/HeroSliderPages";
 
-import Footer from "@/components/client/FooterClient";
-import RequestQuote from "@/components/demo/RequestQuote";
-import FleetBenefits from "@/components/pages/FleetBenefits";
-import FleetTwoCol from "@/components/pages/FleetTwoCol";
-import EmiCalculator1 from "@/components/models/EmiCalculator1";
-
+import Footer from "@/components/ar/client/FooterClient";
+import FleetBenefits from "@/components/ar/pages/FleetBenefits";
+import FleetTwoCol from "@/components/ar/pages/FleetTwoCol";
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/business-page.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "BOLDEN BUSINESS",
+    title:   "بولدن للأعمال",
     subtitle:"",
     align:   "left",
     valign:   "end",

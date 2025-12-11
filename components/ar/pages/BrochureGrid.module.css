@@ -67,9 +67,9 @@
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  letter-spacing: .02em;
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
   transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+  font-family: var(--font-almarai) !important;
 }
 
 .btn:hover {

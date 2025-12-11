@@ -1,16 +1,15 @@
 
-import HeaderNav from "@/components/client/HeaderNavClient";
-import HeroSliderClient from "@/components/client/pages/HeroSliderPages";
+import HeaderNav from "@/components/ar/client/HeaderNavClientAr";
+import HeroSliderClient from "@/components/ar/client/pages/HeroSliderPages";
 
-import Footer from "@/components/client/FooterClient";
-import RequestQuote from "@/components/demo/RequestQuote";
-import EmiCalculator1 from "@/components/models/EmiCalculator1";
+import Footer from "@/components/ar/client/FooterClient";
+import EmiCalculator1 from "@/components/ar/models/EmiCalculator1";
 
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/emi-calculator.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "Finance Calculator",
+    title:   "حاسبة التمويل",
     subtitle:"",
     align:   "left",
     valign:   "end",

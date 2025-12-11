@@ -44,6 +44,7 @@
   font-size: 13px;
   font-weight: 600;
   color: #333;
+  font-family: var(--font-almarai);
 }
 .label span { color: #e22; margin-left: 4px; }
 
@@ -64,14 +65,18 @@
 }
 
 .selectWrap { position: relative; }
-.select { appearance: none; -webkit-appearance: none; -moz-appearance: none; padding-right: 40px; }
+.select { appearance: none; -webkit-appearance: none; -moz-appearance: none; padding-right: 40px; font-family: var(--font-almarai), system-ui, sans-serif;}
+.select option {
+  font-family: var(--font-almarai), system-ui, sans-serif;
+  font-size: 14px;
+}
 .caret {
   position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
   width: 18px; height: 18px; color: #888; pointer-events: none;
 }
 
 .checkLabel {
-  display: flex; align-items: center; gap: 10px; font-size: 14px; color: #444;
+  display: flex; align-items: center; gap: 10px; font-size: 14px; color: #444;font-family: var(--font-almarai);
 }
 .checkbox { width: 18px; height: 18px; }
 
@@ -85,6 +90,7 @@
   font-weight: 700;
   cursor: pointer;
   transition: transform .04s ease, opacity .2s ease;
+  font-family: var(--font-almarai);
 }
 .btn:hover { opacity: .9; }
 .btn:active { transform: translateY(1px); }

@@ -27,9 +27,9 @@ export default function FooterAr() {
           <nav aria-labelledby="foot-product" className={styles.col}>
             <h3 id="foot-product" className={styles.heading}>الموديلات</h3>
             <ul className={styles.list}>
-              <li><Link href="/models/bolden-s9-off-road">بولدن أوف رود</Link></li>
-              <li><Link href="/models/bolden-s7-passenger">بولدن باسنجر</Link></li>
-              <li><Link href="/models/bolden-s6-commercial">بولدن كوميرشال</Link></li>
+              <li><Link href="/ar/models/bolden-s9-off-road">بولدن أوف رود</Link></li>
+              <li><Link href="/ar/models/bolden-s7-passenger">بولدن باسنجر</Link></li>
+              <li><Link href="/ar/models/bolden-s6-commercial">بولدن كوميرشال</Link></li>
             </ul>
           </nav>
 
@@ -37,10 +37,10 @@ export default function FooterAr() {
           <nav aria-labelledby="foot-links" className={styles.col}>
             <h3 id="foot-links" className={styles.heading}>روابط مفيدة</h3>
             <ul className={styles.list}>
-              <li><Link href="/request-a-quote">احصل على عرض الأسعار</Link></li>
-              <li><Link href="/brochure-download">تنزيل الكتيب</Link></li>
+              <li><Link href="/ar/request-a-quote">احصل على عرض الأسعار</Link></li>
+              <li><Link href="/ar/brochure-download">تنزيل الكتيب</Link></li>
               {/* <li><Link href="#">Blogs</Link></li> */}
-              <li><Link href="/contact-us">تواصل معنا</Link></li>
+              <li><Link href="/ar/contact-us">تواصل معنا</Link></li>
             </ul>
           </nav>
 
@@ -101,8 +101,11 @@ export default function FooterAr() {
 
       
       <div className={styles.legal}>
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles.cstWrap}`}>
           <p>© 2025 سينوترَك. جميع الحقوق محفوظة.</p>
+          <div>
+            <Link href="/ar/privacy-policy">سياسة الخصوصية</Link> | <Link href="/connect">Connect</Link>
+          </div>
         </div>
       </div>
 

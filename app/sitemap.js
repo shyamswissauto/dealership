@@ -90,5 +90,10 @@ export default function sitemap() {
             lastModified: '2025-11-25T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/top-5-reasons-uae-businesses-choose-sinotruk-bolden-commercial',
+            lastModified: '2025-12-10T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }

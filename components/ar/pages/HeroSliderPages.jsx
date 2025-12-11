@@ -70,7 +70,7 @@ export default function HeroSlider({ slides = [], autoPlayMs = 7000 }) {
 
               
               <div className="wrap uiText">
-                <div className={`copy align-${s.align} valign-${s.valign}`}>
+                <div className={`copy align-${s.align} valign-${s.valign} dirRtl`}>
                   <h2 className="title slide-in-up">{s.title}</h2>
                   {s.subtitle && <p className="subtitle">{s.subtitle}</p>}
                 </div>

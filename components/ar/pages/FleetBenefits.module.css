@@ -1,5 +1,5 @@
 /* layout */
-.wrap { background:#fff; }
+.wrap { background:#fff; font-family: var(--font-almarai);}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -44,11 +44,10 @@
 .icon { margin: 8px auto 14px; height: 56px; width: 56px; }
 .title {
   margin: 0 0 8px;
-  font-weight: 800;
-  letter-spacing: .06em;
+  font-weight: 700;
   text-transform: uppercase;
   color: #2b2b2b;
-  font-size: clamp(12px, 1.2vw, 14px);
+  font-size: clamp(14px, 1.2vw, 16px);
 }
 .text {
   margin: 0 auto;

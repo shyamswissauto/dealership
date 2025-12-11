@@ -26,6 +26,7 @@
   padding: clamp(14px, 3vw, 30px) clamp(16px, 3vw, 40px);
   display: grid;
   gap: clamp(16px, 2.4vw, 20px);
+  font-family: var(--font-almarai) !important;
 }
 
 .grid {
@@ -40,13 +41,14 @@
 
 /* LEFT */
 .controls { display: grid; gap: 18px; }
-.block { background: #fff; border: 1px solid #e6e9ee; border-radius: 12px; padding: 14px; }
+.block { background: #fff; border: 1px solid #e6e9ee; border-radius: 12px; padding: 14px; font-family: var(--font-almarai) !important;}
 .lbl {
   font-size: 13px;
   font-weight: 700;
   color: #1d2430;
   margin-bottom: 8px;
   display: block;
+  font-family: var(--font-almarai) !important;
 }
 
 /* inputs */
@@ -187,4 +189,5 @@
   margin-top: 16px;
   color: #6a7280;
   font-size: 12px;
+  font-family: var(--font-almarai) !important;
 }

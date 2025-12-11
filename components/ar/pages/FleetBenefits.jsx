@@ -6,40 +6,40 @@ import styles from "./FleetBenefits.module.css";
 import PromoGrid from "../modelList/PromoGrid";
 
 export default function FleetBenefits({
-  heading = `Whether you're running deliveries, managing crews, or powering up daily operations, Bolden pickups are built to keep your fleet moving — reliably, affordably, and with serious muscle. From rugged performance to smart features that make every drive smoother, Bolden is the partner your business deserves. Ready to scale up? Let’s get your fleet Bolden-ready.`,
+  heading = `سواء كنت تدير خدمات توصيل، أو فرق عمل، أو عمليات يومية، فإن بيك أب بولدن مصممة للحفاظ على سير أسطولك — بثقة، وبأسعار مناسبة، وبقوة حقيقية. من الأداء القوي إلى المزايا الذكية التي تجعل كل رحلة أكثر سلاسة، بولدن هي الشريك الذي يستحقه عملك. جاهز للتطوير؟ خلّينا نجهّز أسطولك مع بولدن.`,
   items = [
     {
       icon: "/assets/icons/settings.svg",
-      title: "Built for Fleet Demands",
-      text: "Bolden pickups are engineered for durability, load capacity, and all-day performance.",
+      title: "مصممة لتلبية متطلبات الأساطيل",
+      text: "بيك أب بولدن مُهندسة للتحمّل، والحمولة العالية، والأداء المستمر طوال اليوم.",
     },
     {
       icon: "/assets/icons/settings.svg",
-      title: "Business-Friendly Pricing",
-      text: "Our fleet packages come with competitive rates and financing options that make scaling easy.",
+      title: "أسعار مناسبة للأعمال",
+      text: "باقات الأسطول لدينا تأتي بأسعار تنافسية وخيارات تمويل تسهّل عليك التوسّع.",
     },
     {
       icon: "/assets/icons/settings.svg",
-      title: "Easy Maintenance, Low Downtime",
-      text: "Bolden’s accessible service networks and robust parts ensure your fleet stays on the road.",
+      title: "صيانة سهلة ووقت توقف أقل",
+      text: "شبكات الخدمة المتاحة وقطع الغيار القوية من بولدن تضمن بقاء أسطولك على الطريق.",
     },
     {
       icon: "/assets/icons/settings.svg",
-      title: "Customizable Configurations",
-      text: "Choose from multiple trims and add-ons to match your fleet’s exact needs.",
+      title: "خيارات تخصيص متنوعة",
+      text: "اختر من عدة فئات وإضافات لتلبية احتياجات أسطولك بدقة.",
     },
     {
       icon: "/assets/icons/settings.svg",
-      title: "Fleet Management Support",
-      text: "Optional telematics and GPS tracking tools help you monitor usage and reduce operational costs.",
+      title: "دعم إدارة الأسطول",
+      text: "أدوات التليماتكس ونظام تحديد المواقع. (GPS) الاختيارية تساعدك على مراقبة الاستخدام وتقليل التكاليف التشغيلية",
     },
     {
       icon: "/assets/icons/settings.svg",
-      title: "Dedicated Fleet Advisors",
-      text: "Our team works with you directly to plan, quote, and deliver the right vehicles.",
+      title: "مستشارو أسطول متخصصون",
+      text: "فريقنا يعمل معك مباشرة للتخطيط والتسعير وتوفير المركبات المناسبة لعملك.",
     },
   ],
-  ctaBand = "Fleet-Ready Pickups To Power Your Business Forward",
+  ctaBand = "بيك أب جاهزة للأساطيل… لدفع عملك نحو الأمام",
 }) {
   return (
     <section className={styles.wrap} aria-labelledby="fleet-title">

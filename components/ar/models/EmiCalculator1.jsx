@@ -87,7 +87,7 @@ export default function EmiCalculator1() {
 
 
                                 <div className={styles.block}>
-                                    <label className={styles.lbl}>Car Model</label>
+                                    <label className={styles.lbl}>موديل السيارة</label>
                                     <div className={styles.selectWrap}>
                                         <select
                                             className={styles.select}
@@ -116,7 +116,7 @@ export default function EmiCalculator1() {
                                 <div className={styles.controlsRow}>
                                     {/* Car Price */}
                                     <div className={styles.block}>
-                                        <label className={styles.lbl}>Car Price</label>
+                                        <label className={styles.lbl}>سعر السيارة</label>
                                         <div className={styles.inlineField}>
                                             <span className={styles.prefix}>AED</span>
                                             <input
@@ -143,7 +143,7 @@ export default function EmiCalculator1() {
 
                                     {/* Down Payment */}
                                     <div className={styles.block}>
-                                        <label className={styles.lbl}>Down Payment</label>
+                                        <label className={styles.lbl}>الدفعة الأولى</label>
                                         <div className={styles.twoCols}>
                                             <div className={styles.inlineField}>
                                                 <span className={styles.prefix}>AED</span>
@@ -190,7 +190,7 @@ export default function EmiCalculator1() {
                                 <div className={styles.controlsRow}>
                                     {/* Interest */}
                                     <div className={styles.block}>
-                                        <label className={styles.lbl}>Interest Rate</label>
+                                        <label className={styles.lbl}>سعر الفائدة</label>
                                         <div className={styles.inlineField}>
                                             <input
                                                 type="number"
@@ -217,7 +217,7 @@ export default function EmiCalculator1() {
 
                                     {/* Loan period */}
                                     <div className={styles.block}>
-                                        <label className={styles.lbl}>Loan Period</label>
+                                        <label className={styles.lbl}>مدة القرض</label>
                                         <div className={styles.yearBtns}>
                                             {LOAN_YEARS.map((y) => (
                                                 <button
@@ -240,30 +240,30 @@ export default function EmiCalculator1() {
 
                             {/* === RIGHT: Summary card === */}
                             <div className={styles.summary}>
-                                <p className={styles.summaryEyebrow}>Monthly Payment</p>
+                                <p className={styles.summaryEyebrow}>الدفعة الشهرية</p>
                                 <div className={styles.monthly}>AED {fmt(monthly)}</div>
 
                                 <ul className={styles.kvList}>
                                     <li>
-                                        <span>Car Price</span>
+                                        <span>سعر السيارة</span>
                                         <b>AED {fmt(carPrice)}</b>
                                     </li>
                                     <li>
-                                        <span>Down Payment</span>
+                                        <span>الدفعة الأولى</span>
                                         <b>
                                             AED {fmt(downAmt)} / {Math.round(downPct)}%
                                         </b>
                                     </li>
                                     <li>
-                                        <span>Total Loan Amount</span>
+                                        <span>إجمالي مبلغ القرض</span>
                                         <b>AED {fmt(principal)}</b>
                                     </li>
                                     <li>
-                                        <span>Loan Period</span>
+                                        <span>مدة القرض</span>
                                         <b>{years} {years === 1 ? "Year" : "Years"}</b>
                                     </li>
                                     <li>
-                                        <span>Total interest</span>
+                                        <span>المجموع الفائدة</span>
                                         <b>AED {fmt(totalInterest)}</b>
                                     </li>
                                 </ul>
@@ -273,7 +273,7 @@ export default function EmiCalculator1() {
                     </div>
 
                     <div className={styles.note}>
-                        * The figures shown are for illustration purposes only. Final rates and approvals are subject to the respective bank’s discretion.
+                        * الأرقام المعروضة هي لأغراض توضيحية فقط. تخضع الأسعار النهائية والموافقات لتقدير البنك المعني
                     </div>
 
                 </div>
