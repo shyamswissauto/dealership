@@ -12,7 +12,6 @@
   max-width: 1020px;
   margin: 0 auto clamp(28px, 6vw, 56px);
   font-weight: 800;
-  letter-spacing: .02em;
   line-height: 1.25;
   text-transform: uppercase;
   color: #1a1a1a;
@@ -69,7 +68,6 @@
   margin: 0 auto;
   text-align: center;
   font-weight: 900;
-  letter-spacing: .04em;
   text-transform: uppercase;
   font-size: clamp(16px, 2vw, 26px);
 }

@@ -45,7 +45,7 @@ export default function FeaturesSection() {
             style={{ "--reveal-delay": "0ms" }}
           >
             <Link
-              href="/models/bolden-s9-off-road"
+              href="/ar/models/bolden-s9-off-road"
               className={`${styles.card} ${styles.cardLarge}`}
               style={{
                 "--bg": "url('/assets/home/feature1.webp')",
@@ -68,7 +68,7 @@ export default function FeaturesSection() {
             style={{ "--reveal-delay": "120ms" }}
           >
             <Link
-              href="/models"
+              href="/ar/models"
               className={styles.card}
               style={{
                 "--bg": "url('/assets/home/feature2.webp')",
@@ -91,7 +91,7 @@ export default function FeaturesSection() {
             style={{ "--reveal-delay": "220ms" }}
           >
             <Link
-              href="/models"
+              href="/ar/models"
               className={styles.card}
               style={{
                 "--bg": "url('/assets/home/feature3.webp')",

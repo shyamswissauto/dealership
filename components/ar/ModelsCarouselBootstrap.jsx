@@ -13,19 +13,19 @@ const MODELS = [
     name: "نوع أوف رود",
     img: "/assets/models/img2.webp",
     hoverImg: "/models/img4.png",
-    href: "/models/bolden-s9-off-road",
+    href: "/ar/models/bolden-s9-off-road",
   },
   {
     name: "باسنجر",
     img: "/assets/models/img3.webp",
     hoverImg: "/models/img3.png",
-    href: "/models/bolden-s7-passenger",
+    href: "/ar/models/bolden-s7-passenger",
   },
   {
     name: "كوميرشال",
     img: "/assets/models/img1.webp",
     hoverImg: "/models/img2.png",
-    href: "/models/bolden-s6-commercial",
+    href: "/ar/models/bolden-s6-commercial",
   },
 ];
 
