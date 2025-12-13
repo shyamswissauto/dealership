@@ -6,6 +6,7 @@
   overflow: hidden;
   background: #000;                 /* fallback while image loads */
   align-content: center;
+  direction: rtl;
 }
 
 .bg {

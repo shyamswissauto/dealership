@@ -3,16 +3,16 @@
 
 import { useEffect, useState, useRef } from "react";
 import styles from "./ExperienceSection.module.css";
-import TestDriveModal from "@/components/TestDriveModal";
+import TestDriveModal from "@/components/ar/TestDriveModal";
 
 export default function ExperienceSection({
-  eyebrow = "The Sinotruk Bolden is built for UAE roads. Curious about how it performs? Take it for a spin.",
-  titleTop = "From city streets to desert trails— the Bolden pickup is ready to take on any terrain. Are you?",
+  eyebrow = " سينوتروك بولدن مصممة لطرق الإمارات. فضولي تعرف كيف أداؤها؟ جرّبها بنفسك.",
+  titleTop = "من شوارع المدينة إلى دروب الصحراء — بيك أب بولدن جاهزة لأي تضاريس. ماذا عنك؟",
   titleBottom = "",
-  body = `This is your opportunity to lay your hands on a pickup truck that works as hard as you do. Whether you're navigating deliveries in Dubai or powering through desert terrain in Al Ain, Sinotruk Bolden is built to handle it all. By test driving it, you’re not merely assessing the specs; you’ll also get the chance to feel its torque firsthand. Besides, you’ll also get to experience what true comfort in a pickup feels like. From smooth handling to rugged reliability, this is where performance meets practicality.
-Ready to test drive the Sinotruk Bolden? We have a simple booking process. Once you’ve booked your slot, head to our test drive center, and our team will walk you through every feature, answer your questions, and make sure you get a feel for what the Bolden can do. No pressure to buy—just a chance to see if it’s the right fit for you. Because when it comes to your vehicle, we firmly believe that the best way to experience a vehicle’s features is behind the wheel.
+  body = `فرصتك لتجربة بيك أب تعمل بقدر ما تعمل أنت. سواء كنت تتنقّل للتوصيل داخل دبي أو تتقدّم عبر طرق العين الصحراوية، فإن سينوتروك بولدن مصممة للتعامل مع كل ذلك. وعند قيامك بتجربة القيادة، فأنت لا تختبر المواصفات فقط، بل تشعر بعزمها الحقيقي بنفسك، بالإضافة إلى اكتشاف معنى الراحة الحقيقية في بيك أب. من التحكم السلس إلى الاعتمادية القوية… هنا يلتقي الأداء بالعملية.
+جاهز لتجربة قيادة سينوتروك بولدن؟ لدينا عملية حجز سهلة وبسيطة. بعد حجز موعدك، توجه إلى مركز تجربة القيادة وسيقوم فريقنا بشرح كل ميزة، والإجابة عن استفساراتك، والتأكد من أنك تختبر فعليًا ما يمكن لبولدن أن تقدمه. لا يوجد أي ضغط للشراء—فقط فرصة لمعرفة ما إذا كانت المركبة المناسبة لك. لأننا نؤمن تمامًا بأن أفضل طريقة لاختبار مزايا أي مركبة هي الجلوس خلف المقود.
 `,
-  ctaLabel = "Book A Test Drive",
+  ctaLabel = "احجز تجربة القيادة",
 }) {
 
   const [open, setOpen] = useState(false);

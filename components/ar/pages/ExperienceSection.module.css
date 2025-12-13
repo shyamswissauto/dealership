@@ -1,5 +1,6 @@
 .wrap {
   background: #fff;
+  direction: rtl;
 }
 
 .container {
@@ -53,6 +54,7 @@
   transition: background .2s ease, color .2s ease, transform .02s ease;
   width: 200px;
   margin: 0px auto;
+  font-family: var(--font-almarai);
 }
 
 .cta:hover { background: #0b0b0b; color: #fff; }

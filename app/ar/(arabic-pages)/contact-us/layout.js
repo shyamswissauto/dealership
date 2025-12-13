@@ -1,4 +1,6 @@
 export const metadata = {
+  title: "اتصل بـ Sinotruk الإمارات | تواصل مع الوكيل الرسمي – MySinotruk",
+  description: "نحن هنا لمساعدتك. تواصل مع فريق Sinotruk Bolden في الإمارات للاستفسارات، عروض الأسعار، وتجارب القيادة.تواصل الآن مع الوكيل الرسمي للحصول على المساعدة الفورية.",
   robots: {
     index: false,
     follow: false,

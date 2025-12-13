@@ -6,22 +6,22 @@ import Link from "next/link";
 import styles from "./MoreInfoSection.module.css";
 
 export default function MoreInfoSection({
-    title = "Specs, Support, and More",
+    title = "المواصفات، الدعم، والمزيد",
     items = [
         {
-            title:"View Full Specs - Get detailed technical information before booking.",
-            href: "/brochure-download",
+            title:"عرض المواصفات الكاملة - احصل على معلومات تقنية مفصلة قبل الحجز.",
+            href: "/ar/brochure-download",
             img: "/assets/pages/experience-view-spec.webp",
             alttext: "View Full Specs",
         },
         {
-            title:"Compare Models - Explore your options and trim levels.",
-            href: "/models",
+            title:"استكشف خياراتك والفئات المتوفر.- مقارنة الموديلات",
+            href: "/ar/models",
             img: "/assets/pages/experience-compare-model.webp",
             alttext: "Compare Models",
         },
         {
-            title:"Need more help? - Talk to a specialist for personalized guidance.",
+            title:"تحتاج مساعدة؟ - تحدث إلى مختص للحصول على إرشاد مخصص.",
             href: "tel:+971561122500",
             img: "/assets/pages/experience-talk-specialist.webp",
             alttext: "Need more help?",

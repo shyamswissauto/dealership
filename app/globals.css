@@ -64,6 +64,10 @@ a.ar {
   font-family: var(--font-almarai);
 }
 
+.arText {
+  font-family: var(--font-almarai) !important;
+}
+
 .nav a:hover,
 a.ar:hover {
   opacity: 1;

@@ -176,6 +176,7 @@ export default function HeaderNav() {
           <Link href="/ar/bolden-business" className="cstTransY navItemLinks">
             بولدن للأعمل
           </Link>
+         
           <Link href="/ar/contact-us" className="cstTransY navItemLinks">
             التواصل
           </Link>
@@ -286,6 +287,8 @@ export default function HeaderNav() {
             >
               التواصل
             </Link>
+
+            <LanguageSwitcher />
 
             {/* your existing social icons block can stay here */}
           </div>

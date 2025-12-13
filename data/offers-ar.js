@@ -22,7 +22,7 @@ const OFFERS = [
     "تسجيل مجاني",
     "دفعة أولى ٠٪ (تطبق الشروط والأحكام)"
   ],
-    img: "/assets/offers/uae-offer.webp",
+    img: "/assets/offers/uae-offer-ar.webp",
     cstclass: "offerb2s1",
   },
   

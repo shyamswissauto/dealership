@@ -56,7 +56,6 @@
 .title {
   text-align: center;
   font-weight: 800;
-  letter-spacing: .08em;
   margin: 0 0 clamp(16px, 3vw, 26px);
   color: var(--ink);
 }
@@ -107,7 +106,6 @@
   color: var(--ink);
   padding: 12px 26px;
   font-weight: 600;
-  letter-spacing: .06em;
   text-transform: uppercase;
   transition: transform .18s ease, background .18s ease, color .18s ease;
 }

@@ -1,4 +1,6 @@
 export const metadata = {
+  title: "",
+  description: "",
   robots: {
     index: false,
     follow: false,

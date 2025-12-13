@@ -181,8 +181,9 @@ export default function HeaderNav() {
           </Link>
         </nav>
 
-        {/* <LanguageSwitcher /> */}
+        
         <div className="right">
+          <LanguageSwitcher />
           <button
             onClick={() => setOpen(true)}
             className="cta btn cstBtnStyle hideMobile cstHeadTest"
@@ -285,6 +286,8 @@ export default function HeaderNav() {
             >
               Contact
             </Link>
+
+            <LanguageSwitcher />
 
             {/* your existing social icons block can stay here */}
           </div>

@@ -13,7 +13,7 @@ export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/experience-the-drive.webp",
     mobile:  "/assets/hero/listing-page-banner.webp",
-    title:   "ادخل، ابدأ، واختبر الفرق.",
+    title: "خطوة للداخل… شغّل… واختبر الفرق بنفسك.",
     subtitle:"",
     align:   "left",
     valign:   "end",

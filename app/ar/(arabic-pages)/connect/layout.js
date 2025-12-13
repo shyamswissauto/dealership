@@ -1,4 +1,6 @@
 export const metadata = {
+  title: "Bolden Connect الإمارات | قنوات التواصل والدعم – Sinotruk",
+  description: "Connect صفحة مخصصة لتواصلك مع فريق Sinotruk Bolden الإمارات. استفسارات، دعم، وتجربة قيادة—all in one place. أرسل طلبك وسنعود إليك فوراً.",
   robots: {
     index: false,
     follow: false,

@@ -1,4 +1,6 @@
 export const metadata = {
+  title: "شاحنة Bolden S6 Commercial في الإمارات | للاستخدام التجاري ",
+  description: "اكتشف Bolden S6 Commercial في الإمارات، تقدم أداءً احترافياً للشركات والأفراد تتحمل الظروف الصعبة بفضل تصميم قوي ومحرك متين. احجز تجربة قيادة الآن.",
   robots: {
     index: false,
     follow: false,

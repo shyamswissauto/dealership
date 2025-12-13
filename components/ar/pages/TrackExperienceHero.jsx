@@ -6,10 +6,10 @@ import styles from "./TrackExperienceHero.module.css";
 
 export default function TrackExperienceHero({
   imgSrc = "/assets/hero/landing-banner.webp", // replace with your image
-  eyebrow = "Wherever life takes you, Bolden follows through.",
-  titleTop = "Not Just Tough – the Sinotruk Bolden Is Built For Your Kind Of Road",
+  eyebrow = "أينما تأخذك الحياة… بولدن معك.",
+  titleTop = "ليست قوية فقط — سينوتروك بولدن مصممة للطريق الذي يناسبك",
   titleBottom = "Aliquam erat",
-  body = `Whether you're transporting goods across city blocks or navigating rugged desert routes, the Sinotruk Bolden is built to keep up with your pace. You will find it’s a reliable partner, fitting perfectly into your work day or your day off. It has been designed to take on the demanding UAE roads and landscape. Business or leisure—Bolden is built to keep you comfortable, in control, and moving with power.`,
+  body = ` سواء كنت تنقل البضائع عبر شوارع المدينة أو تتخطى الطرق الصحراوية الوعرة، فإن سينوتروك بولدن مصممة لتواكب وتيرتك. ستجدها شريكًا يعتمد عليه، يناسب يوم عملك كما يناسب يوم عطلتك. وقد تم تصميمها لتحمّل طرق الإمارات القاسية وتضاريسها المتنوعة. عملًا كان أم ترفيهًا — بولدن مصممة لتبقيك مرتاحًا، ممسكًا بزمام التحكم، ومنطلقًا بقوة.`,
   ctaLabel = "Discover more",
   onCtaClick = () => {},
 }) {

@@ -8,12 +8,12 @@ export default function LocationSection({
   title = "تجدنا هنا",
   org = "SINOTRUK",
   tagline = "Chat Beyond Limits Together",
-  cityLabel = "Abu Dhabi, UAE",
-  street = "C 178 Al Mahdar St, Industrial Area",
-  cityLine = "Industrial City - ICAD V - Abu Dhabi",
-  country = "United Arab Emirates",
-  mapsUrl = "https://maps.app.goo.gl/jsgPAtieSeYP6cXg8",
-  mapsEmbedSrc = "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3637.6447443636034!2d54.471344!3d24.254201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sae!4v1760961461887!5m2!1sen!2sae&z=13",
+  cityLabel = "أبوظبي، الإمارات العربية المتحدة",
+  street = "شارع C ١٧٨ المحضر، المنطقة الصناعية",
+  cityLine = "مدينة أبوظبي الصناعية – ICAD ٥",
+  country = "الإمارات العربية المتحدة",
+  mapsUrl = "https://maps.app.goo.gl/HBSuT5qjXY5NExFB8",
+  mapsEmbedSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.6437660632696!2d54.4713145!3d24.2542352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e3f657015095d%3A0xc780a8edd51440e3!2sSinotruk%20Bolden%20UAE!5e0!3m2!1sen!2sae!4v1764153557973!5m2!1sen!2sae",
   /** Position of the pin in PERCENT of the map container (0–100) */
   pinX = 42, // left %
   pinY = 58, // top  %
@@ -66,7 +66,7 @@ export default function LocationSection({
           <div className={styles.kicker}>{titleKicker}</div>
           <h2 id="loc-title" className={styles.title}>{title}</h2>
 
-          <h3 className={styles.h3}>Headquarters</h3>
+          <h3 className={styles.h3}>فرع الرئيسي</h3>
           <div className={styles.addr}>
             <div>{org}</div>
             <div>{cityLabel}</div>

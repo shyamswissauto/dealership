@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import StickyActions from "@/components/ui/StickyActions";
+import StickyActions from "@/components/ar/ui/StickyActions";
 
 export default function FooterAr() {
   return (
@@ -39,7 +39,7 @@ export default function FooterAr() {
             <ul className={styles.list}>
               <li><Link href="/ar/request-a-quote">احصل على عرض الأسعار</Link></li>
               <li><Link href="/ar/brochure-download">تنزيل الكتيب</Link></li>
-              {/* <li><Link href="#">Blogs</Link></li> */}
+              <li><Link href="/ar/blog">المدوّنة</Link></li>
               <li><Link href="/ar/contact-us">تواصل معنا</Link></li>
             </ul>
           </nav>
@@ -104,7 +104,7 @@ export default function FooterAr() {
         <div className={`${styles.container} ${styles.cstWrap}`}>
           <p>© 2025 سينوترَك. جميع الحقوق محفوظة.</p>
           <div>
-            <Link href="/ar/privacy-policy">سياسة الخصوصية</Link> | <Link href="/connect">Connect</Link>
+            <Link href="/ar/privacy-policy">سياسة الخصوصية</Link> | <Link href="/ar/connect">Connect</Link>
           </div>
         </div>
       </div>

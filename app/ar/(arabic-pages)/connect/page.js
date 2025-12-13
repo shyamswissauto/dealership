@@ -19,14 +19,14 @@ const PROFILE = {
 };
 
 const LINKS = [
-  { icon: PiSteeringWheelBold, label: "Book A Test Drive", href: "https://www.mysinotruk.ae/bolden-uae-ar" },
-  { icon: FaGlobe, label: "Website", href: "https://www.mysinotruk.ae/ar" },  
-  { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/971561122500?text=Hi%2C%20Bolden%20UAE" },
-  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/sinotrukbolden_uae/" },
-  { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/people/Sinotruk-UAE/61579914192315/" },
-  { icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@Sinotrukuae" },
-  { icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/company/109429488" },
-  { icon: FaXTwitter, label: "Twitter", href: "https://x.com/SinotrukUAE" },
+  { icon: PiSteeringWheelBold, label: "احجز تجربة القيادة", href: "https://www.mysinotruk.ae/bolden-uae-ar" },
+  { icon: FaGlobe, label: "موقع إلكتروني", href: "https://www.mysinotruk.ae/ar" },  
+  { icon: FaWhatsapp, label: "واتساب", href: "https://wa.me/971561122500?text=Hi%2C%20Bolden%20UAE" },
+  { icon: FaInstagram, label: "إنستغرام", href: "https://www.instagram.com/sinotrukbolden_uae/" },
+  { icon: FaFacebookF, label: "فيسبوك", href: "https://www.facebook.com/people/Sinotruk-UAE/61579914192315/" },
+  { icon: FaYoutube, label: "يوتيوب", href: "https://www.youtube.com/@Sinotrukuae" },
+  { icon: FaLinkedinIn, label: "لينكدإن", href: "https://www.linkedin.com/company/109429488" },
+  { icon: FaXTwitter, label: "تويتر", href: "https://x.com/SinotrukUAE" },
 ];
 
 const PRODUCTS = [
@@ -81,7 +81,7 @@ export default function LinktreePage() {
               <img src={PROFILE.avatar} alt="Logo" style={{ width: '100%'}} />
             </div>
             <h1 className="h6 fw-bold mt-3 mb-1">{PROFILE.handle}</h1>
-            <div className="text-muted small lh-sm">
+            <div className="text-muted small lh-sm arText">
               <div>{PROFILE.title}</div>
               {/* <div dir="rtl">{PROFILE.subtitleAr}</div> */}
             </div>
@@ -89,17 +89,17 @@ export default function LinktreePage() {
             <div className="d-inline-flex bg-body-tertiary rounded-pill mt-3 p-1 gap-1">
               <button
                 type="button"
-                className={`btn btn-sm rounded-pill ${tab === "links" ? "btn-dark" : "btn-light"}`}
+                className={`btn btn-sm rounded-pill arText ${tab === "links" ? "btn-dark" : "btn-light"}`}
                 onClick={() => setTab("links")}
               >
-                Links
+                روابط
               </button>
               <button
                 type="button"
-                className={`btn btn-sm rounded-pill ${tab === "shop" ? "btn-dark" : "btn-light"}`}
+                className={`btn btn-sm rounded-pill arText ${tab === "shop" ? "btn-dark" : "btn-light"}`}
                 onClick={() => setTab("shop")}
               >
-                DOWNLOADS
+                التنزيلات
               </button>
             </div>
           </div>
@@ -167,7 +167,7 @@ function LinksList() {
             </span>
 
             {/* centered text */}
-            <span className="link-label">{l.label}</span>
+            <span className="link-label arText">{l.label}</span>
           </Link>
         );
       })}
@@ -216,10 +216,10 @@ function Shop({ q, setQ, items }) {
                 <div className="overlay">
                   <div className="overlay-inner">
                     <Link href={p.brochure || "#"} className="btn btn-light btn-sm w-100" target="_blank">
-                      Download Brochure
+                      تنزيل الكتيب
                     </Link>
                     <Link href={p.spec || "#"} className="btn btn-outline-light btn-sm w-100" target="_blank">
-                      Download Specification
+                      تنزيل المواصفات
                     </Link>
                   </div>
                 </div>
@@ -235,6 +235,7 @@ function Shop({ q, setQ, items }) {
           overflow: hidden;
           border: 0;
           box-shadow: 0 4px 12px rgba(0,0,0,.06);
+          font-family: var(--font-almarai);
         }
         .product-cover {
           position: relative;

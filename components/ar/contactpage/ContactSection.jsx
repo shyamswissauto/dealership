@@ -18,11 +18,11 @@ export default function ContactSection() {
 
   const validate = () => {
     const e = {};
-    if (!values.first.trim()) e.first = "First name is required.";
-    if (!values.last.trim()) e.last = "Last name is required.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email)) e.email = "Enter a valid email.";
-    if (!/^[0-9]{10,}$/.test(values.phone.replace(/\D/g, ""))) e.phone = "Enter a valid phone. (Ex: 0569082441)";
-    if (!values.msg.trim()) e.msg = "Tell us a bit about your request.";
+    if (!values.first.trim()) e.first = "الاسم الأول مطلوب.";
+    if (!values.last.trim()) e.last = "اسم العائلة مطلوب.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email)) e.email = "يرجى إدخال بريد إلكتروني صالح.";
+    if (!/^[0-9]{10,}$/.test(values.phone.replace(/\D/g, ""))) e.phone = "يرجى إدخال رقم هاتف صالح. (مثال: ٠٥٦١٢٣٤٥٦٧)";
+    if (!values.msg.trim()) e.msg = "أخبرنا قليلًا عن طلبك.";
     setErrors(e);
     return !Object.keys(e).length;
   };
@@ -168,7 +168,9 @@ export default function ContactSection() {
                 {errors.msg && <small className={styles.err}>{errors.msg}</small>}
               </div>
 
-              <button className={styles.submit} type="submit">Submit</button>
+              <button className={styles.submit} type="submit">
+                إرسال
+              </button>
 
               <p className={styles.consent}>
                 بالاتصال بنا، فإنك توافق على سياسة الخصوصية الخاصة بنا

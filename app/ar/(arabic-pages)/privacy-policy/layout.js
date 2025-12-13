@@ -1,4 +1,6 @@
 export const metadata = {
+  title: "سياسة الخصوصية Sinotruk Bolden الإمارات | حماية البيانات والأمن",
+  description: "خصوصيتك مضمونة. اطّلع على سياسة الخصوصية الرسمية Sinotruk Bolden الإمارات لمعرفة التفاصيل الكاملة حول كيفية استخدام البيانات، وأمانها، وحمايتها.",
   robots: {
     index: false,
     follow: false,
