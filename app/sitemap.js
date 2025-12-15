@@ -95,5 +95,10 @@ export default function sitemap() {
             lastModified: '2025-12-10T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/5-secrets-about-sinotruk-bolden-passenger-every-uae-buyer-should-know',
+            lastModified: '2025-12-12T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }

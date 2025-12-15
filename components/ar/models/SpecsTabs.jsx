@@ -143,7 +143,7 @@ export default function SpecsTabs({ title = "SPECIFICATIONS", tabs = [], default
                           rel="noopener"
                           download
                         >
-                          <Image src="/assets/brochure/download-brochure.webp" alt="Brochure Download" width={316} height={88} />
+                          <Image src="/assets/brochure/download-brochure-ar.webp" alt="Brochure Download" width={316} height={88} />
                         </a>
 
                         <a
@@ -154,7 +154,7 @@ export default function SpecsTabs({ title = "SPECIFICATIONS", tabs = [], default
                           rel="noopener"
                           download
                         >
-                          <Image src="/assets/brochure/download-spec-sheet.webp" alt="Spec Sheet Download" width={316} height={88} />
+                          <Image src="/assets/brochure/download-spec-sheet-ar.webp" alt="Spec Sheet Download" width={316} height={88} />
                         </a>
                       </div>
                   
