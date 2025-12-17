@@ -53,10 +53,6 @@ export default function Page() {
         <SpecificationTabs title="SPECIFICATIONS" tabs={specsTabs} defaultKey={specsTabs[0].key} />
 
         {/* <EmiCalculator /> */}
-
-        
-        
-
         {/* <section id="design"         className="fullvhTest centerTest">Design</section> 
         <section id="exterior"       className="fullvhTest centerTest">exterior</section>
         <section id="interior"       className="fullvhTest centerTest">interior</section>

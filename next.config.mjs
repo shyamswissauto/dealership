@@ -17,8 +17,11 @@ const nextConfig = {
       { source: '/book-a-test-drive', destination: '/', permanent: true },
       { source: '/sinotruk-vgv-u70-pro', destination: '/', permanent: true },
       { source: '/sinotruk-vgv-u75-plus', destination: '/', permanent: true },
+      { source: '/models/sinotruk-vgv-u70-pro', destination: '/', permanent: true },
+      { source: '/models/sinotruk-vgv-u75-plus', destination: '/', permanent: true },
       { source: '/test', destination: '/', permanent: true },
       { source: '/test2', destination: '/', permanent: true },
+      { source: '/models/test11', destination: '/', permanent: true },
       
     ];
   },

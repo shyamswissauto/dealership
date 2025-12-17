@@ -161,7 +161,9 @@ export default function LateralScrollSection() {
   return (
     <section ref={sectionRef} className="lat-section">
       <div className="lat-wrapper">
-       
+        <h2 className="lat-heading">
+          Lateral <span>Scroll</span> Highlights
+        </h2>
 
         <div ref={trackRef} className="lat-track">
           {ITEMS.map((item, idx) => (
@@ -197,7 +199,7 @@ export default function LateralScrollSection() {
       <style jsx>{`
         .lat-section {
           position: relative;
-          background: #fff;
+          background: #0a0a0a;
           color: #fff;
           overflow: clip;
         }
