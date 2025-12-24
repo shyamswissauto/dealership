@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/experience-the-drive',
         languages: {
           'en': 'https://www.mysinotruk.ae/experience-the-drive',
+          'ar': 'https://www.mysinotruk.ae/ar/experience-the-drive',
         },
     },
   title: 'Experience the Drive Sinotruk Bolden Off-Road, Passenger & Commercial UAE',

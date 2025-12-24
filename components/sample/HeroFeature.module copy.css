@@ -6,20 +6,6 @@
   color: #fff;
   margin-top: 0px;
   margin-bottom: 50px;
-  background-color: #000;
-}
-
-.contentHidden {
-  opacity: 0;
-}
-
-.contentVisible {
-  opacity: 1;
-}
-
-/* optional: makes sure it stays visible after animation */
-.contentVisible:global(.animate__animated) {
-  animation-fill-mode: both;
 }
 
 /* background */

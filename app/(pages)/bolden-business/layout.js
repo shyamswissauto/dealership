@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/bolden-business',
         languages: {
           'en': 'https://www.mysinotruk.ae/bolden-business',
+          'ar': 'https://www.mysinotruk.ae/ar/bolden-business',
         },
     },
   title: 'Bolden Business: Fleet Solution & Corporate Deals on all Bolden Models',

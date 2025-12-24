@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/contact-us',
         languages: {
           'en': 'https://www.mysinotruk.ae/contact-us',
+          'ar': 'https://www.mysinotruk.ae/ar/contact-us',
         },
     },
   title: 'Contact Us - Sinotruk Bolden Off-Road, Passenger & Commercial',

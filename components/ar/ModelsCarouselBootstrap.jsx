@@ -10,7 +10,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 const MODELS = [
 
   {
-    name: "نوع أوف رود",
+    name: "أوف رود",
     img: "/assets/models/img2.webp",
     hoverImg: "/models/img4.png",
     href: "/ar/models/bolden-s9-off-road",

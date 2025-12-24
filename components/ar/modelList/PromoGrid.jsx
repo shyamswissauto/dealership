@@ -25,7 +25,7 @@ const DEFAULT_ITEMS = [
   {
     src: "/assets/models/list3.webp",
     alt: "BOLDEN COMMERCIAL",
-    title: "بولدن كومرشل ",
+    title: "بولدن كومرشال ",
     subtitle: "أداة عملية وذات براعة.",
     learnHref: "/ar/models/bolden-s6-commercial",
     bookHref: "/",

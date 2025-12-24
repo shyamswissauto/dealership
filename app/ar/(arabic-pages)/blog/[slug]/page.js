@@ -61,7 +61,7 @@ export async function generateMetadata({ params }) {
           alt: page.title || "Sinotruk UAE",
         },
       ],
-      locale: "en_US",
+      locale: "ar_AR",
       type: "article",
     },
     alternates: {

@@ -172,7 +172,7 @@ export default function HeroSlider({ slides = [], autoPlayMs = 7000 }) {
           .btn { padding: 10px 14px; font-size: 12px; }
           .arrow { width: 40px; height: 40px; }
           .cta { gap: 8px; right: 6px; }
-          .hero {height: 70svh;}
+          .hero {height: 80svh;}
         }
 
         /* Right Rail — desktop only */

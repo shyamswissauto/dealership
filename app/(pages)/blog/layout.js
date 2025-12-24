@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/blog',
         languages: {
           'en': 'https://www.mysinotruk.ae/blog',
+          'ar': 'https://www.mysinotruk.ae/ar/blog',
         },
     },
   title: 'Insights & Updates on Sinotruk Bolden | MySinotruk UAE Blog',

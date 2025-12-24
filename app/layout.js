@@ -41,6 +41,7 @@ export const metadata = {
         canonical: '/',
         languages: {
           'en': 'https://www.mysinotruk.ae',
+          'ar': 'https://www.mysinotruk.ae/ar',
         },
     },
   title: 'Sinotruk Bolden Official Dealer UAE | Best Off-Road & Commercial Pickup Trucks',

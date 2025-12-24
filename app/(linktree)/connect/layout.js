@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/connect',
         languages: {
           'en': 'https://www.mysinotruk.ae/connect',
+          'ar': 'https://www.mysinotruk.ae/ar/connect',
         },
     },
   title: 'Connect with Sinotruk UAE',

@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/models/bolden-s6-commercial',
         languages: {
           'en': 'https://www.mysinotruk.ae/models/bolden-s6-commercial',
+          'ar': 'https://www.mysinotruk.ae/ar/models/bolden-s6-commercial',
         },
     },
   title: 'Drive Bolden Commercial Pickup Trucks: Best for Utility & Fleet Deals',

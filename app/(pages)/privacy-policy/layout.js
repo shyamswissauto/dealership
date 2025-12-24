@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/privacy-policy',
         languages: {
           'en': 'https://www.mysinotruk.ae/privacy-policy',
+          'ar': 'https://www.mysinotruk.ae/ar/privacy-policy',
         },
     },
   title: 'Read Our Privacy Policy & Stay Informed',

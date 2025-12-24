@@ -118,7 +118,7 @@ export default function FleetTwoCol({
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
               <label className={styles.label} htmlFor="fleet-name">
-                اسم العائلة
+                الاسم
               </label>
               <input
                 id="fleet-name"

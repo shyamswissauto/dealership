@@ -32,6 +32,9 @@ import TechCardsSlider from "@/components/models/TechCardsSlider";
 import FeatureQuad from "@/components/sample/FeatureQuad";
 import HeroFeature from "@/components/sample/HeroFeature";
 import FeatureQuad1 from "@/components/sample/FeatureQuad1";
+import GalleryMosaic from "@/components/sample/GalleryMosaic-old";
+import GallerySection from "@/components/sample/GallerySection";
+import ContractSection from "@/components/sample/ContractSection";
 
 
 export default function Page() {
@@ -48,8 +51,6 @@ export default function Page() {
         <ProductVideoSection {...VideoConfig} />
 
         <HeroFeature />
-
-               
 
         <TechCardsSlider
           delay={2200}
@@ -79,6 +80,16 @@ export default function Page() {
         />
 
         <FeatureQuad1 /> 
+
+        <GallerySection />    
+
+        <SpecificationTabs title="SPECIFICATIONS" tabs={specsTabs} defaultKey={specsTabs[0].key} />
+
+        <ContractSection image="/assets/models/s9bolden/bolden-s9-hero-slider.webp" />
+
+        {/* <EmiCalculator /> */}
+
+        {/* <GalleryMosaic /> */}
 
         {/* <DualImageIntro /> */}
         {/* <ExteriorGallerySwiper items={EXTERIOR_GALLERY_ITEMS} title="EXTERIOR" />
@@ -114,14 +125,6 @@ export default function Page() {
             },
           ]}
         /> */}
-
-        <SpecificationTabs title="SPECIFICATIONS" tabs={specsTabs} defaultKey={specsTabs[0].key} />
-
-        
-
-        {/* <EmiCalculator /> */}
-
-        
 
         
 

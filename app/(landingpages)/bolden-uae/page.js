@@ -13,7 +13,7 @@ export const HERO_SLIDES = [
     title:   "",
     subtitle:"",
     align:   "center",
-    overlay: "rgba(0,0,0,0.15)",
+    overlay: "rgba(0,0,0,0.05)",
     learnMoreHref: "",
     bookHref:      "",
     className:     "landingCommonCst",

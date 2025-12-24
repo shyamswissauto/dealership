@@ -9,7 +9,7 @@ import LanguageSwitcher from "../LanguageSwitcher";
 const MODEL_GROUPS = [
   {
     id: "PICKUP",
-    label: "بيك أبّات",
+    label: "بيك اب",
     models: [
       {
         name: "نوع أوف رود",
@@ -174,7 +174,7 @@ export default function HeaderNav() {
             العروض الخاصة
           </Link>
           <Link href="/ar/bolden-business" className="cstTransY navItemLinks">
-            بولدن للأعمل
+            بولدن للأعمال
           </Link>
          
           <Link href="/ar/contact-us" className="cstTransY navItemLinks">
@@ -279,7 +279,7 @@ export default function HeaderNav() {
               href="/ar/bolden-business"
               onClick={() => setMobileOpen(false)}
             >
-              بولدن للأعمل
+              بولدن للأعمال
             </Link>
             <Link
               href="/ar/contact-us"

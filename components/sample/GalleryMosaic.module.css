@@ -1,0 +1,195 @@
+.wrap{
+  width: 100%;
+  padding: clamp(18px, 3vw, 34px) 0;
+}
+
+.container{
+  width: min(1320px, 92vw);
+  margin: 0 auto;
+}
+
+/* Mosaic like screenshot */
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  grid-template-rows: 360px 240px;
+  gap: 26px;
+
+  grid-template-areas:
+    "a1 a2 a3"
+    "a6 a2 a4";
+}
+
+/* tiles */
+.tile{
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 18px 38px rgba(0,0,0,.12);
+}
+
+.tile:focus-visible{
+  outline: 3px solid rgba(0,0,0,.25);
+  outline-offset: 4px;
+}
+
+.img{
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform .35s ease;
+}
+
+.tile:hover .img{
+  transform: scale(1.06);
+}
+
+/* map areas */
+.a1{ grid-area: a1; }
+.a2{ grid-area: a2; border-radius: 22px; }
+.a3{ grid-area: a3; }
+.a4{ grid-area: a4; }
+.a5{ grid-area: a5; display:none; } /* not used in this mosaic */
+.a6{ grid-area: a6; display:grid; grid-template-columns: 1fr 1fr; gap: 26px; box-shadow:none; border-radius:0; overflow: visible; }
+
+/* bottom-left two small tiles inside a6 */
+.a6::before{ content:""; display:none; } /* noop */
+
+/* We'll style the 5th and 6th images to sit inside the a6 row */
+.grid > .a6{ display: contents; } /* allow children to occupy grid cells */
+
+.grid > .a5{
+  display: block;
+  grid-column: 1 / span 1;
+  grid-row: 2;
+}
+.grid > .a6{
+  display: block;
+  grid-column: 1 / span 1;
+  grid-row: 2;
+}
+
+/* Use explicit placement for the two small tiles */
+.grid > .a5{ justify-self: stretch; align-self: stretch; }
+.grid > .a6{ justify-self: stretch; align-self: stretch; }
+
+/* Make them two columns in bottom-left */
+@supports (grid-template-areas: "x") {
+  .grid{
+    grid-template-columns: 1fr 1.6fr 1fr;
+    grid-template-rows: 360px 240px;
+    grid-template-areas:
+      "a1 a2 a3"
+      "a56 a2 a4";
+  }
+  .a56Wrap{
+    grid-area: a56;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+  }
+}
+
+/* Mobile: stack nicely */
+@media (max-width: 980px){
+  .grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "a2"
+      "a1"
+      "a3"
+      "a4";
+    gap: 18px;
+  }
+  .tile{ border-radius: 16px; }
+}
+
+/* Lightbox */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+.backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.72);
+  border:0;
+  cursor: zoom-out;
+}
+
+.lbInner{
+  position: relative;
+  width: min(1100px, 94vw);
+  height: min(680px, 78vh);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+
+.lbMedia{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 28px 80px rgba(0,0,0,.55);
+  background: #000;
+  touch-action: pan-y;
+}
+
+.lbMedia :global(img){
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lbImg{ object-fit: contain; }
+
+.lbClose{
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(20,20,20,.7);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.lbNavLeft,
+.lbNavRight{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(20,20,20,.55);
+  color: #fff;
+  font-size: 34px;
+  cursor: pointer;
+  z-index: 3;
+  display:grid;
+  place-items:center;
+}
+
+.lbNavLeft{ left: -18px; }
+.lbNavRight{ right: -18px; }
+
+@media (max-width: 640px){
+  .lbNavLeft{ left: 8px; }
+  .lbNavRight{ right: 8px; }
+  .lbClose{ top: 10px; right: 10px; }
+}

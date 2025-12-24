@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/locations',
         languages: {
           'en': 'https://www.mysinotruk.ae/locations',
+          'ar': 'https://www.mysinotruk.ae/ar/locations',
         },
     },
   title: 'Bolden UAE – 10-Year Warranty, 0% Down Payment & Exclusive Offers.',

@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/models/bolden-s9-off-road',
         languages: {
           'en': 'https://www.mysinotruk.ae/models/bolden-s9-off-road',
+          'ar': 'https://www.mysinotruk.ae/ar/models/bolden-s9-off-road',
         },
     },
   title: 'Bolden Off-Road 4x4 Pickup Truck for sale. Best off-road vehicle in UAE',

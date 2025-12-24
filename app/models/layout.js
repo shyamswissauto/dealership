@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/models',
         languages: {
           'en': 'https://www.mysinotruk.ae/models',
+          'ar': 'https://www.mysinotruk.ae/ar/models',
         },
     },
   title: 'Explore Sinotruk Bolden – 4×4 Off-Road, Passenger & Commercial Trucks',

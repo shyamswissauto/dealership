@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/brochure-download',
         languages: {
           'en': 'https://www.mysinotruk.ae/brochure-download',
+          'ar': 'https://www.mysinotruk.ae/ar/brochure-download',
         },
     },
   title: 'Download Sinotruk Bolden Brochure | Explore Features & Specs',

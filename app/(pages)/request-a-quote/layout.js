@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/request-a-quote',
         languages: {
           'en': 'https://www.mysinotruk.ae/request-a-quote',
+          'ar': 'https://www.mysinotruk.ae/ar/request-a-quote',
         },
     },
   title: 'Request a Quote: Get the Best Bolden Sinotruk Price in UAE',

@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/emi-calculator',
         languages: {
           'en': 'https://www.mysinotruk.ae/emi-calculator',
+          'ar': 'https://www.mysinotruk.ae/ar/emi-calculator',
         },
     },
   title: 'EMI Calculator: Estimate Your Sinotruk Bolden Monthly Payment',

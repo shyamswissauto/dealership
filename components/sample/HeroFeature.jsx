@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import "animate.css";
 import styles from "./HeroFeature.module.css";
 
@@ -13,8 +14,46 @@ export default function HeroFeature({
   desktopImg = "/assets/samples/bolden-s9.webp",
   mobileImg = "/assets/samples/car-garage.jpg",
 }) {
+  const sectionRef = useRef(null);
+  const [played, setPlayed] = useState(false);
+
+  useEffect(() => {
+    // Respect reduced motion
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduce) {
+      setPlayed(true);
+      return;
+    }
+
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPlayed(true);       // play once
+          io.unobserve(el);      // stop observing after first trigger
+        }
+      },
+      { threshold: 0.25 } // trigger when ~25% visible (adjust if needed)
+    );
+
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section className={styles.wrap} aria-label="Hero">
+    <section ref={sectionRef} className={[
+      styles.wrap,
+      played ? styles.contentVisible : styles.contentHidden,
+      played ? "animate__animated animate__fadeIn" : "",
+    ].join(" ")}
+      style={played ? { animationDelay: "0s" } : undefined}
+      aria-label="Hero">
       {/* Background image */}
       <picture className={styles.bg}>
         <source media="(max-width: 768px)" srcSet={mobileImg} />
@@ -28,29 +67,29 @@ export default function HeroFeature({
         />
       </picture>
 
-      {/* Overlays */}
       <div className={styles.overlayTop} />
       <div className={styles.overlayBottom} />
 
-      {/* Content */}
       <div className={styles.container}>
         <div
-            className={`${styles.content} animate__animated animate__fadeInUpBig`}
-            style={{ animationDelay: "0.15s" }}
-            >
-          <h1 className={styles.h1}>
+          className={[
+            styles.content,
+            played ? styles.contentVisible : styles.contentHidden,
+            played ? "animate__animated animate__slideInUp" : "",
+          ].join(" ")}
+          style={played ? { animationDelay: "0.15s" } : undefined}
+        >
+          <h3 className={styles.h1}>
             {title.split("\n").map((line, i) => (
               <span key={i} className={styles.line}>
                 {line}
               </span>
             ))}
-          </h1>
+          </h3>
 
           <p className={styles.p}>{desc}</p>
 
-          {/* <Link href={ctaHref} className={styles.btn}>
-            {ctaText}
-          </Link> */}
+          {/* <Link href={ctaHref} className={styles.btn}>{ctaText}</Link> */}
         </div>
       </div>
     </section>

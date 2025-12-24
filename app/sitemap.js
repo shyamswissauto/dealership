@@ -85,6 +85,81 @@ export default function sitemap() {
             lastModified: '2025-11-25T06:24:08+00:00',
             priority: 1.00,
         },
+		{
+            url: 'https://www.mysinotruk.ae/ar',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/models',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/models/bolden-s9-off-road',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/models/bolden-s7-passenger',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/models/bolden-s6-commercial',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/connect',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/brochure-download',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/privacy-policy',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/request-a-quote',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/special-offers',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/bolden-business',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/contact-us',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/emi-calculator',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/experience-the-drive',
+            lastModified: '2025-10-22T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog',
+            lastModified: '2025-11-25T06:24:08+00:00',
+            priority: 1.00,
+        },
         {
             url: 'https://www.mysinotruk.ae/blog/now-in-the-uae-dedicated-sinotruk-bolden-service-through-royal-swiss-auto-services',
             lastModified: '2025-11-25T06:24:08+00:00',

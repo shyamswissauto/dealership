@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/special-offers',
         languages: {
           'en': 'https://www.mysinotruk.ae/special-offers',
+          'ar': 'https://www.mysinotruk.ae/ar/special-offers',
         },
     },
   title: 'Sinotruk Special Offers: Save Big! New Bolden Deals & Promotions.',

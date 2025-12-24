@@ -4,6 +4,7 @@ export const metadata = {
         canonical: '/models/bolden-s7-passenger',
         languages: {
           'en': 'https://www.mysinotruk.ae/models/bolden-s7-passenger',
+          'ar': 'https://www.mysinotruk.ae/ar/models/bolden-s7-passenger',
         },
     },
   title: 'Buy Bolden Passenger Pickup: Specs, Features & Price in UAE',
