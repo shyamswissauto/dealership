@@ -166,12 +166,27 @@ export default function sitemap() {
             priority: 1.00,
         },
         {
+            url: 'https://www.mysinotruk.ae/ar/blog/now-in-the-uae-dedicated-sinotruk-bolden-service-through-royal-swiss-auto-services',
+            lastModified: '2025-11-25T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
             url: 'https://www.mysinotruk.ae/blog/top-5-reasons-uae-businesses-choose-sinotruk-bolden-commercial',
             lastModified: '2025-12-10T06:24:08+00:00',
             priority: 1.00,
         },
         {
+            url: 'https://www.mysinotruk.ae/ar/blog/top-5-reasons-uae-businesses-choose-sinotruk-bolden-commercial',
+            lastModified: '2025-12-10T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
             url: 'https://www.mysinotruk.ae/blog/5-secrets-about-sinotruk-bolden-passenger-every-uae-buyer-should-know',
+            lastModified: '2025-12-12T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/5-secrets-about-sinotruk-bolden-passenger-every-uae-buyer-should-know',
             lastModified: '2025-12-12T06:24:08+00:00',
             priority: 1.00,
         },

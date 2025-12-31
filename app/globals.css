@@ -387,7 +387,7 @@ a.cstBtnStyle1[aria-disabled="true"] {
 }
 
 .dirRtl p, .is-arabic p,
-.dirRtl .kicker, .is-arabic .kicker {
+.dirRtl .kicker, .is-arabic .kicker, .is-arabic li {
   font-family: var(--font-almarai);
 }
 

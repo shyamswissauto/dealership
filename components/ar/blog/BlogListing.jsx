@@ -60,7 +60,7 @@ export default function BlogListing() {
                                             <span>{formatDate(shortdate)}</span>
                                         </p>
 
-                                        <p className={styles.excerpt}>{excerpt}</p>
+                                        {/* <p className={styles.excerpt}>{excerpt}</p> */}
 
                                         <span className={styles.readMore}>Read more →</span>
                                     </div>
