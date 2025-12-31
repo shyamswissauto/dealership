@@ -39,8 +39,8 @@ export async function generateMetadata({ params }) {
   if (!data[slug]) notFound();
   const page = data[slug];
 
-  const pageUrl = `https://www.mysinotruk.ae/ar/blog/${page.slug || slug
-    }/`;
+  const pageUrl = `https://www.mysinotruk.ae/ar/blog/${page.slug || slug}`;
+  const pageUrlen = `https://www.mysinotruk.ae/blog/${page.slug || slug}`;
 
   const title =
     page.seoTitle || "Sinotruk UAE";
@@ -67,7 +67,8 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: pageUrl,
       languages: {
-        en: pageUrl,
+        en: pageUrlen,
+        ar: pageUrl,
       },
     },
   };

@@ -8,8 +8,8 @@ import LandingPageCommon from "@/components/form/landingpagecommon";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/uae/bolden-landing.webp", //     /assets/hero/bolden-landing.webp
-    mobile:  "/assets/samples/autolevel-banner-moble-1.webp", //    /assets/hero/bolden-landing-m.webp
+    desktop: "/assets/hero/uae/bolden-newyear-desktop-en.webp", //     /assets/hero/bolden-landing.webp
+    mobile:  "/assets/hero/uae/bolden-autolevel-newyear-en-mobile.webp", //    /assets/hero/bolden-landing-m.webp
     title:   "",
     subtitle:"",
     align:   "center",
