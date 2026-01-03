@@ -35,10 +35,10 @@ export default function Page() {
         {/* Blog cards grid */}
         <section className={styles.listSection}>
           
-        {/* <BlogListing /> */}
-         <div className={styles.noBlogSection}>
+        <BlogListing />
+         {/* <div className={styles.noBlogSection}>
           لا توجد مدوّنات بعد
-        </div>
+        </div> */}
 
           
         </section>

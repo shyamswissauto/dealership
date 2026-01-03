@@ -20,12 +20,12 @@ function useIsMobile(bp = 992) {
 export default function SmartBuyingTools({
   title = "أدوات الشراء الذكية",
   items = [
-    { labelTop: "عروض", labelBottom: "حصرية", image: "/assets/tools/img1.webp", href: "/ar/special-offers" },
-    { labelTop: "جرب", labelBottom: "القيادة", image: "/assets/tools/img2.png", href: "/ar/experience-the-drive" },
-    { labelTop: "اطلب", labelBottom: "عرض الأسعار", image: "/assets/tools/img3.png", href: "/ar/request-a-quote", badge: "1" },
-    { labelTop: "حاسبة", labelBottom: "مالية", image: "/assets/tools/img4.png", href: "/ar/emi-calculator" },
-    { labelTop: "موقعنا", labelBottom: "", image: "/assets/tools/img5.png", href: "/ar/contact-us" },
-    { labelTop: "عرض", labelBottom: "الكتيب", image: "/assets/tools/img6.webp", href: "/ar/brochure-download" },
+    { labelTop: "عروض", labelBottom: "حصرية", image: "/assets/tools/img1.webp", href: "/ar/special-offers?utm_source=website&utm_medium=hmpagelink&utm_campaign=exclusive_offer" },
+    { labelTop: "جرب", labelBottom: "القيادة", image: "/assets/tools/img2.png", href: "/ar/experience-the-drive?utm_source=website&utm_medium=hmpagelink&utm_campaign=experience_drive" },
+    { labelTop: "اطلب", labelBottom: "عرض الأسعار", image: "/assets/tools/img3.png", href: "/ar/request-a-quote?utm_source=website&utm_medium=hmpagelink&utm_campaign=request_quote", badge: "1" },
+    { labelTop: "حاسبة", labelBottom: "مالية", image: "/assets/tools/img4.png", href: "/ar/emi-calculator?utm_source=website&utm_medium=hmpagelink&utm_campaign=emicalculator" },
+    { labelTop: "موقعنا", labelBottom: "", image: "/assets/tools/img5.png", href: "/ar/contact-us?utm_source=website&utm_medium=hmpagelink&utm_campaign=contactus" },
+    { labelTop: "عرض", labelBottom: "الكتيب", image: "/assets/tools/img6.webp", href: "/ar/brochure-download?utm_source=website&utm_medium=hmpagelink&utm_campaign=brochuredownload" },
   ],
 }) {
   const isMobile = useIsMobile();

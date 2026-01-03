@@ -13,19 +13,19 @@ const MODELS = [
     name: "OFF ROAD TYPE",
     img: "/assets/models/img2.webp",
     hoverImg: "/models/img4.png",
-    href: "/models/bolden-s9-off-road",
+    href: "/models/bolden-s9-off-road?utm_source=website&utm_medium=hmpagelink&utm_campaign=boldens9",
   },
   {
     name: "PASSENGER",
     img: "/assets/models/img3.webp",
     hoverImg: "/models/img3.png",
-    href: "/models/bolden-s7-passenger",
+    href: "/models/bolden-s7-passenger?utm_source=website&utm_medium=hmpagelink&utm_campaign=boldens7",
   },
   {
     name: "COMMERCIAL",
     img: "/assets/models/img1.webp",
     hoverImg: "/models/img2.png",
-    href: "/models/bolden-s6-commercial",
+    href: "/models/bolden-s6-commercial?utm_source=website&utm_medium=hmpagelink&utm_campaign=boldens6",
   },
 ];
 

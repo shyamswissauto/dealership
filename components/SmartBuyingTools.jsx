@@ -20,12 +20,12 @@ function useIsMobile(bp = 992) {
 export default function SmartBuyingTools({
   title = "SMART BUYING TOOLS",
   items = [
-    { labelTop: "EXCLUSIVE", labelBottom: "OFFERS", image: "/assets/tools/img1.webp", href: "/special-offers" },
-    { labelTop: "EXPERIENCE", labelBottom: "THE DRIVE", image: "/assets/tools/img2.png", href: "/experience-the-drive" },
-    { labelTop: "REQUEST A", labelBottom: "QUOTE", image: "/assets/tools/img3.png", href: "/request-a-quote", badge: "1" },
-    { labelTop: "FINANCE", labelBottom: "CALCULATOR", image: "/assets/tools/img4.png", href: "/emi-calculator" },
-    { labelTop: "OUR", labelBottom: "LOCATION", image: "/assets/tools/img5.png", href: "/contact-us" },
-    { labelTop: "VIEW", labelBottom: "BROCHURE", image: "/assets/tools/img6.webp", href: "/brochure-download" },
+    { labelTop: "EXCLUSIVE", labelBottom: "OFFERS", image: "/assets/tools/img1.webp", href: "/special-offers?utm_source=website&utm_medium=hmpagelink&utm_campaign=exclusive_offer" },
+    { labelTop: "EXPERIENCE", labelBottom: "THE DRIVE", image: "/assets/tools/img2.png", href: "/experience-the-drive?utm_source=website&utm_medium=hmpagelink&utm_campaign=experience_drive" },
+    { labelTop: "REQUEST A", labelBottom: "QUOTE", image: "/assets/tools/img3.png", href: "/request-a-quote?utm_source=website&utm_medium=hmpagelink&utm_campaign=request_quote", badge: "1" },
+    { labelTop: "FINANCE", labelBottom: "CALCULATOR", image: "/assets/tools/img4.png", href: "/emi-calculator?utm_source=website&utm_medium=hmpagelink&utm_campaign=emicalculator" },
+    { labelTop: "OUR", labelBottom: "LOCATION", image: "/assets/tools/img5.png", href: "/contact-us?utm_source=website&utm_medium=hmpagelink&utm_campaign=contactus" },
+    { labelTop: "VIEW", labelBottom: "BROCHURE", image: "/assets/tools/img6.webp", href: "/brochure-download?utm_source=website&utm_medium=hmpagelink&utm_campaign=brochuredownload" },
   ],
 }) {
   const isMobile = useIsMobile();
