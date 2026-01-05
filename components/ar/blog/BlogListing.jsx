@@ -62,7 +62,7 @@ export default function BlogListing() {
 
                                         {/* <p className={styles.excerpt}>{excerpt}</p> */}
 
-                                        <span className={styles.readMore}>Read more →</span>
+                                        <span className={styles.readMore}>اعرف اكثر →</span>
                                     </div>
                                 </Link>
                             </article>

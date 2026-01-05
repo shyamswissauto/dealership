@@ -196,6 +196,11 @@ export default function sitemap() {
             priority: 1.00,
         },
         {
+            url: 'https://www.mysinotruk.ae/ar/blog/why-sinotruk-bolden-passenger-trucks-are-perfect-for-uae-roads',
+            lastModified: '2025-12-29T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
             url: 'https://www.mysinotruk.ae/blog/top-features-of-sinotruk-bolden-off-road-trucks-you-cant-miss',
             lastModified: '2025-12-29T06:24:08+00:00',
             priority: 1.00,
