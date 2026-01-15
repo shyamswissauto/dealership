@@ -210,5 +210,15 @@ export default function sitemap() {
             lastModified: '2025-12-29T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/best-4x4-pickup-trucks-in-the-uae-features-comparison-and-why-bolden-leads',
+            lastModified: '2026-01-15T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/best-4x4-pickup-trucks-in-the-uae-features-comparison-and-why-bolden-leads',
+            lastModified: '2026-01-15T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
