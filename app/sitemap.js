@@ -220,5 +220,15 @@ export default function sitemap() {
             lastModified: '2026-01-15T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/dune-driving-in-the-uae-pro-tips-and-must-have-upgrades-for-your-4x4-pickup',
+            lastModified: '2026-02-02T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/dune-driving-in-the-uae-pro-tips-and-must-have-upgrades-for-your-4x4-pickup',
+            lastModified: '2026-02-02T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
