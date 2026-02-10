@@ -231,12 +231,12 @@ export default function sitemap() {
             priority: 1.00,
         },
         {
-            url: 'https://www.mysinotruk.ae//blog/how-to-choose-the-right-pickup-for-companies-and-fleets-in-the-uae',
+            url: 'https://www.mysinotruk.ae/blog/how-to-choose-the-right-pickup-for-companies-and-fleets-in-the-uae',
             lastModified: '2026-02-08T06:24:08+00:00',
             priority: 1.00,
         },
         {
-            url: 'https://www.mysinotruk.ae/ar//blog/how-to-choose-the-right-pickup-for-companies-and-fleets-in-the-uae',
+            url: 'https://www.mysinotruk.ae/ar/blog/how-to-choose-the-right-pickup-for-companies-and-fleets-in-the-uae',
             lastModified: '2026-02-08T06:24:08+00:00',
             priority: 1.00,
         },
