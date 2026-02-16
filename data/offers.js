@@ -5,7 +5,7 @@ const OFFERS = [
     title: "Smarter Car Deal",
     subtitle: [
     "10 Years Manufacturer Warranty",
-    "5 Years or 300,000 KM Service Contract",
+    "5 Years or 100,000 KM Service Contract",
     "Free Registration",
     "0% down payment (T&C Apply)"
   ],
@@ -18,7 +18,7 @@ const OFFERS = [
     subtitle: [
     "Price starting for 70,000 AED",
     "10 Years Manufacturer Warranty",
-    "5 Years or 300,000 KM Service Contract",
+    "5 Years or 100,000 KM Service Contract",
     "Free Registration",
     "0% down payment (T&C Apply)"
   ],
