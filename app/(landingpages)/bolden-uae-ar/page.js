@@ -11,7 +11,7 @@ import AtmCards from "@/components/pages/AtmCards";
 export const HERO_SLIDES = [
   {
     desktop: "/assets/hero/ramadan/ramadan-kareem-bolden-landing-ar.webp", //desktop: "/assets/hero/bolden-landing.webp",
-    mobile:  "/assets/hero/ramadan/ramadan-kareem-bolden-landing-mobile-ar.webp", //    /assets/hero/bolden-landing-m.webp
+    mobile:  "/assets/hero/ramadan/ramadan-kareem-bolden-uae-mobile-ar.webp", //    /assets/hero/bolden-landing-m.webp
     title:   "",
     subtitle:"",
     align:   "center",
