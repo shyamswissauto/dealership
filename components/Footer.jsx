@@ -104,7 +104,7 @@ Industrial City - ICAD V - Abu Dhabi</a></li>
       
       <div className={styles.legal}>
         <div className={`${styles.container} ${styles.cstWrap}`}>
-          <p>© 2025 SINOTRUK. ALL RIGHTS RESERVED.</p>
+          <p>© 2026 SINOTRUK. ALL RIGHTS RESERVED.</p>
           <div>
             <Link href="/privacy-policy">Privacy Policy</Link> | <Link href="/connect">Connect</Link>
           </div>

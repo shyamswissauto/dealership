@@ -102,7 +102,7 @@ export default function FooterAr() {
       
       <div className={styles.legal}>
         <div className={`${styles.container} ${styles.cstWrap}`}>
-          <p>© 2025 سينوترَك. جميع الحقوق محفوظة.</p>
+          <p>© 2026 سينوترَك. جميع الحقوق محفوظة.</p>
           <div>
             <Link href="/ar/privacy-policy">سياسة الخصوصية</Link> | <Link href="/ar/connect">Connect</Link>
           </div>

@@ -56,7 +56,7 @@ export default function Footer() {
       
       <div className={styles.legal}>
         <div className={styles.container}>
-          <p>© 2025 SINOTRUK. ALL RIGHTS RESERVED.</p>
+          <p>© 2026 SINOTRUK. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
 
