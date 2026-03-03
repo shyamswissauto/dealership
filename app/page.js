@@ -27,12 +27,15 @@ export default function HomePage() {
       <FeaturesSection />
       {/* <GallerySwiperClient /> */}
       
+      
+      <AboutThreeCol /> 
+
       {/* <BlogShowcase
         posts={blogs}
         basePath="/blog"
         imageBase="/assets/blog"
-      />*/}
-      <AboutThreeCol /> 
+      /> */}
+
       <TestDriveSection />
       <Footer />
     </>

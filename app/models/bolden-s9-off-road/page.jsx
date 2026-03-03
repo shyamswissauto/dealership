@@ -63,7 +63,7 @@ export default function Page() {
           leftImage="/assets/popup/s9-off-road-popup.webp"
           title="Sinotruk Bolden Warranty & Services"
           description="The Sinotruk Bolden S9 Off-Road comes with a 10-year manufacturer warranty and an inclusive 5-year or 100,000 km service package, whichever comes first, making it a strong choice for drivers who demand durability, capability, and long-term value in the UAE. Bolden S9 combines powerful off-road capability with refined comfort and practical utility features across the UAE."
-          description2="Visit Royal Swiss Auto showroom to learn more about the Sinotruk Bolden Commercial, explore warranty and service benefits, and schedule a test drive."
+          description2="Visit Royal Swiss Auto showroom to learn more about the Sinotruk Bolden Off-Road, explore warranty and service benefits, and schedule a test drive."
         />
 
         <Footer />        
