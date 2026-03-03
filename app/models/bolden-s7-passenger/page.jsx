@@ -28,6 +28,7 @@ import SpecificationTabs from "@/components/models/SpecsTabs";
 import specsTabs from "@/data/models/s7passenger/specsTabs";
 
 import EmiCalculator from "@/components/models/EmiCalculator";
+import WarrantyDisclaimerSection from "@/components/models/WarrantyDisclaimerSection";
 
 
 export default function Page() {
@@ -61,6 +62,13 @@ export default function Page() {
         <section id="exterior"       className="fullvhTest centerTest">exterior</section>
         <section id="interior"       className="fullvhTest centerTest">interior</section>
         <section id="specifications" className="fullvhTest centerTest">specifications</section>*/}
+
+        <WarrantyDisclaimerSection
+                  leftImage="/assets/popup/s7passenger-popup.webp"
+                  title="Sinotruk Bolden Warranty & Services"
+                  description="The Sinotruk Bolden S7 Passenger is designed for confident everyday driving and long-term dependability. It is offered with a 10-year manufacturer warranty, along with an inclusive 5-year or 100,000 km service package, whichever comes first, making it a compelling choice for both personal and professional use in the UAE. It blends robust capability with comfort-focused design for daily commutes, family travel, and extended journeys."
+                  description2="Visit Royal Swiss Auto Trading showroom to learn more about the Sinotruk Bolden Commercial, explore warranty and service benefits, and schedule a test drive."
+                />
 
         <Footer />        
       </>

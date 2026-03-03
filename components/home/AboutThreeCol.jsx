@@ -29,14 +29,22 @@ With visionary expansion plans, Swiss Auto Trading is poised to expand across va
         <div className={styles.grid}>
           {/* LEFT */}
           <div className={styles.col}>
-            <p className={styles.kicker}>Lorem ipsum dolor sit amet</p>
+            <p className={styles.kicker}>About Sinotruk Bolden UAE</p>
 
-            <h2 id="about-3col-title" className={styles.bigTitle}>
+            {/* <h2 id="about-3col-title" className={styles.bigTitle}>
               Mauris a velit luctus, ornare leo condimentum, efficitur purus. Sed imperdiet erat sit amet velit malesuada, ut luctus nibh dapibus.
-            </h2>
+            </h2> */}
 
             <p className={styles.body}>
-                Nullam nibh erat, pellentesque nec orci ac, ultricies porta dolor. Nunc id tempus mauris. In hac habitasse platea dictumst. Integer eros diam, elementum eget fermentum tristique, rhoncus eu lacus. Phasellus nec lorem quam. Nullam nibh erat, pellentesque nec orci ac, ultricies porta dolor. Nunc id tempus mauris. In hac habitasse platea dictumst. Integer eros diam, elementum eget fermentum tristique, rhoncus eu lacus. Phasellus nec lorem quam.
+                Sinotruk has designated Royal Swiss Auto Trading as the exclusive distributor of the Sinotruk Bolden range in the UAE, reinforcing the brand’s long-term commitment to the region’s commercial and off-road vehicle market. Backed by decades of global investment in advanced manufacturing, in-house research and development, and international engineering partnerships, Sinotruk brings proven expertise in engines, drivetrains, safety systems, and chassis durability to the region.
+            </p>
+
+            <p className={styles.body}>
+                This strategic alliance brings together Sinotruk’s globally trusted engineering legacy proven across the Middle East, Africa, Europe, CIS, South America, and Asia with Royal Swiss Auto Trading’s deep-rooted regional knowledge and established automotive leadership
+            </p>
+
+            <p className={styles.body}>
+                With Royal Swiss Auto Trading’s strong regional presence and automotive expertise, Sinotruk Bolden customers in the UAE receive reliable vehicles, local support, and long-term ownership confidence.
             </p>
 
            {/*  <a className={styles.btn} href={buttonHref}>
@@ -47,32 +55,38 @@ With visionary expansion plans, Swiss Auto Trading is poised to expand across va
           {/* MIDDLE */}
           <div className={styles.col}>
             <p className={styles.kickerCenter}>
-                Nam laoreet id orci vitae mollis
+                Sinotruk Bolden Brand History
             </p>
             <p className={styles.body}>
-                Nunc id tempus mauris. In hac habitasse platea dictumst. Integer eros diam, elementum eget fermentum tristique, rhoncus eu lacus. Phasellus nec lorem quam. Nam semper ex laoreet, faucibus mi a, viverra est. Sed vel sagittis augue. Nam sodales massa felis, quis placerat velit sagittis in.
+                Sinotruk Bolden draws its strength from a powerful legacy rooted in China’s industrial evolution. SINOTRUK founded in 1956 and became China’s first manufacturer of heavy-duty trucks. For nearly seven decades made history as China’s first producer of heavy-duty trucks.
             </p>
             <p className={styles.body}>
-                Nunc id tempus mauris. In hac habitasse platea dictumst. Integer eros diam, elementum eget fermentum tristique, rhoncus eu lacus. Phasellus nec lorem quam. Nam semper ex laoreet, faucibus mi a, viverra est. Sed vel sagittis augue. Nam sodales massa felis, quis placerat velit sagittis in.
+                Sinotruk’s HOWO Heavy-Duty Trucks, HOWO Dump Trucks, HOWO Construction & Mining Vehicles are popular in global export markets, built to handle extreme climates and demanding workloads.
             </p>
             <p className={styles.body}>
-                Nunc id tempus mauris. In hac habitasse platea dictumst. Integer eros diam, elementum eget fermentum tristique, rhoncus eu lacus. Phasellus nec lorem quam. Nam semper ex laoreet, faucibus mi a, viverra est. Sed vel sagittis augue. Nam sodales massa felis, quis placerat velit sagittis in.
+                Sinotruk Bolden represents the next chapter of this legacy, bringing heavy-duty engineering expertise into the modern commercial, pickup, and utility vehicle segment. Designed with real-world conditions in mind, Bolden vehicles combine industrial-grade durability with contemporary comfort, safety, and driving confidence.
             </p>
+
+            <p className={styles.body}>
+                With a focused lineup that includes Commercial, Off-Road, and Passenger models, Sinotruk Bolden delivers purpose-built mobility solutions for work, adventure, and everyday life.
+            </p>
+
+            
           </div>
 
           {/* RIGHT */}
           <div className={styles.col}>
             <p className={styles.kickerCenter}>
-                Nam laoreet id orci vitae mollis
+                About Royal Swiss Auto Trading
             </p>
             <p className={styles.body}>
-                Nunc id tempus mauris. In hac habitasse platea dictumst. Integer eros diam, elementum eget fermentum tristique, rhoncus eu lacus. Phasellus nec lorem quam. Nam semper ex laoreet, faucibus mi a, viverra est. Sed vel sagittis augue. Nam sodales massa felis, quis placerat velit sagittis in.
+                Royal Swiss Auto Trading is a UAE-based automotive enterprise founded on the principles of quality, reliability, and long-term customer confidence. With a growing footprint across the region, the company operates at the intersection of automotive retail, warranty solutions, and integrated marketing services, delivering a seamless, end-to-end automotive experience.
             </p>
             <p className={styles.body}>
-                Nunc id tempus mauris. In hac habitasse platea dictumst. Integer eros diam, elementum eget fermentum tristique, rhoncus eu lacus. Phasellus nec lorem quam. Nam semper ex laoreet, faucibus mi a, viverra est. Sed vel sagittis augue. Nam sodales massa felis, quis placerat velit sagittis in.
+                Driven by a commitment to operational excellence, Royal Swiss Auto Trading integrates structured processes and customer-centric service models to ensure consistent performance. Its multi-disciplinary approach enables the company to support both individual vehicle owners and large-scale commercial clients, with a focus on durability, efficiency, and long-term value.
             </p>
             <p className={styles.body}>
-                Nunc id tempus mauris. In hac habitasse platea dictumst. Integer eros diam, elementum eget fermentum tristique, rhoncus eu lacus. Phasellus nec lorem quam. Nam semper ex laoreet, faucibus mi a, viverra est. Sed vel sagittis augue. Nam sodales massa felis, quis placerat velit sagittis in.
+                Beyond business growth, Royal Swiss Auto Trading is committed to enhancing everyday mobility for its communities. By combining operational excellence with responsible practices, the company actively works toward sustainable expansion while creating meaningful value at both local and international levels.
             </p>
           </div>
         </div>

@@ -31,8 +31,8 @@ export default function HomePage() {
         posts={blogs}
         basePath="/blog"
         imageBase="/assets/blog"
-      />
-      <AboutThreeCol /> */}
+      />*/}
+      <AboutThreeCol /> 
       <TestDriveSection />
       <Footer />
     </>
