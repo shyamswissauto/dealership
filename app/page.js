@@ -14,6 +14,7 @@ import GallerySwiperClient from "@/components/client/GallerySwiperClient";
 import BlogShowcase from "@/components/blog/BlogShowcase";
 import blogs from "@/data/pages.json";
 import AboutThreeCol from "@/components/home/AboutThreeCol";
+import AboutSinotrukSection from "@/components/home/AboutSinotrukSection";
 
 export default function HomePage() {
   return (
@@ -28,7 +29,8 @@ export default function HomePage() {
       {/* <GallerySwiperClient /> */}
       
       
-      <AboutThreeCol /> 
+      {/* <AboutThreeCol />  */}
+      <AboutSinotrukSection />
 
       {/* <BlogShowcase
         posts={blogs}
