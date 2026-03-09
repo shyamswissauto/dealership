@@ -37,6 +37,7 @@ export default function FooterAr() {
           <nav aria-labelledby="foot-links" className={styles.col}>
             <h3 id="foot-links" className={styles.heading}>روابط مفيدة</h3>
             <ul className={styles.list}>
+              <li><Link href="/ar/about-us">حول </Link></li>
               <li><Link href="/ar/request-a-quote">احصل على عرض الأسعار</Link></li>
               <li><Link href="/ar/brochure-download">تنزيل الكتيب</Link></li>
               <li><Link href="/ar/blog">المدوّنة</Link></li>

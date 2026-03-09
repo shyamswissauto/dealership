@@ -8,6 +8,7 @@ import ViewportVideoClient from "@/components/ar/client/ViewportVideoClient";
 import FeaturesSection from "@/components/ar/client/FeaturesSectionClient";
 import TestDriveSection from "@/components/ar/client/TestDriveSectionClient";
 import Footer from "@/components/ar/client/FooterClient";
+import AboutSinotrukSection from "@/components/ar/home/AboutSinotrukSection";
 
 
 export default function ArabicHome() {
@@ -20,6 +21,7 @@ export default function ArabicHome() {
       <WhoWeAreSection />
       <ViewportVideoClient />
       <FeaturesSection />
+      <AboutSinotrukSection />
       {/* <GallerySwiperClient /> */}
       <TestDriveSection />
       <Footer />

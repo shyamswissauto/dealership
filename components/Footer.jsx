@@ -37,6 +37,7 @@ export default function Footer() {
           <nav aria-labelledby="foot-links" className={styles.col}>
             <h3 id="foot-links" className={styles.heading}>USEFUL LINKS</h3>
             <ul className={styles.list}>
+              <li><Link href="/about-us">About Us</Link></li>
               <li><Link href="/request-a-quote">Get A Quote</Link></li>
               <li><Link href="/brochure-download">Brochure Download</Link></li>
               <li><Link href="/blog">Blog</Link></li>
