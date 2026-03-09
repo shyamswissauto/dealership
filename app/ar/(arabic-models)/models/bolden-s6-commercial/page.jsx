@@ -28,6 +28,7 @@ import SpecificationTabs from "@/components/ar/models/SpecsTabs";
 import specsTabs from "@/data/ar/models/s6commercial/specsTabs";
 
 import EmiCalculator from "@/components/models/EmiCalculator";
+import WarrantyDisclaimerSection from "@/components/ar/models/WarrantyDisclaimerSection";
 
 
 export default function Page() {
@@ -51,6 +52,14 @@ export default function Page() {
         <InteriorGallerySwiper items={INTERIOR_GALLERY_ITEMS} title="داخلي" />
 
         <SpecificationTabs title="مواصفات" tabs={specsTabs} defaultKey={specsTabs[0].key} />
+
+        <WarrantyDisclaimerSection
+                                  leftImage="/assets/popup/s6commercial-popup.webp"
+                                  title="ضمان وخدمات سينوترك بولدن"
+                                  description="تحظى سيارات البيك أب التجارية سينوتراك بولدن ببرنامج ملكية متكامل مصمم لدعم الأداء طويل الأمد وتعزيز الاعتمادية التشغيلية في سوق المركبات التجارية في الإمارات. تأتي المركبة بضمان مصنع لمدة 10 سنوات، إضافة إلى باقة صيانة شاملة لمدة 5 سنوات أو 100,000 كيلومتر (أيهما يأتي أولًا)، ما يوفر قيمة تنافسية قوية لرواد الأعمال، وأصحاب الشركات، ومديري أساطيل البيك أب التجارية الباحثين عن الكفاءة وتقليل تكاليف التشغيل."
+                                  description2="يساهم هذا البرنامج في تعزيز ثقة العملاء ضمن قطاع سيارات البيك أب للأعمال في الإمارات، من خلال توفير دعم فني وخدمات ما بعد البيع تضمن استمرارية الأداء في مختلف بيئات العمل."
+                                  description3="للاطلاع على مزايا الضمان والخدمات، ومعرفة المواصفات والأسعار الخاصة بفئة البيك أب التجارية والعملية في الإمارات، يمكن زيارة صالة العرض المعتمدة أو الدخول إلى الموقع الرسمي mysinotruk.ae للحصول على أحدث المعلومات حول الطرازات والعروض المتاحة وحجز تجربة قيادة."
+                                />
 
         {/* <EmiCalculator /> */}
 

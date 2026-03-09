@@ -28,6 +28,7 @@ import SpecificationTabs from "@/components/ar/models/SpecsTabs";
 import specsTabs from "@/data/ar/models/s7passenger/specsTabs";
 
 import EmiCalculator from "@/components/models/EmiCalculator";
+import WarrantyDisclaimerSection from "@/components/ar/models/WarrantyDisclaimerSection";
 
 
 export default function Page() {
@@ -51,6 +52,14 @@ export default function Page() {
         <InteriorGallerySwiper items={INTERIOR_GALLERY_ITEMS} title="داخلي" />
 
         <SpecificationTabs title="مواصفات" tabs={specsTabs} defaultKey={specsTabs[0].key} />
+
+        <WarrantyDisclaimerSection
+                          leftImage="/assets/popup/s7passenger-popup.webp"
+                          title="ضمان وخدمات سينوترك بولدن"
+                          description="تم تصميم طراز الركاب سينوتراك بولدن S7 ليواكب احتياجات القيادة اليومية بثقة واعتمادية طويلة الأمد في سوق سيارات البيك أب في الإمارات. يأتي هذا الطراز مع ضمان مصنع لمدة 10 سنوات، إضافة إلى باقة صيانة شاملة لمدة 5 سنوات أو 100,000 كيلومتر (أيهما يأتي أولًا)، ما يجعله خيارًا تنافسيًا ضمن فئة بيك أب عائلية متعددة الاستخدامات المناسبة للاستخدام الشخصي والمهني."
+                          description2="يجمع الطراز بين قوة الأداء في فئة ديزل بيك أب 4x4 والتصميم الداخلي المريح الذي يلائم التنقل اليومي، والسفر العائلي، والرحلات الطويلة داخل المدن وعلى الطرق السريعة وفي البيئات الصحراوية. كما يوفر توازنًا بين القدرة العملية والمتانة، ليخدم احتياجات الأفراد ورواد الأعمال الباحثين عن سيارة بيك أب عملية واقتصادية في الإمارات."
+                          description3="للمزيد من المعلومات حول المواصفات، الأسعار، وخيارات الضمان والصيانة لسيارات البيك أب التجارية والركاب، يمكنكم زيارة صالة عرض رويال سويس أوتو تريدنج أو الدخول إلى الموقع الرسمي mysinotruk.ae للاطلاع على التفاصيل الكاملة وحجز تجربة قيادة."
+                        />
 
         {/* <EmiCalculator />
  */}

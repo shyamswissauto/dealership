@@ -26,6 +26,7 @@ import specsTabs from "@/data/ar/models/s9offroad/specsTabs";
 
 import EmiCalculator from "@/components/models/EmiCalculator";
 import Footer from "@/components/ar/client/FooterClient";
+import WarrantyDisclaimerSection from "@/components/ar/models/WarrantyDisclaimerSection";
 
 export default function Page() {
   return (
@@ -48,6 +49,16 @@ export default function Page() {
         <InteriorGallerySwiper items={INTERIOR_GALLERY_ITEMS} title="داخلي" />
 
         <SpecificationTabs title="مواصفات" tabs={specsTabs} defaultKey={specsTabs[0].key} />
+
+        <WarrantyDisclaimerSection
+                  leftImage="/assets/popup/s9-off-road-popup.webp"
+                  title="ضمان وخدمات سينوترك بولدن"
+                  description="تأتي سيارة سينوتراك بولدن S9 للطرق الوعرة بضمان مصنع لمدة 10 سنوات، إضافة إلى باقة صيانة شاملة لمدة 5 سنوات أو 100,000 كيلومتر، أيهما يأتي أولاً، مما يجعلها خيارًا قويًا للسائقين الذين يبحثون عن المتانة والقدرة والقيمة طويلة الأمد في دولة الإمارات العربية المتحدة. يجمع طراز Bolden S9 بين قدرات 4x4 القوية على الطرق الوعرة وراحة متطورة وميزات عملية متعددة داخل الإمارات."
+                  description2="قم بزيارة صالة عرض رويال سويس اوتو تريدينج لمعرفة المزيد حول سينوتراك بولدن S9 Off-Road للطرق الوعرة ، واستكشاف مزايا الضمان والخدمات، وحجز تجربة قيادة، أو زيارة الموقع الرسمي mysinotruk.ae للحصول على التفاصيل الكاملة."
+                  description3="تأتي سيارة سينوتراك بولدن S9 للطرق الوعرة بضمان مصنع لمدة 10 سنوات، إضافة إلى باقة صيانة شاملة لمدة 5 سنوات أو 100,000 كيلومتر (أيهما يأتي أولاً)، ما يجعلها خيارًا مثاليًا ضمن فئة بيك أب ديزل 4x4 في الإمارات للسائقين الباحثين عن المتانة العالية، والأداء القوي في الظروف الصحراوية، وقيمة ملكية طويلة الأمد."
+                  description4="يجمع طراز Bolden S9 بين قدرات الدفع الرباعي 4x4 المتقدمة على الطرق الوعرة لتناسب القيادة في الصحراء والبيئات القاسية، ومستوى راحة متطور للاستخدام اليومي، إلى جانب تجهيزات عملية تلائم احتياجات العمل والمغامرات، مما يجعله منافسًا قويًا في سوق سيارات البيك أب 4x4 متعددة الاستخدامات في الإمارات."
+                  description5="للمزيد من التفاصيل حول المواصفات، خيارات الضمان والصيانة، وأسعار سيارات البيك أب التجارية والطرق الوعرة في الإمارات، يمكنكم زيارة صالة العرض المعتمدة أو الدخول إلى الموقع الرسمي mysinotruk.ae للاطلاع على المعلومات الكاملة وحجز تجربة قيادة."
+                />
 
         {/* <EmiCalculator /> */}
 
