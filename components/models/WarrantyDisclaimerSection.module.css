@@ -15,7 +15,7 @@
 /* Left image */
 .left{
   position: relative;
-  border-radius: 22px;
+  border-radius: 0px;
   overflow: hidden;
   min-height: 420px;
   background-size: cover;
@@ -65,7 +65,7 @@
 
 .desc{
   margin: 0 0 16px;
-  color: #6b6b6b;
+  color: #212529;
   line-height: 1.7;
 }
 
@@ -104,7 +104,7 @@
 
 /* Disclaimer box */
 .disclaimerBox{
-  border-radius: 16px;
+  border-radius: 0px;
   padding: 14px 14px;
   border: 1px solid rgba(0,0,0,.08);
   background: #fafafa;
@@ -123,7 +123,7 @@
   margin: 0;
   color: #6b6b6b;
   line-height: 1.65;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* Buttons */

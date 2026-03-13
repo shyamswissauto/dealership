@@ -1,0 +1,386 @@
+.section {
+  position: relative;
+  padding: 30px 0 30px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* .section::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(72, 156, 255, 0.14) 0%, rgba(72, 156, 255, 0) 72%);
+  pointer-events: none;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 176, 62, 0.12) 0%, rgba(255, 176, 62, 0) 72%);
+  pointer-events: none;
+} */
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+.left {
+  max-width: 860px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #7a7a7a;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: #111111;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+.right {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.right {
+  display: block;
+}
+
+.visualCard {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #111;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.visualImageWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.visualImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.visualOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 10, 10, 0.10) 0%, rgba(10, 10, 10, 0.35) 40%, rgba(10, 10, 10, 0.72) 100%);
+}
+
+.visualContent {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 76px;
+  z-index: 2;
+}
+
+.visualTag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.visualTitle {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.visualText {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+.floatingInfo {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.floatingInfo span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.contentWrap {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 28px;
+}
+
+.contentCard {
+  padding: 28px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
+}
+
+.contentCard p {
+  margin: 0 0 16px;
+  color: #3f3f3f;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.contentCard p:last-child {
+  margin-bottom: 0;
+}
+
+.sidePanel {
+  position: relative;
+}
+
+.sidePanelInner {
+  height: 100%;
+  padding: 28px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(16, 16, 16, 0.98) 0%, rgba(40, 40, 40, 0.95) 100%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.sideTitle {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.sidePanelInner p {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.featureList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featureList li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.featureList li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.featureList li:last-child {
+  margin-bottom: 0;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.highlightCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 190px;
+  padding: 24px 22px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+  border: 1px solid rgba(17, 17, 17, 0.07);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.highlightCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 36px rgba(0, 0, 0, 0.06);
+}
+
+.highlightCard::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.cardIndex {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #9c9c9c;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.highlightCard h3 {
+  margin: 0 0 12px;
+  color: #111111;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.highlightCard p {
+  margin: 0;
+  color: #4c4c4c;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+@media (max-width: 1100px) {
+  .topRow,
+  .contentWrap,
+  .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0 55px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .contentCard,
+  .sidePanelInner,
+  .highlightCard {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .highlightCard {
+    min-height: auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .visualCard {
+    min-height: 260px;
+    border-radius: 22px;
+  }
+
+  .visualContent {
+    left: 18px;
+    right: 18px;
+    bottom: 100px;
+  }
+
+  .visualTitle {
+    font-size: 22px;
+  }
+
+  .visualText {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .floatingInfo {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    gap: 8px;
+  }
+
+  .floatingInfo span {
+    min-height: 30px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+}

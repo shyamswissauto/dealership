@@ -488,8 +488,8 @@ a.cstBtnStyle1[aria-disabled="true"] {
 
 @media (min-width: 769px) {
   .explore-models .title {
-    margin-bottom: 150px !important;
-    color: #000000;
+    /* margin-bottom: 150px !important; */
+    color: #ffffff;
   }
 }
 
