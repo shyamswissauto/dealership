@@ -280,5 +280,15 @@ export default function sitemap() {
             lastModified: '2026-03-12T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/cost-comparison-sinotruk-vs-european-pickup',
+            lastModified: '2026-03-16T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/cost-comparison-sinotruk-vs-european-pickup',
+            lastModified: '2026-03-16T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }

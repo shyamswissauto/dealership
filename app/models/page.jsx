@@ -9,6 +9,13 @@ import PromoGrid from "@/components/modelList/PromoGrid";
 import ModelsSeoSection from "@/components/modelList/ModelsSeoSection";
 import VehicleColorSwitcher from "@/components/modelList/VehicleColorSwitcher";
 import InteriorLoopSlider from "@/components/modelList/InteriorLoopSlider";
+import FeatureQuad from "@/components/sample/FeatureQuad";
+import FeatureQuad1 from "@/components/sample/FeatureQuad1";
+import LateralScrollSection from "@/components/demo/LateralScrollSection";
+import ServicesShowcase from "@/components/demo/ServicesShowcase";
+import HeroFeature from "@/components/sample/HeroFeature";
+import GallerySection from "@/components/sample/GallerySection";
+import ContractSection from "@/components/sample/ContractSection";
 
 
 
@@ -57,6 +64,8 @@ export default function Page() {
           },
         ]}
       /> */}
+
+
 
 
       <Footer />
