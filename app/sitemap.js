@@ -290,5 +290,15 @@ export default function sitemap() {
             lastModified: '2026-03-16T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/sinotruk-pickup-buyers-guide',
+            lastModified: '2026-03-24T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/sinotruk-pickup-buyers-guide',
+            lastModified: '2026-03-24T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
