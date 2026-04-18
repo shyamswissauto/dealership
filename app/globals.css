@@ -209,10 +209,13 @@ button.cstBtnStyle1 {
 
 
 a.solid.cstBtnStyle1,
-button.solid.cstBtnStyle1 { background: #ffffff; }
+button.solid.cstBtnStyle1 {
+  background: #ffffff;
+}
 
 
 @media (hover:hover) {
+
   a.cstBtnStyle1:hover,
   button.cstBtnStyle1:hover {
     background-color: var(--button-red-hover);
@@ -356,12 +359,13 @@ a.cstBtnStyle1[aria-disabled="true"] {
 
 /* Privacy Policy */
 .privacyGrid {
-  width: min(1500px, 92%); margin: 50px auto;
+  width: min(1500px, 92%);
+  margin: 50px auto;
 }
 
 /* Experience Drive */
 .experienceHero .title {
-  font-size: clamp(28px,4vw,40px) !important;
+  font-size: clamp(28px, 4vw, 40px) !important;
 }
 
 
@@ -369,7 +373,7 @@ a.cstBtnStyle1[aria-disabled="true"] {
 .dirRtl {
   direction: rtl;
   font-family: var(--font-almarai) !important;
-  
+
 }
 
 .dirLtr {
@@ -377,17 +381,26 @@ a.cstBtnStyle1[aria-disabled="true"] {
 }
 
 
-.dirRtl h1, .is-arabic h1,
-.dirRtl h2, .is-arabic h2,
-.dirRtl h3, .is-arabic h3,
-.dirRtl h4, .is-arabic h4,
-.dirRtl h5, .is-arabic h5,
-.dirRtl h6, .is-arabic h6 {
+.dirRtl h1,
+.is-arabic h1,
+.dirRtl h2,
+.is-arabic h2,
+.dirRtl h3,
+.is-arabic h3,
+.dirRtl h4,
+.is-arabic h4,
+.dirRtl h5,
+.is-arabic h5,
+.dirRtl h6,
+.is-arabic h6 {
   font-family: var(--font-almarai);
 }
 
-.dirRtl p, .is-arabic p,
-.dirRtl .kicker, .is-arabic .kicker, .is-arabic li {
+.dirRtl p,
+.is-arabic p,
+.dirRtl .kicker,
+.is-arabic .kicker,
+.is-arabic li {
   font-family: var(--font-almarai);
 }
 
@@ -406,9 +419,9 @@ a.cstBtnStyle1[aria-disabled="true"] {
 }
 
 .loadMoreBtn {
-    max-width: 200px;
-    margin: 20px auto 0px auto;
-    display: inline-block;
+  max-width: 200px;
+  margin: 20px auto 0px auto;
+  display: inline-block;
   background: #fff;
   color: #111;
   border-radius: 999px;
@@ -422,7 +435,8 @@ a.cstBtnStyle1[aria-disabled="true"] {
 
 .tableWrapper {
   width: 100%;
-  overflow-x: auto; /* Enables scroll on small screens */
+  overflow-x: auto;
+  /* Enables scroll on small screens */
   margin: 30px 0;
 }
 
@@ -432,7 +446,7 @@ a.cstBtnStyle1[aria-disabled="true"] {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   font-family: var(--font-red-rose), ui-serif, Georgia, serif;
 }
 
@@ -460,6 +474,16 @@ a.cstBtnStyle1[aria-disabled="true"] {
 
 .tableWrapper tr:nth-child(even):not(:first-child) td {
   background: #fcfcff;
+}
+
+.hmSliderTextBox {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  gap: .5rem;
+  padding: clamp(16px, 4vw, 40px);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
 }
 
 

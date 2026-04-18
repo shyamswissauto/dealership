@@ -8,8 +8,8 @@ import LandingPageCommon from "@/components/form/landingpagecommon";
 
 export const HERO_SLIDES = [
   {
-    desktop: "/assets/hero/ramadan/ramadan-kareem-bolden-landing.webp", //desktop: "/assets/hero/bolden-landing.webp",
-    mobile:  "/assets/hero/ramadan/ramadan-kareem-bolden-uae-mobile.webp", //    /assets/hero/bolden-landing-m.webp
+    desktop: "/assets/hero/bolden-may-landing.webp", //desktop: "/assets/hero/bolden-landing.webp",
+    mobile:  "/assets/hero/bolden-may-landing-mobile.webp", //    /assets/hero/bolden-landing-m.webp
     title:   "",
     subtitle:"",
     align:   "center",

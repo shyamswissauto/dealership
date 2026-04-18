@@ -13,8 +13,8 @@ export default function HeroSlider({
   slides = [
     
     {
-      desktop: "/assets/hero/ramadan/ramadan-kareem-bolden-landing-ar.webp", //desktop: "/assets/hero/bolden-landing.webp",
-      mobile:  "/assets/hero/ramadan/ramadan-kareem-bolden-landing-mobile-ar.webp", //mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
+      desktop: "/assets/hero/bolden-may-landing-ar.webp", //desktop: "/assets/hero/bolden-landing.webp",
+      mobile:  "/assets/hero/bolden-may-landing-mb-ar.webp", //mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
       title:   "",
       subtitle:"",
       align:   "left",
@@ -115,7 +115,7 @@ export default function HeroSlider({
 
               
               <div className="wrap uiText dirRtl">
-                <div className={`copy align-${s.align}`}>
+                <div className={`hmSliderTextBox align-${s.align}`}>
                   <h2 className="title slide-in-up">{s.title}</h2>
                   {s.subtitle && <p className="subtitle">{s.subtitle}</p>}
                 </div>

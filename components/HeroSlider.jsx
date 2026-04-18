@@ -13,15 +13,15 @@ export default function HeroSlider({
   slides = [
     
     {
-      desktop: "/assets/hero/ramadan/ramadan-kareem-bolden-landing.webp", //desktop: "/assets/hero/bolden-landing.webp",
-      mobile:  "/assets/hero/ramadan/ramadan-kareem-bolden-landing-mobile.webp", //mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
+      desktop: "/assets/hero/bolden-may-landing.webp", //desktop: "/assets/hero/bolden-landing.webp",
+      mobile:  "/assets/hero/bolden-may-landing-mb.webp", //mobile:  "/assets/hero/bolden-home-page-banner-m.webp",
       title:   "",
       subtitle:"",
       align:   "left",
       overlay: "rgba(0,0,0,.12)",
       learnMoreHref: "/models?utm_source=website&utm_medium=hmpagelink&utm_campaign=modelsslider",
       bookHref:      "/",
-      className:     "slide-pure-design",
+      className:     "slide1-hm",
     },
     {
       desktop: "/assets/hero/bolden-s9-hero-slider.webp",
@@ -32,7 +32,7 @@ export default function HeroSlider({
       overlay: "rgba(0,0,0,.42)",
       learnMoreHref: "/models/bolden-s9-off-road?utm_source=website&utm_medium=hmpagelink&utm_campaign=boldens9slider",
       bookHref:      "/",
-      className:     "slide-pure-design",
+      className:     "slide2-hm",
     },
     {
       desktop: "/assets/hero/bolden-heroslider.webp",
@@ -43,7 +43,7 @@ export default function HeroSlider({
       overlay: "rgba(0,0,0,.42)",
       learnMoreHref: "/models/bolden-s7-passenger?utm_source=website&utm_medium=hmpagelink&utm_campaign=boldens7slider",
       bookHref:      "/",
-      className:     "slide-pure-design",
+      className:     "slide3-hm",
     },
     {
       desktop: "/assets/hero/bolden-s6-hero-slider.webp",
@@ -54,7 +54,7 @@ export default function HeroSlider({
       overlay: "rgba(0,0,0,.42)",
       learnMoreHref: "/models/bolden-s6-commercial?utm_source=website&utm_medium=hmpagelink&utm_campaign=boldens6slider",
       bookHref:      "/",
-      className:     "slide-pure-design",
+      className:     "slide4-hm",
     },
   ],
   autoPlayMs = 7000,
@@ -115,7 +115,7 @@ export default function HeroSlider({
 
               
               <div className="wrap uiText">
-                <div className={`copy align-${s.align}`}>
+                <div className={`hmSliderTextBox align-${s.align}`}>
                   <h2 className="title slide-in-up">{s.title}</h2>
                   {s.subtitle && <p className="subtitle">{s.subtitle}</p>}
                 </div>
