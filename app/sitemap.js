@@ -340,5 +340,15 @@ export default function sitemap() {
             lastModified: '2026-04-22T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/chinese-vs-japanese-pickup-uae',
+            lastModified: '2026-05-04T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/chinese-vs-japanese-pickup-uae',
+            lastModified: '2026-05-04T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
