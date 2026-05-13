@@ -79,23 +79,23 @@ export default function Page() {
                 faqs={[
                   {
                     question: "Is the Bolden S7 passenger pickup truck suitable for desert and sand driving in the UAE?",
-                    answer: "Yes, the Bolden S7 passenger pickup truck is built for GCC conditions with strong traction and stability. Its diesel engine and high torque help it perform confidently on desert roads and sandy terrain.",
+                    answer: "Yes, the <strong>Bolden S7 passenger pickup truck</strong> is built for GCC conditions with strong traction and stability. Its <strong>diesel engine and high torque</strong> help it perform confidently on desert roads and sandy terrain.",
                   },
                   {
                     question: "Is the Sinotruk Bolden S7 a reliable diesel passenger pickup in the UAE?",
-                    answer: "Yes, the Sinotruk Bolden S7 Passenger is a dependable diesel passenger pickup UAE option, combining a durable drivetrain, efficient diesel performance, and strong pickup cargo capability for daily use.",
+                    answer: "Yes, the <strong>Sinotruk Bolden S7 Passenger</strong> is a dependable <strong>diesel passenger pickup UAE</strong> option, combining a durable drivetrain, efficient diesel performance, and strong pickup cargo capability for daily use.",
                   },
                   {
                     question: "Can the Bolden S7 be used as a family pickup truck in the UAE?",
-                    answer: "Absolutely. The Bolden S7 Passenger works well as a family pickup truck UAE, offering a spacious cabin, comfortable seating, and a luxury interior passenger pickup design suitable for both travel and everyday driving.",
+                    answer: "Absolutely. The <strong>Bolden S7 Passenger</strong> works well as a <strong>family pickup truck UAE</strong>, offering a spacious cabin, comfortable seating, and a <strong>luxury interior passenger pickup</strong> design suitable for both travel and everyday driving.",
                   },
                   {
                     question: "What makes the Sinotruk Bolden S7 one of the powerful pickup trucks in the UAE?",
-                    answer: "The Sinotruk pickup truck UAE lineup includes the Bolden S7, which delivers strong performance with a diesel engine and high torque making it a powerful pickup truck UAE for both work and passenger use.",
+                    answer: "The <strong>Sinotruk pickup truck UAE</strong> lineup includes the Bolden S7, which delivers strong performance with a <strong>diesel engine and high torque </strong>making it a <strong>powerful pickup truck UAE</strong> for both work and passenger use.",
                   },
                   {
                     question: "Is the Sinotruk Bolden S7 considered one of the best passenger pickup trucks in the UAE?",
-                    answer: "Yes, the Sinotruk Bolden S7 Passenger stands out as one of the best passenger pickup trucks in UAE, combining comfort, durability, and pickup cargo capability in a GCC pickup truck designed for regional driving conditions.",
+                    answer: "Yes, the <strong>Sinotruk Bolden S7 Passenger</strong> stands out as one of the <strong>best passenger pickup trucks in UAE</strong>, combining comfort, durability, and pickup cargo capability in a <strong>GCC pickup truck</strong> designed for regional driving conditions.",
                   },
                 ]}
               />
