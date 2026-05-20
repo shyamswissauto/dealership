@@ -360,5 +360,15 @@ export default function sitemap() {
             lastModified: '2026-05-12T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/sinotruk-s7-for-uae-businesses',
+            lastModified: '2026-05-19T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/sinotruk-s7-for-uae-businesses',
+            lastModified: '2026-05-19T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
