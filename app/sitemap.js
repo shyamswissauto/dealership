@@ -370,5 +370,15 @@ export default function sitemap() {
             lastModified: '2026-05-19T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/can-sinotruk-s9-handle-uae-desert-off-roading-full-breakdown',
+            lastModified: '2026-05-25T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/can-sinotruk-s9-handle-uae-desert-off-roading-full-breakdown',
+            lastModified: '2026-05-25T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
