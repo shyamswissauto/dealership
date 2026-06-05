@@ -380,5 +380,15 @@ export default function sitemap() {
             lastModified: '2026-05-25T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/why-pickup-cars-are-popular-in-uae',
+            lastModified: '2026-06-03T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/why-pickup-cars-are-popular-in-uae',
+            lastModified: '2026-06-03T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
