@@ -390,5 +390,15 @@ export default function sitemap() {
             lastModified: '2026-06-03T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/pickup-truck-for-construction-and-delivery',
+            lastModified: '2026-06-09T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/pickup-truck-for-construction-and-delivery',
+            lastModified: '2026-06-09T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
