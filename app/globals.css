@@ -545,3 +545,7 @@ a.cstBtnStyle1[aria-disabled="true"] {
 .fullvhTest>* {
   margin: 0;
 }
+
+.page-content a {
+  font-weight: bold;
+}
