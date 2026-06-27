@@ -50,7 +50,7 @@ export default function Footer() {
           <div className={styles.col}>
             <h3 className={styles.heading}>CONTACT</h3>
             <ul className={styles.contactList}>
-              <li><a href="https://maps.app.goo.gl/ChJz6fV7KXVwUxR27" target="blank">C 178 Al Mahdar St, Industrial Area
+              <li><a href="https://maps.app.goo.gl/ChJz6fV7KXVwUxR27" target="blank">C 114 Al Mahdar St, Industrial Area
 Industrial City - ICAD V - Abu Dhabi</a></li>
               <li><a href="mailto:sales@mysinotruk.ae">sales@mysinotruk.ae</a></li>
               {/* <li><a href="tel:80000000">800 000 00</a></li> */}

@@ -9,7 +9,7 @@ export default function LocationSection({
   org = "SINOTRUK",
   tagline = "Chat Beyond Limits Together",
   cityLabel = "Abu Dhabi, UAE",
-  street = "C 178 Al Mahdar St, Industrial Area",
+  street = "C 114 Al Mahdar St, Industrial Area",
   cityLine = "Industrial City - ICAD V - Abu Dhabi",
   country = "United Arab Emirates",
   mapsUrl = "https://maps.app.goo.gl/HBSuT5qjXY5NExFB8",

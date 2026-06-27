@@ -410,5 +410,15 @@ export default function sitemap() {
             lastModified: '2026-06-17T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/complete-guide-double-cabin-pickup',
+            lastModified: '2026-06-26T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/complete-guide-double-cabin-pickup',
+            lastModified: '2026-06-26T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }

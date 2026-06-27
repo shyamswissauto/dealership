@@ -9,7 +9,7 @@ export default function LocationSection({
   org = "SINOTRUK",
   tagline = "Chat Beyond Limits Together",
   cityLabel = "أبوظبي، الإمارات العربية المتحدة",
-  street = "شارع C ١٧٨ المحضر، المنطقة الصناعية",
+  street = "شارع C 114 المحضر، المنطقة الصناعية",
   cityLine = "مدينة أبوظبي الصناعية – ICAD ٥",
   country = "الإمارات العربية المتحدة",
   mapsUrl = "https://maps.app.goo.gl/HBSuT5qjXY5NExFB8",
