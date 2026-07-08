@@ -430,5 +430,15 @@ export default function sitemap() {
             lastModified: '2026-06-30T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/pickup-trucks-family-cars-uae',
+            lastModified: '2026-07-07T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/pickup-trucks-family-cars-uae',
+            lastModified: '2026-07-07T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
