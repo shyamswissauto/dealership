@@ -450,5 +450,15 @@ export default function sitemap() {
             lastModified: '2026-07-14T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/gulf-specs-vs-standard-pickup-trucks-in-dubai',
+            lastModified: '2026-07-21T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/gulf-specs-vs-standard-pickup-trucks-in-dubai',
+            lastModified: '2026-07-21T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
