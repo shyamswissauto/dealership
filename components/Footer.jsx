@@ -19,7 +19,7 @@ export default function Footer() {
               className={styles.logo}
             />
             <p className={styles.blurb}>
-              Royal Swiss Auto Trading is the authorized dealer & distributor of Sinotruk Bolden  in the UAE. Our all-terrain vehicles are built to perform. Experience confidence in every ride, backed by expert support.
+              Royal Swiss Auto Trading is the authorized dealer & distributor of Sinotruk Bolden  in the Abudhabi - UAE. Our all-terrain vehicles are built to perform. Experience confidence in every ride, backed by expert support.
             </p>
           </div>
 

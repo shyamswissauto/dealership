@@ -46,7 +46,7 @@ export default function Page() {
             </div>
 
             <div className={styles.topContent}>
-              <h3 className={styles.mainHeading}> سينوترك بولدن الإمارات</h3>
+              <h3 className={styles.mainHeading}> سينوترك بولدن ابوظبي - الإمارات العربية المتحدة</h3>
 
               <div className={styles.topColumns}>
                 <p>

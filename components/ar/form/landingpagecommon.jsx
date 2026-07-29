@@ -101,7 +101,7 @@ export default function LandingPageCommon() {
           </p>
 
           <ul className={styles.bullets}>
-            <li>ضمان المصنع لمدة 10 سنوات</li>
+            <li>ضمان لمدة 10 سنوات</li>
             <li>عقد صيانة لمدة 5 سنوات أو 100,000 كم</li>
             <li>تسجيل مجاني</li>
             <li>دفعة أولى 0% </li>

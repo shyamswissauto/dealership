@@ -7,11 +7,11 @@ export default function AboutSinotrukSection() {
       <div className={styles.container}>
         <div className={styles.left}>
           <h2 className={styles.title}>
-            حول سينوترك بولدن الإمارات
+            حول سينوترك بولدن ابوظبي - الإمارات العربية المتحدة
           </h2>
 
           <p className={styles.description}>
-             قامت شركة سينوتراك (Sinotruk) بتعيين رويال سويس أوتو تريدنج (Royal Swiss Auto Trading) كموزع حصري لمجموعة سيارات بيك اب سينوترك بولدن (Sinotruk Bolden) في دولة الإمارات العربية المتحدة، مما يعزز التزام العلامة التجارية طويل الأمد بسوق المركبات التجارية وسيارات الطرق الوعرة وسيارات الدفع الرباعي 4x4 والبيك اب في الدولة. وبدعم من عقود من الاستثمار العالمي في التصنيع المتقدم، والبحث والتطوير الداخلي، والشراكات الهندسية الدولية، تقدم سينوتراك خبرة مثبتة في المحركات، وأنظمة نقل الحركة، وأنظمة السلامة، ومتانة الهيكل إلى المنطقة.
+             قامت شركة سينوتراك (Sinotruk) بتعيين رويال سويس أوتو تريدنج (Royal Swiss Auto Trading) كموزع حصري لمجموعة سيارات بيك اب سينوترك بولدن (Sinotruk Bolden) في ابوظبي - الإمارات العربية المتحدة، مما يعزز التزام العلامة التجارية طويل الأمد بسوق المركبات التجارية وسيارات الطرق الوعرة وسيارات الدفع الرباعي 4x4 والبيك اب في الدولة. وبدعم من عقود من الاستثمار العالمي في التصنيع المتقدم، والبحث والتطوير الداخلي، والشراكات الهندسية الدولية، تقدم سينوتراك خبرة مثبتة في المحركات، وأنظمة نقل الحركة، وأنظمة السلامة، ومتانة الهيكل إلى المنطقة.
           </p>
 
           <p className={styles.description}>
@@ -23,7 +23,7 @@ export default function AboutSinotrukSection() {
           <div className={styles.imageWrap}>
             <Image
               src="/assets/home/sinotruk-about-us.webp"
-              alt="About Sinotruk Bolden UAE"
+              alt="About Sinotruk Bolden Abudhabi - UAE"
               fill
               className={styles.image}
               priority

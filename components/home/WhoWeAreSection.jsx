@@ -10,7 +10,7 @@ export default function WhoWeAreSection() {
         <div className={styles.titlebox}>
             <h2 id="who-title" className={styles.title}>WHO WE ARE</h2>
             <p className={styles.kicker}>
-              We are Royal Swiss Auto Trading, the authorized Sinotruk dealer in the UAE. We deliver vehicles designed for power, comfort, and reliability.Your destination for world-class vehicles and professional after-sales support.
+              We are Royal Swiss Auto Trading, the authorized Sinotruk dealer in the Abudhabi - UAE. We deliver vehicles designed for power, comfort, and reliability.Your destination for world-class vehicles and professional after-sales support.
             </p>
             <p className={styles.kicker2}>
               Discover Bolden vehicles built for work, family, and adventure.

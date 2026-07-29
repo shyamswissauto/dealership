@@ -46,11 +46,11 @@ export default function Page() {
             </div>
 
             <div className={styles.topContent}>
-              <h3 className={styles.mainHeading}>SINOTRUK BOLDEN UAE</h3>
+              <h3 className={styles.mainHeading}>SINOTRUK BOLDEN ABUDHABI - UAE</h3>
 
               <div className={styles.topColumns}>
                 <p>
-                  Sinotruk has designated Royal Swiss Auto Trading as the exclusive distributor of the Sinotruk Bolden range in the UAE, reinforcing the brand’s long-term commitment to the region’s commercial and off-road vehicle market. Backed by decades of global investment in advanced manufacturing, in-house research and development, and international engineering partnerships, Sinotruk brings proven expertise in engines, drivetrains, safety systems, and chassis durability to the region.
+                  Sinotruk has designated Royal Swiss Auto Trading as the exclusive distributor of the Sinotruk Bolden range in the Abudhabi - UAE, reinforcing the brand’s long-term commitment to the region’s commercial and off-road vehicle market. Backed by decades of global investment in advanced manufacturing, in-house research and development, and international engineering partnerships, Sinotruk brings proven expertise in engines, drivetrains, safety systems, and chassis durability to the region.
                 </p>
 
                 <p>
@@ -146,7 +146,7 @@ export default function Page() {
               </h3>
 
               <p>
-                Royal Swiss Auto Trading is a UAE-based automotive enterprise
+                Royal Swiss Auto Trading is a Abudhabi, UAE-based automotive enterprise
                 founded on the principles of quality, reliability, and long-term
                 customer confidence. With a growing footprint across the region,
                 the company operates at the intersection of automotive retail,

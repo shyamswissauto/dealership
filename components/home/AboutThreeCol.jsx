@@ -29,7 +29,7 @@ With visionary expansion plans, Swiss Auto Trading is poised to expand across va
         <div className={styles.grid}>
           {/* LEFT */}
           <div className={styles.col}>
-            <p className={styles.kicker}>About Sinotruk Bolden UAE</p>
+            <p className={styles.kicker}>About Sinotruk Bolden Abudhabi - UAE</p>
 
             {/* <h2 id="about-3col-title" className={styles.bigTitle}>
               Mauris a velit luctus, ornare leo condimentum, efficitur purus. Sed imperdiet erat sit amet velit malesuada, ut luctus nibh dapibus.

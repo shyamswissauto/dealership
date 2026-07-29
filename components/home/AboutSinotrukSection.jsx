@@ -7,11 +7,11 @@ export default function AboutSinotrukSection() {
       <div className={styles.container}>
         <div className={styles.left}>
           <h2 className={styles.title}>
-            About Sinotruk Bolden UAE
+            About Sinotruk Bolden Abudhabi - UAE
           </h2>
 
           <p className={styles.description}>
-            Sinotruk has designated Royal Swiss Auto Trading as the exclusive distributor of the Sinotruk Bolden range in the UAE, reinforcing the brand’s long-term commitment to the region’s commercial and off-road vehicle market. Backed by decades of global investment in advanced manufacturing, in-house research and development, and international engineering partnerships, Sinotruk brings proven expertise in engines, drivetrains, safety systems, and chassis durability to the region.
+            Sinotruk has designated Royal Swiss Auto Trading as the exclusive distributor of the Sinotruk Bolden range in the Abudhabi - UAE, reinforcing the brand’s long-term commitment to the region’s commercial and off-road vehicle market. Backed by decades of global investment in advanced manufacturing, in-house research and development, and international engineering partnerships, Sinotruk brings proven expertise in engines, drivetrains, safety systems, and chassis durability to the region.
           </p>
 
           <p className={styles.description}>

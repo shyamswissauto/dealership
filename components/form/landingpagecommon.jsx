@@ -102,7 +102,7 @@ export default function LandingPageCommon() {
           </p>
 
           <ul className={styles.bullets}>
-            <li>10 Years Manufacturer Warranty</li>
+            <li>10 Years Warranty</li>
             <li>5 Years or 100,000 KM Service Contract</li>
             <li>Free Registration</li>
             <li>0% down payment</li>
