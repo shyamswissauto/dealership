@@ -460,5 +460,15 @@ export default function sitemap() {
             lastModified: '2026-07-21T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/why-choose-pickup-truck-over-suv-uae',
+            lastModified: '2026-07-28T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/why-choose-pickup-truck-over-suv-uae',
+            lastModified: '2026-07-28T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
