@@ -7,7 +7,7 @@ const OFFERS = [
     "10 Years Warranty",
     "5 Years or 100,000 KM Service Contract",
     "Free Registration",
-    "0% down payment (T&C Apply)"
+    "0% down payment"
   ],
     img: "/assets/popup/s9-off-road-popup.webp",
     cstclass: "offerb2s1",
@@ -20,7 +20,7 @@ const OFFERS = [
     "10 Years Warranty",
     "5 Years or 100,000 KM Service Contract",
     "Free Registration",
-    "0% down payment (T&C Apply)"
+    "0% down payment"
   ],
     img: "/assets/offers/uae-offer.webp",
     cstclass: "offerb2s1",

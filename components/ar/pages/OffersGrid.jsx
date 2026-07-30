@@ -36,6 +36,9 @@ export default function OffersGrid() {
                   {o.subtitle.map((item, idx) => (<li className={styles[o.cstclass]} key={idx}>{item}</li>))}
                 </ul>
               ) : null}
+
+              <p className={styles.tcapply}>تطبق الشروط والأحكام*</p>
+
               <button
                 className={styles.cta}
                 onClick={() => setActive(o)}

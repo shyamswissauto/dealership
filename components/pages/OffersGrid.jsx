@@ -36,6 +36,9 @@ export default function OffersGrid() {
                   {o.subtitle.map((item, idx) => (<li className={styles[o.cstclass]} key={idx}>{item}</li>))}
                 </ul>
               ) : null}
+
+              <p className={styles.tcapply}>*T & C Apply</p>
+
               <button
                 className={styles.cta}
                 onClick={() => setActive(o)}
@@ -47,6 +50,8 @@ export default function OffersGrid() {
           </li>
         ))}
       </ul>
+
+      
 
       {active && (
         <OfferFormModal
