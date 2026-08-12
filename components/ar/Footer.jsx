@@ -54,7 +54,7 @@ export default function FooterAr() {
                 الإمارات العربية المتحدة</li>
               <li><a href="mailto:sales@mysinotruk.ae">info@mysinotruk.ae</a></li>
               {/* <li><a href="tel:80000000">800 000 00</a></li> */}
-              <li className="dirLtr"><a href="tel:+971561122500">+971561122500</a></li>
+              <li className="dirLtr"><a href="tel:+971566031788">+971566031788</a></li>
             </ul>
           </div>
         </div>

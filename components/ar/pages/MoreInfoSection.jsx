@@ -22,7 +22,7 @@ export default function MoreInfoSection({
         },
         {
             title:"تحتاج مساعدة؟ - تحدث إلى مختص للحصول على إرشاد مخصص.",
-            href: "tel:+971561122500",
+            href: "tel:+971566031788",
             img: "/assets/pages/experience-talk-specialist.webp",
             alttext: "Need more help?",
         },

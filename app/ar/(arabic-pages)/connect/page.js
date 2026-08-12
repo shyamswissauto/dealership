@@ -21,7 +21,7 @@ const PROFILE = {
 const LINKS = [
   { icon: PiSteeringWheelBold, label: "احجز تجربة القيادة", href: "https://www.mysinotruk.ae/bolden-uae-ar" },
   { icon: FaGlobe, label: "موقع إلكتروني", href: "https://www.mysinotruk.ae/ar" },  
-  { icon: FaWhatsapp, label: "واتساب", href: "https://wa.me/971561122500?text=Hi%2C%20Bolden%20UAE" },
+  { icon: FaWhatsapp, label: "واتساب", href: "https://wa.me/971566031788?text=Hi%2C%20Bolden%20UAE" },
   { icon: FaInstagram, label: "إنستغرام", href: "https://www.instagram.com/sinotrukbolden_uae/" },
   { icon: FaFacebookF, label: "فيسبوك", href: "https://www.facebook.com/people/Sinotruk-UAE/61579914192315/" },
   { icon: FaYoutube, label: "يوتيوب", href: "https://www.youtube.com/@Sinotrukuae" },

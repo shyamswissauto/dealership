@@ -54,7 +54,7 @@ export default function Footer() {
 Industrial City - ICAD V - Abu Dhabi</a></li>
               <li><a href="mailto:sales@mysinotruk.ae">sales@mysinotruk.ae</a></li>
               {/* <li><a href="tel:80000000">800 000 00</a></li> */}
-              <li><a href="tel:+971561122500">+971 56 11 22 500</a></li>
+              <li><a href="tel:+971566031788">+971566031788</a></li>
             </ul>
           </div>
         </div>

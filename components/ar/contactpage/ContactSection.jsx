@@ -77,7 +77,7 @@ export default function ContactSection() {
 
           <div className={styles.block}>
             <a href="mailto:info@mysinotruk.ae" className={styles.link}>info@mysinotruk.ae</a>
-            <a href="tel:+971561122500" className={`${styles.link} dirLtr`}>+971561122500</a>
+            <a href="tel:+971566031788" className={`${styles.link} dirLtr`}>+971566031788</a>
             {/* <a href="#" className={`${styles.link} ${styles.underline}`}>Customer Support</a> */}
           </div>
 

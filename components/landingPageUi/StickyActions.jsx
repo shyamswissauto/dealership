@@ -9,7 +9,7 @@ import styles from "./StickyActions.module.css";
 const DEFAULT_ITEMS = [
   { href: "/test-drive",       label: "Book a test drive", src: "/assets/icons/icon1.webp" },
   { href: "/",                 label: "Get Quote",         src: "/assets/icons/icon4.webp" },
-  { href: "tel:+971561122500", label: "Contact us",        src: "/assets/icons/icon2.webp" },
+  { href: "tel:+971566031788", label: "Contact us",        src: "/assets/icons/icon2.webp" },
   { href: "/service",          label: "Service & Support", src: "/assets/icons/icon3.webp" },
 ];
 
