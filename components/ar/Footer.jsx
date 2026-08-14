@@ -49,8 +49,8 @@ export default function FooterAr() {
           <div className={styles.col}>
             <h3 className={styles.heading}>تواصل</h3>
             <ul className={styles.contactList}>
-              <li>شارع C 114 المحضر، المنطقة الصناعية
-                مدينة أبوظبي الصناعية – ICAD ٥
+              <li>شارع C 178 المحضر، المنطقة الصناعية
+                 – ICAD V
                 الإمارات العربية المتحدة</li>
               <li><a href="mailto:sales@mysinotruk.ae">info@mysinotruk.ae</a></li>
               {/* <li><a href="tel:80000000">800 000 00</a></li> */}

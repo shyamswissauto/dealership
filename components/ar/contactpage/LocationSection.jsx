@@ -9,9 +9,9 @@ export default function LocationSection({
   org = "SINOTRUK",
   tagline = "Chat Beyond Limits Together",
   cityLabel = "أبوظبي، الإمارات العربية المتحدة",
-  street = "شارع C 114 المحضر، المنطقة الصناعية",
-  cityLine = "مدينة أبوظبي الصناعية – ICAD ٥",
-  country = "الإمارات العربية المتحدة",
+  street = "شارع C 178 المحضر، المنطقة الصناعية",
+  cityLine = "– ICAD V",
+  country = "أبوظبي، الإمارات العربية المتحدة",
   mapsUrl = "https://maps.app.goo.gl/HBSuT5qjXY5NExFB8",
   mapsEmbedSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.6437660632696!2d54.4713145!3d24.2542352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e3f657015095d%3A0xc780a8edd51440e3!2sSinotruk%20Bolden%20UAE!5e0!3m2!1sen!2sae!4v1764153557973!5m2!1sen!2sae",
   /** Position of the pin in PERCENT of the map container (0–100) */
@@ -69,7 +69,7 @@ export default function LocationSection({
           <h3 className={styles.h3}>فرع الرئيسي</h3>
           <div className={styles.addr}>
             <div>{org}</div>
-            <div>{cityLabel}</div>
+            {/* <div>{cityLabel}</div> */}
             <div>{street}</div>
             <div>{cityLine}</div>
             <div>{country}</div>
