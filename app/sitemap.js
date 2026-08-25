@@ -490,5 +490,15 @@ export default function sitemap() {
             lastModified: '2026-08-17T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/top-features-every-commercial-pickup-should-have',
+            lastModified: '2026-08-24T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/top-features-every-commercial-pickup-should-have',
+            lastModified: '2026-08-24T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
