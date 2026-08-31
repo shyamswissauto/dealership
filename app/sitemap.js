@@ -500,5 +500,15 @@ export default function sitemap() {
             lastModified: '2026-08-24T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/are-chinese-pickup-trucks-reliable-in-the-uae',
+            lastModified: '2026-08-30T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/are-chinese-pickup-trucks-reliable-in-the-uae',
+            lastModified: '2026-08-30T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }

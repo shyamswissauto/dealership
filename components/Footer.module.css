@@ -36,7 +36,7 @@
 }
 
 
-.brand { display: flex; gap: 24px; align-items: start; flex-direction: column; }
+.brand { display: flex; gap: 24px; align-items: flex-start; flex-direction: column; }
 .logo { display: block; }
 .blurb {
   max-width: 560px;
