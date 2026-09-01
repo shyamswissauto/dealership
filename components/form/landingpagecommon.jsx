@@ -763,7 +763,7 @@ export default function LandingPageCommon() {
                   }
                 >
                   <option value="">
-                    Select Location
+                    Select Test Drive Location
                   </option>
 
                   {LOCATIONS.map((location) => (
