@@ -1,101 +1,1105 @@
 "use client";
 
-import { useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+
 import { useRouter } from "next/navigation";
+import { Turnstile } from "@marsidev/react-turnstile";
+
+import {
+  getCountries,
+  getCountryCallingCode,
+  parsePhoneNumberFromString,
+} from "libphonenumber-js";
+
 import styles from "./TestDriveModal.module.css";
 
-export default function TestDriveModal({ onClose, modalImage, carOptions = [] }) {
-  const router = useRouter();
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState("");
+/* =========================================================
+   FAKE PHONE NUMBERS
+========================================================= */
 
-  const submit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setSending(true);
+const OBVIOUS_FAKE_PHONES = new Set([
+  "123456789",
+  "1234567890",
+  "987654321",
+  "9876543210",
+  "0123456789",
+]);
 
-    const form = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(form.entries());
+/* =========================================================
+   NAME
+========================================================= */
 
-    // include source URL
-    payload.sourceUrl = window.location.href;
+function isValidName(value = "") {
+  const name = String(value).trim();
 
-    // minimal client-side checks (server revalidates)
-    if (
-      !payload.fullName?.trim() ||
-      !payload.email?.trim() ||
-      !payload.phone?.trim() ||
-      !payload.car?.trim()
-    ) {
-      setSending(false);
-      setError("Please fill all required fields");
-      return;
+  if (
+    name.length < 2 ||
+    name.length > 100
+  ) {
+    return false;
+  }
+
+  return /^[\p{L}\p{M}][\p{L}\p{M}\s.'’\-]{1,99}$/u.test(
+    name
+  );
+}
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+function isValidEmail(value = "") {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(
+    String(value).trim()
+  );
+}
+
+/* =========================================================
+   ARABIC / PERSIAN DIGITS
+========================================================= */
+
+function normalizeDigits(value = "") {
+  return String(value)
+    .replace(/[٠-٩]/g, (digit) =>
+      "0123456789".charAt(
+        "٠١٢٣٤٥٦٧٨٩".indexOf(digit)
+      )
+    )
+    .replace(/[۰-۹]/g, (digit) =>
+      "0123456789".charAt(
+        "۰۱۲۳۴۵۶۷۸۹".indexOf(digit)
+      )
+    );
+}
+
+/* =========================================================
+   PHONE VALIDATION
+========================================================= */
+
+function validatePhoneForCountry(
+  value,
+  country
+) {
+  const raw = normalizeDigits(
+    String(value || "").trim()
+  );
+
+  const digits =
+    raw.replace(/\D/g, "");
+
+  if (!raw) {
+    return {
+      valid: false,
+      message:
+        "Phone number is required.",
+    };
+  }
+
+  if (
+    digits.length < 6 ||
+    digits.length > 15
+  ) {
+    return {
+      valid: false,
+      message:
+        "Enter a valid phone number.",
+    };
+  }
+
+  /* 000000000 / 111111111 etc. */
+
+  if (
+    /^(\d)\1{6,}$/.test(
+      digits
+    )
+  ) {
+    return {
+      valid: false,
+      message:
+        "Enter a valid phone number.",
+    };
+  }
+
+  if (
+    OBVIOUS_FAKE_PHONES.has(
+      digits
+    )
+  ) {
+    return {
+      valid: false,
+      message:
+        "Enter a valid phone number.",
+    };
+  }
+
+  try {
+    const phone =
+      parsePhoneNumberFromString(
+        raw,
+        country
+      );
+
+    if (!phone) {
+      return {
+        valid: false,
+        message:
+          "Enter a valid phone number for the selected country.",
+      };
     }
 
-    try {
-      const res = await fetch("/api/test", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok || !json?.ok) throw new Error(json?.error || "Submission failed");
+    /*
+     * AE selected + +91 number
+     * must be rejected.
+     */
+    if (
+      phone.country !==
+      country
+    ) {
+      return {
+        valid: false,
+        message:
+          "Phone number does not match the selected country.",
+      };
+    }
 
-      onClose?.();
-      //router.replace("/thank-you");
-      window.open("/thank-you", "_self");
-    } catch (err) {
-      setError(err.message || "Something went wrong. Please try again.");
-    } finally {
-      setSending(false);
+    if (
+      !phone.isPossible() ||
+      !phone.isValid()
+    ) {
+      return {
+        valid: false,
+        message:
+          "Enter a valid phone number for the selected country.",
+      };
+    }
+
+    const national =
+      String(
+        phone.nationalNumber || ""
+      );
+
+    if (
+      /^(\d)\1{6,}$/.test(
+        national
+      ) ||
+      OBVIOUS_FAKE_PHONES.has(
+        national
+      )
+    ) {
+      return {
+        valid: false,
+        message:
+          "Enter a valid phone number.",
+      };
+    }
+
+    return {
+      valid: true,
+      number: phone.number,
+    };
+  } catch {
+    return {
+      valid: false,
+      message:
+        "Enter a valid phone number for the selected country.",
+    };
+  }
+}
+
+/* =========================================================
+   COMPONENT
+========================================================= */
+
+export default function TestDriveModal({
+  onClose,
+  modalImage,
+  carOptions = [],
+}) {
+  const router = useRouter();
+
+  const dialogRef =
+    useRef(null);
+
+  const firstFieldRef =
+    useRef(null);
+
+  const [
+    sending,
+    setSending,
+  ] = useState(false);
+
+  const [
+    fieldErrors,
+    setFieldErrors,
+  ] = useState({});
+
+  const [
+    serverMsg,
+    setServerMsg,
+  ] = useState("");
+
+  /* =========================================================
+     PHONE COUNTRY
+  ========================================================= */
+
+  const [
+    phoneCountry,
+    setPhoneCountry,
+  ] = useState("AE");
+
+  /* =========================================================
+     HONEYPOT
+  ========================================================= */
+
+  const [
+    honeypot,
+    setHoneypot,
+  ] = useState("");
+
+  /* =========================================================
+     FORM TIMING
+  ========================================================= */
+
+  const [formStartedAt] =
+    useState(() => Date.now());
+
+  /* =========================================================
+     TURNSTILE
+  ========================================================= */
+
+  const [
+    turnstileToken,
+    setTurnstileToken,
+  ] = useState("");
+
+  const [
+    turnstileKey,
+    setTurnstileKey,
+  ] = useState(0);
+
+  /* =========================================================
+     COUNTRIES
+
+     UAE first.
+  ========================================================= */
+
+  const countryOptions =
+    useMemo(() => {
+      const countries =
+        getCountries().map(
+          (country) => ({
+            country,
+
+            callingCode:
+              getCountryCallingCode(
+                country
+              ),
+          })
+        );
+
+      countries.sort(
+        (a, b) => {
+          const difference =
+            Number(
+              a.callingCode
+            ) -
+            Number(
+              b.callingCode
+            );
+
+          if (
+            difference !== 0
+          ) {
+            return difference;
+          }
+
+          return a.country.localeCompare(
+            b.country
+          );
+        }
+      );
+
+      return [
+        ...countries.filter(
+          (item) =>
+            item.country === "AE"
+        ),
+
+        ...countries.filter(
+          (item) =>
+            item.country !== "AE"
+        ),
+      ];
+    }, []);
+
+  /* =========================================================
+     MODAL BEHAVIOUR
+  ========================================================= */
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (
+        e.key === "Escape"
+      ) {
+        onClose?.();
+      }
+    };
+
+    window.addEventListener(
+      "keydown",
+      onKey
+    );
+
+    const previousOverflow =
+      document.body.style.overflow;
+
+    document.body.style.overflow =
+      "hidden";
+
+    firstFieldRef.current?.focus();
+
+    const trap = (e) => {
+      if (
+        e.key !== "Tab"
+      ) {
+        return;
+      }
+
+      const focusables =
+        dialogRef.current?.querySelectorAll(
+          'button,[href],input,select,textarea,iframe,[tabindex]:not([tabindex="-1"])'
+        );
+
+      if (
+        !focusables?.length
+      ) {
+        return;
+      }
+
+      const items =
+        Array.from(
+          focusables
+        ).filter(
+          (item) =>
+            !item.disabled
+        );
+
+      if (!items.length) {
+        return;
+      }
+
+      const first =
+        items[0];
+
+      const last =
+        items[
+          items.length - 1
+        ];
+
+      if (
+        e.shiftKey &&
+        document.activeElement ===
+          first
+      ) {
+        e.preventDefault();
+        last.focus();
+      } else if (
+        !e.shiftKey &&
+        document.activeElement ===
+          last
+      ) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    dialogRef.current?.addEventListener(
+      "keydown",
+      trap
+    );
+
+    return () => {
+      window.removeEventListener(
+        "keydown",
+        onKey
+      );
+
+      dialogRef.current?.removeEventListener(
+        "keydown",
+        trap
+      );
+
+      document.body.style.overflow =
+        previousOverflow;
+    };
+  }, [onClose]);
+
+  /* =========================================================
+     HELPERS
+  ========================================================= */
+
+  const clearError = (
+    field
+  ) => {
+    setFieldErrors(
+      (current) => ({
+        ...current,
+        [field]: undefined,
+      })
+    );
+
+    if (serverMsg) {
+      setServerMsg("");
     }
   };
 
+  const resetTurnstile =
+    () => {
+      setTurnstileToken("");
+
+      setTurnstileKey(
+        (key) => key + 1
+      );
+    };
+
+  /* =========================================================
+     VALIDATION
+  ========================================================= */
+
+  const validate = (
+    payload
+  ) => {
+    const errors = {};
+
+    /* Name */
+
+    if (
+      !isValidName(
+        payload.fullName
+      )
+    ) {
+      errors.fullName =
+        "Enter a valid full name.";
+    }
+
+    /* Email */
+
+    if (
+      !isValidEmail(
+        payload.email
+      )
+    ) {
+      errors.email =
+        "Enter a valid email address.";
+    }
+
+    /* Phone */
+
+    const phoneResult =
+      validatePhoneForCountry(
+        payload.phone,
+        phoneCountry
+      );
+
+    if (
+      !phoneResult.valid
+    ) {
+      errors.phone =
+        phoneResult.message;
+    }
+
+    /* Car */
+
+    const normalizedCars =
+      carOptions.map(
+        (car) =>
+          String(car).trim()
+      );
+
+    if (
+      !normalizedCars.includes(
+        String(
+          payload.car || ""
+        ).trim()
+      )
+    ) {
+      errors.car =
+        "Please select a valid car.";
+    }
+
+    setFieldErrors(
+      errors
+    );
+
+    return (
+      Object.keys(errors)
+        .length === 0
+    );
+  };
+
+  /* =========================================================
+     SUBMIT
+  ========================================================= */
+
+  const submit =
+    async (e) => {
+      e.preventDefault();
+
+      setServerMsg("");
+
+      const formEl =
+        e.currentTarget;
+
+      const form =
+        new FormData(
+          formEl
+        );
+
+      const payload =
+        Object.fromEntries(
+          form.entries()
+        );
+
+      /* Frontend validation */
+
+      if (
+        !validate(payload)
+      ) {
+        return;
+      }
+
+      /* Turnstile */
+
+      if (
+        !turnstileToken
+      ) {
+        setServerMsg(
+          "Please complete the security verification before submitting."
+        );
+
+        return;
+      }
+
+      try {
+        setSending(true);
+
+        const res =
+          await fetch(
+            "/api/test",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json",
+              },
+
+              body:
+                JSON.stringify({
+                  fullName:
+                    payload.fullName,
+
+                  email:
+                    payload.email,
+
+                  phoneCountry,
+
+                  phone:
+                    payload.phone,
+
+                  car:
+                    String(
+                      payload.car
+                    ).trim(),
+
+                  /*
+                   * Honeypot
+                   */
+                  website:
+                    honeypot,
+
+                  /*
+                   * Timing
+                   */
+                  formStartedAt,
+
+                  /*
+                   * Security
+                   */
+                  turnstileToken,
+
+                  /*
+                   * Lead source
+                   */
+                  sourceUrl:
+                    window.location.href,
+                }),
+            }
+          );
+
+        const json =
+          await res
+            .json()
+            .catch(() => ({}));
+
+        /* =================================================
+           VALIDATION
+        ================================================= */
+
+        if (
+          res.status === 422
+        ) {
+          if (
+            json?.errors
+          ) {
+            setFieldErrors(
+              (current) => ({
+                ...current,
+                ...json.errors,
+              })
+            );
+          }
+
+          setServerMsg(
+            json?.errors?.phone ||
+            json?.errors?.email ||
+            json?.errors?.fullName ||
+            json?.errors?.car ||
+            json?.error ||
+            "Please check the information and try again."
+          );
+
+          return;
+        }
+
+        /* =================================================
+           SECURITY
+        ================================================= */
+
+        if (
+          res.status === 403
+        ) {
+          setServerMsg(
+            json?.error ||
+              "Security verification failed. Please try again."
+          );
+
+          resetTurnstile();
+
+          return;
+        }
+
+        /* =================================================
+           RATE LIMIT
+        ================================================= */
+
+        if (
+          res.status === 429
+        ) {
+          setServerMsg(
+            json?.error ||
+              "Too many submissions. Please wait and try again."
+          );
+
+          resetTurnstile();
+
+          return;
+        }
+
+        /* =================================================
+           OTHER ERROR
+        ================================================= */
+
+        if (
+          !res.ok ||
+          !json?.ok
+        ) {
+          setServerMsg(
+            json?.error ||
+              "Unable to submit your request. Please try again."
+          );
+
+          resetTurnstile();
+
+          return;
+        }
+
+        /* =================================================
+           SUCCESS
+        ================================================= */
+
+        router.replace(
+          "/thank-you"
+        );
+      } catch (err) {
+        console.warn(
+          "Test Drive Popup submission failed:",
+          err
+        );
+
+        setServerMsg(
+          "Unable to connect. Please check your connection and try again."
+        );
+
+        resetTurnstile();
+      } finally {
+        setSending(false);
+      }
+    };
+
+  /* =========================================================
+     RENDER
+  ========================================================= */
+
   return (
-    <div className={styles.modalOverlay} role="dialog" aria-modal="true" onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <figure className={styles.modalLeft}>
-          <img src={modalImage || "/assets/home/book-test-drive1.webp"} alt="Test Drive" className={styles.modalImg} />
+    <div
+      className={styles.modalOverlay}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="test-drive-modal-title"
+      onClick={onClose}
+    >
+      <div
+        ref={dialogRef}
+        className={styles.modal}
+        onClick={(e) =>
+          e.stopPropagation()
+        }
+      >
+        {/* LEFT IMAGE */}
+
+        <figure
+          className={styles.modalLeft}
+        >
+          <img
+            src={
+              modalImage ||
+              "/assets/home/book-test-drive1.webp"
+            }
+            alt="Test Drive"
+            className={styles.modalImg}
+          />
         </figure>
 
-        <div className={styles.modalRight}>
-          <h2 className={styles.modalTitle}>BOOK A TEST DRIVE</h2>
+        {/* RIGHT FORM */}
 
-          <form className={styles.form} onSubmit={submit} noValidate>
-            <input type="text" name="company" tabIndex={-1} autoComplete="off" style={{ display: "none" }} />
-            <input name="fullName" className={styles.input} placeholder="Full Name" required />
-            <input name="email" type="email" className={styles.input} placeholder="Your email" required />
-            <input
-              name="phone"
-              type="tel"
-              className={styles.input}
-              placeholder="Phone Number"
-              inputMode="tel"
-              pattern="[0-9+() -]*"
-              required
-            />
+        <div
+          className={styles.modalRight}
+        >
+          <h2
+            id="test-drive-modal-title"
+            className={styles.modalTitle}
+          >
+            BOOK A TEST DRIVE
+          </h2>
 
-            {/* REQUIRED car selection */}
-            <select name="car" className={`${styles.input} ${styles.select}`} defaultValue="" required>
-              <option value="" disabled hidden>
-                Select your car
-              </option>
-              {carOptions.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
+          <form
+            className={styles.form}
+            onSubmit={submit}
+            noValidate
+          >
+            {/* HONEYPOT */}
 
-            <button type="submit" className={styles.cta} disabled={sending}>
-              {sending ? "SENDING…" : "BOOK NOW"}
+            <div
+              className={styles.honeypot}
+              aria-hidden="true"
+            >
+              <label
+                htmlFor="test-drive-website"
+              >
+                Website
+              </label>
+
+              <input
+                id="test-drive-website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) =>
+                  setHoneypot(
+                    e.target.value
+                  )
+                }
+              />
+            </div>
+
+            {/* NAME */}
+
+            <div
+              className={styles.field}
+            >
+              <input
+                ref={firstFieldRef}
+                name="fullName"
+                className={styles.input}
+                placeholder="Full Name"
+                autoComplete="name"
+                aria-invalid={
+                  !!fieldErrors.fullName
+                }
+                onChange={() =>
+                  clearError(
+                    "fullName"
+                  )
+                }
+              />
+
+              {fieldErrors.fullName && (
+                <small
+                  className={styles.error}
+                >
+                  {
+                    fieldErrors.fullName
+                  }
+                </small>
+              )}
+            </div>
+
+            {/* EMAIL */}
+
+            <div
+              className={styles.field}
+            >
+              <input
+                name="email"
+                type="email"
+                className={styles.input}
+                placeholder="Your email"
+                autoComplete="email"
+                aria-invalid={
+                  !!fieldErrors.email
+                }
+                onChange={() =>
+                  clearError(
+                    "email"
+                  )
+                }
+              />
+
+              {fieldErrors.email && (
+                <small
+                  className={styles.error}
+                >
+                  {
+                    fieldErrors.email
+                  }
+                </small>
+              )}
+            </div>
+
+            {/* PHONE */}
+
+            <div
+              className={styles.field}
+            >
+              <div
+                className={styles.phoneGroup}
+              >
+                <select
+                  name="phoneCountry"
+                  className={styles.countryCode}
+                  value={phoneCountry}
+                  onChange={(e) => {
+                    setPhoneCountry(
+                      e.target.value
+                    );
+
+                    clearError(
+                      "phone"
+                    );
+                  }}
+                  aria-label="Country calling code"
+                >
+                  {countryOptions.map(
+                    (item) => (
+                      <option
+                        key={item.country}
+                        value={item.country}
+                      >
+                        +{item.callingCode} {item.country}
+                      </option>
+                    )
+                  )}
+                </select>
+
+                <input
+                  name="phone"
+                  type="tel"
+                  className={styles.phoneInput}
+                  placeholder="Phone Number"
+                  inputMode="tel"
+                  autoComplete="tel-national"
+                  aria-invalid={
+                    !!fieldErrors.phone
+                  }
+                  onChange={() =>
+                    clearError(
+                      "phone"
+                    )
+                  }
+                />
+              </div>
+
+              {fieldErrors.phone && (
+                <small
+                  className={styles.error}
+                >
+                  {
+                    fieldErrors.phone
+                  }
+                </small>
+              )}
+            </div>
+
+            {/* CAR */}
+
+            <div
+              className={styles.field}
+            >
+              <div
+                className={styles.selectWrap}
+              >
+                <select
+                  name="car"
+                  className={`${styles.input} ${styles.select}`}
+                  defaultValue=""
+                  aria-invalid={
+                    !!fieldErrors.car
+                  }
+                  onChange={() =>
+                    clearError(
+                      "car"
+                    )
+                  }
+                >
+                  <option
+                    value=""
+                    disabled
+                    hidden
+                  >
+                    Select your car
+                  </option>
+
+                  {carOptions.map(
+                    (car) => {
+                      const value =
+                        String(
+                          car
+                        ).trim();
+
+                      return (
+                        <option
+                          key={value}
+                          value={value}
+                        >
+                          {value}
+                        </option>
+                      );
+                    }
+                  )}
+                </select>
+              </div>
+
+              {fieldErrors.car && (
+                <small
+                  className={styles.error}
+                >
+                  {fieldErrors.car}
+                </small>
+              )}
+            </div>
+
+            {/* TURNSTILE */}
+
+            <div
+              className={styles.turnstileWrap}
+            >
+              <Turnstile
+                key={turnstileKey}
+                siteKey={
+                  process.env
+                    .NEXT_PUBLIC_TURNSTILE_SITE_KEY
+                }
+                onSuccess={(token) => {
+                  setTurnstileToken(
+                    token
+                  );
+
+                  setServerMsg("");
+                }}
+                onExpire={() => {
+                  setTurnstileToken(
+                    ""
+                  );
+                }}
+                onError={() => {
+                  setTurnstileToken(
+                    ""
+                  );
+
+                  setServerMsg(
+                    "Security verification could not be completed. Please try again."
+                  );
+                }}
+                options={{
+                  /*
+                   * Must match /api/test
+                   */
+                  action:
+                    "test_drive_popup",
+
+                  theme:
+                    "auto",
+
+                  size:
+                    "normal",
+                }}
+              />
+            </div>
+
+            {/* SERVER MESSAGE */}
+
+            {serverMsg && (
+              <p
+                className={styles.serverMsg}
+                role="status"
+              >
+                {serverMsg}
+              </p>
+            )}
+
+            {/* BUTTON */}
+
+            <button
+              type="submit"
+              className={styles.cta}
+              disabled={
+                sending ||
+                !turnstileToken
+              }
+            >
+              {sending
+                ? "SENDING…"
+                : "BOOK NOW"}
             </button>
-
-            {error && <p className={styles.error}>{error}</p>}
           </form>
         </div>
 
-        <button className={styles.close} onClick={onClose} aria-label="Close">
+        {/* CLOSE */}
+
+        <button
+          type="button"
+          className={styles.close}
+          onClick={onClose}
+          aria-label="Close"
+        >
           ×
         </button>
       </div>

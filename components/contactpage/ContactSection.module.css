@@ -10,10 +10,9 @@
   display:grid;
   grid-template-columns: 1.1fr 1fr;
   gap: clamp(24px,4vw,48px);
-  align-items:start;
+  align-items:center;
 }
 
-.left{}
 .title{
   margin:0 0 12px;
   font-size: clamp(36px,6vw,45px);
@@ -46,7 +45,6 @@
   margin:0; color:#475569; line-height:1.55;
 }
 
-.right{}
 .card{
   background:#fff;
   border-radius: 20px;
@@ -151,11 +149,191 @@
   text-align: center;
 }
 
+/* =========================================================
+   HONEYPOT
+========================================================= */
+
+.honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  top: auto !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  overflow: hidden !important;
+
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* =========================================================
+   PHONE COUNTRY CODE + NUMBER
+========================================================= */
+
+.phoneGroup {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  gap: 8px;
+}
+
+.countryCode {
+  flex: 0 0 105px;
+
+  width: 105px !important;
+  min-width: 105px;
+  max-width: 105px;
+
+  height: 45px;
+
+  padding: 0 8px !important;
+
+  border: 1px solid #d6d0ca;
+  border-radius: 8px;
+
+  background: #fff;
+  color: #111;
+
+  font-family:
+    var(--font-poppins),
+    Poppins,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.phoneInput {
+  flex: 1 1 0;
+
+  width: 0 !important;
+  min-width: 0;
+
+  height: 45px;
+
+  padding: 0 12px !important;
+
+  border: 1px solid #d6d0ca;
+  border-radius: 8px;
+
+  background: #fff;
+  color: #111;
+
+  font-family:
+    var(--font-poppins),
+    Poppins,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+.countryCode:focus,
+.phoneInput:focus {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(59, 130, 246, 0.1);
+
+  outline: none;
+}
+
+.phoneInput[aria-invalid="true"] {
+  border-color: #ef4444 !important;
+}
+
+/* =========================================================
+   TURNSTILE
+========================================================= */
+
+.turnstileWrap {
+  margin: 16px 0 8px;
+
+  display: flex;
+  justify-content: flex-start;
+
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* =========================================================
+   DISABLED BUTTON
+========================================================= */
+
+.submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit:disabled:hover {
+  transform: none;
+}
+
 @media (max-width: 992px){
   .container{ grid-template-columns: 1fr; }
   .grid3{ grid-template-columns: 1fr; }
 }
 
-@media (max-width: 600px){
-  .row{ grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  /*
+   * Keep country code + phone
+   * together even on mobile.
+   */
+  .phoneGroup {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .countryCode {
+    flex: 0 0 95px;
+
+    width: 95px !important;
+    min-width: 95px;
+    max-width: 95px;
+
+    height: 45px;
+
+    padding: 0 6px !important;
+
+    font-size: 12px;
+  }
+
+  .phoneInput {
+    flex: 1 1 0;
+
+    width: 0 !important;
+    min-width: 0;
+
+    height: 45px;
+
+    padding: 0 10px !important;
+
+    font-size: 14px;
+  }
+
+  .turnstileWrap {
+    width: 100%;
+  }
 }

@@ -146,6 +146,210 @@
   font-size: 14px;
 }
 
+/* =========================================================
+   VALIDATION
+========================================================= */
+
+.input[aria-invalid="true"],
+.phoneInput[aria-invalid="true"] {
+  border-bottom-color: #c90000;
+}
+
+/* =========================================================
+   HONEYPOT
+========================================================= */
+
+.honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  top: auto !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  overflow: hidden !important;
+
+  opacity: 0 !important;
+
+  pointer-events: none !important;
+}
+
+/* =========================================================
+   PHONE COUNTRY + NUMBER
+========================================================= */
+
+.phoneGroup {
+  display: flex;
+  align-items: stretch;
+
+  width: 100%;
+
+  gap: 12px;
+}
+
+.countryCode {
+  flex: 0 0 100px;
+
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+
+  border: none;
+
+  border-bottom:
+    2px solid var(--line);
+
+  border-radius: 0;
+
+  background-color:
+    transparent;
+
+  color:
+    var(--ink);
+
+  padding:
+    20px 18px 9px 2px;
+
+  outline: none;
+
+  font-size:
+    14px;
+
+  cursor:
+    pointer;
+
+  box-sizing:
+    border-box;
+
+  font-family:
+    inherit;
+}
+
+.phoneInput {
+  flex: 1 1 0;
+
+  width: 0;
+  min-width: 0;
+
+  border: none;
+
+  border-bottom:
+    2px solid var(--line);
+
+  border-radius: 0;
+
+  background:
+    transparent;
+
+  color:
+    var(--ink);
+
+  padding:
+    20px 2px 9px;
+
+  outline: none;
+
+  font-size:
+    16px;
+
+  box-sizing:
+    border-box;
+
+  font-family:
+    inherit;
+
+  transition:
+    border-color .2s ease,
+    color .2s ease;
+}
+
+.phoneInput::placeholder {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+
+  color:
+    var(--ink-dim);
+
+  opacity: 1;
+}
+
+.countryCode:focus,
+.phoneInput:focus {
+  border-bottom-color:
+    var(--ink);
+}
+
+/* =========================================================
+   TURNSTILE
+========================================================= */
+
+.turnstileWrap {
+  display: flex;
+
+  justify-content:
+    flex-start;
+
+  align-items:
+    center;
+
+  width: auto;
+
+  max-width:
+    100%;
+}
+
+/* =========================================================
+   SERVER MESSAGE
+========================================================= */
+
+.serverMsg {
+  margin:
+    4px 0 0;
+
+  color:
+    #c90000;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.5;
+}
+
+/* =========================================================
+   DISABLED BUTTON
+========================================================= */
+
+.btn:disabled {
+  opacity:
+    .5;
+
+  cursor:
+    not-allowed;
+
+  transform:
+    none;
+}
+
+.btn:disabled:hover {
+  transform:
+    none;
+
+  background:
+    transparent;
+
+  color:
+    var(--ink);
+}
+
 @media (max-width: 991px) {
   .grid {
     grid-template-columns: 1fr;
@@ -159,4 +363,38 @@
   .wrap {
     margin-top: 50px;
   }
+
+  .phoneGroup {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+
+  gap: 10px;
+}
+
+.countryCode {
+  flex: 0 0 95px;
+
+  width: 95px;
+  min-width: 95px;
+  max-width: 95px;
+
+  font-size: 12px;
+}
+
+.phoneInput {
+  flex: 1 1 0;
+
+  width: 0;
+  min-width: 0;
+}
+
+.turnstileWrap {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: auto;
+}
 }

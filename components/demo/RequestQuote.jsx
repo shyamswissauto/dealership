@@ -2,232 +2,1431 @@
 
 import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Turnstile } from "@marsidev/react-turnstile";
+
+import {
+  getCountries,
+  getCountryCallingCode,
+  parsePhoneNumberFromString,
+} from "libphonenumber-js";
+
 import styles from "./RequestQuote.module.css";
 
-const CATEGORIES = ["ALL", "SEDAN", "SUV"];
+/* =========================================================
+   MODELS
+========================================================= */
 
 const MODELS = [
-  /* { id: "u75plus", name: "U75PLUS", body: "SUV", category: "SUV", img: "/assets/models/img4.webp" },
-  { id: "u70pro", name: "U70PRO", body: "SUV", category: "SUV", img: "/assets/models/img5.webp" }, */
-  { id: "bolden-off-road",     name: "BOLDEN OFF-ROAD", body: "PICKUP", category: "PICKUP", img: "/assets/models/img2.webp" },
-  { id: "bolden-passenger", name: "BOLDEN PASSENGER", body: "PICKUP", category: "PICKUP", img: "/assets/models/img3.webp" },
-  { id: "bolden-commercial",  name: "BOLDEN COMMERCIAL", body: "PICKUP", category: "PICKUP", img: "/assets/models/img1.webp" },
+  {
+    id: "bolden-off-road",
+    name: "BOLDEN OFF-ROAD",
+    body: "PICKUP",
+    category: "PICKUP",
+    img: "/assets/models/img2.webp",
+  },
+  {
+    id: "bolden-passenger",
+    name: "BOLDEN PASSENGER",
+    body: "PICKUP",
+    category: "PICKUP",
+    img: "/assets/models/img3.webp",
+  },
+  {
+    id: "bolden-commercial",
+    name: "BOLDEN COMMERCIAL",
+    body: "PICKUP",
+    category: "PICKUP",
+    img: "/assets/models/img1.webp",
+  },
 ];
 
-const TITLES = ["Mr.", "Ms.", "Mrs."];
-const LOCATIONS = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
+const TITLES = [
+  "Mr.",
+  "Ms.",
+  "Mrs.",
+];
+
+const LOCATIONS = [
+  "Dubai",
+  "Abu Dhabi",
+  "Sharjah",
+  "Ajman",
+  "Ras Al Khaimah",
+  "Umm Al Quwain",
+  "Fujairah",
+];
+
+/* =========================================================
+   OBVIOUS FAKE PHONE NUMBERS
+========================================================= */
+
+const OBVIOUS_FAKE_PHONES = new Set([
+  "123456789",
+  "1234567890",
+  "987654321",
+  "9876543210",
+  "0123456789",
+]);
+
+/* =========================================================
+   NAME VALIDATION
+========================================================= */
+
+function isValidName(value = "") {
+  const name = String(value).trim();
+
+  if (
+    name.length < 2 ||
+    name.length > 60
+  ) {
+    return false;
+  }
+
+  return /^[\p{L}\p{M}][\p{L}\p{M}\s.'’\-]{1,59}$/u.test(
+    name
+  );
+}
+
+/* =========================================================
+   COUNTRY-SPECIFIC PHONE VALIDATION
+
+   IMPORTANT:
+   The parsed phone country MUST equal
+   the country selected by the customer.
+========================================================= */
+
+function validatePhoneForCountry(
+  value,
+  country
+) {
+  const raw = String(
+    value || ""
+  ).trim();
+
+  const digits =
+    raw.replace(/\D/g, "");
+
+  if (!raw) {
+    return {
+      valid: false,
+      message:
+        "Phone number is required.",
+    };
+  }
+
+  if (
+    digits.length < 6 ||
+    digits.length > 15
+  ) {
+    return {
+      valid: false,
+      message:
+        "Enter a valid phone number.",
+    };
+  }
+
+  /*
+   * 000000000
+   * 111111111
+   * 999999999
+   */
+  if (
+    /^(\d)\1{6,}$/.test(
+      digits
+    )
+  ) {
+    return {
+      valid: false,
+      message:
+        "Enter a valid phone number.",
+    };
+  }
+
+  if (
+    OBVIOUS_FAKE_PHONES.has(
+      digits
+    )
+  ) {
+    return {
+      valid: false,
+      message:
+        "Enter a valid phone number.",
+    };
+  }
+
+  try {
+    const parsedPhone =
+      parsePhoneNumberFromString(
+        raw,
+        country
+      );
+
+    if (!parsedPhone) {
+      return {
+        valid: false,
+        message:
+          "Enter a valid phone number for the selected country.",
+      };
+    }
+
+    /*
+     * Example:
+     *
+     * Selected = AE
+     * Number   = +919876543210
+     *
+     * Do NOT accept it simply because
+     * the Indian number itself is valid.
+     */
+    if (
+      parsedPhone.country !==
+      country
+    ) {
+      return {
+        valid: false,
+        message:
+          "Phone number does not match the selected country.",
+      };
+    }
+
+    if (
+      !parsedPhone.isPossible() ||
+      !parsedPhone.isValid()
+    ) {
+      return {
+        valid: false,
+        message:
+          "Enter a valid phone number for the selected country.",
+      };
+    }
+
+    const national =
+      String(
+        parsedPhone.nationalNumber ||
+          ""
+      );
+
+    if (
+      /^(\d)\1{6,}$/.test(
+        national
+      ) ||
+      OBVIOUS_FAKE_PHONES.has(
+        national
+      )
+    ) {
+      return {
+        valid: false,
+        message:
+          "Enter a valid phone number.",
+      };
+    }
+
+    return {
+      valid: true,
+      number:
+        parsedPhone.number,
+    };
+  } catch {
+    return {
+      valid: false,
+      message:
+        "Enter a valid phone number for the selected country.",
+    };
+  }
+}
+
+/* =========================================================
+   COMPONENT
+========================================================= */
 
 export default function RequestQuote() {
   const router = useRouter();
-  const [cat, setCat] = useState("ALL");
-  const [submitting, setSubmitting] = useState(false);
-  const [serverMsg, setServerMsg] = useState("");
-  const [selectedId, setSelectedId] = useState(MODELS[0].id);
-  const [agree, setAgree] = useState(false);
 
-  const scrollerRef = useRef(null);
+  const [selectedId, setSelectedId] =
+    useState(MODELS[0].id);
 
-  const visibleModels = useMemo(
-    () => (cat === "ALL" ? MODELS : MODELS.filter(m => m.category === cat)),
-    [cat]
-  );
+  const [phoneCountry, setPhoneCountry] =
+    useState("AE");
 
-  // Scroll helpers
-  const scrollByAmount = (dir) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const amount = Math.round(el.clientWidth * 0.8) * (dir === "left" ? -1 : 1);
-    el.scrollBy({ left: amount, behavior: "smooth" });
+  const [agree, setAgree] =
+    useState(false);
+
+  const [errors, setErrors] =
+    useState({});
+
+  const [serverMsg, setServerMsg] =
+    useState("");
+
+  const [submitting, setSubmitting] =
+    useState(false);
+
+  /* =========================================================
+     TURNSTILE
+  ========================================================= */
+
+  const [
+    turnstileToken,
+    setTurnstileToken,
+  ] = useState("");
+
+  const [
+    turnstileKey,
+    setTurnstileKey,
+  ] = useState(0);
+
+  /* =========================================================
+     HONEYPOT
+  ========================================================= */
+
+  const [honeypot, setHoneypot] =
+    useState("");
+
+  /* =========================================================
+     FORM TIMING
+  ========================================================= */
+
+  const [formStartedAt] =
+    useState(() => Date.now());
+
+  const scrollerRef =
+    useRef(null);
+
+  /* =========================================================
+     COUNTRY OPTIONS
+
+     UAE always first.
+
+     Display:
+     +971 AE
+     +91 IN
+     +966 SA
+     +974 QA
+  ========================================================= */
+
+  const countryOptions =
+    useMemo(() => {
+      const countries =
+        getCountries().map(
+          (country) => ({
+            country,
+            callingCode:
+              getCountryCallingCode(
+                country
+              ),
+          })
+        );
+
+      countries.sort(
+        (a, b) => {
+          const difference =
+            Number(
+              a.callingCode
+            ) -
+            Number(
+              b.callingCode
+            );
+
+          if (
+            difference !== 0
+          ) {
+            return difference;
+          }
+
+          return a.country.localeCompare(
+            b.country
+          );
+        }
+      );
+
+      return [
+        ...countries.filter(
+          (item) =>
+            item.country === "AE"
+        ),
+        ...countries.filter(
+          (item) =>
+            item.country !== "AE"
+        ),
+      ];
+    }, []);
+
+  /* =========================================================
+     SCROLLER
+  ========================================================= */
+
+  const scrollByAmount = (
+    direction
+  ) => {
+    const el =
+      scrollerRef.current;
+
+    if (!el) {
+      return;
+    }
+
+    const amount =
+      Math.round(
+        el.clientWidth * 0.8
+      ) *
+      (
+        direction === "left"
+          ? -1
+          : 1
+      );
+
+    el.scrollBy({
+      left: amount,
+      behavior: "smooth",
+    });
   };
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setServerMsg("");
-    setSubmitting(true);
+  /* =========================================================
+     CLEAR FIELD ERROR
+  ========================================================= */
 
-    const formEl = e.currentTarget;
+  const clearError = (
+    field
+  ) => {
+    setErrors(
+      (current) => ({
+        ...current,
+        [field]: undefined,
+      })
+    );
 
-    try {
-        const form = new FormData(formEl);
-        const payload = Object.fromEntries(form.entries());
-
-        const m = MODELS.find(x => x.id === selectedId) || {};
-        const body = { ...payload, modelId: selectedId, modelName: m.name, modelBody: m.body, modelCategory: m.category };
-
-        const res = await fetch("/api/request-quote", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
-
-
-        const json = await res.json();
-        if (!res.ok || !json.ok) throw new Error(json.error || "Failed");
-
-        router.replace(`/thank-you`);
-        return;
-
-        /* setServerMsg(`Thanks! Reference: ${json.ref}`);
-        formEl.reset();
-        setAgree(false); */
-    } catch (err) {
-        setServerMsg(err.message || "Something went wrong");
-    } finally {
-        setSubmitting(false);
+    if (serverMsg) {
+      setServerMsg("");
     }
+  };
+
+  /* =========================================================
+     RESET TURNSTILE
+  ========================================================= */
+
+  const resetTurnstile =
+    () => {
+      setTurnstileToken("");
+
+      setTurnstileKey(
+        (key) => key + 1
+      );
     };
 
+  /* =========================================================
+     FRONTEND VALIDATION
+  ========================================================= */
 
-  const selectedModel = MODELS.find(m => m.id === selectedId);
+  const validate = (
+    payload
+  ) => {
+    const nextErrors = {};
+
+    /* Title */
+
+    if (
+      !TITLES.includes(
+        payload.title
+      )
+    ) {
+      nextErrors.title =
+        "Please select a title.";
+    }
+
+    /* First name */
+
+    if (
+      !isValidName(
+        payload.firstName
+      )
+    ) {
+      nextErrors.firstName =
+        "Enter a valid first name.";
+    }
+
+    /* Last name */
+
+    if (
+      !isValidName(
+        payload.lastName
+      )
+    ) {
+      nextErrors.lastName =
+        "Enter a valid last name.";
+    }
+
+    /* Email */
+
+    if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(
+        String(
+          payload.email ||
+            ""
+        ).trim()
+      )
+    ) {
+      nextErrors.email =
+        "Enter a valid email address.";
+    }
+
+    /* =============================================
+       COUNTRY-SPECIFIC PHONE
+    ============================================= */
+
+    const phoneResult =
+      validatePhoneForCountry(
+        payload.phone,
+        phoneCountry
+      );
+
+    if (
+      !phoneResult.valid
+    ) {
+      nextErrors.phone =
+        phoneResult.message;
+    }
+
+    /* Location */
+
+    if (
+      !LOCATIONS.includes(
+        payload.location
+      )
+    ) {
+      nextErrors.location =
+        "Please select a valid location.";
+    }
+
+    /* Terms */
+
+    if (!agree) {
+      nextErrors.agree =
+        "You must accept the Terms & Conditions.";
+    }
+
+    setErrors(
+      nextErrors
+    );
+
+    return (
+      Object.keys(
+        nextErrors
+      ).length === 0
+    );
+  };
+
+  /* =========================================================
+     SUBMIT
+  ========================================================= */
+
+  const onSubmit =
+    async (e) => {
+      e.preventDefault();
+
+      setServerMsg("");
+
+      const formEl =
+        e.currentTarget;
+
+      const formData =
+        new FormData(
+          formEl
+        );
+
+      const payload =
+        Object.fromEntries(
+          formData.entries()
+        );
+
+      /* =============================================
+         FRONTEND VALIDATION
+      ============================================= */
+
+      if (
+        !validate(payload)
+      ) {
+        return;
+      }
+
+      /* =============================================
+         TURNSTILE
+      ============================================= */
+
+      if (
+        !turnstileToken
+      ) {
+        setServerMsg(
+          "Please complete the security verification before submitting."
+        );
+
+        return;
+      }
+
+      /* =============================================
+         MODEL
+      ============================================= */
+
+      const selectedModel =
+        MODELS.find(
+          (model) =>
+            model.id ===
+            selectedId
+        );
+
+      if (
+        !selectedModel
+      ) {
+        setServerMsg(
+          "Please select a valid vehicle."
+        );
+
+        return;
+      }
+
+      try {
+        setSubmitting(true);
+
+        const body = {
+          /* Model */
+          modelId:
+            selectedModel.id,
+
+          /*
+           * Included for email/display convenience,
+           * but API will NOT trust these values.
+           */
+          modelName:
+            selectedModel.name,
+
+          modelBody:
+            selectedModel.body,
+
+          modelCategory:
+            selectedModel.category,
+
+          /* Customer */
+          title:
+            payload.title,
+
+          firstName:
+            payload.firstName,
+
+          lastName:
+            payload.lastName,
+
+          email:
+            payload.email,
+
+          /* Phone */
+          phoneCountry,
+
+          phone:
+            payload.phone,
+
+          /* Location */
+          location:
+            payload.location,
+
+          /* Comments */
+          comments:
+            payload.comments ||
+            "",
+
+          /* Agreement */
+          agree: true,
+
+          /* Anti-spam */
+          website:
+            honeypot,
+
+          formStartedAt,
+
+          turnstileToken,
+
+          /* Source */
+          sourceUrl:
+            window.location.href,
+        };
+
+        const res =
+          await fetch(
+            "/api/request-quote",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json",
+              },
+
+              body:
+                JSON.stringify(
+                  body
+                ),
+            }
+          );
+
+        const json =
+          await res
+            .json()
+            .catch(() => ({}));
+
+        /* =============================================
+           VALIDATION ERROR
+        ============================================= */
+
+        if (
+          res.status === 422
+        ) {
+          if (
+            json?.errors
+          ) {
+            setErrors(
+              (current) => ({
+                ...current,
+                ...json.errors,
+              })
+            );
+          }
+
+          const message =
+            json?.errors?.phone ||
+            json?.errors?.email ||
+            json?.errors?.firstName ||
+            json?.errors?.lastName ||
+            json?.errors?.title ||
+            json?.errors?.location ||
+            json?.errors?.modelId ||
+            json?.errors?.agree ||
+            json?.errors?.comments ||
+            json?.error ||
+            "Please check the form and try again.";
+
+          setServerMsg(
+            message
+          );
+
+          return;
+        }
+
+        /* =============================================
+           SECURITY / ORIGIN / TURNSTILE
+        ============================================= */
+
+        if (
+          res.status === 403
+        ) {
+          setServerMsg(
+            json?.error ||
+              "Security verification failed. Please try again."
+          );
+
+          resetTurnstile();
+
+          return;
+        }
+
+        /* =============================================
+           RATE LIMIT
+        ============================================= */
+
+        if (
+          res.status === 429
+        ) {
+          setServerMsg(
+            json?.error ||
+              "Too many submissions. Please wait and try again."
+          );
+
+          resetTurnstile();
+
+          return;
+        }
+
+        /* =============================================
+           OTHER ERROR
+        ============================================= */
+
+        if (
+          !res.ok ||
+          !json.ok
+        ) {
+          setServerMsg(
+            json?.error ||
+              "Unable to submit your request. Please try again."
+          );
+
+          resetTurnstile();
+
+          return;
+        }
+
+        /* =============================================
+           SUCCESS
+        ============================================= */
+
+        router.replace(
+          "/thank-you"
+        );
+      } catch (err) {
+        console.warn(
+          "Request quote submission failed:",
+          err
+        );
+
+        setServerMsg(
+          "Unable to connect. Please check your connection and try again."
+        );
+
+        resetTurnstile();
+      } finally {
+        setSubmitting(false);
+      }
+    };
+
+  /* =========================================================
+     RENDER
+  ========================================================= */
 
   return (
-    <section className={styles.wrap} aria-labelledby="rq-title">
-      {/* STEP 1 */}
-      {/* <div className={styles.row}>
-        <aside className={styles.step}><span>STEP</span><b>1</b></aside>
-
-        <div className={styles.content}>
-          <h2 id="rq-title" className={styles.title}>CHOOSE YOUR CAR</h2>
-
-          <div className={styles.chips} role="tablist" aria-label="Filter by body type">
-            {CATEGORIES.map((c) => (
-              <button
-                key={c}
-                role="tab"
-                aria-selected={cat === c}
-                className={`${styles.chip} ${cat === c ? styles.chipActive : ""}`}
-                onClick={() => setCat(c)}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
-      {/* STEP 2 */}
+    <section
+      className={styles.wrap}
+      aria-labelledby="rq-title"
+    >
       <div className={styles.row}>
-        
-
         <div className={styles.content}>
-          <h3 className={styles.subtitle}>SELECT MODEL</h3>
+          <h3
+            id="rq-title"
+            className={styles.subtitle}
+          >
+            SELECT MODEL
+          </h3>
 
-          <div className={styles.modelWrap}>
+          {/* =================================================
+              MODEL SELECTOR
+          ================================================= */}
+
+          <div
+            className={styles.modelWrap}
+          >
             <button
               type="button"
               className={`${styles.arrow} ${styles.arrowLeft}`}
               aria-label="Scroll models left"
-              onClick={() => scrollByAmount("left")}
+              onClick={() =>
+                scrollByAmount(
+                  "left"
+                )
+              }
             >
               ‹
             </button>
 
-            <ul ref={scrollerRef} className={styles.scroller} tabIndex={0}>
-              {visibleModels.map((m) => (
-                <li key={m.id} className={styles.card}>
-                  <button
-                    type="button"
-                    className={`${styles.cardBtn} ${selectedId === m.id ? styles.cardSelected : ""}`}
-                    onClick={() => setSelectedId(m.id)}
-                    aria-pressed={selectedId === m.id}
+            <ul
+              ref={scrollerRef}
+              className={styles.scroller}
+              tabIndex={0}
+            >
+              {MODELS.map(
+                (model) => (
+                  <li
+                    key={model.id}
+                    className={styles.card}
                   >
-                    <figure className={styles.cardMedia}>
-                      <img src={m.img} alt={`${m.name} image`} loading="lazy" />
-                    </figure>
-                    <figcaption className={styles.cardText}>
-                      <strong className={styles.cardName}>{m.name}</strong>
-                     {/*  <small className={styles.cardMeta}>Body Type : {m.body}</small> */}
-                    </figcaption>
-                  </button>
-                </li>
-              ))}
+                    <button
+                      type="button"
+                      className={`${styles.cardBtn} ${
+                        selectedId ===
+                        model.id
+                          ? styles.cardSelected
+                          : ""
+                      }`}
+                      onClick={() => {
+                        setSelectedId(
+                          model.id
+                        );
+                      }}
+                      aria-pressed={
+                        selectedId ===
+                        model.id
+                      }
+                    >
+                      <figure
+                        className={
+                          styles.cardMedia
+                        }
+                      >
+                        <img
+                          src={
+                            model.img
+                          }
+                          alt={`${model.name} image`}
+                          loading="lazy"
+                        />
+                      </figure>
+
+                      <figcaption
+                        className={
+                          styles.cardText
+                        }
+                      >
+                        <strong
+                          className={
+                            styles.cardName
+                          }
+                        >
+                          {
+                            model.name
+                          }
+                        </strong>
+                      </figcaption>
+                    </button>
+                  </li>
+                )
+              )}
             </ul>
 
             <button
               type="button"
               className={`${styles.arrow} ${styles.arrowRight}`}
               aria-label="Scroll models right"
-              onClick={() => scrollByAmount("right")}
+              onClick={() =>
+                scrollByAmount(
+                  "right"
+                )
+              }
             >
               ›
             </button>
           </div>
 
-          {/* STEP 3 — FORM */}
-          <form className={styles.form} onSubmit={onSubmit} noValidate>
-            <input type="hidden" name="modelId" value={selectedId} />
+          {/* =================================================
+              FORM
+          ================================================= */}
 
-            {/* Title */}
-            <div className={styles.field}>
-              <label className={styles.label} htmlFor="rq-title-select">Title <span>*</span></label>
-              <div className={styles.selectWrap}>
-                <select id="rq-title-select" name="title" className={`${styles.input} ${styles.select}`} required defaultValue="">
-                  <option value="" disabled hidden>Select Title</option>
-                  {TITLES.map(t => <option key={t} value={t}>{t}</option>)}
+          <form
+            className={styles.form}
+            onSubmit={onSubmit}
+            noValidate
+          >
+            {/* =================================================
+                HONEYPOT
+            ================================================= */}
+
+            <div
+              className={styles.honeypot}
+              aria-hidden="true"
+            >
+              <label
+                htmlFor="rq-website"
+              >
+                Website
+              </label>
+
+              <input
+                id="rq-website"
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) =>
+                  setHoneypot(
+                    e.target.value
+                  )
+                }
+              />
+            </div>
+
+            {/* =================================================
+                TITLE
+            ================================================= */}
+
+            <div
+              className={styles.field}
+            >
+              <label
+                className={styles.label}
+                htmlFor="rq-title-select"
+              >
+                Title <span>*</span>
+              </label>
+
+              <div
+                className={styles.selectWrap}
+              >
+                <select
+                  id="rq-title-select"
+                  name="title"
+                  className={`${styles.input} ${styles.select}`}
+                  defaultValue=""
+                  aria-invalid={
+                    !!errors.title
+                  }
+                  onChange={() =>
+                    clearError(
+                      "title"
+                    )
+                  }
+                >
+                  <option
+                    value=""
+                    disabled
+                    hidden
+                  >
+                    Select Title
+                  </option>
+
+                  {TITLES.map(
+                    (title) => (
+                      <option
+                        key={title}
+                        value={title}
+                      >
+                        {title}
+                      </option>
+                    )
+                  )}
                 </select>
               </div>
+
+              {errors.title && (
+                <small
+                  className={styles.err}
+                >
+                  {errors.title}
+                </small>
+              )}
             </div>
 
-            {/* Name */}
-            <div className={styles.grid2}>
-              <div className={styles.field}>
-                <label className={styles.label} htmlFor="firstName">First Name <span>*</span></label>
-                <input id="firstName" name="firstName" className={styles.input} required />
+            {/* =================================================
+                NAMES
+            ================================================= */}
+
+            <div
+              className={styles.grid2}
+            >
+              <div
+                className={styles.field}
+              >
+                <label
+                  className={styles.label}
+                  htmlFor="firstName"
+                >
+                  First Name{" "}
+                  <span>*</span>
+                </label>
+
+                <input
+                  id="firstName"
+                  name="firstName"
+                  className={styles.input}
+                  autoComplete="given-name"
+                  aria-invalid={
+                    !!errors.firstName
+                  }
+                  onChange={() =>
+                    clearError(
+                      "firstName"
+                    )
+                  }
+                />
+
+                {errors.firstName && (
+                  <small
+                    className={styles.err}
+                  >
+                    {
+                      errors.firstName
+                    }
+                  </small>
+                )}
               </div>
-              <div className={styles.field}>
-                <label className={styles.label} htmlFor="lastName">Last Name <span>*</span></label>
-                <input id="lastName" name="lastName" className={styles.input} required />
+
+              <div
+                className={styles.field}
+              >
+                <label
+                  className={styles.label}
+                  htmlFor="lastName"
+                >
+                  Last Name{" "}
+                  <span>*</span>
+                </label>
+
+                <input
+                  id="lastName"
+                  name="lastName"
+                  className={styles.input}
+                  autoComplete="family-name"
+                  aria-invalid={
+                    !!errors.lastName
+                  }
+                  onChange={() =>
+                    clearError(
+                      "lastName"
+                    )
+                  }
+                />
+
+                {errors.lastName && (
+                  <small
+                    className={styles.err}
+                  >
+                    {
+                      errors.lastName
+                    }
+                  </small>
+                )}
               </div>
             </div>
 
-            <div className={styles.grid2}>
-              <div className={styles.field}>
-                  <label className={styles.label} htmlFor="phone">Phone <span>*</span></label>
+            {/* =================================================
+                PHONE + EMAIL
+            ================================================= */}
+
+            <div
+              className={styles.grid2}
+            >
+              {/* PHONE */}
+
+              <div
+                className={styles.field}
+              >
+                <label
+                  className={styles.label}
+                  htmlFor="phone"
+                >
+                  Phone{" "}
+                  <span>*</span>
+                </label>
+
+                <div
+                  className={
+                    styles.phoneGroup
+                  }
+                >
+                  <select
+                    name="phoneCountry"
+                    className={
+                      styles.countryCode
+                    }
+                    value={
+                      phoneCountry
+                    }
+                    onChange={(e) => {
+                      setPhoneCountry(
+                        e.target.value
+                      );
+
+                      clearError(
+                        "phone"
+                      );
+                    }}
+                    aria-label="Country calling code"
+                  >
+                    {countryOptions.map(
+                      (item) => (
+                        <option
+                          key={
+                            item.country
+                          }
+                          value={
+                            item.country
+                          }
+                        >
+                          +{item.callingCode} {item.country}
+                        </option>
+                      )
+                    )}
+                  </select>
+
                   <input
                     id="phone"
+                    type="tel"
                     name="phone"
-                    className={styles.input}
+                    className={
+                      styles.phoneInput
+                    }
                     inputMode="tel"
-                    pattern="[0-9]{5,15}"
+                    autoComplete="tel-national"
                     placeholder="Phone"
-                    required
+                    aria-invalid={
+                      !!errors.phone
+                    }
+                    onChange={() =>
+                      clearError(
+                        "phone"
+                      )
+                    }
                   />
+                </div>
+
+                {errors.phone && (
+                  <small
+                    className={styles.err}
+                  >
+                    {errors.phone}
+                  </small>
+                )}
               </div>
-              <div className={styles.field}>
-                <label className={styles.label} htmlFor="email">Email <span>*</span></label>
-                <input id="email" name="email" type="email" className={styles.input} required />
+
+              {/* EMAIL */}
+
+              <div
+                className={styles.field}
+              >
+                <label
+                  className={styles.label}
+                  htmlFor="email"
+                >
+                  Email{" "}
+                  <span>*</span>
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className={styles.input}
+                  autoComplete="email"
+                  aria-invalid={
+                    !!errors.email
+                  }
+                  onChange={() =>
+                    clearError(
+                      "email"
+                    )
+                  }
+                />
+
+                {errors.email && (
+                  <small
+                    className={styles.err}
+                  >
+                    {errors.email}
+                  </small>
+                )}
               </div>
             </div>
 
-            {/* Location */}
-            <div className={styles.field}>
-              <label className={styles.label} htmlFor="location">Select the location <span>*</span></label>
-              <div className={styles.selectWrap}>
-                <select id="location" name="location" className={`${styles.input} ${styles.select}`} defaultValue="" required>
-                  <option value="" disabled hidden>Select Location</option>
-                  {LOCATIONS.map(l => <option key={l} value={l}>{l}</option>)}
+            {/* =================================================
+                LOCATION
+            ================================================= */}
+
+            <div
+              className={styles.field}
+            >
+              <label
+                className={styles.label}
+                htmlFor="location"
+              >
+                Select Test Drive location{" "}
+                <span>*</span>
+              </label>
+
+              <div
+                className={styles.selectWrap}
+              >
+                <select
+                  id="location"
+                  name="location"
+                  className={`${styles.input} ${styles.select}`}
+                  defaultValue=""
+                  aria-invalid={
+                    !!errors.location
+                  }
+                  onChange={() =>
+                    clearError(
+                      "location"
+                    )
+                  }
+                >
+                  <option
+                    value=""
+                    disabled
+                    hidden
+                  >
+                    Select Location
+                  </option>
+
+                  {LOCATIONS.map(
+                    (location) => (
+                      <option
+                        key={location}
+                        value={location}
+                      >
+                        {location}
+                      </option>
+                    )
+                  )}
                 </select>
               </div>
+
+              {errors.location && (
+                <small
+                  className={styles.err}
+                >
+                  {errors.location}
+                </small>
+              )}
             </div>
 
-            {/* Comments */}
-            <div className={styles.field}>
-              <label className={styles.label} htmlFor="comments">Comments</label>
-              <textarea id="comments" name="comments" className={`${styles.input} ${styles.textarea}`} rows={5} />
+            {/* =================================================
+                COMMENTS
+            ================================================= */}
+
+            <div
+              className={styles.field}
+            >
+              <label
+                className={styles.label}
+                htmlFor="comments"
+              >
+                Comments
+              </label>
+
+              <textarea
+                id="comments"
+                name="comments"
+                className={`${styles.input} ${styles.textarea}`}
+                rows={5}
+                maxLength={1000}
+                onChange={() =>
+                  clearError(
+                    "comments"
+                  )
+                }
+              />
+
+              {errors.comments && (
+                <small
+                  className={styles.err}
+                >
+                  {errors.comments}
+                </small>
+              )}
             </div>
 
-            {/* Terms */}
-            <label className={styles.terms}>
-              <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} required />
-              <span>I have read and accept <a href="#" target="_blank" rel="noreferrer">Terms &amp; Conditions</a></span>
+            {/* =================================================
+                TERMS
+            ================================================= */}
+
+            <label
+              className={styles.terms}
+            >
+              <input
+                type="checkbox"
+                checked={agree}
+                onChange={(e) => {
+                  setAgree(
+                    e.target.checked
+                  );
+
+                  clearError(
+                    "agree"
+                  );
+                }}
+              />
+
+              <span>
+                I have read and accept{" "}
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Terms &amp; Conditions
+                </a>
+              </span>
             </label>
 
-            <button type="submit" className={styles.submit} disabled={!agree || submitting}>
-                {submitting ? "Submitting..." : "Submit"}
+            {errors.agree && (
+              <small
+                className={styles.err}
+              >
+                {errors.agree}
+              </small>
+            )}
+
+            {/* =================================================
+                TURNSTILE
+            ================================================= */}
+
+            <div
+              className={
+                styles.turnstileWrap
+              }
+            >
+              <Turnstile
+                key={turnstileKey}
+                siteKey={
+                  process.env
+                    .NEXT_PUBLIC_TURNSTILE_SITE_KEY
+                }
+                onSuccess={(token) => {
+                  setTurnstileToken(
+                    token
+                  );
+
+                  setServerMsg("");
+                }}
+                onExpire={() => {
+                  setTurnstileToken(
+                    ""
+                  );
+                }}
+                onError={() => {
+                  setTurnstileToken(
+                    ""
+                  );
+
+                  setServerMsg(
+                    "Security verification could not be completed. Please try again."
+                  );
+                }}
+                options={{
+                  action:
+                    "request_quote",
+                  theme:
+                    "auto",
+
+                  /*
+                   * Normal prevents the widget
+                   * from stretching full width.
+                   */
+                  size:
+                    "normal",
+                }}
+              />
+            </div>
+
+            {/* =================================================
+                SUBMIT
+            ================================================= */}
+
+            <button
+              type="submit"
+              className={styles.submit}
+              disabled={
+                !agree ||
+                submitting ||
+                !turnstileToken
+              }
+            >
+              {submitting
+                ? "Submitting..."
+                : "Submit"}
             </button>
 
-            {serverMsg && <p style={{marginTop:8}}>{serverMsg}</p>}
-
+            {serverMsg && (
+              <p
+                className={
+                  styles.serverMsg
+                }
+              >
+                {serverMsg}
+              </p>
+            )}
           </form>
         </div>
       </div>

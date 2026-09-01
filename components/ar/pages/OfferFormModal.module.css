@@ -1,96 +1,593 @@
-/* Same layout/feel as TestDriveModal (two columns, overlay, focus state) */
+/* =========================================================
+   OVERLAY
+========================================================= */
 
 .modalOverlay {
   position: fixed;
+
   inset: 0;
-  background: rgba(0,0,0,.6);
+
+  background: rgba(0, 0, 0, 0.6);
+
   display: grid;
+
   place-items: center;
+
   z-index: 1000;
+
   padding: 16px;
 }
 
+/* =========================================================
+   MODAL
+========================================================= */
+
 .modal {
   width: min(1100px, 94vw);
+
+  max-height: calc(100dvh - 32px);
+
   background: #fff;
+
   position: relative;
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   overflow: hidden;
+
   border-radius: 10px;
-  box-shadow: 0 24px 48px rgba(0,0,0,.3);
+
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+
+  direction: rtl;
 }
 
-.modalLeft { position: relative; margin: 0; }
-.modalImg { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.modalLeft {
+  position: relative;
+
+  margin: 0;
+
+  min-height: 500px;
+}
+
+.modalImg {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* =========================================================
+   RIGHT
+========================================================= */
 
 .modalRight {
   background: #e9e9e9;
+
   padding: clamp(18px, 4vw, 40px);
+
   display: grid;
+
   align-content: start;
+
   gap: 16px;
+
+  /* vertical scroll only when required */
+  overflow-y: auto;
+
+  /* prevent the bottom horizontal scrollbar */
+  overflow-x: hidden;
+
+  min-width: 0;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
 }
+
+.form {
+  position: relative;
+
+  display: grid;
+
+  gap: 16px;
+
+  direction: rtl;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.field {
+  display: grid;
+
+  gap: 6px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.phoneGroup {
+  display: flex;
+
+  align-items: stretch;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  gap: 12px;
+
+  direction: ltr;
+}
+
+.turnstileWrap {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  direction: ltr;
+
+  /* Do NOT create horizontal scrollbar */
+  overflow: hidden;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .modalTitle {
   text-align: center;
+
   margin: 0 0 2px;
+
   font-weight: 900;
+
   color: #3b3b3b;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
 }
 
 .offerName {
   text-align: center;
+
   margin: 0 0 10px;
+
   font-weight: 700;
+
   color: #111;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
 }
 
-.form { display: grid; gap: 16px; }
+/* =========================================================
+   FORM
+========================================================= */
+
+.form {
+  position: relative;
+
+  display: grid;
+
+  gap: 16px;
+
+  direction: rtl;
+}
+
+.field {
+  display: grid;
+
+  gap: 6px;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
 
 .input {
+  width: 100%;
+
   background: transparent;
+
   border: none;
-  border-bottom: 2px solid rgba(0,0,0,.55);
+
+  border-bottom: 2px solid rgba(0, 0, 0, 0.55);
+
   padding: 10px 2px 12px;
+
   font-size: 16px;
+
   color: #111;
+
   outline: none;
-  transition: border-color .18s ease;
-  font-family: var(--font-almarai);
+
+  box-sizing: border-box;
+
+  direction: rtl;
+
+  text-align: right;
+
+  transition: border-color 0.18s ease;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
+
   font-weight: 500;
 }
-.input:focus { border-bottom-color: #111; }
+
+.input:focus {
+  border-bottom-color: #111;
+}
+
+.input[aria-invalid="true"],
+.phoneInput[aria-invalid="true"] {
+  border-bottom-color: #c90000;
+}
+
+.input::placeholder {
+  font-family: var(--font-almarai), Arial, sans-serif;
+
+  color: #555;
+
+  opacity: 1;
+}
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+.phoneGroup {
+  display: flex;
+
+  align-items: stretch;
+
+  width: 100%;
+
+  gap: 12px;
+
+  /*
+   * Keep code and phone number
+   * in correct international order.
+   */
+  direction: ltr;
+}
+
+.countryCode {
+  flex: 0 0 105px;
+
+  width: 105px;
+
+  min-width: 105px;
+
+  max-width: 105px;
+
+  border: none;
+
+  border-bottom: 2px solid rgba(0, 0, 0, 0.55);
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #111;
+
+  padding: 10px 18px 12px 2px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  direction: ltr;
+
+  text-align: left;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
+}
+
+.phoneInput {
+  flex: 1 1 0;
+
+  width: 0;
+
+  min-width: 0;
+
+  border: none;
+
+  border-bottom: 2px solid rgba(0, 0, 0, 0.55);
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #111;
+
+  padding: 10px 2px 12px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  font-size: 16px;
+
+  direction: ltr;
+
+  text-align: right;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
+
+  font-weight: 500;
+}
+
+.phoneInput::placeholder {
+  color: #555;
+
+  opacity: 1;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
+}
+
+.countryCode:focus,
+.phoneInput:focus {
+  border-bottom-color: #111;
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error {
+  color: #c90000;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  text-align: right;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
+}
+
+.serverMsg {
+  margin: 0;
+
+  color: #c90000;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  text-align: right;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
+}
+
+/* =========================================================
+   HONEYPOT
+========================================================= */
+
+.honeypot {
+  position: absolute !important;
+
+  left: -10000px !important;
+
+  top: auto !important;
+
+  width: 1px !important;
+
+  height: 1px !important;
+
+  overflow: hidden !important;
+
+  opacity: 0 !important;
+
+  pointer-events: none !important;
+}
+
+/* =========================================================
+   TURNSTILE
+========================================================= */
+
+.turnstileWrap {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  width: auto;
+
+  max-width: 100%;
+
+  direction: ltr;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
 
 .cta {
   justify-self: start;
+
   padding: 12px 26px;
+
   border: 2px solid #111;
+
   background: transparent;
+
   color: #111;
+
   font-weight: 800;
+
   cursor: pointer;
-  transition: transform .15s ease, background .15s ease, color .15s ease;
-  font-family: var(--font-almarai);
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
+
+  font-family: var(--font-almarai), Arial, sans-serif;
 }
-.cta:hover { transform: translateY(-2px); background: #111; color: #fff; }
+
+.cta:hover {
+  transform: translateY(-2px);
+
+  background: #111;
+
+  color: #fff;
+}
+
+.cta:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.cta:disabled:hover {
+  background: transparent;
+
+  color: #111;
+
+  transform: none;
+}
+
+/* =========================================================
+   CLOSE
+========================================================= */
 
 .close {
   position: absolute;
+
   top: 8px;
+
+  /*
+   * Keep close button on right
+   * like English modal.
+   */
   right: 8px;
-  width: 36px; height: 36px;
+
+  width: 36px;
+
+  height: 36px;
+
   border-radius: 999px;
-  background: rgba(0,0,0,.75);
+
+  background: rgba(0, 0, 0, 0.75);
+
   color: #fff;
+
   border: 0;
+
   font-size: 22px;
+
   line-height: 1;
+
   cursor: pointer;
-  z-index: 1;
+
+  z-index: 2;
 }
 
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
 @media (max-width: 860px) {
-  .modal { grid-template-columns: 1fr; }
-  .modalLeft { min-height: 220px; }
+  .modal {
+    grid-template-columns: 1fr;
+
+    overflow-y: auto;
+  }
+
+  .modalLeft {
+    min-height: 220px;
+
+    height: 220px;
+  }
+
+  .modalRight {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 560px) {
+  .modalOverlay {
+    padding: 10px;
+  }
+
+  .modal {
+    width: 100%;
+
+    max-height: calc(100dvh - 20px);
+  }
+
+  .modalRight {
+    padding: 24px 18px;
+  }
+
+  /*
+   * Keep phone controls
+   * on one row.
+   */
+  .phoneGroup {
+    display: flex;
+
+    flex-direction: row;
+
+    width: 100%;
+
+    gap: 8px;
+
+    direction: ltr;
+  }
+
+  .countryCode {
+    flex: 0 0 95px;
+
+    width: 95px;
+
+    min-width: 95px;
+
+    max-width: 95px;
+
+    font-size: 12px;
+
+    padding-right: 12px;
+  }
+
+  .phoneInput {
+    flex: 1 1 0;
+
+    width: 0;
+
+    min-width: 0;
+
+    font-size: 14px;
+  }
+
+  .turnstileWrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow-x: hidden;
+  }
 }
