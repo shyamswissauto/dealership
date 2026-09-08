@@ -510,5 +510,15 @@ export default function sitemap() {
             lastModified: '2026-08-30T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/chinese-cars-uae-complete-2026-guide',
+            lastModified: '2026-09-07T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/chinese-cars-uae-complete-2026-guide',
+            lastModified: '2026-09-07T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
