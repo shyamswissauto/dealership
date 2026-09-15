@@ -520,5 +520,15 @@ export default function sitemap() {
             lastModified: '2026-09-07T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/how-to-choose-off-road-pickup-4wd-in-the-uae',
+            lastModified: '2026-09-14T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/how-to-choose-off-road-pickup-4wd-in-the-uae',
+            lastModified: '2026-09-14T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
