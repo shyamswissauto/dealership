@@ -530,5 +530,15 @@ export default function sitemap() {
             lastModified: '2026-09-14T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/best-pickup-trucks-in-uae-for-family-work-and-off-road',
+            lastModified: '2026-09-21T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/best-pickup-trucks-in-uae-for-family-work-and-off-road',
+            lastModified: '2026-09-21T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
