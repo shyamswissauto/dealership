@@ -540,5 +540,15 @@ export default function sitemap() {
             lastModified: '2026-09-21T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/best-off-road-cars-in-uae-4x4',
+            lastModified: '2026-09-28T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/best-off-road-cars-in-uae-4x4',
+            lastModified: '2026-09-28T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
