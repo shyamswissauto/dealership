@@ -560,5 +560,15 @@ export default function sitemap() {
             lastModified: '2026-10-06T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/bolden-2026-guide-to-personalizing-your-pickup',
+            lastModified: '2026-10-12T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/bolden-2026-guide-to-personalizing-your-pickup',
+            lastModified: '2026-10-12T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
