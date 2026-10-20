@@ -570,5 +570,15 @@ export default function sitemap() {
             lastModified: '2026-10-12T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/pickup-car-for-family-work-and-off-road-use',
+            lastModified: '2026-10-19T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/pickup-car-for-family-work-and-off-road-use',
+            lastModified: '2026-10-19T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
