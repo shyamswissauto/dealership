@@ -580,5 +580,15 @@ export default function sitemap() {
             lastModified: '2026-10-19T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/bolden-s6-for-the-new-entrepreneur-a-pickup-for-uae-start-up-life',
+            lastModified: '2026-10-27T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/bolden-s6-for-the-new-entrepreneur-a-pickup-for-uae-start-up-life',
+            lastModified: '2026-10-27T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
