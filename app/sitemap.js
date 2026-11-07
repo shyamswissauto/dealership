@@ -590,5 +590,15 @@ export default function sitemap() {
             lastModified: '2026-10-27T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/pickup-truck-blind-spot-safety-how-to-drive-and-park-a-large-pickup-in-tight-spaces',
+            lastModified: '2026-11-07T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/pickup-truck-blind-spot-safety-how-to-drive-and-park-a-large-pickup-in-tight-spaces',
+            lastModified: '2026-11-07T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
