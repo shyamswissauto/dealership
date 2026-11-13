@@ -600,5 +600,15 @@ export default function sitemap() {
             lastModified: '2026-11-07T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/pickup-truck-ground-clearance-explained-how-much-do-you-need',
+            lastModified: '2026-11-12T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/pickup-truck-ground-clearance-explained-how-much-do-you-need',
+            lastModified: '2026-11-12T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
