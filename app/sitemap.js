@@ -610,5 +610,15 @@ export default function sitemap() {
             lastModified: '2026-11-12T06:24:08+00:00',
             priority: 1.00,
         },
+        {
+            url: 'https://www.mysinotruk.ae/blog/driving-in-uae-traffic-how-sinotruk-bolden-safety-systems-support-urban-drivers',
+            lastModified: '2026-11-16T06:24:08+00:00',
+            priority: 1.00,
+        },
+        {
+            url: 'https://www.mysinotruk.ae/ar/blog/driving-in-uae-traffic-how-sinotruk-bolden-safety-systems-support-urban-drivers',
+            lastModified: '2026-11-16T06:24:08+00:00',
+            priority: 1.00,
+        },
     ]
   }
